@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Börse">
+<meta name="theme-color" content="#0e1116">
+<title>Börsen-Briefing</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0e1116;--card:#171b22;--card2:#1e232c;--line:#2a303b;--text:#e8ebf0;--muted:#8c94a3;
+    --up:#2fbf71;--down:#ef5a5a;--accent:#7aa2ff;--warn:#f0b34a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+  body{padding:env(safe-area-inset-top) env(safe-area-inset-right) calc(76px + env(safe-area-inset-bottom)) env(safe-area-inset-left)}
+  .wrap{max-width:560px;margin:0 auto;padding:16px 16px 8px}
+  header{display:flex;justify-content:space-between;align-items:flex-end;margin:8px 0 14px}
+  header h1{font-size:22px;font-weight:700;letter-spacing:-.02em}
+  header .sub{font-size:12px;color:var(--muted);margin-top:3px}
+  .pill{font-size:11px;font-weight:600;padding:4px 9px;border-radius:99px;background:var(--card2);color:var(--muted);white-space:nowrap}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px}
+  .card h2{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+  .mood{font-size:15px;line-height:1.5}
+  .mkts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .mkt{background:var(--card2);border-radius:12px;padding:10px}
+  .mkt .n{font-size:12px;color:var(--muted)}
+  .mkt .v{font-size:16px;font-weight:600;margin-top:2px;font-variant-numeric:tabular-nums}
+  .mkt .c{font-size:12px;font-weight:600;margin-top:2px}
+  .mkt .x{font-size:11px;color:var(--muted);margin-top:2px}
+  .up{color:var(--up)}.down{color:var(--down)}.flat{color:var(--muted)}
+  .filters{display:flex;gap:6px;overflow-x:auto;margin-bottom:10px;scrollbar-width:none}
+  .filters::-webkit-scrollbar{display:none}
+  .f{border:1px solid var(--line);background:var(--card);color:var(--muted);font:inherit;font-size:13px;font-weight:500;padding:6px 12px;border-radius:99px;cursor:pointer;white-space:nowrap}
+  .f.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+  .pos{border-bottom:1px solid var(--line);padding:12px 0;cursor:pointer}
+  .pos:last-child{border-bottom:0}
+  .pos .top{display:flex;align-items:center;gap:10px}
+  .pos .nm{flex:1;min-width:0}
+  .pos .nm b{font-size:15px;font-weight:600;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pos .nm span{font-size:12px;color:var(--muted)}
+  .pos .chg{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+  .pos .note{font-size:13.5px;line-height:1.5;color:#c9cfd9;margin-top:8px;display:none}
+  .pos.open .note{display:block}
+  .pos .next{display:inline-block;margin-top:8px;font-size:12px;font-weight:600;color:var(--accent)}
+  .sig{font-size:11px;font-weight:700;padding:4px 8px;border-radius:8px;text-transform:uppercase;letter-spacing:.04em}
+  .s-chance{background:rgba(47,191,113,.15);color:var(--up)}
+  .s-halten{background:rgba(140,148,163,.15);color:#b7bdc8}
+  .s-beobachten{background:rgba(122,162,255,.15);color:var(--accent)}
+  .s-vorsicht{background:rgba(239,90,90,.15);color:var(--down)}
+  .news{padding:12px 0;border-bottom:1px solid var(--line)}
+  .news:last-child{border-bottom:0}
+  .news b{font-size:15px;font-weight:600;display:block;line-height:1.35}
+  .news p{font-size:13.5px;line-height:1.5;color:#c9cfd9;margin-top:5px}
+  .tags{margin-top:7px;display:flex;gap:5px;flex-wrap:wrap}
+  .tag{font-size:11px;padding:2px 7px;border-radius:6px;background:var(--card2);color:var(--muted)}
+  .tag.mine{color:var(--accent);background:rgba(122,162,255,.12)}
+  .idea{background:var(--card2);border-radius:12px;padding:11px;margin-bottom:8px}
+  .idea .h{display:flex;justify-content:space-between;align-items:center}
+  .idea .h b{font-size:15px}
+  .idea .h span{font-size:11px;color:var(--muted)}
+  .idea p{font-size:13px;line-height:1.45;margin-top:5px;color:#c9cfd9}
+  .idea p i{font-style:normal;color:var(--muted)}
+  .sub2{font-size:13px;font-weight:600;margin:4px 0 8px}
+  .cal{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.4}
+  .cal:last-child{border-bottom:0}
+  .cal .d{min-width:74px;font-weight:600;color:var(--accent);font-size:13px}
+  .src a{display:block;color:var(--accent);font-size:13px;text-decoration:none;padding:6px 0;border-bottom:1px solid var(--line)}
+  .src a:last-child{border-bottom:0}
+  .disc{font-size:11.5px;color:var(--muted);text-align:center;line-height:1.5;padding:8px 10px 4px}
+  nav{position:fixed;left:0;right:0;bottom:0;background:rgba(14,17,22,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px 6px calc(8px + env(safe-area-inset-bottom))}
+  nav button{background:none;border:0;color:var(--muted);font:inherit;font-size:11px;font-weight:500;display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 10px;cursor:pointer}
+  nav button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  nav button.on{color:var(--text)}
+  .view{display:none}.view.on{display:block}
+  .hint{font-size:12.5px;color:var(--muted);line-height:1.5}
+  .vb{display:inline-block;font-size:11px;font-weight:600;margin-top:4px}
+  .vb.ok{color:var(--up)}.vb.no{color:var(--warn)}
+  .checkbox{font-size:12.5px;line-height:1.5;color:var(--muted);border-left:3px solid var(--warn);padding-left:10px}
+  .err{color:var(--warn);font-size:14px;padding:20px 0;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Börsen-Briefing</h1>
+      <div class="sub" id="upd">lädt …</div>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="pill" id="kind"></span><button class="pill" id="reload" style="border:0;cursor:pointer;color:var(--text)" aria-label="Neu laden">↻</button></div>
+  </header>
+
+  <section class="view on" id="v-home">
+    <div class="card"><h2>In einem Satz</h2><p class="mood" id="mood"></p></div>
+    <div class="card"><h2>Märkte</h2><div class="mkts" id="mkts"></div></div>
+    <div class="card" id="check" style="display:none"></div>
+    <div class="card"><h2>Auf dem Radar</h2><div id="radar"></div></div>
+    <div class="card"><h2>Diese Woche wichtig für dich</h2><div id="cal-short"></div></div>
+  </section>
+
+  <section class="view" id="v-depot">
+    <div class="filters" id="filters"></div>
+    <div class="card" id="depot"></div>
+    <p class="hint">Tippe auf eine Position für Details. Die Einordnung (Chance / Halten / Beobachten / Vorsicht) basiert auf aktuellen Nachrichten und ist keine Anlageberatung.</p>
+  </section>
+
+  <section class="view" id="v-news">
+    <div class="card"><h2>Was passiert ist</h2><div id="news"></div></div>
+  </section>
+
+  <section class="view" id="v-more">
+    <div class="card"><h2>Termine</h2><div id="cal"></div></div>
+    <div class="card src"><h2>Quellen</h2><div id="src"></div></div>
+    <div class="card"><h2>Als App speichern</h2>
+      <p class="hint" id="install-hint"><b>Android:</b> In Chrome ⋮ → „App installieren“ (oder „Zum Startbildschirm hinzufügen“).<br><b>iPhone:</b> In Safari Teilen → „Zum Home-Bildschirm“.<br>Neue Daten kommen jeden Morgen um ca. 7:40 Uhr.</p>
+      <button class="f" id="install-btn" style="display:none;margin-top:10px">📲 App jetzt installieren</button>
+    </div>
+  </section>
+
+  <p class="disc">Keine Anlageberatung – nur zusammengefasste Nachrichten. Entscheidungen triffst du selbst.</p>
+</div>
+
+<nav>
+  <button class="on" data-v="home"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Heute</button>
+  <button data-v="depot"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>Depot</button>
+  <button data-v="news"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h10M7 17h6"/></svg>News</button>
+  <button data-v="more"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Termine</button>
+</nav>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmtChg = c => c === null || c === undefined ? "" : (c > 0 ? "+" : "") + c.toLocaleString("de-DE",{minimumFractionDigits:1,maximumFractionDigits:2}) + " %";
+const cls = c => c === null || c === undefined ? "flat" : c > 0 ? "up" : c < 0 ? "down" : "flat";
+const SIG = {chance:"Chance", halten:"Halten", beobachten:"Beobachten", vorsicht:"Vorsicht"};
+let D, filter = "alle";
+const vbadge = x => x.verified === true ? `<span class="vb ok">✓ bestätigt durch ${x.nsrc || 2} Quellen</span>`
+  : x.verified === false ? `<span class="vb no">⚠ nur ${x.nsrc || 1} Quelle – mit Vorsicht</span>` : "";
+
+function store(k, v){ try{ v === undefined ? (v = localStorage.getItem(k)) : localStorage.setItem(k, v); }catch(e){ v = null; } return v; }
+
+function show(v){
+  document.querySelectorAll(".view").forEach(x => x.classList.toggle("on", x.id === "v-" + v));
+  document.querySelectorAll("nav button").forEach(b => b.classList.toggle("on", b.dataset.v === v));
+  window.scrollTo(0,0);
+  if (location.hash !== "#" + v) history.replaceState(null, "", "#" + v);
+}
+document.querySelectorAll("nav button").forEach(b => b.onclick = () => show(b.dataset.v));
+
+function renderDepot(){
+  const list = D.depot.filter(p => filter === "alle" || p.signal === filter);
+  $("#depot").innerHTML = list.length ? list.map(p => `
+    <div class="pos">
+      <div class="top">
+        <div class="nm"><b>${esc(p.name)}</b><span>${esc(p.ticker)} · ${esc(p.type)}${p.price ? " · " + esc(p.price) : ""}</span></div>
+        <span class="chg ${cls(p.change)}">${fmtChg(p.change)}</span>
+        <span class="sig s-${esc(p.signal)}">${SIG[p.signal] || esc(p.signal)}</span>
+      </div>
+      <div class="note">${esc(p.note)}${p.next ? `<br><span class="next">📅 ${esc(p.next)}</span>` : ""}<br>${vbadge(p)}</div>
+    </div>`).join("") : '<p class="hint">Keine Positionen in dieser Kategorie.</p>';
+  document.querySelectorAll(".pos").forEach(el => el.onclick = () => el.classList.toggle("open"));
+}
+
+function render(){
+  $("#upd").textContent = "Stand: " + D.updated_label;
+  $("#kind").textContent = D.kind || "Tagesbriefing";
+  $("#mood").textContent = D.mood;
+  $("#mkts").innerHTML = D.markets.map(m => `
+    <div class="mkt"><div class="n">${esc(m.name)}</div><div class="v">${esc(m.value)}</div>
+    ${m.change !== null && m.change !== undefined ? `<div class="c ${cls(m.change)}">${fmtChg(m.change)}</div>` : ""}
+    ${m.note ? `<div class="x">${esc(m.note)}</div>` : ""}${m.verified === false ? '<div class="vb no">⚠ 1 Quelle</div>' : m.verified === true ? `<div class="vb ok">✓ ${m.nsrc || 2} Quellen</div>` : ""}</div>`).join("");
+  $("#check").innerHTML = D.check_note ? `<h2>Datenqualität</h2><p class="checkbox">${esc(D.check_note)}</p>` : "";
+  $("#check").style.display = D.check_note ? "" : "none";
+
+  const idea = (i) => `<div class="idea"><div class="h"><b>${esc(i.name)} <span style="color:var(--muted);font-weight:500">${esc(i.ticker)}</span></b><span>${esc(i.strength)} begründet</span></div>
+    <p>${esc(i.why)}</p><p><i>Gegenargument:</i> ${esc(i.risk)}</p></div>`;
+  const r = D.radar || {};
+  $("#radar").innerHTML =
+    (r.chance?.length ? `<div class="sub2 up">▲ Mögliche Einstiegs-Chance</div>${r.chance.map(idea).join("")}` : "") +
+    (r.vorsicht?.length ? `<div class="sub2 down" style="margin-top:10px">▼ Vorsicht / Gewinne sichern?</div>${r.vorsicht.map(idea).join("")}` : "") ||
+    '<p class="hint">Heute keine klaren Ideen – die Nachrichtenlage ist zu dünn.</p>';
+
+  const mine = new Set(D.depot.map(p => p.ticker));
+  $("#news").innerHTML = D.news.map(n => `<div class="news"><b>${esc(n.title)}</b><p>${esc(n.text)}</p>
+    <div class="tags">${(n.tags||[]).map(t => `<span class="tag ${mine.has(t) ? "mine" : ""}">${esc(t)}</span>`).join("")}</div></div>`).join("");
+
+  const cal = c => `<div class="cal"><span class="d">${esc(c.date)}</span><span>${esc(c.text)}</span></div>`;
+  $("#cal").innerHTML = D.calendar.map(cal).join("");
+  $("#cal-short").innerHTML = D.calendar.filter(c => c.mine).slice(0,5).map(cal).join("") || '<p class="hint">Keine Termine zu deinen Positionen.</p>';
+  $("#src").innerHTML = D.sources.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)} ↗</a>`).join("");
+
+  const counts = D.depot.reduce((a,p) => (a[p.signal] = (a[p.signal]||0)+1, a), {});
+  const opts = ["alle","chance","halten","beobachten","vorsicht"].filter(k => k === "alle" || counts[k]);
+  $("#filters").innerHTML = opts.map(k => `<button class="f ${k===filter?"on":""}" data-f="${k}">${k==="alle" ? "Alle ("+D.depot.length+")" : SIG[k]+" ("+counts[k]+")"}</button>`).join("");
+  document.querySelectorAll(".f").forEach(b => b.onclick = () => { filter = b.dataset.f; store("filter", filter); render(); });
+  renderDepot();
+}
+
+(async () => {
+  filter = store("filter") || "alle";
+  try {
+    const res = await fetch("data/briefing.json?t=" + Date.now(), {cache: "no-store"});
+    if (!res.ok) throw new Error(res.status);
+    D = await res.json();
+    render();
+  } catch (e) {
+    if (D) return;
+    $("#upd").textContent = "";
+    $("#v-home").innerHTML = '<p class="err">Das Briefing konnte nicht geladen werden. Bitte später neu öffnen.</p>';
+  }
+  const h = location.hash.slice(1);
+  if (["home","depot","news","more"].includes(h)) show(h);
+  document.getElementById("reload").onclick = () => location.reload();
+  if (!navigator.onLine) $("#upd").textContent += " · offline";
+  window.addEventListener("hashchange", () => { const v = location.hash.slice(1); if (["home","depot","news","more"].includes(v)) show(v); });
+})();
+
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+let deferredPrompt;
+window.addEventListener("beforeinstallprompt", e => { e.preventDefault(); deferredPrompt = e; const b = document.getElementById("install-btn"); b.style.display = "inline-block";
+  b.onclick = async () => { b.style.display = "none"; deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt = null; }; });
+</script>
+</body>
+</html>

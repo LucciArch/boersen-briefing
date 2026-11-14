@@ -1,0 +1,413 @@
+{
+ "updated": "2026-11-14T16:30:00+01:00",
+ "updated_label": "Sa, 14.11.2026, 16:30 Uhr",
+ "kind": "Wochenrückblick",
+ "mood": "Gute Woche, nervöser Freitag: Der S&P 500 hatte seine beste Woche seit August (+2,5 %). Am Freitag drückte aber der Rücktritt von Nvidia-Chef Jensen Huang die Chip-Aktien. Die Inflation bei den Erzeugerpreisen ist hoch und die Zinsen steigen.",
+ "markets": [
+  {
+   "name": "S&P 500",
+   "value": "7.561,67",
+   "change": -0.4,
+   "note": "Woche +2,5 %",
+   "nsrc": 4,
+   "verified": true
+  },
+  {
+   "name": "Nasdaq Comp.",
+   "value": "25.136,27",
+   "change": -0.9,
+   "note": "Woche +2,3 %",
+   "nsrc": 4,
+   "verified": true
+  },
+  {
+   "name": "Dow Jones",
+   "value": "52.347,55",
+   "change": 0.1,
+   "note": "Woche +2,1 %",
+   "nsrc": 4,
+   "verified": true
+  },
+  {
+   "name": "DAX",
+   "value": "26.642",
+   "change": 1.1,
+   "note": "Stand Mi 11.11., nahe Rekord",
+   "nsrc": 1,
+   "verified": false
+  },
+  {
+   "name": "Bitcoin",
+   "value": "< 70.000 $",
+   "change": null,
+   "note": "am Freitag gefallen",
+   "nsrc": 1,
+   "verified": false
+  },
+  {
+   "name": "Uran (Spot)",
+   "value": "91,88 $/lb",
+   "change": null,
+   "note": "Stand 9.11.",
+   "nsrc": 1,
+   "verified": false
+  }
+ ],
+ "depot": [
+  {
+   "name": "Core S&P 500",
+   "ticker": "CSPX",
+   "type": "ETF",
+   "signal": "halten",
+   "price": "Index 7.561,67",
+   "change": -0.4,
+   "note": "Beste Woche seit August (+2,5 %), seit Jahresbeginn +10,5 %. Breite Basis deines Depots.",
+   "next": "",
+   "nsrc": 3,
+   "verified": true
+  },
+  {
+   "name": "AMD",
+   "ticker": "AMD",
+   "type": "Aktie",
+   "signal": "vorsicht",
+   "price": "",
+   "change": -8.8,
+   "note": "Freitag −8,8 %, nachdem die Aktie nach dem Nvidia-Chefwechsel stark gestiegen war. Die Zahlen sind stark (Q3-Umsatz +45 %, Rechenzentren +97 %), aber die Aktie schwankt extrem. Oppenheimer hat sie am 9.11. hochgestuft (Kursziel 600 $).",
+   "next": "",
+   "nsrc": 3,
+   "verified": true
+  },
+  {
+   "name": "Alphabet",
+   "ticker": "GOOGL",
+   "type": "Aktie",
+   "signal": "halten",
+   "price": "",
+   "change": null,
+   "note": "JPMorgan hat Alphabet von seiner Top-Liste genommen (Meta und Amazon bevorzugt), die Aktie stieg trotzdem. Bewertung laut TIKR unter dem 5-Jahres-Schnitt (20× statt 23× Gewinn).",
+   "next": "",
+   "nsrc": 2,
+   "verified": true
+  },
+  {
+   "name": "Caterpillar",
+   "ticker": "CAT",
+   "type": "Aktie",
+   "signal": "beobachten",
+   "price": "",
+   "change": null,
+   "note": "DA Davidson senkte das Kursziel (882 → 685 $, Neutral), danach fiel die Aktie am 4.11. um 5 %. Ein Direktor hat am 2.11. für rund 620.000 $ eigene Aktien gekauft. Industriewerte führten die Wochenerholung an.",
+   "next": "Dividende am 19.11.",
+   "nsrc": 1,
+   "verified": false
+  },
+  {
+   "name": "Walmart",
+   "ticker": "WMT",
+   "type": "Aktie",
+   "signal": "beobachten",
+   "price": "",
+   "change": null,
+   "note": "Zahlen kommen am Donnerstag vor Börsenstart. Im letzten Quartal lag der Ausblick unter den Erwartungen.",
+   "next": "Q3-Zahlen Do 19.11.",
+   "nsrc": 3,
+   "verified": true
+  },
+  {
+   "name": "Copper Miners",
+   "ticker": "COPX",
+   "type": "ETF",
+   "signal": "halten",
+   "price": "",
+   "change": null,
+   "note": "Kupfer ist knapp, und der Bedarf durch KI-Rechenzentren und Stromnetze stützt den Preis. Rohstoffwerte sind aber konjunkturabhängig.",
+   "next": "",
+   "nsrc": 1,
+   "verified": false
+  },
+  {
+   "name": "AbbVie",
+   "ticker": "ABBV",
+   "type": "Aktie",
+   "signal": "halten",
+   "price": "~295 $ (5.11.)",
+   "change": null,
+   "note": "Starkes Q3 (Umsatz +10 %), Jahresprognose angehoben, Dividende +5,2 %. Seit Ende Juli rund +20 %.",
+   "next": "Dividendenzahlung Mo 16.11.",
+   "nsrc": 3,
+   "verified": true
+  },
+  {
+   "name": "Cheesecake Factory",
+   "ticker": "CAKE",
+   "type": "Aktie",
+   "signal": "halten",
+   "price": "",
+   "change": null,
+   "note": "Diese Woche keine wichtigen Nachrichten gefunden.",
+   "next": "",
+   "nsrc": 0,
+   "verified": null
+  },
+  {
+   "name": "SoFi",
+   "ticker": "SOFI",
+   "type": "Aktie",
+   "signal": "beobachten",
+   "price": "",
+   "change": null,
+   "note": "Rekordquartal und angehobene Prognose (Ende Oktober, Kurs +15 %). Trotzdem seit Jahresbeginn noch über 30 % im Minus. Steigende Zinsen belasten die Aktie.",
+   "next": "",
+   "nsrc": 3,
+   "verified": true
+  },
+  {
+   "name": "Amazon",
+   "ticker": "AMZN",
+   "type": "Aktie",
+   "signal": "chance",
+   "price": "",
+   "change": null,
+   "note": "JPMorgan nennt Amazon am 9.11. als Top-Pick bei Internetwerten, die Aktie stieg um rund 5 %.",
+   "next": "",
+   "nsrc": 2,
+   "verified": true
+  },
+  {
+   "name": "Uranium & Nuclear",
+   "ticker": "NUCL",
+   "type": "ETF",
+   "signal": "halten",
+   "price": "",
+   "change": null,
+   "note": "Der Uranpreis ist stabil bei ~92 $/lb. Wenn neue Regeln den Bau von Rechenzentren in den USA bremsen, wäre das ein Risiko für die Stromnachfrage.",
+   "next": "",
+   "nsrc": 1,
+   "verified": false
+  },
+  {
+   "name": "SpaceX",
+   "ticker": "SPCX",
+   "type": "Aktie",
+   "signal": "vorsicht",
+   "price": "143,09 $ (10.11.)",
+   "change": null,
+   "note": "Über die Hälfte des Umsatzes kommt aus dem KI-Geschäft. Die Aktie bewegt sich daher wie Chip-Werte und wird durch Regulierungssorgen nach den Midterms belastet. Sie liegt knapp über dem IPO-Preis von 135 $ und weit unter dem Hoch von 225 $.",
+   "next": "",
+   "nsrc": 3,
+   "verified": true
+  },
+  {
+   "name": "Xiaomi",
+   "ticker": "1810.HK",
+   "type": "Aktie",
+   "signal": "beobachten",
+   "price": "",
+   "change": null,
+   "note": "Im Oktober über 50.000 ausgelieferte E-Autos, der beste Monat 2026. Die Aktie liegt aber rund 27 % unter ihrem 200-Tage-Durchschnitt.",
+   "next": "Q3-Zahlen Di 24.11.",
+   "nsrc": 3,
+   "verified": true
+  },
+  {
+   "name": "Quantum Computing",
+   "ticker": "WQTM",
+   "type": "ETF",
+   "signal": "beobachten",
+   "price": "",
+   "change": null,
+   "note": "Branchenwert IonQ stieg am 6.11. nach Rekordumsatz um 23 %. Das Thema ist sehr spekulativ und schwankt stark.",
+   "next": "",
+   "nsrc": 1,
+   "verified": false
+  },
+  {
+   "name": "Take-Two",
+   "ticker": "TTWO",
+   "type": "Aktie",
+   "signal": "beobachten",
+   "price": "",
+   "change": null,
+   "note": "GTA 6 erscheint am Donnerstag. Laut CEO liegen die Vorbestellungen über den Erwartungen. Die letzten Quartalszahlen waren gemischt (Umsatz leicht verfehlt). Rund um den Launch drohen große Kurssprünge in beide Richtungen.",
+   "next": "GTA-6-Launch Do 19.11.",
+   "nsrc": 2,
+   "verified": true
+  }
+ ],
+ "news": [
+  {
+   "title": "Nvidia-Chef Jensen Huang tritt zurück",
+   "text": "Der Rücktritt erschütterte die KI-Branche. AMD und Broadcom stiegen zunächst, verloren am Freitag aber wieder deutlich (AMD −8,8 %). Nvidia fiel die sechste Woche in Folge und ist nun unter 4 Billionen $ wert.",
+   "tags": [
+    "AMD",
+    "Chips"
+   ]
+  },
+  {
+   "title": "Beste Woche seit August für den S&P 500",
+   "text": "Nach vier Verlustwochen gab es +2,5 %. Am stärksten waren Energie- und Industriewerte.",
+   "tags": [
+    "Markt",
+    "CAT"
+   ]
+  },
+  {
+   "title": "Erzeugerpreise steigen um 6,5 %",
+   "text": "Das ist der höchste Anstieg seit November 2022. Die Anleiherenditen kletterten, das belastet Wachstumswerte wie SoFi und Tech.",
+   "tags": [
+    "Zinsen"
+   ]
+  },
+  {
+   "title": "Nachwirkungen der US-Midterms",
+   "text": "Die Demokraten haben beide Kammern gewonnen. Anleger fürchten strengere Regeln für KI-Rechenzentren. Am 5.11. fiel der S&P 500 um 4,4 %, der schlimmste Tag seit April 2025.",
+   "tags": [
+    "SpaceX",
+    "AMD",
+    "Markt"
+   ]
+  },
+  {
+   "title": "GTA 6 erscheint am 19. November",
+   "text": "Take-Two meldet stärkere Vorbestellungen als erwartet. Der Launch ist der größte Termin für die Aktie seit Jahren.",
+   "tags": [
+    "TTWO"
+   ]
+  },
+  {
+   "title": "DAX nahe am Rekordhoch",
+   "text": "Am Mittwoch fehlten nur gut 50 Punkte zum Allzeithoch von 26.693. Vorne lagen Infineon (Rekordjahr) und Siemens Energy.",
+   "tags": [
+    "DAX"
+   ]
+  }
+ ],
+ "radar": {
+  "chance": [
+   {
+    "ticker": "AMZN",
+    "name": "Amazon",
+    "why": "JPMorgan Top-Pick (9.11.), starke Cloud",
+    "risk": "Die KI-Ausgaben drücken kurzfristig auf die Marge",
+    "strength": "mittel"
+   },
+   {
+    "ticker": "ABBV",
+    "name": "AbbVie",
+    "why": "Prognose angehoben und Dividende erhöht, wenig abhängig von der Konjunktur",
+    "risk": "Nach +20 % seit Juli schon gut gelaufen",
+    "strength": "mittel"
+   }
+  ],
+  "vorsicht": [
+   {
+    "ticker": "AMD",
+    "name": "AMD",
+    "why": "−8,8 % am Freitag, KI-Chip-Werte schwanken extrem",
+    "risk": "Starke Zahlen, ein Rücksetzer kann auch eine Chance sein",
+    "strength": "mittel"
+   },
+   {
+    "ticker": "SPCX",
+    "name": "SpaceX",
+    "why": "Hängt am KI-Geschäft, Regulierungsrisiko nach den Midterms",
+    "risk": "Umsatz +161 %, Analysten überwiegend positiv",
+    "strength": "mittel"
+   },
+   {
+    "ticker": "TTWO",
+    "name": "Take-Two",
+    "why": "Launch-Risiko: Häufig wird das Ereignis vorher gekauft und danach verkauft (Gewinnmitnahmen)",
+    "risk": "Ein Rekordstart könnte die Aktie weiter antreiben",
+    "strength": "schwach"
+   }
+  ]
+ },
+ "calendar": [
+  {
+   "date": "Mo 16.11.",
+   "text": "AbbVie zahlt die Dividende (1,73 $ je Aktie)",
+   "mine": true
+  },
+  {
+   "date": "Do 19.11.",
+   "text": "Walmart Q3-Zahlen vor US-Börsenstart",
+   "mine": true
+  },
+  {
+   "date": "Do 19.11.",
+   "text": "GTA 6 erscheint (Take-Two)",
+   "mine": true
+  },
+  {
+   "date": "Do 19.11.",
+   "text": "Caterpillar zahlt die Dividende",
+   "mine": true
+  },
+  {
+   "date": "Di 24.11.",
+   "text": "Xiaomi Q3-Zahlen",
+   "mine": true
+  }
+ ],
+ "sources": [
+  {
+   "title": "AP: How major US stock indexes fared 11/13/2026",
+   "url": "https://krmg.com/2026/11/13/how-major-us-stock-indexes-fared-friday-11-13-2026/"
+  },
+  {
+   "title": "Newser/AP: Stocks fall at end of stormy week",
+   "url": "https://www.newser.com/story/400011/stocks-fall-at-end-of-stormy-week.html"
+  },
+  {
+   "title": "CappNotes: Closing Look 13.11.2026",
+   "url": "https://cappnotes.substack.com/p/closing-look-friday-november-13-2026"
+  },
+  {
+   "title": "ms-aktuell: DAX nahe Höchststand (11.11.)",
+   "url": "https://ms-aktuell.de/welt/dax-unter-rekordhoch-11-11-2026/"
+  },
+  {
+   "title": "Trefis: Why did AMD stock jump?",
+   "url": "https://www.trefis.com/stock/amd/articles/623723/why-did-amd-stock-jump-2/2026-11-07"
+  },
+  {
+   "title": "Gotrade: SpaceX (SPCX) 10.11.",
+   "url": "https://www.heygotrade.com/en/news/spacex-spcx-stock-news-november-11-2026/"
+  },
+  {
+   "title": "Shacknews: Take-Two Q2 FY27",
+   "url": "https://shacknews.com/article/151309/take-two-interactive-ttwo-q2-2027-earnings-results"
+  },
+  {
+   "title": "Webull: JPMorgan Top-Picks Meta/Amazon",
+   "url": "https://www.webull.com/news/15894359755441152"
+  },
+  {
+   "title": "MarketBeat: Caterpillar fällt 5,2 %",
+   "url": "https://www.marketbeat.com/instant-alerts/price-caterpillar-nyse-cat-stock-falls-52-heres-why-2026-11-04/"
+  },
+  {
+   "title": "TheRightTrader: Walmart Earnings 19.11.",
+   "url": "https://therighttrader.com/earnings-calendar/wmt"
+  },
+  {
+   "title": "Finimize: AbbVie hebt Ausblick an",
+   "url": "https://finimize.com/content/abbvie-lifted-its-2026-outlook-after-another-strong-quarter"
+  },
+  {
+   "title": "Stock-World: Xiaomi Q3 am 24.11.",
+   "url": "https://www.stock-world.de/xiaomi-aktie-alle-vier-modelle-in-verkaufsrangliste/"
+  },
+  {
+   "title": "Webull: SoFi stock trades up",
+   "url": "https://www.webull.com/news/15820750068199424"
+  },
+  {
+   "title": "Skillings: Uranpreis 9.11.",
+   "url": "https://www.skillings.net/?p=111401"
+  }
+ ],
+ "check_note": "Erste Version, von Hand recherchiert: Die US-Indizes sind durch 4 Quellen bestätigt (AP und andere). DAX, Bitcoin und einige Depot-Notizen stützen sich nur auf eine Quelle. Ab dem nächsten Lauf prüft das System jeden Wert mit mindestens 2 Quellen."
+}

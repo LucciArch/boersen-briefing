@@ -40,7 +40,7 @@ def resolve(query):
     return q["symbol"], q.get("longname") or q.get("shortname") or query, "ETF" if q.get("quoteType") == "ETF" else "Aktie"
 
 def candles(sym):
-    j = json.loads(get(f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?interval=1d&range=1y&includePrePost=false"))
+    j = json.loads(get(f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?interval=1d&range=2y&includePrePost=false"))
     r = j["chart"]["result"][0]
     q = r["indicators"]["quote"][0]
     out = []
@@ -173,8 +173,10 @@ def analyze(disp, sym, name, typ):
     macd = [a - b for a, b in zip(m_fast, m_slow)]
     sig = ema(macd, 9)
     a = atr(c)
-    sup, res = levels(c, price, a)
-    hi52, lo52 = max(x[2] for x in c), min(x[3] for x in c)
+    Y = min(252, len(c))                      # letztes Jahr für Zonen, Hoch/Tief und Anzeige
+    cy = c[-Y:]
+    sup, res = levels(cy, price, a)
+    hi52, lo52 = max(x[2] for x in cy), min(x[3] for x in cy)
     if not res and hi52 > price * 1.005:
         res = [{"price": round(hi52, 4), "touches": 1, "dist_pct": round((hi52 / price - 1) * 100, 1), "strength": "52-Wochen-Hoch"}]
     if not sup and lo52 < price * 0.995:
@@ -197,7 +199,7 @@ def analyze(disp, sym, name, typ):
         if v50 > v200: pts += 1
         else: pts -= 1
         # Golden/Death Cross in den letzten 15 Tagen?
-        for i in range(len(c) - 15, len(c)):
+        for i in range(max(1, len(c) - 15), len(c)):
             if s50[i - 1] and s200[i - 1] and s50[i] and s200[i]:
                 if s50[i - 1] <= s200[i - 1] and s50[i] > s200[i]: notes.append(f"Golden Cross am {c[i][0][8:10]}.{c[i][0][5:7]}. (50-Tage-Linie steigt über 200-Tage-Linie) – gilt als positives Signal")
                 if s50[i - 1] >= s200[i - 1] and s50[i] < s200[i]: notes.append(f"Death Cross am {c[i][0][8:10]}.{c[i][0][5:7]}. (50-Tage-Linie fällt unter 200-Tage-Linie) – gilt als negatives Signal")
@@ -234,16 +236,14 @@ def analyze(disp, sym, name, typ):
         "bear": {"title": "Bruch nach unten",
                  "text": f"Fällt der Kurs unter {fmtp(s1, cur)} ({pct(s1)}), ist {s2_txt} bei {fmtp(s2, cur)} ({pct(s2)}) die nächste Auffanglinie."},
     }
-    step = 1 if len(c) < 400 else 2
+    first = cy[0][0]
+    cut = lambda arr: [[c[i][0], round(v, 4 if arr is not r else 1)] for i, v in enumerate(arr) if v is not None and c[i][0] >= first]
     item = {
         "ticker": disp, "symbol": sym, "name": name, "type": typ, "currency": cur,
         "exchange": meta.get("fullExchangeName") or meta.get("exchangeName"),
         "date": c[-1][0], "last": round(price, 4), "change_pct": round((price / prev - 1) * 100, 2),
-        "candles": [[x[0], round(x[1], 4), round(x[2], 4), round(x[3], 4), round(x[4], 4)] for x in c[::step]],
-        "sma20": [[c[i][0], round(v, 4)] for i, v in enumerate(s20) if v],
-        "sma50": [[c[i][0], round(v, 4)] for i, v in enumerate(s50) if v],
-        "sma200": [[c[i][0], round(v, 4)] for i, v in enumerate(s200) if v],
-        "rsi": [[c[i][0], round(v, 1)] for i, v in enumerate(r) if v is not None],
+        "candles": [[x[0], round(x[1], 4), round(x[2], 4), round(x[3], 4), round(x[4], 4)] for x in cy],
+        "sma20": cut(s20), "sma50": cut(s50), "sma200": cut(s200), "rsi": cut(r),
         "supports": sup, "resistances": res,
         "high52": round(hi52, 4), "low52": round(lo52, 4),
         "atr": round(a, 4), "vol_daily_pct": round(sd * 100, 2),
@@ -251,7 +251,7 @@ def analyze(disp, sym, name, typ):
         "analysis": {"tone": tone, "score": pts, "points": notes, "rsi": rsi_txt, "macd": macd_txt,
                      "perf": {"1M": round((price / closes[-22] - 1) * 100, 1) if len(closes) > 22 else None,
                               "3M": round((price / closes[-64] - 1) * 100, 1) if len(closes) > 64 else None,
-                              "1J": round((price / closes[0] - 1) * 100, 1)},
+                              "1J": round((price / closes[-Y] - 1) * 100, 1)},
                      "scenarios": scen},
     }
     return item

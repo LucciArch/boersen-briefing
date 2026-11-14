@@ -389,7 +389,7 @@ function renderChart() {
     if (it.target) { cs.createPriceLine({price: it.target.mean, color: "#b48cff", lineWidth: 2, lineStyle: 0, axisLabelVisible: true, title: "Ø Ziel"}); leg.push(["#b48cff", "Analysten-Ziel"]); }
   }
   $("#legend").innerHTML = leg.map(([col, t, dash]) => `<span><i class="${dash ? "dash" : ""}" style="background:${col};border-color:${col}"></i>${t}</span>`).join("");
-  rsiChart = L.createChart($("#rsichart"), {...base, timeScale: {...base.timeScale, visible: false}, rightPriceScale: {borderColor: "#2a303b", scaleMargins: {top: .1, bottom: .1}}, handleScroll: false, handleScale: false});
+  rsiChart = L.createChart($("#rsichart"), {...base, layout: {...base.layout, attributionLogo: false}, timeScale: {...base.timeScale, visible: false}, rightPriceScale: {borderColor: "#2a303b", scaleMargins: {top: .1, bottom: .1}}, handleScroll: false, handleScale: false});
   const rs = rsiChart.addLineSeries({color: "#7aa2ff", lineWidth: 1.5, priceLineVisible: false, lastValueVisible: true, title: "RSI"});
   rs.setData(it.rsi.map(([t, v]) => ({time: t, value: v})));
   if (show_.prog && it.cone?.length) { const ph = rsiChart.addLineSeries({color: "rgba(0,0,0,0)", priceLineVisible: false, lastValueVisible: false}); ph.setData(it.cone.map(p => ({time: p.t, value: 50}))); }

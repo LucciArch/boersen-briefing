@@ -1,0 +1,95 @@
+{
+ "updated": "2026-11-14",
+ "positions": [
+  {
+   "ticker": "CSPX",
+   "symbol": "CSPX.L",
+   "name": "Core S&P 500",
+   "type": "ETF"
+  },
+  {
+   "ticker": "AMD",
+   "symbol": "AMD",
+   "name": "AMD",
+   "type": "Aktie"
+  },
+  {
+   "ticker": "GOOGL",
+   "symbol": "GOOGL",
+   "name": "Alphabet",
+   "type": "Aktie"
+  },
+  {
+   "ticker": "CAT",
+   "symbol": "CAT",
+   "name": "Caterpillar",
+   "type": "Aktie"
+  },
+  {
+   "ticker": "WMT",
+   "symbol": "WMT",
+   "name": "Walmart",
+   "type": "Aktie"
+  },
+  {
+   "ticker": "COPX",
+   "symbol": "COPX.L",
+   "name": "Copper Miners",
+   "type": "ETF"
+  },
+  {
+   "ticker": "ABBV",
+   "symbol": "ABBV",
+   "name": "AbbVie",
+   "type": "Aktie"
+  },
+  {
+   "ticker": "CAKE",
+   "symbol": "CAKE",
+   "name": "Cheesecake Factory",
+   "type": "Aktie"
+  },
+  {
+   "ticker": "SOFI",
+   "symbol": "SOFI",
+   "name": "SoFi",
+   "type": "Aktie"
+  },
+  {
+   "ticker": "AMZN",
+   "symbol": "AMZN",
+   "name": "Amazon",
+   "type": "Aktie"
+  },
+  {
+   "ticker": "NUCL",
+   "symbol": "NUCL.L",
+   "name": "Uranium & Nuclear",
+   "type": "ETF"
+  },
+  {
+   "ticker": "SPCX",
+   "symbol": "SPCX",
+   "name": "SpaceX",
+   "type": "Aktie"
+  },
+  {
+   "ticker": "1810.HK",
+   "symbol": "1810.HK",
+   "name": "Xiaomi",
+   "type": "Aktie"
+  },
+  {
+   "ticker": "WQTM",
+   "symbol": "WQTM.L",
+   "name": "Quantum Computing",
+   "type": "ETF"
+  },
+  {
+   "ticker": "TTWO",
+   "symbol": "TTWO",
+   "name": "Take-Two",
+   "type": "Aktie"
+  }
+ ]
+}

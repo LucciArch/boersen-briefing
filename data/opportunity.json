@@ -1,6 +1,6 @@
 {
  "week": "KW 47 (16.–20.11.2026)",
- "updated": "2026-11-14",
+ "updated": "2026-11-15",
  "picks": [
   {
    "ticker": "META",
@@ -10,28 +10,54 @@
    "headline": "Rücksetzer im Aufwärtstrend und neuer Top-Pick von JPMorgan",
    "strength": "mittel",
    "why": [
-    "JPMorgan hat Meta am 9.11. auf seine Analyst-Focus-Liste gesetzt und nennt die KI-gestützte Werbung als Grund. Die Aktie stieg an dem Tag um 5,1 %.",
-    "Die Analysten sind fast einhellig positiv: 50 von 57 raten zum Kauf. Das durchschnittliche Kursziel liegt bei rund 850 $ und damit gut 30 % über dem aktuellen Kurs.",
-    "Im Chart ist die Aktie seit dem Hoch im September (779,82 $) um rund 18 % gefallen. Sie liegt aber noch über ihrem 200-Tage-Schnitt, und der MACD (ein Momentum-Indikator) dreht positiv.",
-    "Der neue KI-Assistent Muse hatte laut Meta in den ersten sechs Wochen über 10 Mio. Nutzer in den USA und Kanada."
+    "JPMorgan hat Meta am 9.11. auf seine Analyst-Focus-Liste gesetzt (statt Alphabet) und nennt die KI-gestützte Werbung als Grund. Die Aktie stieg an dem Tag um 5,1 %.",
+    "Die Analysten sind klar positiv: Das durchschnittliche Kursziel liegt bei Yahoo bei rund 850 $ (+32 % zum Freitagsschluss von 641,69 $), andere Datenanbieter nennen weniger (ab ~790 $, +23 %). JPMorgan nennt 940 $.",
+    "Im Chart ist die Aktie seit dem Hoch im September (779,82 $ im Tagesverlauf) um rund 18 % gefallen. Sie liegt aber noch über ihrem 200-Tage-Schnitt, und der MACD (ein Momentum-Indikator) ist positiv.",
+    "Am Freitag stieg die Aktie um 2,9 % und liegt wieder über 625 $ – dem Preis, zu dem Meta Ende Oktober neue Aktien verkauft hat."
    ],
    "risks": [
-    "Meta gibt enorm viel für KI aus (Investitionsplan 2026: mindestens 135 Mrd. $). Nach dieser Ankündigung fiel die Aktie am 22.10. um 7 %.",
-    "Berichten zufolge hat Meta neue Aktien für rund 25 Mrd. $ zu je 625 $ verkauft. Das verwässert den Anteil der bestehenden Aktionäre (nur eine Quelle).",
+    "Meta gibt enorm viel für KI aus (Investitionsplan 2026: 135–145 Mrd. $). Nach den Q3-Zahlen fiel die Aktie am 22.10. um 7 %.",
+    "Meta hat Ende Oktober neue Aktien für 25 Mrd. $ zu je 625 $ verkauft (als Terminverkauf, das Geld fließt bis spätestens Nov. 2027). Das verwässert den Anteil der bestehenden Aktionäre, und es ist Teil eines größeren Finanzierungsprogramms.",
     "Nach den Midterms droht mehr Regulierung für KI und Rechenzentren. Die Aktie schwankt zuletzt stark (Woche vom 5.11.: −4 % an einem Tag).",
     "Der COO verkauft regelmäßig kleine Aktienpakete. Das gehört wohl zu einem geplanten Verkaufsprogramm, ist aber kein Rückenwind."
    ],
    "entry": "Rücksetzer-Variante: Einstieg in der Zone um die starke Unterstützung bei ~606 $ (11-mal getestet). Ausbruch-Variante: erst nach einem Tagesschluss über dem Widerstand bei ~680 $.",
    "stop": "Absicherungs-Idee: Ein Tagesschluss unter ~600 $ würde die starke Unterstützung brechen. Dann ist das Chartbild kaputt.",
-   "targets": "Etappenziele aus dem Chart: ~680 $ (+6 %), ~711 $ (+11 %), Hoch ~776–780 $ (+21 %). Analysten-Schnitt: ~850 $ (+32 %).",
+   "targets": "Etappenziele aus dem Chart: ~680 $ (+6 %), ~711 $ (+11 %), Hoch ~776–780 $ (+21 %). Analysten-Schnitt je nach Anbieter ~790–850 $ (+23 bis +32 %).",
    "horizon": "mehrere Wochen bis Monate",
    "sources": [
-    {"title": "Trefis: Why Is Meta Stock Going Up? (10.11.2026)", "url": "https://www.trefis.com/stock/meta/articles/624110/why-is-meta-stock-going-up/2026-11-10"},
-    {"title": "Webull: JPMorgan nennt Meta und Amazon Top-Picks", "url": "https://www.webull.com/news/15894359755441152"},
-    {"title": "MarketBeat: Meta-Aktie, Analysten und Insider (11.11.2026)", "url": "https://www.marketbeat.com/instant-alerts/price-meta-platforms-nasdaq-meta-stock-price-down-2-heres-what-happened-2026-11-11/"},
-    {"title": "TIKR: Meta verliert 11 % in einer Woche (Capex)", "url": "https://www.tikr.com/de/blog/meta-lost-11-in-a-week-canaccord-sees-53-upside-from-here"},
-    {"title": "FX Leaders: Meta über dem Ausgabepreis von 625 $ (13.11.2026)", "url": "https://www.fxleaders.com/news/2026/11/13/meta-stock-forecast-meta-reclaims-625-share-sale-price-eyes-651-60-resistance/"},
-    {"title": "Yahoo Finance: Kurse und Analysten-Kursziele", "url": "https://finance.yahoo.com/quote/META/"}
+    {
+     "title": "Trefis: Why Is Meta Stock Going Up? (10.11.2026)",
+     "url": "https://www.trefis.com/stock/meta/articles/624110/why-is-meta-stock-going-up/2026-11-10"
+    },
+    {
+     "title": "Webull: JPMorgan nennt Meta und Amazon Top-Picks",
+     "url": "https://www.webull.com/news/15894359755441152"
+    },
+    {
+     "title": "TIKR: Meta verliert 11 % in einer Woche (Capex)",
+     "url": "https://www.tikr.com/de/blog/meta-lost-11-in-a-week-canaccord-sees-53-upside-from-here"
+    },
+    {
+     "title": "FX Leaders: Meta über dem Ausgabepreis von 625 $ (13.11.2026)",
+     "url": "https://www.fxleaders.com/news/2026/11/13/meta-stock-forecast-meta-reclaims-625-share-sale-price-eyes-651-60-resistance/"
+    },
+    {
+     "title": "Yahoo Finance: Kurse und Analysten-Kursziele",
+     "url": "https://finance.yahoo.com/quote/META/"
+    },
+    {
+     "title": "Motley Fool: Why Meta Platforms stock rallied on Monday (9.11.2026)",
+     "url": "https://www.fool.com/investing/2026/11/09/why-meta-platforms-stock-rallied-on-monday"
+    },
+    {
+     "title": "24/7 Wall St: JPMorgan just added Meta to its Analyst Focus List (9.11.2026)",
+     "url": "https://247wallst.com/investing/2026/11/09/jpmorgan-just-added-meta-platforms-to-its-analyst-focus-list/"
+    },
+    {
+     "title": "Meta: Q3-2026-Zahlen (Investitionsplan)",
+     "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/"
+    }
    ]
   }
  ],

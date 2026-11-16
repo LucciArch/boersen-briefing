@@ -58,7 +58,9 @@
     let periodDefault = null;  // Standard-Uhrzeit, wenn nur "abends" o. ä. gesagt wurde
     let relMinutes = null;
     let explicitDate = false;
+    let repeat = null;         // { freq: "daily"|"weekly"|"monthly"|"yearly", interval, days?, until? }
 
+    const nextDayOfMonth = d => { let x = new Date(today.getFullYear(), today.getMonth(), d); if (x < today) x = new Date(today.getFullYear(), today.getMonth() + 1, d); return x; };
     const take = (re, fn) => {
       const rx = new RegExp(re, "iu");
       const m = s.match(rx);
@@ -68,6 +70,76 @@
       o = o.slice(0, m.index) + " " + o.slice(m.index + m[0].length);
       return true;
     };
+
+    // ---------- Wiederholung ----------
+    const WDPL = "montags|dienstags|mittwochs|donnerstags|freitags|samstags|sonntags|sonnabends";
+    const wdOf = w => WEEKDAYS[w.replace(/s$/, "")];
+    const daysIn = str => [...new Set((str.match(new RegExp(`${WDW}`, "giu")) || []).map(w => WEEKDAYS[w.toLowerCase()]))];
+    const ivWord = w => !w ? 1 : (/^\d/.test(w) ? parseInt(w, 10) : ({ zweite: 2, zweiten: 2, dritte: 3, dritten: 3, vierte: 4, vierten: 4 })[w] || 1);
+    const PERIODS = { morgen: ["am", 8], früh: ["am", 8], vormittag: ["am", 10], mittag: ["noon", 12], nachmittag: ["pm", 15], abend: ["pm", 19], nacht: ["pm", 22] };
+    // Enddatum: "bis zum 20.12.", "bis 31. März", "bis Ende des Jahres"
+    const takeUntil = () => {
+      take(`${B}bis\\s+(?:zum\\s+|einschließlich\\s+)?(\\d{1,2})\\.\\s?(\\d{1,2})\\.?(?:\\s?(\\d{2,4}))?(?![\\d:])(?!\\s*uhr)`, m => {
+        let y = m[3] ? +m[3] : null; if (y != null && y < 100) y += 2000;
+        repeat.until = ymdStr(resolveDayMonth(+m[1], +m[2], y, today));
+      }) ||
+      take(`${B}bis\\s+(?:zum\\s+)?(?:(\\d{1,2})\\.?|(${ORDW}))\\s*(${MONW})${E}`, m => {
+        repeat.until = ymdStr(resolveDayMonth(m[1] ? +m[1] : ORD[m[2]], MONTHS[m[3]], null, today));
+      }) ||
+      take(`${B}bis\\s+(?:zum\\s+)?(?:ende\\s+des\\s+jahres|jahresende)${E}`, () => { repeat.until = `${today.getFullYear()}-12-31`; }) ||
+      take(`${B}bis\\s+(?:zum\\s+)?(?:ende\\s+des\\s+monats|monatsende)${E}`, () => { repeat.until = ymdStr(new Date(today.getFullYear(), today.getMonth() + 1, 0)); });
+    };
+    // "jeden Montag", "jeden zweiten Dienstag", "jeden Montag und Donnerstag", "immer freitags"
+    take(`${B}(?:jeden|jedem|immer|an\\s+jedem)\\s+(?:(zweiten|dritten|vierten|\\d\\.)\\s+)?(?:${WDW})(?:\\s*(?:,|und|sowie)\\s*(?:jeden\\s+|am\\s+)?(?:${WDW}))*${E}`, m => {
+      repeat = { freq: "weekly", interval: ivWord(m[1]), days: daysIn(m[0]) };
+    }) ||
+    // "montags", "dienstags und donnerstags", "immer samstags"
+    take(`${B}(?:immer\\s+|jeweils\\s+)?(?:${WDPL})(?:\\s*(?:,|und)\\s*(?:${WDPL}))*${E}`, m => {
+      repeat = { freq: "weekly", interval: 1, days: [...new Set(m[0].match(new RegExp(WDPL, "giu")).map(w => wdOf(w.toLowerCase())))] };
+    }) ||
+    // "werktags", "jeden Werktag", "Montag bis Freitag"
+    take(`${B}(?:werktags|jeden\\s+werktag|an\\s+(?:allen\\s+)?werktagen|unter\\s+der\\s+woche|(?:von\\s+)?montags?\\s+bis\\s+freitags?)${E}`, () => {
+      repeat = { freq: "weekly", interval: 1, days: [1, 2, 3, 4, 5] };
+    }) ||
+    take(`${B}(?:jedes|an\\s+jedem|immer\\s+am)\\s+wochenende${E}`, () => {
+      repeat = { freq: "weekly", interval: 1, days: [6, 0] };
+    }) ||
+    // "jeden Morgen", "jeden Abend um 8"
+    take(`${B}(?:jeden|jede|immer)\\s+(morgen|früh|vormittag|mittag|nachmittag|abend|nacht)${E}`, m => {
+      repeat = { freq: "daily", interval: 1 }; [period, periodDefault] = PERIODS[m[1]];
+    }) ||
+    take(`${B}(?:jeden\\s+(?:(zweiten|dritten|\\d\\.)\\s+)?tag|täglich|tagtäglich)${E}`, m => {
+      repeat = { freq: "daily", interval: ivWord(m[1]) };
+    }) ||
+    // "alle zwei Wochen", "alle 3 Tage", "alle 6 Monate"
+    take(`${B}alle\\s+${NUM}\\s+(tage|wochen|monate|jahre)${E}`, m => {
+      const n = num(m[1]); if (!n) return false;
+      repeat = { freq: { tage: "daily", wochen: "weekly", monate: "monthly", jahre: "yearly" }[m[2]], interval: n };
+    }) ||
+    take(`${B}(?:jede\\s+(?:(zweite|dritte|vierte)\\s+)?woche|wöchentlich|einmal\\s+(?:in\\s+der|pro|die)\\s+woche|zweiwöchentlich|vierzehntägig)${E}`, m => {
+      repeat = { freq: "weekly", interval: /zwei|vierzehn/.test(m[0]) ? 2 : ivWord(m[1]) };
+    }) ||
+    // "am 1. jedes Monats", "jeden 15.", "jeden ersten im Monat"
+    take(`${B}(?:am\\s+)?(?:(\\d{1,2})\\.|(${ORDW}))\\s+(?:jedes|jeden|eines|des)\\s+monats${E}`, m => {
+      repeat = { freq: "monthly", interval: 1 }; date = nextDayOfMonth(m[1] ? +m[1] : ORD[m[2]]); explicitDate = true;
+    }) ||
+    take(`${B}(?:jeden|immer\\s+am|jeweils\\s+am)\\s+(?:(\\d{1,2})\\.|(${ORDW}))(?:\\s+(?:des\\s+monats|im\\s+monat|eines\\s+monats))?${E}`, m => {
+      repeat = { freq: "monthly", interval: 1 }; date = nextDayOfMonth(m[1] ? +m[1] : ORD[m[2]]); explicitDate = true;
+    }) ||
+    take(`${B}(?:jeden\\s+(?:(zweiten|dritten)\\s+)?monat|monatlich|einmal\\s+(?:im|pro)\\s+monat)${E}`, m => {
+      repeat = { freq: "monthly", interval: ivWord(m[1]) };
+    }) ||
+    take(`${B}(?:jedes\\s+jahr|jährlich|alljährlich|einmal\\s+(?:im|pro)\\s+jahr)${E}`, () => {
+      repeat = { freq: "yearly", interval: 1 };
+    });
+    if (repeat) {
+      takeUntil();
+      take(`${B}ab\\s+(?:dem\\s+)?(?:nächste[nmr]?|kommende[nmr]?)\\s+monat${E}`, () => {
+        const nm = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+        if (!date || date < nm) { date = date ? new Date(nm.getFullYear(), nm.getMonth(), date.getDate()) : nm; explicitDate = true; }
+      });
+      take(`${B}(?:ab|ab\\s+dem|beginnend|startend)\\s+(?=(?:\\d|heute|morgen|übermorgen|nächste|kommende|${WDW}))`, () => {});
+    }
 
     const nextMonday = (weeks) => addDays(today, (((1 - today.getDay() + 7) % 7) || 7) + 7 * (weeks - 1));
     const WEEKQ = `(nächste|nächster|kommende|kommender|übernächste|übernächster|diese|dieser)\\s+woche`;
@@ -166,11 +238,11 @@
         if (diff === 0) diff = 7;
         date = addDays(today, diff); explicitDate = true;
       }) ||
-      take(`${B}(nächste|kommende)\\s+woche${E}`, () => {
+      take(`${B}(?:ab\\s+)?(nächste[nr]?|kommende[nr]?)\\s+woche${E}`, () => {
         const diff = ((1 - today.getDay() + 7) % 7) || 7; // nächster Montag
         date = addDays(today, diff); explicitDate = true;
       }) ||
-      take(`${B}(nächsten|kommenden)\\s+monat${E}`, () => {
+      take(`${B}(?:ab\\s+)?(nächste[nmr]?|kommende[nmr]?)\\s+monat${E}`, () => {
         date = new Date(today.getFullYear(), today.getMonth() + 1, 1); explicitDate = true;
       });
     }
@@ -253,14 +325,90 @@
       if (t <= now) date = addDays(today, 1);
     }
 
-    const start = new Date(date.getFullYear(), date.getMonth(), date.getDate(), hour, minute);
+    let start = new Date(date.getFullYear(), date.getMonth(), date.getDate(), hour, minute);
+    if (repeat) {
+      // Erstes passendes Vorkommen ab dem genannten Datum (bzw. ab jetzt)
+      if (repeat.freq === "weekly" && !(repeat.days && repeat.days.length)) repeat.days = [start.getDay()];
+      if (repeat.freq === "weekly" || (repeat.freq === "daily" && !explicitDate)) {
+        const from = explicitDate ? dayStart(start) : today;
+        const probe = { ...repeat, interval: 1 };
+        const first = occurrences(probe, new Date(from.getFullYear(), from.getMonth(), from.getDate(), hour, minute), from, 2, 400)
+          .find(x => x > now || explicitDate);
+        if (first) { start = first; date = dayStart(first); }
+      } else if (!explicitDate && start <= now) {
+        start = new Date(start.getTime() + 864e5); date = dayStart(start);
+      }
+    }
     let end = null;
     if (endHour != null) end = new Date(date.getFullYear(), date.getMonth(), date.getDate(), endHour % 24, endMinute);
 
     let { title, location } = splitLocation(cleanTitle(o));
     if (/^(?:beim|bei|zum|zur)\s/i.test(title)) title = "Termin " + title.charAt(0).toLowerCase() + title.slice(1);
-    return { title, location, start, end, timeGuessed, dateFound: explicitDate || relMinutes != null };
+    return { title, location, start, end, repeat, timeGuessed, dateFound: explicitDate || relMinutes != null };
   }
+
+  const ymdStr = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+
+  // ---------- Wiederholungsregeln (auch von der App genutzt) ----------
+  const mondayOf = d => { const x = dayStart(d); x.setDate(x.getDate() - ((x.getDay() + 6) % 7)); return x; };
+  const daysBetween = (a, b) => Math.round((dayStart(b) - dayStart(a)) / 864e5);
+  function occursOn(rule, base, day) {
+    const b = dayStart(base), d = dayStart(day);
+    if (d < b) return false;
+    if (rule.until && ymdStr(d) > rule.until) return false;
+    const iv = rule.interval || 1;
+    switch (rule.freq) {
+      case "daily": return daysBetween(b, d) % iv === 0;
+      case "weekly": {
+        const days = rule.days && rule.days.length ? rule.days : [b.getDay()];
+        if (!days.includes(d.getDay())) return false;
+        return (daysBetween(mondayOf(b), mondayOf(d)) / 7) % iv === 0;
+      }
+      case "monthly": {
+        if (d.getDate() !== b.getDate()) return false;
+        return ((d.getFullYear() - b.getFullYear()) * 12 + d.getMonth() - b.getMonth()) % iv === 0;
+      }
+      case "yearly": return d.getDate() === b.getDate() && d.getMonth() === b.getMonth() && (d.getFullYear() - b.getFullYear()) % iv === 0;
+    }
+    return false;
+  }
+  // Nächste Vorkommen ab "from" (inklusive), höchstens "count" Stück
+  function occurrences(rule, base, from, count, maxDays) {
+    const out = [];
+    let d = dayStart(from) < dayStart(base) ? dayStart(base) : dayStart(from);
+    for (let i = 0; i < (maxDays || 800) && out.length < count; i++, d = new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1)) {
+      if (rule.until && ymdStr(d) > rule.until) break;
+      if (occursOn(rule, base, d)) out.push(new Date(d.getFullYear(), d.getMonth(), d.getDate(), base.getHours(), base.getMinutes()));
+    }
+    return out;
+  }
+  const WD_LONG = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
+  const MON_LONG = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+  function describeRepeat(rule, base) {
+    if (!rule) return "Einmalig";
+    const iv = rule.interval || 1, b = new Date(base);
+    const list = a => a.length > 1 ? a.slice(0, -1).join(", ") + " und " + a[a.length - 1] : a[0];
+    let t;
+    if (rule.freq === "daily") t = iv === 1 ? "Täglich" : `Alle ${iv} Tage`;
+    else if (rule.freq === "weekly") {
+      const days = (rule.days && rule.days.length ? rule.days : [b.getDay()]).slice().sort((x, y) => ((x + 6) % 7) - ((y + 6) % 7));
+      if (iv === 1 && days.join() === "1,2,3,4,5") t = "Werktags (Mo–Fr)";
+      else if (iv === 1 && days.join() === "6,0") t = "Jedes Wochenende";
+      else t = (iv === 1 ? "Jeden " : iv === 2 ? "Jeden zweiten " : `Alle ${iv} Wochen am `) + list(days.map(x => WD_LONG[x]));
+    } else if (rule.freq === "monthly") t = (iv === 1 ? "Monatlich" : `Alle ${iv} Monate`) + ` am ${b.getDate()}.`;
+    else if (rule.freq === "yearly") t = (iv === 1 ? "Jährlich" : `Alle ${iv} Jahre`) + ` am ${b.getDate()}. ${MON_LONG[b.getMonth()]}`;
+    if (rule.until) { const [y, m, d] = rule.until.split("-"); t += ` bis ${+d}.${+m}.${y}`; }
+    return t;
+  }
+  function toRRULE(rule) {
+    const BY = ["SU", "MO", "TU", "WE", "TH", "FR", "SA"];
+    let r = "RRULE:FREQ=" + rule.freq.toUpperCase();
+    if ((rule.interval || 1) > 1) r += ";INTERVAL=" + rule.interval;
+    if (rule.freq === "weekly" && rule.days && rule.days.length) r += ";BYDAY=" + rule.days.map(d => BY[d]).join(",");
+    if (rule.until) r += ";UNTIL=" + rule.until.replace(/-/g, "") + "T235959";
+    return r;
+  }
+  root.Wiederholung = { occursOn, occurrences, describe: describeRepeat, toRRULE };
 
   function resolveDayMonth(d, mo, y, today) {
     if (y) return new Date(y, mo - 1, d);
@@ -277,11 +425,11 @@
     /^(?:ich\s+(?:habe|hab|muss|soll|will|möchte|sollte|müsste)(?:\s+(?:einen?|noch|unbedingt|dringend))*)/,
     /^(?:(?:habe|hab|muss|soll|will|möchte|sollte|müsste|hätte|gehe|geh|fahre|fahr)\s+ich(?:\s+(?:einen?|noch|unbedingt|dringend|mal))*)/,
     /^(?:(?:ist|steht|gibt\s+es|gibts|wäre)(?:\s+(?:ein|eine|einen|der|die|das))?)/,
-    /^(?:muss|soll|noch)\b/,
+    /^(?:muss|soll|noch|immer|regelmäßig|jeweils)\b/,
     /^(?:dass\s+ich|daran\s+dass\s+ich|daran|dass|zu|um|am|an|ab|im|in|den|der|die|das|für|mit\s*$)\b/,
   ];
   const TRAIL = [
-    /\b(?:eintragen|einplanen|erinnern|hinzufügen|notieren|bitte|ein|habe|hab|muss|soll|ist|zu|um|am|an|ab|im|in|den|der|die|das|für|und|bis|von|gegen|so)$/,
+    /\b(?:immer|regelmäßig|jeweils|eintragen|einplanen|erinnern|hinzufügen|notieren|bitte|ein|habe|hab|muss|soll|ist|zu|um|am|an|ab|im|in|den|der|die|das|für|und|bis|von|gegen|so)$/,
   ];
 
   function cleanTitle(s) {

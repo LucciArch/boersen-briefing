@@ -27,6 +27,7 @@
       --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.25);--scrim:rgba(0,0,0,.6)}
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  [hidden]{display:none!important}
   html,body{background:var(--bg);color:var(--text);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
   body{min-height:100dvh;padding:env(safe-area-inset-top) env(safe-area-inset-right) calc(130px + env(safe-area-inset-bottom)) env(safe-area-inset-left);overscroll-behavior-y:contain}
   button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
@@ -75,6 +76,7 @@
   .ev .c b{display:block;font-size:15px;font-weight:600;line-height:1.3;word-wrap:break-word}
   .ev .c small{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--muted);margin-top:4px;font-weight:500}
   .ev .c small svg{width:13px;height:13px;flex:none}
+  .ev .c small .rp{display:inline-flex;align-items:center;gap:3px;color:var(--accent);font-weight:700}
   .ev.past{opacity:.55}
   .ev.past .bar{background:var(--line)}
   .empty{text-align:center;padding:26px 20px 10px;color:var(--muted);font-size:14px;line-height:1.55}
@@ -245,13 +247,23 @@
       <div class="field" id="fTimeWrap"><label for="fTime">Uhrzeit</label><input id="fTime" type="time" required></div>
     </div>
     <div class="hint" id="timeHint" hidden>Keine Uhrzeit verstanden – bitte prüfen.</div>
-    <div class="field" style="margin-top:12px"><label for="fRemind">Erinnerung</label>
+    <div class="row2" style="margin-top:12px;grid-template-columns:1fr 1fr">
+    <div class="field"><label for="fRepeat">Wiederholen</label>
+      <select id="fRepeat">
+        <option value="none">Nie</option><option value="daily">Täglich</option><option value="weekdays">Werktags (Mo–Fr)</option>
+        <option value="weekly">Wöchentlich</option><option value="biweekly">Alle 2 Wochen</option><option value="monthly">Monatlich</option>
+        <option value="yearly">Jährlich</option><option value="custom" id="fRepeatCustom" hidden>Eigene</option>
+      </select>
+    </div>
+    <div class="field"><label for="fRemind">Erinnerung</label>
       <select id="fRemind">
         <option value="0">Zum Termin</option><option value="5">5 Minuten vorher</option><option value="10">10 Minuten vorher</option>
         <option value="15">15 Minuten vorher</option><option value="30">30 Minuten vorher</option><option value="60">1 Stunde vorher</option>
         <option value="120">2 Stunden vorher</option><option value="1440">1 Tag vorher</option><option value="-1">Keine Erinnerung</option>
       </select>
     </div>
+    </div>
+    <div class="hint" id="repeatHint" hidden style="color:var(--accent);margin-top:-4px"></div>
     <div class="btns">
       <button type="button" class="btn" id="cancelEdit">Abbrechen</button>
       <button type="submit" class="btn pri" id="saveBtn">Speichern</button>
@@ -266,13 +278,19 @@
   <div class="when">
     <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span id="dDate"></span></div>
     <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span id="dTime"></span></div>
+    <div id="dRepRow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4"/><path d="M21 13v2a3 3 0 0 1-3 3H3"/></svg><span id="dRep"></span></div>
     <div id="dLocRow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><a id="dLoc" target="_blank" rel="noopener" style="color:inherit"></a></div>
     <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span id="dRemind"></span></div>
   </div>
   <button class="linkbtn" id="dHandoff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></svg><span>In Handy-Kalender übernehmen</span></button>
-  <div class="btns">
+  <div class="btns" id="dBtns">
     <button class="btn danger" id="dDelete">Löschen</button>
     <button class="btn pri" id="dEdit">Bearbeiten</button>
+  </div>
+  <div class="btns" id="dDelSeries" hidden>
+    <button class="btn danger" id="dDelOne">Nur diesen</button>
+    <button class="btn danger" id="dDelAll">Ganze Serie</button>
+    <button class="btn" id="dDelCancel" style="flex:.8">Zurück</button>
   </div>
 </div>
 
@@ -317,7 +335,26 @@ let settings = Object.assign({ autoListen: true, remind: 15, handoff: "google" }
 const saveEvents = () => { store.set("kal.events", events); scheduleAll(); };
 const saveSettings = () => store.set("kal.settings", settings);
 const evStart = e => new Date(e.start);
-const remindAt = e => e.remind < 0 ? null : new Date(evStart(e).getTime() - e.remind * 60000);
+const W = window.Wiederholung;
+// Kommt der Termin (oder ein Serientermin) an diesem Tag vor? Liefert die Startzeit oder null.
+function occOn(e, day) {
+  const s = evStart(e);
+  if (!e.repeat) return sameDay(s, day) ? s : null;
+  if ((e.skip || []).includes(ymd(day)) || !W.occursOn(e.repeat, s, day)) return null;
+  return new Date(day.getFullYear(), day.getMonth(), day.getDate(), s.getHours(), s.getMinutes());
+}
+function nextOccs(e, from, n) {
+  const s = evStart(e);
+  if (!e.repeat) return s >= from ? [s] : [];
+  const out = [];
+  for (const d of W.occurrences(e.repeat, s, from, n + (e.skip || []).length + 2)) {
+    if (d < from || (e.skip || []).includes(ymd(d))) continue;
+    out.push(d); if (out.length >= n) break;
+  }
+  return out;
+}
+const durMs = e => e.end ? new Date(e.end) - evStart(e) : 36e5;
+const repeatText = e => e.repeat ? W.describe(e.repeat, evStart(e)) : "";
 
 // ---------- Darstellung ----------
 let view = startOf(new Date()); view.setDate(1);
@@ -354,7 +391,12 @@ function renderCal(dir) {
   const start = new Date(first); start.setDate(1 - offset);
   const today = startOf(new Date());
   const counts = {};
-  for (const e of events) { const k = e.start.slice(0, 10); counts[k] = (counts[k] || 0) + 1; }
+  const weeksTmp = Math.ceil((offset + new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate()) / 7);
+  for (let i = 0; i < weeksTmp * 7; i++) {
+    const d = new Date(start); d.setDate(start.getDate() + i);
+    const n = events.reduce((a, e) => a + (occOn(e, d) ? 1 : 0), 0);
+    if (n) counts[ymd(d)] = n;
+  }
   const weeks = Math.ceil((offset + new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate()) / 7);
   for (let i = 0; i < weeks * 7; i++) {
     const d = new Date(start); d.setDate(start.getDate() + i);
@@ -371,34 +413,36 @@ function renderCal(dir) {
 }
 
 const ICON_BELL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>';
-function evCard(e, showDay) {
-  const s = evStart(e), past = (e.end ? new Date(e.end) : new Date(s.getTime() + 36e5)) < new Date();
+const ICON_REP = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4"/><path d="M21 13v2a3 3 0 0 1-3 3H3"/></svg>';
+function evCard(e, s, showDay) {
+  const past = new Date(s.getTime() + durMs(e)) < new Date();
   const b = document.createElement("button");
   b.className = "ev" + (past ? " past" : "");
-  const dayLabel = showDay ? (relDay(s) || `${DAYS[s.getDay()].slice(0,2)}, ${s.getDate()}.${s.getMonth()+1}.`) : (e.end ? "bis " + hm(new Date(e.end)) : "Uhr");
+  const dayLabel = showDay ? (relDay(s) || `${DAYS[s.getDay()].slice(0,2)}, ${s.getDate()}.${s.getMonth()+1}.`) : (e.end ? "bis " + hm(new Date(s.getTime() + durMs(e))) : "Uhr");
   b.innerHTML = `<span class="bar"></span><span class="t"><b>${hm(s)}</b><small></small></span><span class="c"><b></b><small>${ICON_BELL}<span></span></small></span>`;
   b.querySelector(".t small").textContent = dayLabel;
   b.querySelector(".c b").textContent = e.title;
   b.querySelector(".c small span").textContent = (e.location ? "📍 " + e.location + " · " : "") + remindText(e.remind);
-  b.onclick = () => openDetail(e.id);
+  if (e.repeat) { const r = document.createElement("span"); r.className = "rp"; r.innerHTML = ICON_REP; r.title = repeatText(e); b.querySelector(".c small").appendChild(r); }
+  b.onclick = () => openDetail(e.id, s);
   return b;
 }
 
 function renderList() {
   const rel = relDay(selected);
   $("dayTitle").textContent = rel ? `${rel}` : longDate(selected);
-  const list = events.filter(e => sameDay(evStart(e), selected)).sort((a, b) => a.start.localeCompare(b.start));
+  const list = events.map(e => ({ e, s: occOn(e, selected) })).filter(x => x.s).sort((a, b) => a.s - b.s);
   $("dayCount").textContent = rel ? `${selected.getDate()}. ${MONTHS[selected.getMonth()]}` : (list.length ? `${list.length} Termin${list.length > 1 ? "e" : ""}` : "");
   const box = $("dayList"); box.innerHTML = "";
   if (!list.length) {
     box.innerHTML = `<div class="empty"><b>${rel === "Heute" ? "Heute ist nichts geplant" : "Keine Termine"}</b>Tippe auf das Mikrofon und sag einfach, was ansteht.<br><q>${["Morgen 18 Uhr Mama anrufen","Nächste Woche Dienstag um 10 Zahnarzt bei Dr. Weber","Am 21.03. um 9 Uhr Reifenwechsel","Übermorgen um halb drei Friseur"][new Date().getDate() % 4]}</q></div>`;
-  } else list.forEach(e => box.appendChild(evCard(e, false)));
+  } else list.forEach(x => box.appendChild(evCard(x.e, x.s, false)));
 
   const now = new Date();
-  const up = events.filter(e => evStart(e) > now && !sameDay(evStart(e), selected)).sort((a, b) => a.start.localeCompare(b.start)).slice(0, 5);
+  const up = events.map(e => ({ e, s: nextOccs(e, now, 2).find(d => !sameDay(d, selected)) })).filter(x => x.s).sort((a, b) => a.s - b.s).slice(0, 5);
   $("upWrap").hidden = !up.length;
   const ub = $("upList"); ub.innerHTML = "";
-  up.forEach(e => ub.appendChild(evCard(e, true)));
+  up.forEach(x => ub.appendChild(evCard(x.e, x.s, true)));
 }
 
 function renderBanner() {
@@ -494,7 +538,7 @@ $("addManual").onclick = () => openEditor(null, null);
 let editingId = null;
 function handleSentence(text) {
   const r = window.parseTermin(text, new Date());
-  openEditor(null, { title: r.title, location: r.location, start: r.start, end: r.end, timeGuessed: r.timeGuessed, said: text });
+  openEditor(null, { title: r.title, location: r.location, repeat: r.repeat, start: r.start, end: r.end, timeGuessed: r.timeGuessed, said: text });
 }
 function openEditor(id, draft) {
   editingId = id;
@@ -505,6 +549,7 @@ function openEditor(id, draft) {
   $("fLoc").value = e ? (e.location || "") : (draft?.location || "");
   $("fDate").value = ymd(start); $("fTime").value = hm(start);
   $("fRemind").value = String(e ? e.remind : settings.remind);
+  setRepeatField(e ? e.repeat : draft?.repeat || null);
   $("fTimeWrap").classList.toggle("warn", !!draft?.timeGuessed);
   $("timeHint").hidden = !draft?.timeGuessed;
   const said = $("said");
@@ -514,6 +559,48 @@ function openEditor(id, draft) {
   showSheet("editSheet");
   if (!$("fTitle").value) setTimeout(() => $("fTitle").focus(), 350);
 }
+// ---------- Wiederholung im Formular ----------
+let customRepeat = null;
+function presetOf(r) {
+  if (!r) return "none";
+  const iv = r.interval || 1, days = (r.days || []).slice().sort().join();
+  if (r.until) return "custom";
+  if (r.freq === "daily" && iv === 1) return "daily";
+  if (r.freq === "weekly" && iv === 1 && days === "1,2,3,4,5") return "weekdays";
+  if (r.freq === "weekly" && (r.days || []).length <= 1) return iv === 1 ? "weekly" : iv === 2 ? "biweekly" : "custom";
+  if (r.freq === "monthly" && iv === 1) return "monthly";
+  if (r.freq === "yearly" && iv === 1) return "yearly";
+  return "custom";
+}
+function setRepeatField(r) {
+  const p = presetOf(r);
+  customRepeat = p === "custom" ? r : null;
+  $("fRepeatCustom").hidden = p !== "custom";
+  $("fRepeatCustom").textContent = "Eigene Regel";
+  $("fRepeat").value = p;
+  updateRepeatHint();
+}
+function repeatFromField() {
+  const v = $("fRepeat").value, d = fromParts($("fDate").value, $("fTime").value).getDay();
+  switch (v) {
+    case "daily": return { freq: "daily", interval: 1 };
+    case "weekdays": return { freq: "weekly", interval: 1, days: [1, 2, 3, 4, 5] };
+    case "weekly": return { freq: "weekly", interval: 1, days: [d] };
+    case "biweekly": return { freq: "weekly", interval: 2, days: [d] };
+    case "monthly": return { freq: "monthly", interval: 1 };
+    case "yearly": return { freq: "yearly", interval: 1 };
+    case "custom": return customRepeat;
+  }
+  return null;
+}
+function updateRepeatHint() {
+  const r = repeatFromField(), h = $("repeatHint");
+  if (!r || !$("fDate").value) { h.hidden = true; return; }
+  h.hidden = false; h.textContent = "↻ " + W.describe(r, fromParts($("fDate").value, $("fTime").value));
+}
+$("fRepeat").onchange = updateRepeatHint;
+$("fDate").addEventListener("change", updateRepeatHint);
+
 function nextFullHour() { const d = new Date(); if (!sameDay(selected, d)) { const x = new Date(selected); x.setHours(9, 0, 0, 0); return x; } d.setHours(d.getHours() + 1, 0, 0, 0); return d; }
 function updateSaveLabel() { $("saveBtn").textContent = !editingId && settings.handoff !== "off" ? "Speichern & eintragen" : "Speichern"; }
 $("fTime").oninput = () => { $("fTimeWrap").classList.remove("warn"); $("timeHint").hidden = true; };
@@ -526,33 +613,39 @@ $("editForm").onsubmit = ev => {
   if (isNaN(start)) return;
   let end = null;
   if (editForm.dataset.end) { end = fromParts($("fDate").value, editForm.dataset.end); if (end <= start) end = null; }
-  const data = { title, location: $("fLoc").value.trim(), start: `${ymd(start)}T${hm(start)}`, end: end ? `${ymd(end)}T${hm(end)}` : null, remind: +$("fRemind").value };
+  let repeat = repeatFromField();
+  if (repeat && repeat.freq === "weekly" && repeat.days && !repeat.days.includes(start.getDay()) && presetOf(repeat) !== "custom") repeat.days = [start.getDay()];
+  const data = { title, location: $("fLoc").value.trim(), start: `${ymd(start)}T${hm(start)}`, end: end ? `${ymd(end)}T${hm(end)}` : null, remind: +$("fRemind").value, repeat: repeat || null };
   let e;
   if (editingId) {
     e = events.find(x => x.id === editingId);
-    const changed = e.start !== data.start || e.remind !== data.remind;
-    Object.assign(e, data); if (changed) e.notified = false;
+    const changed = e.start !== data.start || e.remind !== data.remind || JSON.stringify(e.repeat) !== JSON.stringify(data.repeat);
+    Object.assign(e, data); if (changed) { e.done = []; if (!e.repeat) e.skip = []; }
   } else {
-    e = Object.assign({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), notified: false, created: Date.now() }, data);
+    e = Object.assign({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), done: [], skip: [], created: Date.now() }, data);
     events.push(e);
   }
   saveEvents();
   selected = startOf(start); view = new Date(start.getFullYear(), start.getMonth(), 1);
   hideSheet(); render();
   const r = relDay(start);
-  toast(`${editingId ? "Geändert" : "Gespeichert"}: ${r || `${start.getDate()}.${start.getMonth()+1}.`} um ${hm(start)} Uhr`);
+  toast(`${editingId ? "Geändert" : "Gespeichert"}: ` + (e.repeat ? `${repeatText(e)}, ${hm(start)} Uhr` : `${r || `${start.getDate()}.${start.getMonth()+1}.`} um ${hm(start)} Uhr`));
   if (!editingId && settings.handoff !== "off") setTimeout(() => handoff(e), 450);
   if ("Notification" in window && Notification.permission === "default") setTimeout(askNotify, editingId || settings.handoff === "off" ? 600 : 3000);
 };
 
 // ---------- Details ----------
-let detailId = null;
-function openDetail(id) {
+let detailId = null, detailOcc = null;
+function openDetail(id, occ) {
   const e = events.find(x => x.id === id); if (!e) return; detailId = id;
-  const s = evStart(e);
+  const s = occ ? new Date(occ) : (e.repeat ? (nextOccs(e, startOf(new Date()), 1)[0] || evStart(e)) : evStart(e));
+  detailOcc = s;
+  $("dBtns").hidden = false; $("dDelSeries").hidden = true;
+  $("dRepRow").hidden = !e.repeat; $("dRep").textContent = repeatText(e);
+  $("dEdit").textContent = e.repeat ? "Serie bearbeiten" : "Bearbeiten";
   $("dTitle").textContent = e.title;
   $("dDate").textContent = (relDay(s) ? relDay(s) + ", " : "") + longDate(s);
-  $("dTime").textContent = hm(s) + (e.end ? " – " + hm(new Date(e.end)) : "") + " Uhr";
+  $("dTime").textContent = hm(s) + (e.end ? " – " + hm(new Date(s.getTime() + durMs(e))) : "") + " Uhr";
   $("dRemind").textContent = remindText(e.remind);
   $("dLocRow").hidden = !e.location;
   if (e.location) { $("dLoc").textContent = e.location; $("dLoc").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(e.location); }
@@ -562,10 +655,22 @@ function openDetail(id) {
 }
 $("dEdit").onclick = () => openEditor(detailId, null);
 $("dHandoff").onclick = () => { const e = events.find(x => x.id === detailId); e && handoff(e); };
-$("dDelete").onclick = () => {
+function deleteSeries() {
   const i = events.findIndex(x => x.id === detailId); if (i < 0) return;
   const [gone] = events.splice(i, 1); saveEvents(); hideSheet(); render();
   toast(`„${gone.title}“ gelöscht`);
+}
+$("dDelete").onclick = () => {
+  const e = events.find(x => x.id === detailId); if (!e) return;
+  if (e.repeat) { $("dBtns").hidden = true; $("dDelSeries").hidden = false; } else deleteSeries();
+};
+$("dDelAll").onclick = deleteSeries;
+$("dDelCancel").onclick = () => { $("dBtns").hidden = false; $("dDelSeries").hidden = true; };
+$("dDelOne").onclick = () => {
+  const e = events.find(x => x.id === detailId); if (!e) return;
+  e.skip = [...new Set([...(e.skip || []), ymd(detailOcc)])];
+  saveEvents(); hideSheet(); render();
+  toast(`Termin am ${detailOcc.getDate()}.${detailOcc.getMonth() + 1}. entfernt`);
 };
 
 // ---------- Übergabe an den Handy-Kalender ----------
@@ -573,6 +678,7 @@ const icsDate = d => `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())
 function endOf(e) { return e.end ? new Date(e.end) : new Date(evStart(e).getTime() + 60 * 60000); }
 function handoff(e) {
   const s = evStart(e), en = endOf(e);
+  const rrule = e.repeat ? W.toRRULE(e.repeat) : null;
   if (settings.handoff === "google") {
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "Europe/Berlin";
     const url = "https://calendar.google.com/calendar/render?action=TEMPLATE"
@@ -580,6 +686,7 @@ function handoff(e) {
       + "&dates=" + icsDate(s) + "/" + icsDate(en)
       + "&ctz=" + encodeURIComponent(tz)
       + (e.location ? "&location=" + encodeURIComponent(e.location) : "")
+      + (rrule ? "&recur=" + encodeURIComponent(rrule) : "")
       + "&details=" + encodeURIComponent("Erstellt mit dem Sprachkalender");
     window.open(url, "_blank", "noopener");
   } else if (settings.handoff === "ics") {
@@ -588,6 +695,8 @@ function handoff(e) {
       "UID:" + e.id + "@sprachkalender", "DTSTAMP:" + new Date().toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z",
       "DTSTART:" + icsDate(s), "DTEND:" + icsDate(en), "SUMMARY:" + esc(e.title)];
     if (e.location) lines.push("LOCATION:" + esc(e.location));
+    if (rrule) lines.push(rrule);
+    for (const k of e.skip || []) lines.push("EXDATE:" + k.replace(/-/g, "") + "T" + hm(s).replace(":", "") + "00");
     if (e.remind >= 0) lines.push("BEGIN:VALARM", "ACTION:DISPLAY", "DESCRIPTION:" + esc(e.title), "TRIGGER:-PT" + e.remind + "M", "END:VALARM");
     lines.push("END:VEVENT", "END:VCALENDAR");
     const blob = new Blob([lines.join("\r\n")], { type: "text/calendar" });
@@ -612,8 +721,8 @@ async function askNotify() {
   renderBanner(); renderSettings();
   if (p === "granted") toast("Erinnerungen sind aktiv");
 }
-async function notify(e) {
-  const s = evStart(e);
+async function notify(e, occ) {
+  const s = occ || evStart(e);
   const body = `${relDay(s) || longDate(s)} um ${hm(s)} Uhr` + (e.location ? ` · ${e.location}` : "") + (e.remind > 0 && e.remind < 1440 ? ` · in ${e.remind >= 60 ? e.remind / 60 + " Std." : e.remind + " Min."}` : "");
   const opts = { body, tag: "termin-" + e.id, icon: "icons/icon-192.png", badge: "icons/badge-96.png", vibrate: [200, 100, 200], renotify: true, requireInteraction: true, data: { id: e.id } };
   try {
@@ -622,22 +731,29 @@ async function notify(e) {
     if (reg) await reg.showNotification(e.title, opts); else new Notification(e.title, opts);
   } catch { if (document.visibilityState === "visible") toast(`⏰ ${e.title} – ${hm(s)} Uhr`); }
 }
-function fire(e) {
-  const cur = events.find(x => x.id === e.id);
-  if (!cur || cur.notified) return;
-  cur.notified = true; store.set("kal.events", events);
-  notify(cur);
+// "done" merkt sich, für welche Vorkommen (Datum) schon erinnert wurde
+const markDone = (e, key) => { e.done = [...(e.done || []).filter(k => k !== key), key].slice(-30); store.set("kal.events", events); };
+function fire(id, occ) {
+  const cur = events.find(x => x.id === id), key = ymd(occ);
+  if (!cur || (cur.done || []).includes(key)) return;
+  markDone(cur, key);
+  notify(cur, occ);
 }
 function scheduleAll() {
   timers.splice(0).forEach(clearTimeout);
   const now = Date.now();
   for (const e of events) {
-    const at = remindAt(e); if (!at || e.notified) continue;
-    const ms = at.getTime() - now;
-    if (ms <= 0) {
-      // verpasst, während die App zu war: nachholen, solange der Termin noch nicht lange vorbei ist
-      if (evStart(e).getTime() > now - 2 * 36e5) fire(e); else { e.notified = true; store.set("kal.events", events); }
-    } else if (ms < 2147483000) timers.push(setTimeout(() => fire(e), ms));
+    if (e.notified && !e.done) { e.done = [e.start.slice(0, 10)]; delete e.notified; } // ältere Daten übernehmen
+    if (e.remind < 0) continue;
+    const lead = e.remind * 60000;
+    // Vorkommen ab "vor 2 Stunden" betrachten, damit verpasste Erinnerungen nachgeholt werden
+    for (const occ of nextOccs(e, new Date(now - 2 * 36e5 - 0), 4)) {
+      const key = ymd(occ); if ((e.done || []).includes(key)) continue;
+      const ms = occ.getTime() - lead - now;
+      if (ms <= 0) { if (occ.getTime() > now - 2 * 36e5) fire(e.id, occ); else markDone(e, key); continue; }
+      if (ms < 2147483000) timers.push(setTimeout(() => fire(e.id, occ), ms));
+      break;
+    }
   }
 }
 // Timer laufen im Hintergrund gedrosselt – beim Zurückkehren sofort prüfen

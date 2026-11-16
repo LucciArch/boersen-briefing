@@ -164,6 +164,15 @@
   .smallbtn{background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:13px;padding:9px 12px;border-radius:11px;white-space:nowrap}
   .note{font-size:12px;color:var(--muted);line-height:1.55;margin-top:14px;background:var(--surface2);border-radius:14px;padding:12px 14px}
 
+  .install{display:flex;gap:12px;align-items:center;background:var(--grad);color:#fff;border-radius:18px;padding:12px 14px;margin:0 0 14px;font-size:13px;line-height:1.4;box-shadow:0 8px 24px rgba(110,80,255,.3)}
+  .install svg{width:24px;height:24px;flex:none}
+  .install b{display:block;font-size:15px}
+  .install button.go{margin-left:auto;background:#fff;color:#5b4cf0;font-weight:800;font-size:13px;padding:9px 13px;border-radius:12px;white-space:nowrap}
+  .install button.x{color:#fff;opacity:.8;padding:4px;font-size:18px;line-height:1}
+  .steps{counter-reset:s;margin:6px 0 4px}
+  .steps li{list-style:none;position:relative;padding:0 0 14px 40px;font-size:15px;line-height:1.5}
+  .steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:-1px;width:28px;height:28px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:800;display:grid;place-items:center;font-size:14px}
+  .steps b{font-weight:700}
   .toast{position:fixed;left:50%;bottom:calc(120px + env(safe-area-inset-bottom));transform:translate(-50%,20px);background:var(--text);color:var(--bg);padding:12px 18px;border-radius:14px;font-size:14px;font-weight:600;opacity:0;transition:.25s;z-index:40;pointer-events:none;max-width:88vw;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
   .toast.on{opacity:1;transform:translate(-50%,0)}
   @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
@@ -181,6 +190,7 @@
     </button>
   </header>
 
+  <div id="installBox"></div>
   <div id="banner"></div>
 
   <section class="cal" id="cal">
@@ -309,6 +319,20 @@
     <button class="smallbtn" id="sNotifBtn">Erlauben</button></div>
   <div class="note">So kommen Erinnerungen an: Solange die App offen oder im Hintergrund ist, meldet sie sich selbst. Weil Web-Apps bei ganz geschlossener App keine Weckzeiten setzen dürfen, wird jeder Termin zusätzlich mit einem Tipp in deinen Handy-Kalender übernommen – der erinnert dich dann zuverlässig.</div>
   <div class="btns"><button class="btn pri" id="closeSettings">Fertig</button></div>
+</div>
+
+<div class="sheet" id="installSheet" role="dialog" aria-label="App installieren">
+  <div class="grab"></div>
+  <h3>Als App installieren</h3>
+  <p class="lead">So landet der Kalender als eigene App auf deinem Startbildschirm:</p>
+  <ol class="steps">
+    <li>Öffne diese Seite in <b>Chrome</b> (nicht in einer anderen App oder einem Vorschaufenster).</li>
+    <li>Tippe oben rechts auf <b>⋮</b> (drei Punkte).</li>
+    <li>Wähle <b>„App installieren“</b> oder <b>„Zum Startbildschirm hinzufügen“</b> und dann <b>„Installieren“</b>.</li>
+    <li>Fertig – starte den <b>Kalender</b> über das neue Symbol auf dem Startbildschirm.</li>
+  </ol>
+  <div class="note">Siehst du nur „In Börse öffnen“? Dann öffne die Seite einmal neu (nach unten ziehen) – Chrome braucht manchmal ein paar Minuten, bis es die Änderung mitbekommt.</div>
+  <div class="btns"><button class="btn pri" id="closeInstall">Verstanden</button></div>
 </div>
 
 <div class="toast" id="toast"></div>
@@ -781,10 +805,31 @@ $("sNotifBtn").onclick = () => {
   else askNotify();
 };
 
+// ---------- Installation ----------
+let installEvt = null;
+const isStandalone = () => matchMedia("(display-mode: standalone)").matches || matchMedia("(display-mode: fullscreen)").matches || navigator.standalone;
+function renderInstall() {
+  const box = $("installBox"); box.innerHTML = "";
+  if (isStandalone() || store.get("kal.installHidden", 0) > Date.now()) return;
+  box.innerHTML = `<div class="install"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span><b>App installieren</b>Als eigenes Symbol auf dem Startbildschirm</span><button class="go" id="installGo">Installieren</button><button class="x" id="installX" aria-label="Ausblenden">×</button></div>`;
+  $("installGo").onclick = async () => {
+    if (installEvt) {
+      installEvt.prompt();
+      const r = await installEvt.userChoice.catch(() => null);
+      installEvt = null;
+      if (r && r.outcome === "accepted") { $("installBox").innerHTML = ""; toast("Wird installiert – gleich auf dem Startbildschirm"); }
+    } else showSheet("installSheet");
+  };
+  $("installX").onclick = () => { store.set("kal.installHidden", Date.now() + 7 * 864e5); $("installBox").innerHTML = ""; };
+}
+window.addEventListener("beforeinstallprompt", e => { e.preventDefault(); installEvt = e; renderInstall(); });
+window.addEventListener("appinstalled", () => { installEvt = null; $("installBox").innerHTML = ""; });
+$("closeInstall").onclick = hideSheet;
+
 // ---------- Start ----------
 let hiddenAt = 0;
 function maybeAutoListen() {
-  if (!settings.autoListen || openSheet || !SR) return;
+  if (!settings.autoListen || openSheet || !SR || !isStandalone()) return;
   if (hiddenAt && Date.now() - hiddenAt < 60000) return; // nur nach echtem Öffnen, nicht nach kurzem App-Wechsel
   hiddenAt = 0;
   startListening(false);
@@ -794,6 +839,7 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker.addEventListener("message", m => { if (m.data?.open) openDetail(m.data.open); });
 }
 render();
+renderInstall();
 scheduleAll();
 const openId = new URLSearchParams(location.search).get("termin");
 if (openId && events.some(e => e.id === openId)) { history.replaceState(null, "", location.pathname); openDetail(openId); }

@@ -1,15 +1,15 @@
 {
- "updated": "2026-11-15T11:10:00+01:00",
- "updated_label": "So, 15.11.2026, 11:10 Uhr",
- "kind": "Wochenrückblick",
- "mood": "Gemischte Woche: US-Aktien +2,5 % (beste Woche seit August), aber Nvidia, Bitcoin, Kupfer und Quantenwerte fielen deutlich, nachdem Nvidia-Chef Jensen Huang zurückgetreten war. Wegen hoher Inflation und einer 10-jährigen US-Rendite über 5 % gilt eine Fed-Zinserhöhung im Dezember als praktisch sicher.",
- "check_note": "Alle 11 Aktienkurse mit mindestens 2 Quellen bestätigt (Yahoo plus Nasdaq.com oder StockAnalysis). Die Kurse der 4 ETFs in London sind nur von Yahoo und werden daher nicht angezeigt. Ein unabhängiger Faktencheck hat rund 120 Aussagen geprüft; 5 Fehler (u. a. Oklo-Kurs, Anthropic-Termin, Fed-Wahrscheinlichkeit) sind korrigiert, nicht belegbare Angaben sind entfernt.",
+ "updated": "2026-11-16T07:34:00+01:00",
+ "updated_label": "Mo, 16.11.2026, 07:34 Uhr",
+ "kind": "Tagesbriefing",
+ "mood": "Vorsichtiger Wochenstart: Der KI- und Chip-Ausverkauf nach dem Nvidia-Chefwechsel geht in Asien weiter, US-Futures liegen leicht im Minus. Die Woche wird von den Nvidia-Zahlen (Di), Walmart, GTA VI und dem Anthropic-Börsengang (Do) bestimmt.",
+ "check_note": "11 von 15 Depotkursen mit mindestens 2 Quellen bestätigt (Yahoo plus StockAnalysis bzw. Nachrichtenquellen); die 4 London-ETFs haben nur eine unabhängige Quelle und werden ohne Kurs gezeigt. US-Kurse sind Freitagsschlüsse (seitdem kein Handel). Ein unabhängiger Faktencheck hat rund 80 Aussagen geprüft; 4 Fehler (u. a. Goldpreis, Starship-Datum) sind korrigiert, unsichere Angaben abgeschwächt oder als Gerücht markiert.",
  "markets": [
   {
    "name": "S&P 500",
    "value": "7.561,67",
    "change": -0.4,
-   "note": "Woche +2,5 %, beste seit August",
+   "note": "Fr-Schluss; Woche +2,5 %. Futures Mo früh rund −0,4 %",
    "nsrc": 3,
    "verified": true
   },
@@ -17,23 +17,23 @@
    "name": "Nasdaq Comp.",
    "value": "25.136,27",
    "change": -0.91,
-   "note": "Woche +2,3 %",
-   "nsrc": 2,
+   "note": "Fr-Schluss; Nasdaq-100-Futures Mo früh rund −0,8 %",
+   "nsrc": 3,
    "verified": true
   },
   {
    "name": "Dow Jones",
    "value": "52.347,55",
    "change": 0.1,
-   "note": "Woche +2,1 %",
-   "nsrc": 2,
+   "note": "Fr-Schluss; Woche +2,1 %",
+   "nsrc": 3,
    "verified": true
   },
   {
    "name": "DAX",
    "value": "26.749,95",
    "change": -0.08,
-   "note": "Am Do erstmals über 27.000 (Rekord)",
+   "note": "Fr-Schluss; Start heute laut IG etwa unverändert erwartet",
    "nsrc": 2,
    "verified": true
   },
@@ -41,32 +41,32 @@
    "name": "Bitcoin",
    "value": "≈ 65.000 $",
    "change": null,
-   "note": "So-Morgen; 3-Monats-Tief, Woche rund −13 %",
+   "note": "Mo früh; am Wochenende Tief bei rund 62.000 $ (tiefster Stand seit Juli)",
    "nsrc": 3,
    "verified": true
   },
   {
    "name": "Gold",
-   "value": "≈ 3.886 $",
-   "change": 0.17,
-   "note": "je Unze, Fr-Schluss (Spot)",
-   "nsrc": 3,
+   "value": "≈ 3.850–3.870 $",
+   "change": null,
+   "note": "je Unze, Mo früh leicht im Minus (Spot)",
+   "nsrc": 2,
    "verified": true
   },
   {
    "name": "Öl (Brent)",
-   "value": "95,84 $",
-   "change": 0.02,
-   "note": "2. Verlustwoche; Iran-Spannungen am Wochenende",
+   "value": "≈ 95 $",
+   "change": null,
+   "note": "Mo früh leicht schwächer trotz Iran-Spannungen",
    "nsrc": 3,
    "verified": true
   },
   {
    "name": "US-Rendite 10J",
-   "value": "5,15 %",
+   "value": "5,14 %",
    "change": null,
-   "note": "+0,04 Prozentpunkte am Fr; Vorwoche ~4,85 %",
-   "nsrc": 3,
+   "note": "Mo früh kaum verändert; Vorwoche +0,29 Prozentpunkte",
+   "nsrc": 2,
    "verified": true
   }
  ],
@@ -78,7 +78,7 @@
    "signal": "halten",
    "price": "",
    "change": null,
-   "note": "Der S&P 500 schloss Fr bei −0,4 %, die Woche brachte +2,5 %. Der ETF zeigt in London −1,3 %, weil die Börse dort schließt, bevor sich die US-Kurse am Nachmittag erholt hatten. Breite Basis deines Depots.",
+   "note": "Der S&P 500 schloss Fr bei −0,4 %, die Woche brachte +2,5 %. Heute früh deuten die US-Futures (Terminkontrakte auf den Index) rund −0,4 % an – Grund ist der weitere Druck auf KI- und Chipwerte. Kurs in London nur 1 unabhängige Quelle, daher nicht angezeigt.",
    "next": "Nvidia-Zahlen Di 17.11. abends",
    "nsrc": 1,
    "verified": false
@@ -90,8 +90,8 @@
    "signal": "vorsicht",
    "price": "534,06 $",
    "change": -8.75,
-   "note": "Freitag −8,75 %: Nach dem Rücktritt von Nvidia-Chef Huang war AMD zunächst stark gestiegen (bis Donnerstag rund +30 % in der Woche), am Freitag nahmen Anleger Gewinne mit. Laut Börsenprospekt von Anthropic kauft AMD beim Börsengang Anthropic-Aktien für 2,5 Mrd. $. Die Aktie liegt ca. 8 % über einer starken Unterstützung (~495 $).",
-   "next": "",
+   "note": "Fr −8,75 %: Gewinnmitnahmen, nachdem Anleger nach dem Rücktritt von Nvidia-Chef Huang in AMD umgeschichtet hatten (Woche davor rund +30 %). AMD kauft beim Anthropic-Börsengang Aktien für 2,5 Mrd. $ (laut Prospekt). Keine neuen Nachrichten am Wochenende. Die Unterstützung (Kursbereich, an dem Käufer zuletzt einstiegen) liegt bei ~495 $.",
+   "next": "Nvidia-Zahlen Di 17.11., 22:20 Uhr",
    "nsrc": 2,
    "verified": true
   },
@@ -102,7 +102,7 @@
    "signal": "halten",
    "price": "295,77 $",
    "change": -0.98,
-   "note": "JPMorgan hat Alphabet am 9.11. von seiner Top-Liste genommen (Rating bleibt „Overweight“ = Kaufen). Google kauft beim Anthropic-Börsengang Aktien für 10 Mrd. $ (laut Prospekt). Seit einem Monat −15 %, RSI 41 (eher schwach).",
+   "note": "Keine wichtigen Nachrichten am Wochenende. Google kauft beim Anthropic-Börsengang Aktien für rund 10 Mrd. $ (laut Prospekt). Technisch angeschlagen: Kurs unter dem 200-Tage-Schnitt, RSI 41 (eher schwach).",
    "next": "",
    "nsrc": 2,
    "verified": true
@@ -114,7 +114,7 @@
    "signal": "beobachten",
    "price": "600,20 $",
    "change": -0.84,
-   "note": "Insiderkauf: Direktor David MacLennan kaufte am 12.11. 350 Aktien zu 596,10 $ (Pflichtmeldung bei der SEC). Technisch: RSI 35 (schwach), aber der MACD hat gerade nach oben gedreht (frisches Kaufsignal). Seit 3 Monaten −32 %.",
+   "note": "Keine wichtigen Nachrichten in den letzten 72 h. Insiderkauf eines Direktors am 12.11. (SEC-Meldung). Technisch: RSI 35 (schwach), aber der MACD (Trendfolge-Indikator) hat gerade nach oben gedreht. Seit 3 Monaten −32 %.",
    "next": "Dividende 1,63 $ am Do 19.11.",
    "nsrc": 2,
    "verified": true
@@ -126,8 +126,8 @@
    "signal": "beobachten",
    "price": "128,09 $",
    "change": 1.51,
-   "note": "Freitag +1,5 %, seit einem Monat +8,7 %. Die Aktie liegt knapp unter einem Widerstand bei ~133 $. Am Donnerstag kommen die Quartalszahlen – danach sind größere Kurssprünge möglich.",
-   "next": "Q3-Zahlen Do 19.11. um 13 Uhr (vor US-Börsenstart)",
+   "note": "Fr +1,5 %, seit einem Monat +8,7 %. Am Donnerstag kommen die Quartalszahlen; erwartet wird ein Gewinn je Aktie von rund 0,64 $ (eigene Prognose 0,62–0,64 $). Die Aktie liegt nahe dem durchschnittlichen Analysten-Kursziel (~131 $), Spielraum nach oben ist laut Analysten begrenzt.",
+   "next": "Q3-Zahlen Do 19.11. vor US-Börsenstart (Telefonkonferenz 14 Uhr)",
    "nsrc": 2,
    "verified": true
   },
@@ -137,8 +137,8 @@
    "type": "ETF",
    "signal": "beobachten",
    "price": "",
-   "change": -2.62,
-   "note": "Kupfer hatte die 5. Verlustwoche in Folge und die schwächste Woche seit März (Ausverkauf bei KI-Werten, starker Dollar, hohe Zinsen). Goldman Sachs sieht eher Anlegerverhalten als schwache Nachfrage dahinter. Kurs in London nur 1 Quelle, daher nicht angezeigt.",
+   "change": null,
+   "note": "Kupfer fiel am Fr erneut (LME rund 13.610 $ je Tonne), 5. Verlustwoche in Folge. Keine neuen Nachrichten zu Kupferminen. Technisch schwach: Kurs unter dem 200-Tage-Schnitt. Kurs in London nur 1 unabhängige Quelle, daher nicht angezeigt.",
    "next": "",
    "nsrc": 1,
    "verified": false
@@ -150,8 +150,8 @@
    "signal": "halten",
    "price": "295,03 $",
    "change": 0.2,
-   "note": "Keine wichtigen Nachrichten diese Woche. Ruhiger Wert: seit einem Jahr +27 %, RSI 63.",
-   "next": "Dividende 1,73 $ am Mo 16.11.",
+   "note": "Heute wird die Dividende von 1,73 $ ausgezahlt. Ab Februar 2027 steigt sie auf 1,82 $ (+5,2 %, laut Quartalsbericht bei der SEC). Keine weiteren wichtigen Nachrichten. Ruhiger Wert: seit einem Jahr +27 %.",
+   "next": "Dividende 1,73 $ heute (Mo 16.11.)",
    "nsrc": 2,
    "verified": true
   },
@@ -162,8 +162,8 @@
    "signal": "halten",
    "price": "109,11 $",
    "change": 2.74,
-   "note": "Freitag +2,7 %. Keine wichtigen Nachrichten (nur: Chef der Bäckerei-Tochter geht Anfang 2027 in Ruhestand).",
-   "next": "Investorenkonferenz Mi 18.11.; Dividende 0,30 $ am Di 24.11.",
+   "note": "Fr +2,7 %. Keine wichtigen Nachrichten. Am Mittwoch spricht das Management auf einer Investorenkonferenz (Stephens) – dort kommen oft Hinweise zum laufenden Geschäft.",
+   "next": "Konferenz Mi 18.11., 17:15 Uhr; Dividende 0,30 $ am Di 24.11.",
    "nsrc": 2,
    "verified": true
   },
@@ -174,7 +174,7 @@
    "signal": "beobachten",
    "price": "15,42 $",
    "change": -1.34,
-   "note": "SoFi ist einer der Broker, über die Privatanleger Anthropic-Aktien beim Börsengang zeichnen können (laut Prospekt). Technisch: MACD hat gerade nach unten gedreht (Verkaufssignal), die Unterstützung bei ~15,18 $ ist nur 1,5 % entfernt. Steigende Zinsen belasten.",
+   "note": "Vier Minustage in Folge. SoFi soll laut Berichten zu den Brokern gehören, über die Privatanleger Anthropic-Aktien zeichnen können; das hat den Kurs bisher nicht gestützt. Technisch: MACD hat nach unten gedreht (Verkaufssignal), Unterstützung bei ~15,18 $ nur 1,6 % entfernt. Hohe Zinsen belasten.",
    "next": "",
    "nsrc": 2,
    "verified": true
@@ -183,10 +183,10 @@
    "name": "Amazon",
    "ticker": "AMZN",
    "type": "Aktie",
-   "signal": "chance",
+   "signal": "halten",
    "price": "266,66 $",
    "change": -0.29,
-   "note": "Amazon bleibt auf der JPMorgan-Top-Liste (9.11.). Die Anthropic-Beteiligung wäre am oberen Ende der Preisspanne laut Reuters-Rechnung rund 272 Mrd. $ wert (investiert: 18 Mrd. $). Technisch positiv: MACD über Signallinie, RSI 57.",
+   "note": "Rückschlag am Wochenende: Eine Vulcan-Rakete von ULA ist rund 10 Minuten nach dem Start ausgefallen, alle 40 Satelliten für Amazons Internetdienst „Leo“ sind verloren. Weitere Leo-Starts mit dieser Rakete dürften sich verzögern. Technisch weiter positiv (Kurs über 200-Tage-Schnitt, RSI 57).",
    "next": "",
    "nsrc": 2,
    "verified": true
@@ -197,8 +197,8 @@
    "type": "ETF",
    "signal": "beobachten",
    "price": "",
-   "change": -3.93,
-   "note": "Atomwerte fielen in der Woche (z. B. am Fr Cameco −1,5 %, Oklo −2,2 %); als Grund gelten die steigenden Zinsen. Keine neuen uranspezifischen Nachrichten gefunden. Kurs in London nur 1 Quelle, daher nicht angezeigt.",
+   "change": null,
+   "note": "Atomwerte schwach (Cameco Fr −1,5 %). Keine neuen uranspezifischen Nachrichten gefunden. Technisch angeschlagen: Kurs deutlich unter dem 200-Tage-Schnitt. Kurs in London nur 1 unabhängige Quelle, daher nicht angezeigt.",
    "next": "",
    "nsrc": 1,
    "verified": false
@@ -210,8 +210,8 @@
    "signal": "vorsicht",
    "price": "139,11 $",
    "change": -0.59,
-   "note": "Starship-Flug 15: Das Schiff wurde am Sa erstmals vom Startturm gefangen; der Booster brach seinen Turmfang wegen eines Navigationsfehlers ab und ging im Golf verloren. Founders Fund (Peter Thiel) hielt Ende September rund 113 Mio. Aktien weniger als Ende Juni (Pflichtmeldung); ob verkauft oder an Anleger verteilt, ist offen. Kurs nur 3 % über dem IPO-Preis von 135 $.",
-   "next": "Mo 16.11.: Frist für Fonds-Bestandsmeldungen (13F)",
+   "note": "Starship-Flug 15 (Start Fr, Landung Sa): Das Schiff wurde erstmals vom Startturm gefangen, der Booster ging aber im Golf von Mexiko verloren. Laut Bloomberg kommen Fusionsgespräche mit Tesla voran – Gerücht, von den Firmen nicht bestätigt. Kurs nur 3 % über dem Börsengangpreis von 135 $.",
+   "next": "",
    "nsrc": 2,
    "verified": true
   },
@@ -220,9 +220,9 @@
    "ticker": "1810.HK",
    "type": "Aktie",
    "signal": "beobachten",
-   "price": "28,86 HKD",
-   "change": -3.74,
-   "note": "Hongkonger Tech-Werte fielen am Freitag stark (Hang Seng Tech −3 %), wegen Sorgen um KI-Bewertungen und Nvidia. Xiaomi kauft laufend eigene Aktien zurück. Die Aktie liegt nur 2 % über einer starken Unterstützung (28,22 HKD).",
+   "price": "29,22 HKD",
+   "change": 1.25,
+   "note": "Heute im laufenden Handel in Hongkong (Stand ca. 14 Uhr Ortszeit) leicht erholt, nach −3,7 % am Fr. Xiaomi kauft weiter eigene Aktien zurück. Laut Berichten senkt die Bank CLSA ihre Gewinnschätzungen, bleibt aber bei „Outperform“ (= Kaufen, Kursziel 35 HKD; nur Zweitquellen).",
    "next": "Q3-Zahlen Di 24.11.",
    "nsrc": 2,
    "verified": true
@@ -233,8 +233,8 @@
    "type": "ETF",
    "signal": "beobachten",
    "price": "",
-   "change": -4.64,
-   "note": "Nach dem IonQ-Sprung (+23 % am 6.11. nach Rekordumsatz) gaben Quantenwerte nach; Rigetti verfehlte die Umsatzerwartung deutlich (Aktie −5 % am 12.11.). Sehr spekulatives Thema. Kurs in London nur 1 Quelle, daher nicht angezeigt.",
+   "change": null,
+   "note": "Quantenwerte fielen Ende letzter Woche deutlich (u. a. IonQ, Rigetti), nach enttäuschenden Zahlen von Rigetti und D-Wave und der Nvidia-Unruhe. Sehr spekulatives Thema. Kurs in London nur 1 unabhängige Quelle, daher nicht angezeigt.",
    "next": "",
    "nsrc": 1,
    "verified": false
@@ -246,7 +246,7 @@
    "signal": "beobachten",
    "price": "227,82 $",
    "change": 0.38,
-   "note": "GTA VI erscheint am Donnerstag (PS5 und Xbox). Laut CEO liegen die Vorbestellungen „weit über den Erwartungen“, eine Zahl gibt es nicht. Das letzte Quartal war schwach (Buchungen −18 %, unter der eigenen Prognose); die Aktie stieg trotzdem am 10.11. um 8 %. Rund um den Start drohen große Kurssprünge in beide Richtungen.",
+   "note": "GTA VI erscheint am Donnerstag (PS5 und Xbox). Laut CEO liegen die Vorbestellungen „weit über den Erwartungen“, eine Zahl gibt es nicht. Erste Testberichte könnten laut Gerüchten schon am Mittwoch kommen (nicht offiziell). Rund um den Start sind große Kurssprünge in beide Richtungen möglich.",
    "next": "GTA VI erscheint Do 19.11.",
    "nsrc": 2,
    "verified": true
@@ -254,100 +254,99 @@
  ],
  "news": [
   {
-   "title": "Nvidia-Chef Jensen Huang tritt zurück",
-   "text": "Huang trat am Donnerstag mit sofortiger Wirkung zurück, Finanzchefin Colette Kress führt Nvidia übergangsweise. Nvidia nannte keinen Grund; laut Berichten räumte Huang eine Affäre ein, Spionagevorwürfe sind unbestätigt. Nvidia verlor in der Woche rund 13 %. AMD stieg zunächst kräftig, fiel aber am Freitag um 8,75 %.",
+   "title": "KI-Ausverkauf geht weiter, Asien schwach",
+   "text": "Nach dem Rücktritt von Nvidia-Chef Jensen Huang fallen Chipwerte weiter: In Taiwan verlor der Leitindex heute rund 4 %, der Nikkei in Tokio 1,6–2 %. US-Futures deuten auf einen schwächeren Start, vor allem bei Technologiewerten.",
    "tags": [
-    "AMD",
-    "Chips",
-    "CSPX"
+    "Markt",
+    "KI"
    ]
   },
   {
-   "title": "Inflation hoch, Fed-Zinserhöhung im Dezember gilt als sicher",
-   "text": "Die US-Erzeugerpreise lagen im Oktober 6,5 % über dem Vorjahr – der höchste Wert seit November 2022. An den Terminmärkten ist eine Zinserhöhung am 9.12. voll eingepreist, meist um 0,25 Prozentpunkte erwartet (≈89 %). Die 10-jährige US-Rendite stieg auf 5,15 %.",
+   "title": "Nvidia: Zahlen am Dienstag als großer Test",
+   "text": "Nvidia legt am Di 17.11. gegen 22:20 Uhr Quartalszahlen vor – die ersten nach Huangs Rücktritt. Übergangschefin ist Finanzchefin Colette Kress. Laut Financial Times sprach der Aufsichtsrat mit Arm-Chef Rene Haas über die Nachfolge. Wichtig für AMD und den S&P 500.",
+   "tags": [
+    "USA",
+    "Chips"
+   ]
+  },
+  {
+   "title": "Fed: Zinserhöhung im Dezember sehr wahrscheinlich",
+   "text": "An den Terminmärkten wird eine Zinserhöhung am 9.12. mit rund 90 % Wahrscheinlichkeit erwartet, meist um 0,25 Prozentpunkte. Fed-Chef Kevin Warsh spricht heute um 18 Uhr, auf einer Konferenz zu Produktivität und Jobs (Schwerpunkt KI). Am Mittwoch folgt das Protokoll der letzten Fed-Sitzung.",
    "tags": [
     "Zinsen",
-    "SOFI",
-    "Markt"
+    "USA"
    ]
   },
   {
-   "title": "Anthropic geht an die Börse",
-   "text": "Der KI-Entwickler will Aktien zu 70–78 $ ausgeben (Bewertung bis rund 1,4 Billionen $, Kürzel „ANT“). Preisfestlegung ist am 18.11., erster Handelstag Do 19.11. Laut Prospekt kaufen Google für 10 Mrd. $ und AMD für 2,5 Mrd. $ mit; Amazon ist schon groß beteiligt, SoFi ist einer der Broker für Privatanleger.",
+   "title": "Anthropic-Börsengang diese Woche",
+   "text": "Der KI-Entwickler will Aktien zu 70–78 $ ausgeben (Kürzel „ANT“ an der Nasdaq). Preisfestlegung voraussichtlich Mi 18.11., erster Handelstag voraussichtlich Do 19.11. Google, Amazon und AMD sind beteiligt bzw. kaufen Aktien.",
    "tags": [
-    "GOOGL",
-    "AMZN",
-    "AMD",
-    "SOFI"
+    "IPO",
+    "KI"
    ]
   },
   {
-   "title": "Bitcoin fällt auf 3-Monats-Tief",
-   "text": "Bitcoin sank am Wochenende zeitweise unter 63.000 $ und lag am Sonntagmorgen um 65.000 $, rund 13 % unter dem Wochenstart. Gründe: starker Dollar, Abflüsse aus Bitcoin-ETFs und Zwangsverkäufe gehebelter Positionen.",
+   "title": "Iran: Drohnenangriff auf US-Basis in Bahrain",
+   "text": "Irans Revolutionsgarden meldeten am Sonntag einen Drohnenangriff auf eine US-Basis in Bahrain; Bahrain fing die Drohnen nach eigenen Angaben ab, Schäden wurden nicht gemeldet. Angebliche Minentreffer bei Tankern sind nicht bestätigt. Der Ölpreis reagierte kaum.",
    "tags": [
-    "Krypto"
+    "Geopolitik",
+    "Öl"
    ]
   },
   {
-   "title": "Kupfer mit schwächster Woche seit März",
-   "text": "Der Kupferpreis fiel die 5. Woche in Folge auf ein Fast-4-Monats-Tief. Belastet haben der Ausverkauf bei KI-Werten, der starke Dollar und hohe Zinsen.",
+   "title": "Raketenfehlstart kostet 40 Amazon-Satelliten",
+   "text": "Eine Vulcan-Rakete von ULA fiel am Sonntag rund 10 Minuten nach dem Start aus – der erste Totalverlust des Unternehmens. Alle 40 Satelliten für Amazons Internetdienst Leo sind zerstört.",
    "tags": [
-    "COPX"
+    "Amazon",
+    "Raumfahrt"
    ]
   },
   {
-   "title": "Iran: Spannungen am Golf am Wochenende",
-   "text": "Iran meldet Drohnenangriffe auf US-Ziele in Bahrain, dort gab es am Sonntag Sirenen und Warnungen. Das US-Militär bestreitet Schäden durch einen Angriff am Freitag. Iranische Angaben über Tanker, die in der Straße von Hormus auf Minen gelaufen seien, sind unbestätigt. Das kann den Ölpreis am Montag bewegen.",
+   "title": "Japans Wirtschaft schrumpft",
+   "text": "Japans Wirtschaftsleistung sank im 3. Quartal aufs Jahr hochgerechnet um 0,1 % – erwartet war ein leichtes Plus. Auch Chinas Oktober-Daten (Einzelhandel, Industrie) fielen schwächer aus als erwartet.",
    "tags": [
-    "Öl",
-    "Markt"
-   ]
-  },
-  {
-   "title": "DAX erstmals über 27.000 Punkten",
-   "text": "Der DAX erreichte am Donnerstag einen Rekord über 27.000 Punkte und schloss am Freitag mit 26.749,95 nahezu unverändert. Chipwerte wie Infineon (−4,3 %) waren am Freitag schwach.",
-   "tags": [
-    "DAX"
+    "Asien",
+    "Konjunktur"
    ]
   }
  ],
  "radar": {
   "chance": [
    {
-    "ticker": "AMZN",
-    "name": "Amazon",
-    "why": "JPMorgan-Top-Liste, wertvolle Anthropic-Beteiligung, Chart positiv",
-    "risk": "Hohe KI-Ausgaben, Tech-Stimmung nach dem Nvidia-Schock wackelig",
-    "strength": "mittel"
-   },
-   {
     "ticker": "CAT",
     "name": "Caterpillar",
     "why": "Insiderkauf am 12.11. und frisches MACD-Kaufsignal nach −32 % in 3 Monaten",
     "risk": "Trend noch abwärts; steigende Zinsen bremsen Industriewerte",
     "strength": "schwach"
+   },
+   {
+    "ticker": "ABBV",
+    "name": "AbbVie",
+    "why": "Stabiler Aufwärtstrend, Dividende steigt ab Februar um 5,2 %",
+    "risk": "RSI 63 – nach starkem Lauf kann eine Pause kommen",
+    "strength": "mittel"
    }
   ],
   "vorsicht": [
    {
     "ticker": "AMD",
     "name": "AMD",
-    "why": "−8,75 % am Freitag nach starkem Wochenanstieg; Nvidia-Zahlen am Dienstag können KI-Chips stark bewegen",
-    "risk": "Starke Zahlen und Anthropic-Deal – ein Rücksetzer kann auch Chance sein",
+    "why": "Nvidia-Zahlen am Dienstag können Chipwerte stark bewegen; Futures heute schwach",
+    "risk": "Ein guter Nvidia-Bericht könnte den Sektor wieder anschieben",
     "strength": "mittel"
    },
    {
     "ticker": "SPCX",
     "name": "SpaceX",
-    "why": "Großer Altaktionär hat Bestand abgebaut, Kurs nahe IPO-Preis",
-    "risk": "Starship-Fortschritt, Analysten überwiegend positiv",
+    "why": "Kurs nahe Börsengangpreis, Booster-Verlust bei Starship-Flug 15",
+    "risk": "Mögliche Tesla-Fusion (Gerücht) könnte den Kurs treiben",
     "strength": "mittel"
    },
    {
     "ticker": "TTWO",
     "name": "Take-Two",
     "why": "Launch-Risiko: oft wird vorher gekauft und nach dem Ereignis verkauft",
-    "risk": "Ein Rekordstart könnte die Aktie weiter treiben",
+    "risk": "Ein Rekordstart von GTA VI könnte die Aktie weiter treiben",
     "strength": "schwach"
    }
   ]
@@ -360,17 +359,27 @@
   },
   {
    "date": "Mo 16.11.",
-   "text": "Rede von Fed-Chef Kevin Warsh (18 Uhr MEZ)",
+   "text": "Rede von Fed-Chef Kevin Warsh, 18 Uhr (Konferenz zu Produktivität und Jobs)",
    "mine": false
   },
   {
    "date": "Di 17.11.",
-   "text": "US-Einzelhandelsumsatz Oktober, 14:30 Uhr (voraussichtlich)",
+   "text": "ZEW-Konjunkturerwartungen, 11 Uhr",
    "mine": false
   },
   {
    "date": "Di 17.11.",
-   "text": "Nvidia-Quartalszahlen um 23 Uhr (nach US-Börsenschluss) – wichtig für AMD, Chips und S&P 500",
+   "text": "US-Einzelhandelsumsatz Oktober, 14:30 Uhr",
+   "mine": false
+  },
+  {
+   "date": "Di 17.11.",
+   "text": "Nvidia-Quartalszahlen ca. 22:20 Uhr, Telefonkonferenz 23 Uhr – wichtig für AMD, Chips und S&P 500",
+   "mine": true
+  },
+  {
+   "date": "Mi 18.11.",
+   "text": "Cheesecake Factory auf Stephens-Investorenkonferenz, 17:15 Uhr",
    "mine": true
   },
   {
@@ -380,12 +389,12 @@
   },
   {
    "date": "Mi 18.11.",
-   "text": "Cheesecake Factory auf Investorenkonferenz (Stephens)",
-   "mine": true
+   "text": "Anthropic legt den Ausgabepreis fest (voraussichtlich)",
+   "mine": false
   },
   {
    "date": "Do 19.11.",
-   "text": "Walmart Q3-Zahlen, 13 Uhr (vor US-Börsenstart)",
+   "text": "Walmart Q3-Zahlen vor US-Börsenstart (Telefonkonferenz 14 Uhr)",
    "mine": true
   },
   {
@@ -400,7 +409,7 @@
   },
   {
    "date": "Do 19.11.",
-   "text": "Anthropic-Börsengang: erster Handelstag (Preis am 18.11.)",
+   "text": "Anthropic: erster Handelstag an der Nasdaq (voraussichtlich)",
    "mine": false
   },
   {
@@ -412,96 +421,125 @@
    "date": "Di 24.11.",
    "text": "Cheesecake Factory zahlt die Dividende (0,30 $)",
    "mine": true
+  },
+  {
+   "date": "Do 26.11.",
+   "text": "Thanksgiving – US-Börsen geschlossen",
+   "mine": false
   }
  ],
  "sources": [
   {
-   "title": "CNBC: Nasdaq fällt, Index mit bester Woche seit August (13.11.)",
-   "url": "https://www.cnbc.com/2026/11/12/stock-market-today-live-updates.html"
+   "title": "CNBC: Stock futures slip as traders brace for Nvidia earnings, Anthropic IPO",
+   "url": "https://www.cnbc.com/2026/11/15/stock-market-today-live-updates.html"
   },
   {
-   "title": "Yahoo Finance: Markets News 13.11.2026",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-futures-tick-133734502.html"
+   "title": "Investing.com: US stock futures await Nvidia earnings",
+   "url": "https://www.investing.com/news/stock-market-news/us-stock-futures-little-changed-as-investors-await-nvidia-earnings-5028292"
   },
   {
-   "title": "dpa-AFX: Dax trotzt Nasdaq-Schwäche – Pause nach Rekord (13.11.)",
+   "title": "Reuters Morning Bid: AI selloff resumes (Yahoo)",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/morning-bid-ai-selloff-resumes-053223150.html"
+  },
+  {
+   "title": "AP: Stocks decline in Asia over Nvidia fallout",
+   "url": "https://www.wsbtv.com/news/business/stocks-decline-asia/Y6KSUFUT6E4JJJKTTJKBZ6637U/"
+  },
+  {
+   "title": "dpa-AFX: DAX schließt Freitag (ariva)",
    "url": "https://www.ariva.de/news/roundup-aktien-frankfurt-schluss-dax-trotzt-nasdaq-schwaeche-12207030"
   },
   {
-   "title": "SEC: Nvidia 8-K zum CEO-Wechsel (12.11.)",
-   "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000082/nvidiaannouncesceotransiti.htm"
+   "title": "dpa-AFX DAX-Flash Montag",
+   "url": "https://www.ad-hoc-news.de/boerse/news/marktberichte/dax-flash-wenig-bewegter-auftakt-erwartet-ki-und-geopolitik-im-blick/70519410"
   },
   {
-   "title": "BLS: Erzeugerpreise Oktober",
-   "url": "https://www.bls.gov/news.release/ppi.nr0.htm"
+   "title": "CNBC: Nvidia nach Huang-Rücktritt",
+   "url": "https://www.cnbc.com/2026/11/13/nvidia-nvda-stock-jensen-huang-transition.html"
   },
   {
-   "title": "CNBC: 10-jährige US-Rendite 5,15 % (13.11.)",
-   "url": "https://www.cnbc.com/amp/2026/11/13/treasury-yields-fed-rates.html"
+   "title": "Nvidia IR: Q3 FY27 Termin",
+   "url": "https://investor.nvidia.com/events-and-presentations/events-and-presentations/event-details/2026/NVIDIA-3rd-Quarter-FY27-Financial-Results/default.aspx"
   },
   {
-   "title": "Rigzone/Bloomberg: Ölpreis (13.11.)",
-   "url": "https://www.rigzone.com/news/wire/crude_fluctuates_as_iran_tensions_persist-13-nov-2026-185085-article/"
-  },
-  {
-   "title": "cryptoticker: Bitcoin-Wochenschluss (15.11.)",
-   "url": "https://cryptoticker.io/en/bitcoin-price-overnight-low-weekly-close-november-15-2026/"
-  },
-  {
-   "title": "USAGOLD: Edelmetall-Bericht 13.11.",
-   "url": "https://www.usagold.com/daily-precious-metals-market-report-november-13-2026/"
-  },
-  {
-   "title": "Motley Fool: Anthropic-Preisspanne 70–78 $ (13.11.)",
-   "url": "https://www.fool.com/investing/2026/11/13/anthropic-set-its-ipo-price-range-at-70-to-78-valuing-it-at-up-to-1405-trillion/"
-  },
-  {
-   "title": "CNBC: Anthropic-IPO für Privatanleger (10.11.)",
-   "url": "https://www.cnbc.com/2026/11/10/anthropic-ipo-shares-invest.html"
-  },
-  {
-   "title": "SEC: Caterpillar Form 4 MacLennan (13.11.)",
-   "url": "https://www.sec.gov/Archives/edgar/data/18230/000110465926127088/tm2629746-1_4seq1.xml"
-  },
-  {
-   "title": "Walmart: Termin Q3-Telefonkonferenz",
-   "url": "https://finviz.com/news/421667/walmart-to-host-third-quarter-earnings-conference-call-november-19-2026"
-  },
-  {
-   "title": "mining.com: Kupfer mit schwächster Woche seit März",
-   "url": "https://mining.com/web/copper-price-falls-heads-for-worst-week-since-march-on-ai-rout/"
-  },
-  {
-   "title": "Space.com: Starship Flug 15",
-   "url": "https://www.space.com/news/live/spacex-starship-flight-15-live-updates-nov-14-2026-starship-first-double-landing-attempt"
-  },
-  {
-   "title": "24/7 Wall St: Founders Fund und SpaceX (14.11.)",
-   "url": "https://247wallst.com/investing/2026/11/14/17-billion-of-spacex-stock-left-peter-thiels-fund-last-quarter/"
-  },
-  {
-   "title": "24/7 Wall St: Take-Two +8 % nach GTA-VI-Vorbestellungen (10.11.)",
-   "url": "https://247wallst.com/investing/2026/11/10/take-two-jumps-8-as-gta-vi-preorders-run-far-in-excess-of-expectations-sony-and-roblox-slide-2/"
-  },
-  {
-   "title": "The Standard HK: Hang Seng 13.11.",
-   "url": "https://www.thestandard.com.hk/finance/article/348438"
-  },
-  {
-   "title": "Al Jazeera: Iran und Bahrain (15.11.)",
-   "url": "https://www.aljazeera.com/news/2026/11/15/iran-says-it-targets-us-radar-in-bahrain-what-do-we-know"
-  },
-  {
-   "title": "Fed: Termine November 2026",
+   "title": "Federal Reserve: Kalender November 2026",
    "url": "https://www.federalreserve.gov/newsevents/2026-november.htm"
   },
   {
-   "title": "Nasdaq.com: historische Kurse (Abgleich Schlusskurse)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/amd/historical"
+   "title": "CNBC: Anthropic setzt Preisspanne 70–78 $",
+   "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html"
   },
   {
-   "title": "Nasdaq Trader: Anthropic-Handelsstart (DTN2026-28)",
-   "url": "https://www.nasdaqtrader.com/TraderNews.aspx?id=DTN2026-28"
+   "title": "CNBC: Bahrain/Iran-Drohnenangriffe",
+   "url": "https://www.cnbc.com/2026/11/15/bahrain-iran-drone-attacks-tehran-us-base.html"
+  },
+  {
+   "title": "Spaceflight Now: Vulcan-Fehlstart mit 40 Amazon-Leo-Satelliten",
+   "url": "https://spaceflightnow.com/2026/11/15/ula-suffers-first-total-mission-failure-with-loss-of-vulcan-rocket-carrying-40-amazon-leo-satellites/"
+  },
+  {
+   "title": "Space.com: Vulcan / Amazon Leo",
+   "url": "https://www.space.com/space-exploration/launches-spacecraft/ula-vulcan-centaur-return-to-flight-amazon-leo-internet-satellite-launch"
+  },
+  {
+   "title": "Space.com: Starship-Flug 15",
+   "url": "https://www.space.com/space-exploration/launches-spacecraft/spacex-starship-flight-15-chopsticks-double-catch-super-heavy-ship"
+  },
+  {
+   "title": "Reuters via Investing.com: SpaceX-Tesla-Fusionsgespräche (Bloomberg)",
+   "url": "https://www.investing.com/news/stock-market-news/spacex-tesla-merger-talks-progress-bloomberg-news-reports-5023102"
+  },
+  {
+   "title": "Walmart: FY2027 Q3 Earnings Release",
+   "url": "https://corporate.walmart.com/news/events/fy2027-q3-earnings-release"
+  },
+  {
+   "title": "Cheesecake Factory IR: Stephens-Konferenz",
+   "url": "https://investors.thecheesecakefactory.com/news-and-events/news-releases/news-release-details/2026/The-Cheesecake-Factory-to-Present-at-the-Stephens-Annual-Investment-Conference/default.aspx"
+  },
+  {
+   "title": "SEC: AbbVie 10-Q (Dividendenerhöhung)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001551152/000155115226000037/abbv-20260930.htm"
+  },
+  {
+   "title": "StockAnalysis: AbbVie Dividende",
+   "url": "https://stockanalysis.com/stocks/abbv/dividend/"
+  },
+  {
+   "title": "MarketScreener: Caterpillar-Dividende 19.11.",
+   "url": "https://www.marketscreener.com/news/caterpillar-inc-maintains-quarterly-dividend-payable-on-19-november-2026-ce785dd2de8cff21"
+  },
+  {
+   "title": "Yahoo Finance: Take-Two / GTA VI-Vorbestellungen",
+   "url": "https://finance.yahoo.com/markets/stocks/article/take-two-stock-rises-on-unprecedented-preorders-for-grand-theft-auto-vi-160644526.html"
+  },
+  {
+   "title": "Motley Fool: Why AMD is down today",
+   "url": "https://www.fool.com/investing/2026/11/13/why-advanced-micro-devices-is-down-today/"
+  },
+  {
+   "title": "Globe and Mail: Xiaomi Q3-Termin",
+   "url": "https://www.theglobeandmail.com/investing/markets/stocks/XIACF/pressreleases/8404753/xiaomi-sets-november-board-meeting-to-approve-q3-2026-results/"
+  },
+  {
+   "title": "StockAnalysis: Xiaomi Kursverlauf",
+   "url": "https://stockanalysis.com/quote/hkg/1810/history/"
+  },
+  {
+   "title": "Benzinga: Quantenwerte unter Druck",
+   "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63184851/quantum-stocks-slide-as-rigetti-d-wave-results-disappoint-nvidia-turmoil-overshadows-ionq"
+  },
+  {
+   "title": "Crypto.news: Bitcoin fällt auf 62.000 $",
+   "url": "https://crypto.news/bitcoin-price-falls-62000-etf-outflows-liquidations/"
+  },
+  {
+   "title": "MarketScreener/Reuters: Gold vor Warsh-Rede",
+   "url": "https://www.marketscreener.com/news/gold-dips-on-firmer-dollar-ahead-of-warsh-comments-ce785edede8af721"
+  },
+  {
+   "title": "Japan Cabinet Office: BIP Q3 2026",
+   "url": "https://www.esri.cao.go.jp/en/sna/data/sokuhou/files/2026/qe263/pdf/gaiyou2631_e.pdf"
   }
  ]
 }

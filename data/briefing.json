@@ -49,7 +49,7 @@
    "name": "Gold",
    "value": "≈ 3.790 $",
    "change": null,
-   "note": "je Unze, Mi früh; tiefster Stand seit rund 14 Monaten, starker Dollar belastet",
+   "note": "je Unze, Mi früh; tiefster Stand seit über einem Jahr, starker Dollar belastet",
    "nsrc": 2,
    "verified": true
   },
@@ -138,7 +138,7 @@
    "signal": "vorsicht",
    "price": "",
    "change": null,
-   "note": "Kurs vom 17.11. nur aus 1 Quelle – nicht angezeigt. Bestätigt ist Montag: 52,12 $ (−4,72 %). Der Kupferpreis fiel auf ein 4-Monats-Tief (London rund 13.210 $/t), u. a. wegen Sorgen um weniger Rechenzentrums-Nachfrage und des starken Dollars. Unter dem 200-Tage-Schnitt, frisches technisches Verkaufssignal.",
+   "note": "Kurs vom 17.11. nur aus 1 Quelle – nicht angezeigt. Bestätigt ist Montag: 52,12 $ (−4,72 %). Der Kupferpreis fiel auf ein 4-Monats-Tief, u. a. wegen Sorgen um weniger Rechenzentrums-Nachfrage und des starken Dollars. Unter dem 200-Tage-Schnitt, frisches technisches Verkaufssignal.",
    "next": "Kein Termin gefunden",
    "nsrc": 1,
    "verified": false
@@ -174,7 +174,7 @@
    "signal": "vorsicht",
    "price": "14,28 $",
    "change": -3.84,
-   "note": "Fünf Verlusttage in Folge, nahe dem 52-Wochen-Tief (13,86 $). Keine Firmennachricht als Auslöser – steigende Zinsen belasten: Chef Noto sagte, die Prognose habe mit zwei Zinssenkungen gerechnet, stattdessen gab es eine Erhöhung.",
+   "note": "Sechs Verlusttage in Folge, nahe dem Jahrestief. Keine Firmennachricht als Auslöser – steigende Zinsen belasten: Chef Noto sagte, die Prognose habe mit zwei Zinssenkungen gerechnet, stattdessen gab es eine Erhöhung.",
    "next": "Fed-Zinsentscheid 9.12. (voraussichtlich)",
    "nsrc": 3,
    "verified": true
@@ -198,7 +198,7 @@
    "signal": "vorsicht",
    "price": "38,10 $",
    "change": -2.09,
-   "note": "Schluss 17.11. in London. Atomkraft-Werte fielen breit (u. a. Oklo, NuScale, Centrus); seit 11.11. rund −10 %. Unter dem 200-Tage-Schnitt, frisches technisches Verkaufssignal.",
+   "note": "Schluss 17.11. in London. Seit 11.11. rund −10 %; keine wichtigen Einzelnachrichten bestätigt – der Sektor leidet mit dem Tech-Abverkauf. Unter dem 200-Tage-Schnitt, frisches technisches Verkaufssignal.",
    "next": "Kein Termin gefunden",
    "nsrc": 2,
    "verified": true
@@ -223,7 +223,7 @@
    "price": "29,70 HK$",
    "change": 2.13,
    "note": "Schluss 17.11. in Hongkong; heute bisher kaum verändert (Handel läuft noch). Über dem 200-Tage-Schnitt, Widerstand bei rund 32,30 HK$.",
-   "next": "Q3-Zahlen Di 24.11. (laut Unternehmen), Telefonkonferenz 12:30 Uhr",
+   "next": "Q3-Zahlen Di 24.11. (bestätigt), Telefonkonferenz 12:30 Uhr (voraussichtlich)",
    "nsrc": 2,
    "verified": true
   },
@@ -275,7 +275,7 @@
   },
   {
    "title": "Zinsangst: Fed-Erhöhung im Dezember erwartet",
-   "text": "Der Markt rechnet zu rund 95 % mit einer Zinserhöhung im Dezember; St.-Louis-Fed-Chef Musalem hält bis zu vier weitere Schritte für möglich. Die 10-jährige US-Rendite liegt bei rund 5,1 %, Gold auf einem 14-Monats-Tief. Heute 20 Uhr kommt das Fed-Protokoll.",
+   "text": "Der Markt rechnet zu rund 95 % mit einer Zinserhöhung im Dezember; St.-Louis-Fed-Chef Musalem hält bis zu vier weitere Schritte für möglich. Die 10-jährige US-Rendite liegt bei rund 5,1 %, Gold auf dem tiefsten Stand seit über einem Jahr. Heute 20 Uhr kommt das Fed-Protokoll.",
    "tags": [
     "USA",
     "Zinsen",
@@ -336,7 +336,7 @@
    {
     "ticker": "SOFI",
     "name": "SoFi",
-    "why": "Nahe dem 52-Wochen-Tief.",
+    "why": "Nahe dem Jahrestief.",
     "risk": "Steigende Zinsen treffen das Geschäftsmodell direkt; kein Boden erkennbar.",
     "strength": "mittel"
    }
@@ -395,7 +395,7 @@
   },
   {
    "date": "Di 24.11.",
-   "text": "Xiaomi Q3-Zahlen (Telefonkonferenz 12:30 Uhr)",
+   "text": "Xiaomi Q3-Zahlen (Telefonkonferenz voraussichtlich 12:30 Uhr)",
    "mine": true
   },
   {
@@ -405,7 +405,7 @@
   },
   {
    "date": "Di 24.11.",
-   "text": "ifo-Geschäftsklima (Uhrzeit uneinheitlich: 10 bzw. 10:30 Uhr)",
+   "text": "ifo-Geschäftsklima, 10 Uhr",
    "mine": false
   },
   {

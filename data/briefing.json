@@ -1,71 +1,71 @@
 {
- "updated": "2026-11-18T08:00:00+01:00",
- "updated_label": "Mi, 18.11.2026, 08:00 Uhr",
+ "updated": "2026-11-19T07:40:00+01:00",
+ "updated_label": "Do, 19.11.2026, 07:40 Uhr",
  "kind": "Tagesbriefing",
- "mood": "Vierter Verlusttag in Folge an der Wall Street (S&P 500 −1,03 %), der DAX fiel sogar um 2,08 %. Hoffnungsschimmer: Nvidia hat nach US-Börsenschluss klar besser als erwartet abgeschnitten, die Aktie stieg nachbörslich um rund 4 %, und die US-Terminkontrakte (Wetten auf den Börsenstart) liegen leicht im Plus.",
- "check_note": "13 von 15 Depotkursen und alle Indizes mit mindestens 2 Quellen bestätigt; für die London-ETFs Core S&P 500 und Copper Miners gab es für Dienstag nur 1 Quelle, daher ohne Kurs. Ein unabhängiger Faktencheck prüfte 74 Angaben: 1 Fehler (SoFi: sechs statt fünf Verlusttage) korrigiert, 4 unsichere Details entfernt oder abgeschwächt; ein gemeldeter COPX-Fehler betraf die US-Variante des ETFs, nicht deine London-Notiz.",
+ "mood": "Gemischter Tag: Der S&P 500 fiel den fünften Tag in Folge (−0,23 %), der Dow verlor 1,11 %, nur die Nasdaq stieg (+0,42 %). Nvidia drehte trotz starker Zahlen ins Minus (−2,9 %), und laut Fed-Protokoll halten fast alle Notenbanker weitere Zinserhöhungen für nötig.",
+ "check_note": "Alle 15 Depotkurse und die 4 Indizes mit mindestens 2 Quellen bestätigt (Quantum-ETF nur mit Kurs vom 17.11., für den 18.11. gab es nur 1 Quelle); Brent wegen widersprüchlicher Quellen ohne Wert. Ein unabhängiger Faktencheck prüfte rund 88 Angaben: 6 Fehler (u. a. SpaceX-Texas-Projekt ist noch nicht genehmigt, Take-Two hat die Wochenverluste nicht ganz aufgeholt) korrigiert, unsichere Details entfernt oder gekennzeichnet.",
  "markets": [
   {
    "name": "S&P 500",
-   "value": "7.340,53",
-   "change": -1.03,
-   "note": "Di-Schluss; tiefster Stand seit Ende Juli, 4. Minustag in Folge. Terminkontrakte Mi früh leicht im Plus",
+   "value": "7.323,63",
+   "change": -0.23,
+   "note": "Mi-Schluss; 5. Minustag in Folge",
    "nsrc": 3,
    "verified": true
   },
   {
    "name": "Nasdaq Comp.",
-   "value": "24.328,38",
-   "change": -0.74,
-   "note": "Di-Schluss; Software-Werte schwach",
+   "value": "24.429,88",
+   "change": 0.42,
+   "note": "Mi-Schluss; einziger großer US-Index im Plus",
    "nsrc": 3,
    "verified": true
   },
   {
    "name": "Dow Jones",
-   "value": "50.759,42",
-   "change": -1.64,
-   "note": "Di-Schluss (−849 Punkte)",
+   "value": "50.198,17",
+   "change": -1.11,
+   "note": "Mi-Schluss (−561 Punkte)",
    "nsrc": 3,
    "verified": true
   },
   {
    "name": "DAX",
-   "value": "26.045,37",
-   "change": -2.08,
-   "note": "Di-Schluss; Deutsche Bank (−6 %) und SAP (−5,6 %) belasteten",
-   "nsrc": 3,
-   "verified": true
-  },
-  {
-   "name": "Bitcoin",
-   "value": "≈ 64.300–64.600 $",
-   "change": null,
-   "note": "Mi früh",
+   "value": "25.736,24",
+   "change": -1.19,
+   "note": "Mi-Schluss; wieder unter 26.000 Punkten – Zinssorgen und Zweifel am KI-Boom",
    "nsrc": 2,
    "verified": true
   },
   {
-   "name": "Gold",
-   "value": "≈ 3.790 $",
+   "name": "Bitcoin",
+   "value": "≈ 63.460 $",
    "change": null,
-   "note": "je Unze, Mi früh; tiefster Stand seit über einem Jahr, starker Dollar belastet",
+   "note": "Do früh",
+   "nsrc": 3,
+   "verified": true
+  },
+  {
+   "name": "Gold",
+   "value": "≈ 3.740 $",
+   "change": null,
+   "note": "je Unze, Do früh; neues Jahrestief (starker Dollar, Zinserhöhungs-Erwartungen)",
    "nsrc": 2,
    "verified": true
   },
   {
    "name": "Öl (Brent)",
-   "value": "≈ 93 $",
+   "value": "",
    "change": null,
-   "note": "Di-Schluss (93,02 bzw. 93,14 $ je nach Quelle); Mi früh um 92,60 $",
+   "note": "Quellen widersprüchlich (zwischen rund 89 und 92 $) – nicht angezeigt. Bestätigt: Ölpreis zuletzt deutlich gefallen",
    "nsrc": 2,
-   "verified": true
+   "verified": false
   },
   {
    "name": "US-Rendite 10J",
-   "value": "≈ 5,1 %",
+   "value": "≈ 5,07 %",
    "change": null,
-   "note": "Markt rechnet laut CME-FedWatch mit rund 95 % mit einer Zinserhöhung der Fed im Dezember",
+   "note": "Mi-Schluss; leicht gesunken. Markt rechnet laut Trading Economics zu rund 90 % mit einer Fed-Zinserhöhung im Dezember",
    "nsrc": 2,
    "verified": true
   }
@@ -76,21 +76,21 @@
    "ticker": "CSPX",
    "type": "ETF",
    "signal": "halten",
-   "price": "",
-   "change": null,
-   "note": "Londoner Börsenkurs vom 17.11. nur aus 1 Quelle – daher nicht angezeigt. Laut Anbieter iShares lag der Fondswert (Wert aller enthaltenen Aktien je Anteil) am 17.11. bei 792,60 $ (−1,03 %, genau wie der S&P 500) – also leicht unter der Unterstützung (Kursbereich, wo zuletzt Käufer kamen) bei 800 $. Langfristiger Trend noch intakt (über dem 200-Tage-Schnitt von rund 791 $), aber knapp.",
-   "next": "Fed-Protokoll heute 20 Uhr; Thanksgiving 26.11. (US-Börsen zu)",
-   "nsrc": 1,
-   "verified": false
+   "price": "789,92 $",
+   "change": -0.13,
+   "note": "Schluss 18.11. in London. Liegt jetzt knapp (≈ 0,2 %) unter dem 200-Tage-Schnitt (Durchschnittskurs der letzten 200 Handelstage, ≈ 791,56 $) – der langfristige Trend steht auf der Kippe. RSI 34 (Kraftmesser 0–100, unter 30 gilt als überverkauft). Für einen Breit-ETF kein Grund zur Hektik.",
+   "next": "Thanksgiving Do 26.11. (US-Börsen zu)",
+   "nsrc": 2,
+   "verified": true
   },
   {
    "name": "AMD",
    "ticker": "AMD",
    "type": "Aktie",
-   "signal": "beobachten",
-   "price": "503,41 $",
-   "change": -0.17,
-   "note": "Hält sich knapp über der Unterstützung bei 495 $. Die starken Nvidia-Zahlen (Umsatz 115,8 Mrd. $, Ausblick über den Erwartungen) könnten heute den ganzen KI-Chip-Sektor stützen. Belastend: Die USA haben die Exportregeln für KI-Chips nach Südostasien und Brasilien verschärft.",
+   "signal": "halten",
+   "price": "530,14 $",
+   "change": 5.31,
+   "note": "Deutliche Erholung nach zwei schwachen Tagen: Chip-Werte wurden von Nvidias starken Zahlen gestützt; zudem hat AMD die Übernahme des KI-Chip-Entwicklers Taalas abgeschlossen. Über dem 200-Tage-Schnitt (≈ 427 $), Unterstützung (Kursbereich, wo zuletzt Käufer kamen) bei rund 495 $. Analysten-Ø-Ziel ≈ 658 $ (+24 %).",
    "next": "Keine eigenen Termine in den nächsten 7 Tagen gefunden",
    "nsrc": 2,
    "verified": true
@@ -100,10 +100,10 @@
    "ticker": "GOOGL",
    "type": "Aktie",
    "signal": "beobachten",
-   "price": "280,20 $",
-   "change": -1.24,
-   "note": "Keine wichtigen Nachrichten gefunden (Meldungen zu einem Berkshire-Einstieg stammen aus 2025). Technisch angeschlagen: unter dem 200-Tage-Schnitt, RSI 33 (Kraftmesser 0–100, unter 30 gilt als überverkauft). Nächste Unterstützung bei rund 274,50 $.",
-   "next": "Anthropic-Börsengang Do 19.11. (Alphabet ist an Anthropic beteiligt)",
+   "price": "282,44 $",
+   "change": 0.8,
+   "note": "Keine wichtigen neuen Firmennachrichten. Alphabet ist an Anthropic beteiligt, das heute an die Börse geht. Technisch weiter angeschlagen: unter dem 200-Tage-Schnitt (≈ 338 $), RSI 35; Unterstützung bei rund 274,50 $.",
+   "next": "Anthropic-Börsengang heute Do 19.11.",
    "nsrc": 2,
    "verified": true
   },
@@ -112,10 +112,10 @@
    "ticker": "CAT",
    "type": "Aktie",
    "signal": "beobachten",
-   "price": "570,79 $",
-   "change": 0.05,
-   "note": "Keine wichtigen neuen Nachrichten. Stabilisiert sich nach dem Rückgang vom Montag; weit unter dem 200-Tage-Schnitt (≈ 806 $), Unterstützung bei rund 557 $.",
-   "next": "Dividende 1,63 $ wird Do 19.11. ausgezahlt (bestätigt)",
+   "price": "558,77 $",
+   "change": -2.11,
+   "note": "Fiel erneut, weil Anleger Wetten auf den KI-Rechenzentrums-Ausbau abbauen. RSI 30 = überverkauft, eine Gegenbewegung ist möglich, aber nicht sicher. Weit unter dem 200-Tage-Schnitt (≈ 806 $); nächste Unterstützung bei rund 537 $.",
+   "next": "Dividende 1,63 $ wird heute Do 19.11. ausgezahlt",
    "nsrc": 2,
    "verified": true
   },
@@ -124,10 +124,10 @@
    "ticker": "WMT",
    "type": "Aktie",
    "signal": "halten",
-   "price": "127,52 $",
-   "change": -0.69,
-   "note": "Langfristiger Aufwärtstrend intakt; nahe dem Analysten-Ø-Ziel (≈ 132 $). Spannend werden die Zahlen am Donnerstag: Walmart selbst erwartet 0,62–0,64 $ Gewinn je Aktie.",
-   "next": "Q3-Zahlen Do 19.11., 13:00 Uhr (vom Unternehmen bestätigt), Telefonkonferenz 14 Uhr",
+   "price": "127,36 $",
+   "change": -0.13,
+   "note": "Heute kommen die Quartalszahlen. Erwartet werden laut Analysten-Vorschauen rund 0,64 $ Gewinn je Aktie und rund 187 Mrd. $ Umsatz (Walmart selbst: 0,62–0,64 $). Langfristiger Aufwärtstrend intakt; Kurs nahe dem Analysten-Ø-Ziel (≈ 132 $), Widerstand (Kursbereich, wo zuletzt verkauft wurde) bei rund 133 $. Nach Zahlen sind größere Kurssprünge in beide Richtungen möglich.",
+   "next": "Q3-Zahlen heute Do 19.11., 13:00 Uhr; Telefonkonferenz 14 Uhr",
    "nsrc": 2,
    "verified": true
   },
@@ -136,21 +136,21 @@
    "ticker": "COPX",
    "type": "ETF",
    "signal": "vorsicht",
-   "price": "",
-   "change": null,
-   "note": "Kurs vom 17.11. nur aus 1 Quelle – nicht angezeigt. Bestätigt ist Montag: 52,12 $ (−4,72 %). Der Kupferpreis fiel auf ein 4-Monats-Tief, u. a. wegen Sorgen um weniger Rechenzentrums-Nachfrage und des starken Dollars. Unter dem 200-Tage-Schnitt, frisches technisches Verkaufssignal.",
+   "price": "47,47 $",
+   "change": -7.72,
+   "note": "Schluss 18.11. in London – heftiger Tagesverlust. Der Kupferpreis fiel an der Londoner Metallbörse auf den tiefsten Stand seit April; große Minenwerte wie Freeport verloren rund 7 %. Gründe: starker Dollar, Sorge um weniger Nachfrage aus dem KI-Rechenzentrumsbau, schwache China-Daten. Klar unter dem 200-Tage-Schnitt; nächste Unterstützung erst bei rund 43 $ (≈ −9 %).",
    "next": "Kein Termin gefunden",
-   "nsrc": 1,
-   "verified": false
+   "nsrc": 2,
+   "verified": true
   },
   {
    "name": "AbbVie",
    "ticker": "ABBV",
    "type": "Aktie",
    "signal": "halten",
-   "price": "292,82 $",
-   "change": -0.59,
-   "note": "Keine wichtigen neuen Nachrichten. Die Dividende von 1,73 $ wurde am 16.11. gezahlt; ab Februar 2027 steigt sie um 5,2 % (angekündigt). Langfristiger Aufwärtstrend intakt.",
+   "price": "286,01 $",
+   "change": -2.33,
+   "note": "Keine wichtigen Nachrichten gefunden – kein konkreter Grund für das Minus bestätigt. Langfristiger Aufwärtstrend intakt (über dem 200-Tage-Schnitt ≈ 242 $); Unterstützung bei rund 280 $.",
    "next": "Kein Termin in den nächsten 7 Tagen gefunden",
    "nsrc": 2,
    "verified": true
@@ -160,10 +160,10 @@
    "ticker": "CAKE",
    "type": "Aktie",
    "signal": "halten",
-   "price": "111,96 $",
-   "change": 2.03,
-   "note": "Stieg gegen den Markt – einen konkreten Grund haben wir nicht gefunden. Liegt schon über dem Analysten-Ø-Ziel (≈ 106 $); Widerstand (Kursbereich, wo zuletzt verkauft wurde) bei rund 118 $.",
-   "next": "Investorenkonferenz heute Mi 18.11., 17:15 Uhr; Dividende 0,30 $ am 24.11. (beides bestätigt)",
+   "price": "120,05 $",
+   "change": 7.23,
+   "note": "Kräftiges Plus am Tag des Auftritts auf der Stephens-Investorenkonferenz; laut Zusammenfassung betonte das Management Rekordumsätze und mehr Gäste. Ein direkter Zusammenhang mit dem Kurssprung ist nicht bestätigt. Kurs liegt rund 12 % über dem Analysten-Ø-Ziel (≈ 107 $) und am Widerstand bei rund 121 $ – Gewinnmitnahmen möglich.",
+   "next": "Dividende 0,30 $ am Di 24.11. (bestätigt)",
    "nsrc": 2,
    "verified": true
   },
@@ -172,11 +172,11 @@
    "ticker": "SOFI",
    "type": "Aktie",
    "signal": "vorsicht",
-   "price": "14,28 $",
-   "change": -3.84,
-   "note": "Sechs Verlusttage in Folge, nahe dem Jahrestief. Keine Firmennachricht als Auslöser – steigende Zinsen belasten: Chef Noto sagte, die Prognose habe mit zwei Zinssenkungen gerechnet, stattdessen gab es eine Erhöhung.",
+   "price": "14,11 $",
+   "change": -1.19,
+   "note": "Siebter Verlusttag in Folge, ohne neue Firmennachricht; steigende Zinsen belasten. Auf Jahressicht rund −48 %. Unter dem 200-Tage-Schnitt; Unterstützung bei rund 13,86 $ – nur noch knapp 2 % entfernt.",
    "next": "Fed-Zinsentscheid 9.12. (voraussichtlich)",
-   "nsrc": 3,
+   "nsrc": 2,
    "verified": true
   },
   {
@@ -184,11 +184,11 @@
    "ticker": "AMZN",
    "type": "Aktie",
    "signal": "halten",
-   "price": "257,89 $",
-   "change": 0.05,
-   "note": "Nach dem Minus vom Montag (Raketen-Fehlstart mit 40 Amazon-Leo-Satelliten, neue Chip-Exportregel) stabil. Über dem 200-Tage-Schnitt, Unterstützung bei rund 250 $.",
-   "next": "AWS re:Invent ab 30.11. (voraussichtlich)",
-   "nsrc": 3,
+   "price": "267,74 $",
+   "change": 3.82,
+   "note": "Kräftiges Plus am Tag der Anthropic-Preisfestsetzung: Amazon hält laut Börsenprospekt rund 14,7 % an Anthropic, der Ausgabepreis von 83 $ macht diese Beteiligung sichtbar wertvoller (ein direkter Zusammenhang mit dem Kursplus ist naheliegend, aber nicht ausdrücklich bestätigt). Über dem 200-Tage-Schnitt; Widerstand bei rund 275 $.",
+   "next": "Anthropic-Handelsstart heute; AWS re:Invent ab 30.11. (voraussichtlich)",
+   "nsrc": 2,
    "verified": true
   },
   {
@@ -196,9 +196,9 @@
    "ticker": "NUCL",
    "type": "ETF",
    "signal": "vorsicht",
-   "price": "38,10 $",
-   "change": -2.09,
-   "note": "Schluss 17.11. in London. Seit 11.11. rund −10 %; keine wichtigen Einzelnachrichten bestätigt – der Sektor leidet mit dem Tech-Abverkauf. Unter dem 200-Tage-Schnitt, frisches technisches Verkaufssignal.",
+   "price": "37,55 $",
+   "change": -1.44,
+   "note": "Schluss 18.11. in London. Weiter abwärts mit dem Abverkauf bei KI- und Energiethemen; keine Einzelnachricht bestätigt. Kurs ist knapp unter die Unterstützung bei rund 37,85 $ gerutscht, deutlich unter dem 200-Tage-Schnitt (≈ 55 $).",
    "next": "Kein Termin gefunden",
    "nsrc": 2,
    "verified": true
@@ -208,22 +208,22 @@
    "ticker": "SPCX",
    "type": "Aktie",
    "signal": "halten",
-   "price": "141,70 $",
-   "change": 3.16,
-   "note": "Stieg gegen den Markt: Nvidia hat laut Pflichtmeldung (13F) seine Beteiligung auf 130,5 Mio. Aktien aufgestockt; am 14.11. wurde beim Starship-Testflug erstmals die Oberstufe gefangen. Widerstand bei rund 145 $.",
+   "price": "143,50 $",
+   "change": 1.27,
+   "note": "Leicht im Plus. SpaceX plant in Texas ein 24-Mrd.-$-Projekt (KI-Rechenzentrum mit Gaskraftwerk); eine Genehmigung gibt es noch nicht – die Stadt Starbase entscheidet am 9.12. über Steuervorteile. Kurs knapp unter dem Widerstand (Kursbereich, wo zuletzt verkauft wurde) bei rund 145 $.",
    "next": "Ende der Haltefrist für Alt-Aktionäre um den 8./9.12. (voraussichtlich, Angaben uneinheitlich)",
-   "nsrc": 3,
+   "nsrc": 2,
    "verified": true
   },
   {
    "name": "Xiaomi",
    "ticker": "1810.HK",
    "type": "Aktie",
-   "signal": "halten",
-   "price": "29,70 HK$",
-   "change": 2.13,
-   "note": "Schluss 17.11. in Hongkong; heute bisher kaum verändert (Handel läuft noch). Über dem 200-Tage-Schnitt, Widerstand bei rund 32,30 HK$.",
-   "next": "Q3-Zahlen Di 24.11. (bestätigt), Telefonkonferenz 12:30 Uhr (voraussichtlich)",
+   "signal": "beobachten",
+   "price": "28,50 HK$",
+   "change": -3.91,
+   "note": "Stand Do-Nachmittag in Hongkong (Handel läuft noch, Wert kann sich ändern). Kurz vor den Zahlen schwach; wieder unter dem 200-Tage-Schnitt (≈ 29,11 HK$) und frisches technisches Verkaufssignal (MACD, ein Trendfolge-Indikator). Unterstützung bei rund 28,20 HK$.",
+   "next": "Q3-Zahlen Di 24.11. (bestätigt)",
    "nsrc": 2,
    "verified": true
   },
@@ -233,8 +233,8 @@
    "type": "ETF",
    "signal": "vorsicht",
    "price": "27,55 $",
-   "change": -3.4,
-   "note": "Schluss 17.11. in London. Quanten-Aktien fielen erneut (Rigetti −7 %, IonQ und D-Wave je −6 % im Tagesverlauf) – höhere Zinsen und Angst vor Kapitalerhöhungen. Seit 11.11. rund −12 %, unter dem 200-Tage-Schnitt.",
+   "change": -3.39,
+   "note": "Schluss 17.11. in London (für den 18.11. nur 1 Quelle, daher nicht angezeigt). Quanten-Aktien stehen wegen höherer Zinsen und hoher Bewertungen weiter unter Druck. Unter dem 200-Tage-Schnitt (≈ 35,76 $), RSI 30; Unterstützung bei rund 27,23 $.",
    "next": "Kein Termin gefunden",
    "nsrc": 2,
    "verified": true
@@ -243,19 +243,29 @@
    "name": "Take-Two",
    "ticker": "TTWO",
    "type": "Aktie",
-   "signal": "beobachten",
-   "price": "203,93 $",
-   "change": -4.47,
-   "note": "In zwei Tagen −10,5 % – keine Firmennachricht, sondern Tech-Abverkauf und Gewinnmitnahmen vor dem GTA-VI-Start. Analysten bleiben positiv (Ø-Ziel ≈ 284 $). Unter dem 200-Tage-Schnitt; Unterstützung bei rund 188 $.",
-   "next": "GTA VI erscheint Do 19.11. (PS5/Xbox)",
+   "signal": "halten",
+   "price": "216,61 $",
+   "change": 6.22,
+   "note": "Starke Erholung: GTA VI erhielt Top-Kritiken (Metacritic 99); Wells Fargo hob laut Berichten die Verkaufsschätzung von 35 auf 65 Mio. Stück an. Der Kurs liegt aber noch rund 5 % unter dem Schluss vom Freitag (227,82 $). Knapp unter dem 200-Tage-Schnitt (≈ 218 $); Analysten-Ø-Ziel ≈ 284 $ (+31 %).",
+   "next": "GTA VI erscheint heute Do 19.11. (PS5/Xbox)",
    "nsrc": 2,
    "verified": true
   }
  ],
  "news": [
   {
-   "title": "Nvidia übertrifft Erwartungen",
-   "text": "Umsatz 115,8 Mrd. $ (erwartet 109,1 Mrd.), Ausblick fürs nächste Quartal 130 Mrd. $ (erwartet ≈ 125 Mrd.). Die Aktie stieg nachbörslich um rund 4 %. Belastend bleiben der Rücktritt von Chef Jensen Huang am 12.11. und ein Bericht über eine Prüfung durch die US-Börsenaufsicht SEC.",
+   "title": "Anthropic-Börsengang: 83 $ je Aktie, Rekord-Erlös",
+   "text": "Anthropic hat den Ausgabepreis auf 83 $ festgelegt – über der Spanne von 70–78 $ – und rund 980 Mio. Aktien verkauft. Erlös rund 81,3 Mrd. $, laut CNBC der größte Börsengang (ohne Mehrzuteilungsoption gerechnet; mit dieser lag SpaceX im Juni höher). Handelsstart heute an der Nasdaq unter „ANT“. Amazon und Alphabet sind große Anteilseigner.",
+   "tags": [
+    "USA",
+    "KI",
+    "AMZN",
+    "GOOGL"
+   ]
+  },
+  {
+   "title": "Nvidia dreht trotz Rekordzahlen ins Minus",
+   "text": "Trotz Umsatz von 115,8 Mrd. $ (+103 %) schloss die Aktie 2,9 % tiefer. Belastend: die Führungskrise nach dem Rücktritt von Jensen Huang, neue Vorwürfe rund um ihn und Zweifel, ob sich die riesigen KI-Investitionen auszahlen.",
    "tags": [
     "USA",
     "KI",
@@ -264,18 +274,8 @@
    ]
   },
   {
-   "title": "Anthropic-Börsengang am Donnerstag",
-   "text": "Der Ausgabepreis wird heute Abend (US-Zeit) festgelegt, Handelsstart ist Do 19.11. an der Nasdaq (Kürzel ANT). Preisspanne 70–78 $; laut WSJ könnte der Preis wegen hoher Nachfrage angehoben werden.",
-   "tags": [
-    "USA",
-    "KI",
-    "GOOGL",
-    "AMZN"
-   ]
-  },
-  {
-   "title": "Zinsangst: Fed-Erhöhung im Dezember erwartet",
-   "text": "Der Markt rechnet zu rund 95 % mit einer Zinserhöhung im Dezember; St.-Louis-Fed-Chef Musalem hält bis zu vier weitere Schritte für möglich. Die 10-jährige US-Rendite liegt bei rund 5,1 %, Gold auf dem tiefsten Stand seit über einem Jahr. Heute 20 Uhr kommt das Fed-Protokoll.",
+   "title": "Fed-Protokoll: fast alle für weitere Zinserhöhungen",
+   "text": "Laut Protokoll der Oktober-Sitzung halten fast alle Fed-Mitglieder weitere Zinserhöhungen für angebracht. Das stärkte den Dollar und drückt auf Gold und Wachstumswerte. Die 10-jährige US-Rendite liegt bei rund 5,07 %.",
    "tags": [
     "USA",
     "Zinsen",
@@ -283,28 +283,26 @@
    ]
   },
   {
-   "title": "DAX verliert über 2 %",
-   "text": "Deutsche Bank (−6 %) nach Berichten über Schwächen bei der Geldwäsche-Kontrolle und SAP (−5,6 %) zogen den Index nach unten.",
-   "tags": [
-    "Europa"
-   ]
-  },
-  {
-   "title": "USA verschärfen Chip-Exportregeln",
-   "text": "Neue Auflagen für KI-Chip-Lieferungen nach Singapur, Malaysia, Thailand, Indonesien und Brasilien belasten Chip- und Cloud-Werte.",
-   "tags": [
-    "USA",
-    "KI",
-    "AMD",
-    "AMZN"
-   ]
-  },
-  {
-   "title": "Kupfer auf 4-Monats-Tief",
-   "text": "Der Kupferpreis fiel auf den tiefsten Stand seit vier Monaten – Grund sind Sorgen um geringere Nachfrage aus Rechenzentren und der starke Dollar.",
+   "title": "Kupfer-Ausverkauf trifft Minenaktien",
+   "text": "Der Kupferpreis fiel an der Londoner Metallbörse auf den tiefsten Stand seit April; Freeport verlor rund 7 %, Southern Copper rund 6 %. Gründe: starker Dollar, Sorgen um die Nachfrage aus dem KI-Ausbau und schwache China-Daten.",
    "tags": [
     "Rohstoffe",
     "COPX"
+   ]
+  },
+  {
+   "title": "GTA VI startet mit Top-Kritiken",
+   "text": "Das Spiel erscheint heute und erhielt eine Metacritic-Wertung von 99. Take-Two stieg am Mittwoch um 6,2 %.",
+   "tags": [
+    "USA",
+    "TTWO"
+   ]
+  },
+  {
+   "title": "DAX wieder unter 26.000 Punkten",
+   "text": "Der DAX verlor 1,19 % auf 25.736 Punkte. Belastend waren schwache Vorgaben aus den USA, die Erwartung höherer US-Zinsen und Zweifel am KI-Boom; Zalando stieg nach Aktienkäufen eines Großaktionärs.",
+   "tags": [
+    "Europa"
    ]
   }
  ],
@@ -313,15 +311,15 @@
    {
     "ticker": "META",
     "name": "Meta Platforms",
-    "why": "Chance der Woche: Kurs 618,87 $ nahe der starken Unterstützung bei rund 606 $; Analysten-Ø-Ziel ≈ 848 $ (+37 %).",
-    "risk": "Liegt inzwischen unter dem 200-Tage-Schnitt; bei weiterem Tech-Abverkauf droht Rutsch Richtung 557 $.",
+    "why": "Chance der Woche: Kurs 616,38 $, über der Unterstützung bei rund 595 $; Analysten-Ø-Ziel ≈ 848 $ (+38 %).",
+    "risk": "Unter dem 200-Tage-Schnitt (≈ 630 $); Streit vor Gericht um Zuckerbergs Aktienplan und sehr hohe KI-Ausgaben.",
     "strength": "mittel"
    },
    {
-    "ticker": "WMT",
-    "name": "Walmart",
-    "why": "Stabiler Aufwärtstrend in einem schwachen Markt; Zahlen am Do 19.11. könnten Klarheit bringen.",
-    "risk": "Kurs liegt schon nahe am Analysten-Ø-Ziel; enttäuschende Zahlen könnten Gewinnmitnahmen auslösen.",
+    "ticker": "CAT",
+    "name": "Caterpillar",
+    "why": "RSI 30 – technisch überverkauft, eine Gegenbewegung ist möglich; Analysten-Ø-Ziel weit über Kurs.",
+    "risk": "Klarer Abwärtstrend; der Abbau von KI-Infrastruktur-Wetten kann weiter belasten.",
     "strength": "schwach"
    }
   ],
@@ -329,48 +327,23 @@
    {
     "ticker": "ANT",
     "name": "Anthropic (Börsengang)",
-    "why": "Erster Handelstag Do 19.11. – große Aufmerksamkeit.",
-    "risk": "Erste Handelstage nach Börsengängen schwanken oft stark; nicht impulsiv kaufen.",
+    "why": "Erster Handelstag heute – enorme Aufmerksamkeit.",
+    "risk": "Erste Handelstage schwanken oft stark; nicht impulsiv zum Eröffnungskurs kaufen.",
     "strength": "mittel"
    },
    {
-    "ticker": "SOFI",
-    "name": "SoFi",
-    "why": "Nahe dem Jahrestief.",
-    "risk": "Steigende Zinsen treffen das Geschäftsmodell direkt; kein Boden erkennbar.",
+    "ticker": "COPX",
+    "name": "Copper Miners",
+    "why": "−7,7 % an einem Tag, Kupfer auf Mehrmonatstief.",
+    "risk": "Kein Boden erkennbar; nächste Unterstützung erst rund 9 % tiefer.",
     "strength": "mittel"
    }
   ]
  },
  "calendar": [
   {
-   "date": "Mi 18.11.",
-   "text": "Eurozone-Inflation (endgültig), 11 Uhr",
-   "mine": false
-  },
-  {
-   "date": "Mi 18.11.",
-   "text": "Target, Lowe's und TJX: Zahlen vor US-Börsenstart",
-   "mine": false
-  },
-  {
-   "date": "Mi 18.11.",
-   "text": "Cheesecake Factory auf Stephens-Investorenkonferenz, 17:15 Uhr",
-   "mine": true
-  },
-  {
-   "date": "Mi 18.11.",
-   "text": "Protokoll der letzten Fed-Sitzung, 20 Uhr",
-   "mine": false
-  },
-  {
-   "date": "Mi 18.11.",
-   "text": "Anthropic legt Ausgabepreis fest (abends US-Zeit)",
-   "mine": false
-  },
-  {
    "date": "Do 19.11.",
-   "text": "Walmart Q3-Zahlen, 13 Uhr (bestätigt)",
+   "text": "Walmart Q3-Zahlen, 13 Uhr (bestätigt); Telefonkonferenz 14 Uhr",
    "mine": true
   },
   {
@@ -389,13 +362,18 @@
    "mine": false
   },
   {
+   "date": "Do 19.11.",
+   "text": "USA: Erstanträge Arbeitslosenhilfe und Philly-Fed-Index, 14:30 Uhr",
+   "mine": false
+  },
+  {
    "date": "Mo 23.11.",
-   "text": "Einkaufsmanagerindizes (Stimmung in Firmen) DE/Eurozone/USA",
+   "text": "Einkaufsmanagerindizes (Stimmung in Firmen) DE/Eurozone/USA (voraussichtlich)",
    "mine": false
   },
   {
    "date": "Di 24.11.",
-   "text": "Xiaomi Q3-Zahlen (Telefonkonferenz voraussichtlich 12:30 Uhr)",
+   "text": "Xiaomi Q3-Zahlen (bestätigt)",
    "mine": true
   },
   {
@@ -405,12 +383,12 @@
   },
   {
    "date": "Di 24.11.",
-   "text": "ifo-Geschäftsklima, 10 Uhr",
+   "text": "ifo-Geschäftsklima, 10:30 Uhr",
    "mine": false
   },
   {
    "date": "Mi 25.11.",
-   "text": "US-Inflation PCE und BIP Q3, 14:30 Uhr; deutsches BIP Q3, 8 Uhr",
+   "text": "US-Inflation PCE und BIP Q3, 14:30 Uhr; deutsches BIP Q3 (Details, voraussichtlich)",
    "mine": false
   },
   {
@@ -421,72 +399,76 @@
  ],
  "sources": [
   {
-   "title": "CNBC: Stock market today 17.11.2026",
-   "url": "https://www.cnbc.com/2026/11/17/stock-market-today-live-updates.html"
+   "title": "La Nación/AP: How major US stock indexes fared 18.11.2026",
+   "url": "https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-wednesday-11182026-nid18112026/"
   },
   {
-   "title": "Investing.com/Reuters: Asia stocks mixed as Nvidia optimism offsets Wall Street rout",
-   "url": "https://in.investing.com/news/stock-market-news/asia-stocks-mixed-as-nvidia-optimism-offsets-wall-street-rout-fed-mins-in-focus-5711387"
+   "title": "CNBC: Stock market today 18.11.2026",
+   "url": "https://www.cnbc.com/2026/11/18/stock-market-today-live-updates.html"
   },
   {
-   "title": "dpa-AFX: Aktien Frankfurt Schluss – Klare Verluste",
-   "url": "https://de.marketscreener.com/boerse-nachrichten/aktien-frankfurt-schluss-klare-verluste-nervositaet-vor-nvidia-zahlen-ce785edcdd89f420"
+   "title": "Yahoo/AFP: Stocks drop as booming Nvidia results drowned by spy scandal",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/stocks-drop-booming-nvidia-results-024500677.html"
   },
   {
-   "title": "Der Aktionär: DAX-Prognose 18.11.",
-   "url": "https://www.deraktionaer.de/artikel/indizes/dax-prognose-stabil-gold-faellt-nvidia-fed-dt-bank-sap-siemens-energy-anthropic-im-fokus-20445102.html"
+   "title": "Trading Economics: US-Aktien, Rendite, Gold, Brent",
+   "url": "https://tradingeconomics.com/united-states/stock-market"
   },
   {
-   "title": "Nvidia: Ergebnisse Q3 Geschäftsjahr 2027",
-   "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/"
+   "title": "ad-hoc-news: DAX fällt am Mittwoch um 1,19 %",
+   "url": "https://www.ad-hoc-news.de/boerse/news/marktberichte/dax-faellt-am-mittwoch-um-1-19-prozent-unter-26-000-punkte/70532374"
   },
   {
-   "title": "CNBC: Nvidia earnings Q3 2027",
-   "url": "https://www.cnbc.com/2026/11/17/nvidia-nvda-earnings-report-q3-2027.html"
+   "title": "CNBC: Anthropic IPO raises over $81 billion",
+   "url": "https://www.cnbc.com/2026/11/18/anthropic-ipo-ai-offering-price.html"
   },
   {
-   "title": "CNBC: Musalem zu Zinsen",
-   "url": "https://www.cnbc.com/2026/11/17/alberto-musalem-fed-interest-rates.html"
+   "title": "CNN: Anthropic’s $83 IPO price",
+   "url": "https://www.cnn.com/2026/11/18/investing/anthropic-ipo-price-stock"
   },
   {
-   "title": "Yahoo/AFP: Anthropic set to price IPO",
-   "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-price-ipo-key-030309911.html"
+   "title": "Fox Business: Take-Two surges as GTA VI rolls out",
+   "url": "https://www.foxbusiness.com/markets/take-two-stock-jumps-over-6-rockstars-long-awaited-gta-vi-arrives-after-13-year-wait"
   },
   {
-   "title": "finanzen.net: Tagesvorschau Mittwoch 18.11.",
-   "url": "https://www.finanzen.net/nachricht/aktien/tagesvorschau-mittwoch-18-november-16072058"
+   "title": "CNBC/BNN: GTA VI publisher Take-Two jumps",
+   "url": "https://www.bnnbloomberg.ca/business/company-news/2026/11/18/gta-vi-publisher-take-two-jumps-as-gamers-relish-blockbuster-release/"
   },
   {
-   "title": "Walmart: Q3-Telefonkonferenz 19.11.2026",
-   "url": "https://finviz.com/news/421667/walmart-to-host-third-quarter-earnings-conference-call-november-19-2026"
+   "title": "Proactive/Yahoo: Copper stocks fall as LME prices plunge",
+   "url": "https://finance.yahoo.com/markets/commodities/articles/copper-stocks-fall-lme-prices-160100723.html"
   },
   {
-   "title": "Cheesecake Factory: Stephens-Konferenz",
-   "url": "https://s29.q4cdn.com/187116270/files/content_files/Stephens-Conference-Press-Release-vFinal.pdf"
+   "title": "Yahoo: Why is AMD stock rising today?",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/why-advanced-micro-devices-stock-121232264.html"
   },
   {
-   "title": "iShares Core S&P 500 UCITS ETF (Fondswert)",
-   "url": "https://www.ishares.com/uk/individual/en/products/253743/ishares-sp-500-b-ucits-etf-acc-fund"
+   "title": "Yahoo: Anthropic-Prospekt – Anteile von Amazon und Google",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-ipo-filing-shows-amazon-141838999.html"
   },
   {
-   "title": "Börsen-Zeitung: Nvidia-Krise drückt den Kupferpreis",
-   "url": "https://www.boersen-zeitung.de/meinung-analyse/nvidia-krise-drueckt-den-kupferpreis"
+   "title": "Investing.com: Why is Caterpillar stock sliding today?",
+   "url": "https://ca.investing.com/news/stock-market-news/why-is-caterpillar-stock-sliding-today-93CH-4967364"
   },
   {
-   "title": "Yahoo/TheStreet: Nvidia und SpaceX",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-just-sent-powerful-signal-233300934.html"
+   "title": "Investing.com: Cheesecake Factory auf der Stephens-Konferenz",
+   "url": "https://www.investing.com/news/transcripts/the-cheesecake-factory-at-2026-stephens-annual-investment-conference-growth-broadens-93CH-5036743"
   },
   {
-   "title": "24/7 Wall St.: Quanten-Aktien fallen",
-   "url": "https://247wallst.com/investing/2026/11/17/rigetti-drops-7-as-quantum-stocks-extend-mondays-selloff-ionq-and-d-wave-fall-6/"
+   "title": "Seeking Alpha: SoFi fiel sieben Tage in Folge",
+   "url": "https://seekingalpha.com/news/4674282-sofi-technologies-shares-fell-for-seven-consecutive-sessions"
   },
   {
-   "title": "Forbes: GTA 6 Release",
-   "url": "https://www.forbes.com/sites/erikkain/2026/11/16/gta-6-release-date-time-ps5-xbox-series-x-download-size-day-one-update/"
+   "title": "S&P Global: Walmart earnings preview Q3 2027",
+   "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/11/walmart-earnings-preview-q3-2027"
   },
   {
-   "title": "Xiaomi IR: Q3-Ergebnisse 2026",
-   "url": "https://ir.mi.com/events/event-details/xiaomi-corporation-2026-third-quarter-results-announcement"
+   "title": "finanzen.net/dpa-AFX: Tagesvorschau 19.11.2026",
+   "url": "https://www.finanzen.net/nachricht/aktien/tagesvorschau-termine-am-19-november-2026-16074183"
+  },
+  {
+   "title": "Bloomberg: Meta pausiert Zuckerberg-Aktienplan",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-18/meta-pauses-zuckerberg-share-plan-during-investor-legal-fight"
   },
   {
    "title": "StockAnalysis: Kurshistorien (Zweitquelle Depotkurse)",

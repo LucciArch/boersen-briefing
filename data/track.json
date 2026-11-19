@@ -1,6 +1,61 @@
 {
  "picks": [
   {
+   "id": "KW 47 (16.–20.11.2026)|VRTX",
+   "week": "KW 47 (16.–20.11.2026)",
+   "created": "2026-11-19",
+   "sector": "Gesundheit & Pharma",
+   "ticker": "VRTX",
+   "symbol": "VRTX",
+   "name": "Vertex Pharmaceuticals",
+   "strength": "schwach",
+   "status": "wartet auf ersten Handelstag"
+  },
+  {
+   "id": "KW 47 (16.–20.11.2026)|UCG",
+   "week": "KW 47 (16.–20.11.2026)",
+   "created": "2026-11-19",
+   "sector": "Finanzen",
+   "ticker": "UCG",
+   "symbol": "UCG.MI",
+   "name": "UniCredit",
+   "strength": "mittel",
+   "status": "wartet auf ersten Handelstag"
+  },
+  {
+   "id": "KW 47 (16.–20.11.2026)|PANW",
+   "week": "KW 47 (16.–20.11.2026)",
+   "created": "2026-11-19",
+   "sector": "Technologie",
+   "ticker": "PANW",
+   "symbol": "PANW",
+   "name": "Palo Alto Networks",
+   "strength": "mittel",
+   "status": "wartet auf ersten Handelstag"
+  },
+  {
+   "id": "KW 47 (16.–20.11.2026)|ITT",
+   "week": "KW 47 (16.–20.11.2026)",
+   "created": "2026-11-19",
+   "sector": "Industrie",
+   "ticker": "ITT",
+   "symbol": "ITT",
+   "name": "ITT Inc.",
+   "strength": "mittel",
+   "status": "wartet auf ersten Handelstag"
+  },
+  {
+   "id": "KW 47 (16.–20.11.2026)|EL",
+   "week": "KW 47 (16.–20.11.2026)",
+   "created": "2026-11-19",
+   "sector": "Basiskonsum",
+   "ticker": "EL",
+   "symbol": "EL",
+   "name": "Estée Lauder",
+   "strength": "mittel",
+   "status": "wartet auf ersten Handelstag"
+  },
+  {
    "id": "KW 47 (16.–20.11.2026)|META",
    "week": "KW 47 (16.–20.11.2026)",
    "created": "2026-11-15",
@@ -21,7 +76,7 @@
    "status": "läuft"
   }
  ],
- "updated": "2026-11-19T13:59+01:00",
+ "updated": "2026-11-19T14:08+01:00",
  "benchmark": "S&P 500 (SPY)",
  "method": "Einstieg zum Eröffnungskurs des ersten Handelstags ab Veröffentlichung; Vergleich mit dem S&P-500-ETF SPY über denselben Zeitraum; Kursentwicklung in Handelswährung, ohne Dividenden und Gebühren.",
  "stats": {

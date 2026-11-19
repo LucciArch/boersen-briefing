@@ -39,6 +39,43 @@ Prüfprotokoll erfüllt, die Branche weglassen (lieber 4 gute als 6 schwache Pic
 - Danach `python3 scripts/charts.py` laufen lassen (es lädt alle Picks mit).
 - In der Endnachricht die Chancen kurz als „Branche: Name“ nennen.
 
+## Trefferquote (jeden Tag)
+
+Nach `python3 scripts/charts.py` immer `python3 scripts/track.py` ausführen. Es
+nimmt neue Chancen der Woche in data/track.json auf und rechnet aus, wie sie sich
+im Vergleich zum S&P 500 entwickelt haben (laufend, nach 4 und 12 Wochen).
+data/track.json nie von Hand ändern und nie Einträge löschen – die Bilanz soll
+ehrlich bleiben, auch wenn eine Chance schlecht lief. Schlägt das Skript fehl,
+weitermachen und es in der Endnachricht erwähnen.
+
+## Fundamentale Signale nutzen
+
+data/charts.json enthält je Aktie das Feld "fund": Änderung der
+Gewinnschätzungen (30/90 Tage, Anzahl Anhebungen/Senkungen), Quartalsüberraschungen,
+Anteil der Kaufempfehlungen jetzt und vor 3 Monaten, Insider-Käufe/-Verkäufe an der
+Börse (90 Tage, nur US-Aktien), Kursreaktion auf die letzten Zahlen und den nächsten
+Zahlentermin.
+
+- Bei der Einordnung ("signal") je Depot-Position diese Daten mit berücksichtigen
+  und in "note" die wichtigste davon kurz nennen (z. B. „Analysten haben die
+  Gewinnschätzung in 30 Tagen um 5 % gesenkt“).
+- Bei den Chancen der Woche Kandidaten mit steigenden Gewinnschätzungen
+  bevorzugen; bei sinkenden Schätzungen (≤ −2 % in 30 Tagen) nur mit besonders
+  starker, bestätigter Begründung und das als Risiko nennen.
+- Insider-Käufe, die in Briefing oder Begründung genannt werden, mit der
+  Original-Meldung (SEC EDGAR, Form 4) oder einer zweiten seriösen Quelle prüfen.
+- Zahlentermine aus "next_earnings" gelten als 1 Quelle; mit "estimated": true
+  sind sie „(voraussichtlich)“, bis das Unternehmen sie bestätigt.
+
+## Wichtige Nachrichten: 3 Quellen
+
+Für Nachrichten mit großer Wirkung auf eine Depot-Position (Quartalszahlen,
+Prognose-Änderung, Übernahme, Kapitalerhöhung, Klage/Behörde, Rücktritt im
+Vorstand, Herab-/Hochstufung durch große Banken) gelten 3 unabhängige
+Quellen oder die Primärquelle (Pressemitteilung, SEC-Meldung) plus 1 weitere.
+Lieber mehr suchen als weglassen; ist es nicht so belegbar, als „noch nicht
+bestätigt“ kennzeichnen.
+
 ## ETFs im Depot
 
 Fehlen bei einem ETF in data/portfolio.json die Felder "sector" (z. B.

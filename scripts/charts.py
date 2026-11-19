@@ -76,7 +76,7 @@ def summary(sym):
             try: get("https://fc.yahoo.com", tries=1)
             except Exception: pass
             _crumb = get("https://query2.finance.yahoo.com/v1/test/getcrumb").decode().strip()
-        j = json.loads(get(f"https://query2.finance.yahoo.com/v10/finance/quoteSummary/{sym}?modules=financialData,assetProfile,price&crumb={_crumb}"))
+        j = json.loads(get(f"https://query2.finance.yahoo.com/v10/finance/quoteSummary/{sym}?modules=financialData,assetProfile,price,earningsTrend,earningsHistory,recommendationTrend,calendarEvents,insiderTransactions&crumb={_crumb}"))
         res = j["quoteSummary"]["result"][0]
     except Exception:
         return None, {}
@@ -90,7 +90,115 @@ def summary(sym):
     if n and g("targetMeanPrice"):
         tgt = {"mean": g("targetMeanPrice"), "median": g("targetMedianPrice"), "high": g("targetHighPrice"),
                "low": g("targetLowPrice"), "n": n, "rec": f.get("recommendationKey")}
+    try:
+        fd = fundamentals(res)
+        if fd: prof["fund"] = fd
+    except Exception as e:
+        print("WARN Fundamentaldaten", sym, e)
     return tgt, prof
+
+def _raw(x):
+    return x.get("raw") if isinstance(x, dict) else None
+
+def fundamentals(res):
+    """Gewinnschätzungen (Revisionen), Quartalsüberraschungen, Analystenstimmung, Insidergeschäfte, nächster Zahlentermin."""
+    out = {}
+    trends = {t.get("period"): t for t in (res.get("earningsTrend") or {}).get("trend", [])}
+    for per, label in (("+1y", "nächstes Geschäftsjahr"), ("0y", "laufendes Geschäftsjahr")):
+        t = trends.get(per)
+        if not t: continue
+        et, rv = t.get("epsTrend") or {}, t.get("epsRevisions") or {}
+        now, d30, d90 = _raw(et.get("current")), _raw(et.get("30daysAgo")), _raw(et.get("90daysAgo"))
+        if now is None or not d30: continue
+        out["eps"] = {"period": label, "fy_end": t.get("endDate"), "now": now, "d30": d30, "d90": d90,
+                      "chg30": round(now / d30 - 1, 4) if d30 > 0 else None, "chg90": round(now / d90 - 1, 4) if d90 and d90 > 0 else None,
+                      "up30": _raw(rv.get("upLast30days")), "down30": _raw(rv.get("downLast30days")),
+                      "n": _raw((t.get("earningsEstimate") or {}).get("numberOfAnalysts"))}
+        break
+    hist = [{"quarter": (h.get("quarter") or {}).get("fmt"), "surprise": _raw(h.get("surprisePercent"))}
+            for h in (res.get("earningsHistory") or {}).get("history", []) if _raw(h.get("surprisePercent")) is not None]
+    if hist: out["surprises"] = hist[-4:]
+    rt = {r.get("period"): r for r in (res.get("recommendationTrend") or {}).get("trend", [])}
+    def share(r):
+        tot = sum(r.get(k, 0) or 0 for k in ("strongBuy", "buy", "hold", "sell", "strongSell"))
+        return (round(((r.get("strongBuy") or 0) + (r.get("buy") or 0)) / tot, 4), tot) if tot else (None, 0)
+    if "0m" in rt:
+        b0, n0 = share(rt["0m"]); b3, _ = share(rt.get("-3m", {}))
+        if b0 is not None: out["rec"] = {"buy_share": b0, "buy_share_3m": b3, "n": n0}
+    ev = (res.get("calendarEvents") or {}).get("earnings") or {}
+    today = datetime.date.today().isoformat()
+    nxt = [d.get("fmt") for d in ev.get("earningsDate", []) if d.get("fmt") and d["fmt"] >= today]
+    if nxt: out["next_earnings"] = {"date": nxt[0], "estimated": bool(ev.get("isEarningsDateEstimate"))}
+    last = [d.get("fmt") for d in ev.get("earningsCallDate", []) if d.get("fmt") and d["fmt"] <= today]
+    if last: out["last_call"] = last[-1]
+    cutoff = (datetime.date.today() - datetime.timedelta(days=90)).isoformat()
+    buys, sells = [], []
+    for t in (res.get("insiderTransactions") or {}).get("transactions", []):
+        d, txt = (t.get("startDate") or {}).get("fmt") or "", t.get("transactionText") or ""
+        if d < cutoff: continue
+        row = {"date": d, "name": (t.get("filerName") or "").title(), "role": t.get("filerRelation"), "value": _raw(t.get("value")), "shares": _raw(t.get("shares"))}
+        if txt.startswith("Purchase"): buys.append(row)
+        elif txt.startswith("Sale"): sells.append(row)
+    us = (res.get("price") or {}).get("currency") == "USD" and (res.get("assetProfile") or {}).get("country") == "United States"
+    if us and (res.get("insiderTransactions") or {}).get("transactions") is not None:   # nur US-Meldepflicht (SEC Form 4)
+        out["insider"] = {"days": 90, "buys": len(buys), "buy_value": round(sum(b["value"] or 0 for b in buys)), "sells": len(sells),
+                          "sell_value": round(sum(x["value"] or 0 for x in sells)), "top_buys": sorted(buys, key=lambda b: -(b["value"] or 0))[:3]}
+    return out
+
+def fmt_big(x, cur):
+    sym = {"USD": " $", "EUR": " €", "HKD": " HK$"}.get(cur, " " + cur)
+    for div, unit in ((1e9, " Mrd."), (1e6, " Mio."), (1e3, " Tsd.")):
+        if abs(x) >= div: return f"{x / div:,.1f}".replace(",", "X").replace(".", ",").replace("X", ".") + unit + sym
+    return fmtp(x, cur)
+
+def fund_points(fd, c, cur):
+    """Deutsche Kurzsätze und Gesamttendenz aus den Fundamentaldaten; ergänzt die Kursreaktion auf die letzten Zahlen."""
+    pts, notes = 0, []
+    pf = lambda x: f"{x * 100:+.1f} %".replace(".", ",")
+    e = fd.get("eps")
+    if e and e.get("chg30") is not None:
+        txt = f"Gewinnschätzung je Aktie ({e['period']}) in 30 Tagen {pf(e['chg30'])}"
+        if e.get("chg90") is not None: txt += f", in 90 Tagen {pf(e['chg90'])}"
+        if e.get("up30") is not None or e.get("down30") is not None: txt += f" ({e.get('up30') or 0}× angehoben, {e.get('down30') or 0}× gesenkt)"
+        if e["chg30"] >= 0.02: pts += 1; txt += " – Analysten werden optimistischer"
+        elif e["chg30"] <= -0.02: pts -= 1; txt += " – Analysten werden vorsichtiger"
+        notes.append(txt)
+    s = fd.get("surprises")
+    if s:
+        beats = sum(1 for x in s if x["surprise"] > 0)
+        notes.append(f"Gewinn in {beats} der letzten {len(s)} Quartale über den Erwartungen (zuletzt {pf(s[-1]['surprise'])} Abweichung)")
+        if len(s) >= 3 and beats == len(s): pts += 1
+        elif len(s) >= 3 and beats <= 1: pts -= 1
+    r = fd.get("rec")
+    if r and r.get("buy_share") is not None:
+        txt = f"{round(r['buy_share'] * 100)} % der {r['n']} Analysten raten zum Kauf"
+        if r.get("buy_share_3m") is not None:
+            d = r["buy_share"] - r["buy_share_3m"]
+            txt += f" (vor 3 Monaten {round(r['buy_share_3m'] * 100)} %)"
+            if d >= 0.05: pts += 1
+            elif d <= -0.05: pts -= 1
+        notes.append(txt)
+    ins = fd.get("insider")
+    if ins:
+        if ins["buys"]:
+            pts += 1
+            notes.append(f"Insider-Käufe an der Börse in 90 Tagen: {ins['buys']}× für zusammen {fmt_big(ins['buy_value'], cur)} – Manager kaufen mit eigenem Geld")
+        if ins["sells"]:
+            notes.append(f"Insider-Verkäufe in 90 Tagen: {ins['sells']}× für zusammen {fmt_big(ins['sell_value'], cur)} (oft geplante Verkäufe, für sich allein wenig aussagekräftig)")
+        if not ins["buys"] and not ins["sells"]:
+            notes.append("Keine Insider-Käufe oder -Verkäufe an der Börse in 90 Tagen")
+    lc = fd.get("last_call")
+    if lc:
+        dates = [x[0] for x in c]
+        i = next((k for k, d in enumerate(dates) if d >= lc), None)
+        if i is not None and i >= 1 and i + 1 < len(c):
+            react = c[i + 1][4] / c[i - 1][4] - 1
+            fd["reaction"] = {"date": lc, "pct": round(react, 4)}
+            notes.append(f"Kursreaktion auf die letzten Zahlen ({lc[8:10]}.{lc[5:7]}.): {pf(react)} in 2 Handelstagen")
+    ne = fd.get("next_earnings")
+    if ne: notes.append(f"Nächste Zahlen: {ne['date'][8:10]}.{ne['date'][5:7]}.{ne['date'][:4]}" + (" (voraussichtlich)" if ne["estimated"] else ""))
+    fd["score"], fd["points"] = pts, notes
+    fd["tone"] = "positiv" if pts >= 2 else "negativ" if pts <= -2 else "neutral"
 
 def targets(sym):
     return summary(sym)[0]
@@ -223,6 +331,7 @@ def analyze(disp, sym, name, typ):
              "u2": round(price * math.exp(2 * sd * math.sqrt(k)), 4), "d2": round(price * math.exp(-2 * sd * math.sqrt(k)), 4)}
             for k, d in enumerate(days, 1)]
     tgt, prof = summary(sym) if typ == "Aktie" else (None, {})
+    if prof.get("fund"): fund_points(prof["fund"], c, cur)
 
     # --- Bewertung der Signale ---
     pts, notes = 0, []

@@ -180,6 +180,7 @@
     </div>
     <div class="card"><h2>Chartanalyse</h2><div id="c-analysis"></div></div>
     <div class="card"><h2>Unterstützungen & Widerstände</h2><div id="c-levels"></div></div>
+    <div class="card" id="c-fund-card"><h2>Fundamentale Signale</h2><div id="c-fund"></div></div>
     <div class="card" id="c-target-card"><h2>Analysten-Prognosen</h2><div id="c-target"></div></div>
     <div class="card"><h2>Spekulative Szenarien</h2><div id="c-scen"></div>
       <p class="hint" style="margin-top:6px">Die Szenarien sind „Wenn-dann“-Überlegungen aus dem Chart, keine Vorhersage. Der lila Korridor zeigt, wie stark der Kurs in den letzten 60 Tagen typischerweise geschwankt hat. Er sagt nichts über die Richtung aus.</p></div>
@@ -220,7 +221,7 @@ const cls = c => c == null ? "flat" : c > 0 ? "up" : c < 0 ? "down" : "flat";
 const SIG = {chance: "Chance", halten: "Halten", beobachten: "Beobachten", vorsicht: "Vorsicht", neu: "Neu"};
 const REPO = "https://github.com/LucciArch/boersen-briefing";
 const VIEWS = ["home", "depot", "charts", "chance", "more"];
-let B = null, C = null, P = null, O = null, filter = "alle", sel = null, range = "6M";
+let B = null, C = null, P = null, O = null, TR = null, filter = "alle", sel = null, range = "6M";
 let show_ = {lines: true, zones: true, prog: true};
 
 function store(k, v) { try { if (v === undefined) return JSON.parse(localStorage.getItem(k)); localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} return null; }
@@ -427,6 +428,12 @@ function renderChart() {
   chart.timeScale().subscribeVisibleLogicalRangeChange(r => { if (r) try { rsiChart.timeScale().setVisibleLogicalRange(r); } catch (e) {} });
   setRange();
   // Analyse
+  const fd = it.fund;
+  $("#c-fund-card").style.display = fd?.points?.length ? "" : "none";
+  if (fd?.points?.length) $("#c-fund").innerHTML = `<div style="display:flex;align-items:center;gap:8px"><span class="sig t-${fd.tone}">Zahlen ${fd.tone}</span><span class="hint">Punkte ${fd.score > 0 ? "+" : ""}${fd.score}</span></div>
+    <ul class="pts" style="margin-top:10px">${fd.points.map(p => `<li>${esc(p)}</li>`).join("")}</ul>
+    ${fd.insider?.top_buys?.length ? `<p class="hint">Größte Insider-Käufe: ${fd.insider.top_buys.map(b => `${esc(b.name)} (${esc(b.role || "")}, ${dm(b.date)}, ${money(b.value, c)})`).join("; ")}</p>` : ""}
+    <p class="hint" style="margin-top:6px">Quelle: Yahoo Finance (Analystenschätzungen, Quartalszahlen, Insider-Meldungen an die US-Börsenaufsicht SEC). Steigende Gewinnschätzungen und Insider-Käufe gelten als bessere Hinweise als Kursziele – eine Garantie sind sie nicht.</p>`;
   const a = it.analysis, pf = a.perf;
   $("#c-analysis").innerHTML = `<div style="display:flex;align-items:center;gap:8px"><span class="sig t-${a.tone}">Technik ${a.tone}</span><span class="hint">Punkte ${a.score > 0 ? "+" : ""}${a.score} von ±4</span></div>
     <div class="kv"><div><small>1 Monat</small><b class="${cls(pf["1M"])}">${fmtChg(pf["1M"])}</b></div><div><small>3 Monate</small><b class="${cls(pf["3M"])}">${fmtChg(pf["3M"])}</b></div><div><small>1 Jahr</small><b class="${cls(pf["1J"])}">${fmtChg(pf["1J"])}</b></div></div>
@@ -520,6 +527,8 @@ function analyzeDepot() {
   const tg = rows.filter(r => r.ch.target?.mean);
   if (tg.length) { const w = tg.reduce((a, r) => a + r.w, 0); A.upside = tg.reduce((a, r) => a + r.w * (r.ch.target.mean / r.ch.last - 1), 0) / w; A.upsideCov = w; }
   A.tone = {positiv: 0, neutral: 0, negativ: 0}; rows.forEach(r => A.tone[r.ch.analysis.tone] += r.w);
+  A.fund = {positiv: 0, neutral: 0, negativ: 0, n: 0}; rows.forEach(r => { if (r.ch.fund?.tone) { A.fund[r.ch.fund.tone] += r.w; A.fund.n += r.w; } });
+  A.epsDown = rows.filter(r => (r.ch.fund?.eps?.chg30 ?? 0) <= -0.02);
   A.vorsichtW = rows.filter(r => r.signal === "vorsicht").reduce((a, r) => a + r.w, 0);
   A.spec = rows.filter(r => SPEC_THEMES.test(r.p.name + " " + (r.ch.industry || "")) || (r.ch.vol_daily_pct || 0) >= 3.5);
   A.specW = A.spec.reduce((a, r) => a + r.w, 0);
@@ -578,6 +587,7 @@ function depotTips(A) {
   if (A.specW > 0.25) T.push(["🎢", `Spekulativer Anteil ${pct(A.specW, 0)}`, `${esc(A.spec.map(r => r.p.name).join(", "))} schwanken stark oder sind junge Zukunftsthemen. Das kann sich lohnen, aber starke Rückschläge von 30–50 % sind hier normal.`]);
   if (A.tiny.length >= 3) T.push(["🔍", `${A.tiny.length} Mini-Positionen unter 2 %`, `${esc(A.tiny.map(r => r.p.name).join(", "))} bewegen dein Depot kaum. Entweder bewusst aufstocken oder zusammenlegen – das macht das Depot übersichtlicher.`]);
   if (A.vorsichtW > 0.2) T.push(["🚦", `${pct(A.vorsichtW, 0)} deines Depots stehen heute auf „Vorsicht“`, `Lies dir im Briefing die Begründung zu diesen Werten durch.`]);
+  if (A.epsDown.length) T.push(["✂️", `Sinkende Gewinnschätzungen: ${esc(A.epsDown.map(r => r.p.name).join(", "))}`, `Analysten haben ihre Gewinnerwartung in den letzten 30 Tagen spürbar gesenkt (${A.epsDown.map(r => esc(r.p.name) + " " + spct(r.ch.fund.eps.chg30)).join(", ")}). Das ist oft ein früheres Warnsignal als der Kurs selbst. Details unter Charts → Fundamentale Signale.`]);
   if (A.tone.negativ > 0.4) T.push(["📉", `Charttechnik bei ${pct(A.tone.negativ, 0)} des Depots negativ`, `Ein großer Teil deiner Werte ist im Abwärtstrend. Das sagt nichts über die Zukunft, aber Nachkäufe in fallende Trends sind riskanter.`]);
   A.rows.filter(r => r.cost != null && r.value / r.cost - 1 <= -0.25).forEach(r => T.push(["🩹", `${esc(r.p.name)}: ${spct(r.value / r.cost - 1, 0)} seit Kauf`, `Frag dich ehrlich: Würdest du die Aktie heute neu kaufen? Wenn sich die Geschichte dahinter verschlechtert hat, ist Halten nur Hoffen.`]));
   A.rows.filter(r => r.cost != null && r.value / r.cost - 1 >= 1).forEach(r => T.push(["🏆", `${esc(r.p.name)}: ${spct(r.value / r.cost - 1, 0)} seit Kauf`, `Ein Teilverkauf („Gewinne mitnehmen“) senkt das Risiko, falls die Aktie wieder fällt. Beachte die Steuer auf Gewinne über dem Freibetrag.`]));
@@ -608,7 +618,7 @@ function renderAnalysis() {
     <div class="tile"><small>Schwankung</small>${vl ? `<b class="lv-${vl[0]}">${vl[1]}</b><span>±${pct(H.vol, 0)} pro Jahr (S&P 500 meist ±15–20 %)</span>` : "<b>–</b><span>zu wenig Kursdaten</span>"}</div>
     <div class="tile"><small>Analysten-Ziele</small>${A.upside != null ? `<b class="${cls(A.upside)}">${spct(A.upside, 0)}</b><span>gewichteter Ø-Abstand zum Kursziel (für ${pct(A.upsideCov, 0)} des Depots)</span>` : "<b>–</b><span>keine Kursziele</span>"}</div>
   </div>
-  <p class="hint" style="margin-top:8px">Charttechnik nach Depotgewicht: <span class="up">${pct(A.tone.positiv, 0)} positiv</span> · ${pct(A.tone.neutral, 0)} neutral · <span class="down">${pct(A.tone.negativ, 0)} negativ</span></p></div>`;
+  <p class="hint" style="margin-top:8px">Charttechnik nach Depotgewicht: <span class="up">${pct(A.tone.positiv, 0)} positiv</span> · ${pct(A.tone.neutral, 0)} neutral · <span class="down">${pct(A.tone.negativ, 0)} negativ</span>${A.fund.n ? `<br>Fundamentaldaten (Gewinnschätzungen, Quartalszahlen, Insider) für ${pct(A.fund.n, 0)} des Depots: <span class="up">${pct(A.fund.positiv, 0)} positiv</span> · ${pct(A.fund.neutral, 0)} neutral · <span class="down">${pct(A.fund.negativ, 0)} negativ</span>` : ""}</p></div>`;
   html += `<div class="card"><h2>Verbesserungsansätze</h2>${T.map(([ic, h, t]) => `<div class="tip"><span class="ic">${ic}</span><div><b>${h}</b><p>${t}</p></div></div>`).join("") || '<p class="hint">Keine auffälligen Schwachstellen gefunden.</p>'}
     ${ok.length ? `<div class="sub2 up" style="margin-top:12px">Was schon gut ist</div><ul class="pts">${ok.map(x => `<li>${x}</li>`).join("")}</ul>` : ""}
     <p class="hint" style="margin-top:10px">Diese Hinweise folgen festen Regeln (Anteile, Branchen, Regionen, Schwankung) und sind keine Anlageberatung.</p></div>`;
@@ -708,7 +718,8 @@ function renderChance() {
         ${ch ? `<div style="text-align:right"><b style="font-size:17px">${money(ch.last, c)}</b><div class="${cls(ch.change_pct)}" style="font-size:12px;font-weight:600">${fmtChg(ch.change_pct)}</div></div>` : ""}
       </div>
       <p class="hl">${esc(p.headline)}</p>
-      <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap"><span class="sig s-chance">Begründung: ${esc(p.strength)}</span>${ch ? `<span class="sig t-${ch.analysis.tone}">Technik ${ch.analysis.tone}</span>` : ""}${ch?.target ? `<span class="sig" style="background:rgba(180,140,255,.15);color:var(--violet)">Ø Ziel ${fmtChg((ch.target.mean / ch.last - 1) * 100)}</span>` : ""}</div>
+      <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap"><span class="sig s-chance">Begründung: ${esc(p.strength)}</span>${ch ? `<span class="sig t-${ch.analysis.tone}">Technik ${ch.analysis.tone}</span>` : ""}${ch?.fund?.tone ? `<span class="sig t-${ch.fund.tone}">Zahlen ${ch.fund.tone}</span>` : ""}${ch?.target ? `<span class="sig" style="background:rgba(180,140,255,.15);color:var(--violet)">Ø Ziel ${fmtChg((ch.target.mean / ch.last - 1) * 100)}</span>` : ""}</div>
+      ${ch?.fund?.points?.length ? `<ul class="pts" style="margin-top:10px">${ch.fund.points.slice(0, 3).map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
       ${ch ? `<button class="btn" style="width:100%" id="tochart">📈 Chart mit Einstiegszonen ansehen</button>` : ""}
     </div>
     <div class="card"><h2 class="up">Warum jetzt?</h2>${li(p.why)}</div>
@@ -719,6 +730,7 @@ function renderChance() {
       <div class="box"><b>Ziele</b>${esc(p.targets)}</div>
       <div class="box"><b>Zeithorizont</b>${esc(p.horizon)}</div></div>
     <div class="card src"><h2>Quellen</h2>${(p.sources || []).map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)} ↗</a>`).join("")}</div>
+    ${trackHtml()}
     <div class="card"><h2>Wie wird ausgewählt?</h2><p class="hint">${esc(O.method || "")}</p></div>`;
   document.querySelectorAll(".plist").forEach(el => el.onclick = () => { pickSel = el.dataset.p; renderChance(); $("#pickcard").scrollIntoView({behavior: "smooth", block: "start"}); });
   const b = $("#tochart"); if (b) b.onclick = () => openChart(p.ticker);
@@ -730,12 +742,27 @@ function renderChance() {
   document.querySelectorAll("[data-tp]").forEach(el => el.onclick = () => { pickSel = el.dataset.tp; renderChance(); show("chance"); });
 }
 
+function trackHtml() {
+  const ps = (TR?.picks || []).filter(p => p.ret != null);
+  if (!ps.length) return "";
+  const st = TR.stats || {}, tile = (k, t) => { const x = st[k] || {};
+    return `<div class="tile"><small>${t}</small>${x.n ? `<b class="${cls(x.avg_excess)}">${x.beat} von ${x.n} besser</b><span>als der S&P 500 · Ø ${spct(x.avg_ret)} vs. ${spct(x.avg_bench)}</span>` : "<b>–</b><span>noch keine Chance so alt</span>"}</div>`; };
+  const first4 = ps.filter(p => !p["4w"]).map(p => p.entry_date).sort()[0];
+  return `<div class="card"><h2>📊 Trefferquote der Chancen</h2>
+    <p class="hint" style="margin-bottom:8px">Ehrliche Bilanz: Wie liefen die bisherigen Chancen im Vergleich zum S&P 500 (gleicher Zeitraum)?</p>
+    <div class="tiles">${tile("4w", "Nach 4 Wochen")}${tile("12w", "Nach 12 Wochen")}</div>
+    ${!st["4w"]?.n && first4 ? `<p class="hint" style="margin-top:8px">Erste 4-Wochen-Auswertung ca. 4 Wochen nach dem ${dm(first4)}. Aussagekräftig wird die Quote erst nach 10–20 Chancen.</p>` : ""}
+    <div class="sub2" style="margin-top:12px">Alle Chancen (laufend)</div>
+    ${ps.map(p => `<div class="lv"><span><b>${esc(p.name)}</b> <span class="s">· ${esc(p.sector || p.week || "")} · ab ${dm(p.entry_date)}</span></span><span style="text-align:right"><span class="p ${cls(p.ret)}">${spct(p.ret)}</span><br><span class="s">S&P ${spct(p.bench_ret)} · <span class="${cls(p.excess)}">${p.excess >= 0 ? "besser" : "schlechter"}</span></span></span></div>`).join("")}
+    <p class="hint" style="margin-top:8px">${esc(TR.method || "")} Stand ${esc((TR.updated || "").slice(0, 10).split("-").reverse().join("."))}.</p></div>`;
+}
+
 /* ---------- Start ---------- */
 (async () => {
   show_ = store("chartopts") || show_;
   dtab = store("dtab") || "list";
   renderToggles();
-  [B, C, P, O] = await Promise.all([load("data/briefing.json"), load("data/charts.json"), load("data/portfolio.json"), load("data/opportunity.json")]);
+  [B, C, P, O, TR] = await Promise.all([load("data/briefing.json"), load("data/charts.json"), load("data/portfolio.json"), load("data/opportunity.json"), load("data/track.json")]);
   syncChanges();
   renderHome(); renderDepot(); renderTickers(); renderChance();
   $("#about").innerHTML = `Nachrichten: tägliche Recherche mit Mehrfach-Quellen-Prüfung (${esc(B?.updated_label || "–")}).<br>Kurse & Charts: ${esc(C?.source || "–")}, Stand ${esc(C?.updated_label || "–")}.${C?.errors?.length ? "<br>Fehler: " + esc(C.errors.join("; ")) : ""}<br>Technische Analyse beschreibt die Vergangenheit und kann nichts garantieren.`;

@@ -1,0 +1,45 @@
+{
+ "picks": [
+  {
+   "id": "KW 47 (16.–20.11.2026)|META",
+   "week": "KW 47 (16.–20.11.2026)",
+   "created": "2026-11-15",
+   "sector": null,
+   "ticker": "META",
+   "symbol": "META",
+   "name": "Meta Platforms",
+   "strength": "mittel",
+   "entry_date": "2026-11-16",
+   "entry": 640.0,
+   "bench_entry": 749.66,
+   "last_date": "2026-11-18",
+   "last": 616.38,
+   "ret": -0.0369,
+   "bench_ret": -0.026,
+   "excess": -0.0109,
+   "days": 2,
+   "status": "läuft"
+  }
+ ],
+ "updated": "2026-11-19T13:59+01:00",
+ "benchmark": "S&P 500 (SPY)",
+ "method": "Einstieg zum Eröffnungskurs des ersten Handelstags ab Veröffentlichung; Vergleich mit dem S&P-500-ETF SPY über denselben Zeitraum; Kursentwicklung in Handelswährung, ohne Dividenden und Gebühren.",
+ "stats": {
+  "now": {
+   "n": 1,
+   "beat": 0,
+   "positive": 0,
+   "hit_rate": 0.0,
+   "avg_ret": -0.0369,
+   "avg_bench": -0.026,
+   "avg_excess": -0.0109
+  },
+  "4w": {
+   "n": 0
+  },
+  "12w": {
+   "n": 0
+  }
+ },
+ "errors": []
+}

@@ -1,65 +1,218 @@
 {
  "week": "KW 47 (16.–20.11.2026)",
- "updated": "2026-11-15",
+ "updated": "2026-11-19",
+ "method": "Je Branche eine große, liquide Aktie außerhalb des Depots mit frischem, bestätigtem positivem Anlass (meist Zahlen mit angehobener Prognose); technisch gefiltert nach Kurs über dem 200-Tage-Schnitt, RSI unter 70 und Analysten-Kursziel deutlich über Kurs. Für Energie/Rohstoffe erfüllte diese Woche kein Kandidat die Kriterien (Öl-, Kupfer- und Goldwerte im Abwärtstrend).",
  "picks": [
   {
-   "ticker": "META",
-   "symbol": "META",
-   "name": "Meta Platforms",
+   "sector": "Technologie",
+   "ticker": "PANW",
+   "symbol": "PANW",
+   "name": "Palo Alto Networks",
    "type": "Aktie",
-   "headline": "Rücksetzer im Aufwärtstrend und neuer Top-Pick von JPMorgan",
+   "headline": "Palo Alto übertrifft Erwartungen und hebt Jahresprognose deutlich an",
    "strength": "mittel",
    "why": [
-    "JPMorgan hat Meta am 9.11. auf seine Analyst-Focus-Liste gesetzt (statt Alphabet) und nennt die KI-gestützte Werbung als Grund. Die Aktie stieg an dem Tag um 5,1 %.",
-    "Die Analysten sind klar positiv: Das durchschnittliche Kursziel liegt bei Yahoo bei rund 850 $ (+32 % zum Freitagsschluss von 641,69 $), andere Datenanbieter nennen weniger (ab ~790 $, +23 %). JPMorgan nennt 940 $.",
-    "Im Chart ist die Aktie seit dem Hoch im September (779,82 $ im Tagesverlauf) um rund 18 % gefallen. Sie liegt aber noch über ihrem 200-Tage-Schnitt, und der MACD (ein Momentum-Indikator) ist positiv.",
-    "Am Freitag stieg die Aktie um 2,9 % und liegt wieder über 625 $ – dem Preis, zu dem Meta Ende Oktober neue Aktien verkauft hat."
+    "Palo Alto Networks hat am 18.11.2026 nach US-Börsenschluss Zahlen für das erste Geschäftsquartal vorgelegt: Der Umsatz stieg um 39 % auf 3,44 Mrd. $ (erwartet rund 3,31 Mrd. $), der Gewinn je Aktie lag bei 1,05 $ (erwartet 0,97 $).",
+    "Die Firma hebt ihre Umsatzprognose für das Geschäftsjahr auf 14,52–14,57 Mrd. $ an (bisher 14,10–14,20 Mrd. $).",
+    "Die wiederkehrenden Erlöse aus neuen Sicherheitsprodukten (ARR, hochgerechneter Jahresumsatz aus Abos) wuchsen um 66 % auf 9,73 Mrd. $.",
+    "Der Kurs liegt klar über dem 200-Tage-Durchschnitt (Mittelwert der letzten 200 Handelstage, ≈ 279 $) – der langfristige Trend ist intakt; das Analysten-Ø-Ziel liegt bei rund 406 $."
    ],
    "risks": [
-    "Meta gibt enorm viel für KI aus (Investitionsplan 2026: 135–145 Mrd. $). Nach den Q3-Zahlen fiel die Aktie am 22.10. um 7 %.",
-    "Meta hat Ende Oktober neue Aktien für 25 Mrd. $ zu je 625 $ verkauft (als Terminverkauf, das Geld fließt bis spätestens Nov. 2027). Das verwässert den Anteil der bestehenden Aktionäre, und es ist Teil eines größeren Finanzierungsprogramms.",
-    "Nach den Midterms droht mehr Regulierung für KI und Rechenzentren. Die Aktie schwankt zuletzt stark (Woche vom 5.11.: −4 % an einem Tag).",
-    "Der COO verkauft regelmäßig kleine Aktienpakete. Das gehört wohl zu einem geplanten Verkaufsprogramm, ist aber kein Rückenwind."
+    "Die Aktie ist schon vor und nach den Zahlen kräftig gestiegen (vorbörslich am 19.11. deutlich über dem Mittwochsschluss von 339,92 $). Wer jetzt kauft, läuft Gefahr, einem Kurssprung hinterherzulaufen, der teilweise wieder abgegeben wird.",
+    "Palo Alto kauft das KI-Start-up Applied Compute für 4,5 Mrd. $ in eigenen Aktien. Das verwässert den Anteil der Altaktionäre (neue Aktien verkleinern den Anteil jedes Einzelnen).",
+    "Die Bewertung ist hoch. Bei schwächerer Stimmung für Technologiewerte kann die Aktie überdurchschnittlich fallen.",
+    "Der MACD (Trendfolge-Indikator) war vor dem Sprung noch negativ. Bestätigt ist die Trendwende erst, wenn der Kurs über etwa 368 $ hält."
    ],
-   "entry": "Rücksetzer-Variante: Einstieg in der Zone um die starke Unterstützung bei ~606 $ (11-mal getestet). Ausbruch-Variante: erst nach einem Tagesschluss über dem Widerstand bei ~680 $.",
-   "stop": "Absicherungs-Idee: Ein Tagesschluss unter ~600 $ würde die starke Unterstützung brechen. Dann ist das Chartbild kaputt.",
-   "targets": "Etappenziele aus dem Chart: ~680 $ (+6 %), ~711 $ (+11 %), Hoch ~776–780 $ (+21 %). Analysten-Schnitt je nach Anbieter ~790–850 $ (+23 bis +32 %).",
-   "horizon": "mehrere Wochen bis Monate",
+   "entry": "Nicht dem Kurssprung hinterherlaufen. Besser bei Rücksetzern in die Zone 345–368 $; der frühere Widerstand bei rund 368,50 $ sollte nach einem Ausbruch als Boden halten. Den Eröffnungskurs heute in Trade Republic prüfen.",
+   "stop": "Schlusskurs unter 329 $ (unter der schwachen Unterstützung bei rund 334,75 $; die starke Unterstützung liegt erst bei rund 312 $). Bei einem Einstieg bei 360 $ entspricht das einem Risiko von rund 8,6 %.",
+   "targets": "Ziel 1: Widerstand bei rund 398,90 $ (+17,3 % zum Mittwochsschluss von 339,92 $). Ziel 2: Analysten-Ø-Ziel 405,78 $ (+19,4 %). Ziel 3: 52-Wochen-Hoch 432,33 $ (+27,2 %). Vom höheren Kurs nach dem Sprung aus ist der Abstand entsprechend kleiner.",
+   "horizon": "2–6 Monate",
    "sources": [
     {
-     "title": "Trefis: Why Is Meta Stock Going Up? (10.11.2026)",
-     "url": "https://www.trefis.com/stock/meta/articles/624110/why-is-meta-stock-going-up/2026-11-10"
+     "title": "CNBC: Palo Alto inks $4.5 billion deal for Applied Compute, shares pop on earnings (18.11.2026)",
+     "url": "https://www.cnbc.com/2026/11/18/palo-alto-networks-panw-q1-2027-earnings-.html"
     },
     {
-     "title": "Webull: JPMorgan nennt Meta und Amazon Top-Picks",
-     "url": "https://www.webull.com/news/15894359755441152"
+     "title": "SEC 8-K: Palo Alto Networks Fiscal Q1 2027 Results",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001327567/000132756726000030/ex991q127earningsrelease.htm"
     },
     {
-     "title": "TIKR: Meta verliert 11 % in einer Woche (Capex)",
-     "url": "https://www.tikr.com/de/blog/meta-lost-11-in-a-week-canaccord-sees-53-upside-from-here"
+     "title": "Reuters via Investing.com: Palo Alto's raised sales forecast powers cybersecurity rally (19.11.2026)",
+     "url": "https://investing.com/news/stock-market-news/palo-altos-raised-sales-forecast-powers-cybersecurity-stock-rally-5038632"
+    }
+   ]
+  },
+  {
+   "sector": "Gesundheit & Pharma",
+   "ticker": "VRTX",
+   "symbol": "VRTX",
+   "name": "Vertex Pharmaceuticals",
+   "type": "Aktie",
+   "headline": "Vertex: Prognose angehoben, FDA-Entscheidung zum Nierenmittel bis 30. November",
+   "strength": "schwach",
+   "why": [
+    "Vertex hat am 2.11.2026 den Umsatz im dritten Quartal um 12 % auf 3,44 Mrd. $ gesteigert und die Jahresprognose auf 13,15–13,25 Mrd. $ angehoben (bisher 13,1–13,2 Mrd. $).",
+    "Neue Produkte wachsen schnell: Die Gentherapie Casgevy (gegen Sichelzellkrankheit) kam auf 99 Mio. $ Umsatz, das Schmerzmittel Journavx auf 58 Mio. $.",
+    "Bis zum 30.11.2026 entscheidet die US-Arzneimittelbehörde FDA über die Zulassung von Povetacicept gegen die Nierenkrankheit IgA-Nephropathie – ein mögliches neues Standbein neben dem Mukoviszidose-Geschäft.",
+    "Die Aktie liegt über dem 200-Tage-Durchschnitt (≈ 484 $, langfristiger Trend intakt), der RSI (Kraftmesser 0–100) ist mit 52 neutral, und das Analysten-Ø-Ziel liegt rund 11 % über dem Kurs."
+   ],
+   "risks": [
+    "Die FDA-Entscheidung ist ein Ja-oder-Nein-Ereignis: Bei Ablehnung oder Verzögerung kann die Aktie über Nacht deutlich fallen, auch unter den Stoppkurs.",
+    "Die Prognose wurde nur leicht angehoben (um 50 Mio. $); der Anlass (Zahlen vom 2.11.) ist schon gut zwei Wochen alt.",
+    "Das Kerngeschäft Mukoviszidose wächst langsamer, und Konkurrenten bringen weitere Mittel gegen IgA-Nephropathie auf den Markt.",
+    "Der MACD (Trendfolge-Indikator) ist zurzeit negativ; kurzfristig fehlt Schwung."
+   ],
+   "entry": "Zone 515–537 $: Der Kurs liegt knapp über der Unterstützung bei rund 531,80 $. Ein zweiter Kauf ist bei Rücksetzern Richtung 496–500 $ möglich (starke Unterstützung bei rund 496 $). Vorsichtige warten die FDA-Entscheidung (bis 30.11.) ab.",
+   "stop": "Schlusskurs unter 490 $ (unter der starken Unterstützung bei rund 496 $), etwa −8,7 % vom letzten Kurs. Bei schlechten FDA-Nachrichten kann der Kurs darunter eröffnen.",
+   "targets": "Ziel 1: Widerstand bei rund 558 $ (+4,0 %). Ziel 2: 52-Wochen-Hoch 568,67 $ (+6,0 %). Ziel 3: Analysten-Ø-Ziel 595,36 $ (+11,0 %). Alle Werte zum Schlusskurs vom 18.11. von 536,45 $.",
+   "horizon": "1–3 Monate",
+   "sources": [
+    {
+     "title": "Nasdaq.com: Vertex Reports Third Quarter 2026 Financial Results (02.11.2026)",
+     "url": "https://www.nasdaq.com/press-release/vertex-reports-third-quarter-2026-financial-results-2026-11-02"
     },
     {
-     "title": "FX Leaders: Meta über dem Ausgabepreis von 625 $ (13.11.2026)",
-     "url": "https://www.fxleaders.com/news/2026/11/13/meta-stock-forecast-meta-reclaims-625-share-sale-price-eyes-651-60-resistance/"
+     "title": "StockStory: Vertex Q3 2026 sales top estimates",
+     "url": "https://stockstory.org/us/stocks/nasdaq/vrtx/news/earnings/vertex-pharmaceuticalss-nasdaqvrtx-q3-2026-sales-top-estimates"
     },
     {
-     "title": "Yahoo Finance: Kurse und Analysten-Kursziele",
-     "url": "https://finance.yahoo.com/quote/META/"
+     "title": "HCPLive: FDA accepts BLA for povetacicept (PDUFA 30.11.2026)",
+     "url": "https://www.hcplive.com/view/fda-accepts-bla-for-povetacicept-in-iga-nephropathy"
     },
     {
-     "title": "Motley Fool: Why Meta Platforms stock rallied on Monday (9.11.2026)",
-     "url": "https://www.fool.com/investing/2026/11/09/why-meta-platforms-stock-rallied-on-monday"
+     "title": "BioSpace: Vertex as FDA verdict looms",
+     "url": "https://www.biospace.com/business/vertex-unfazed-by-competitive-igan-space-as-fda-verdict-looms"
+    }
+   ]
+  },
+  {
+   "sector": "Finanzen",
+   "ticker": "UCG",
+   "symbol": "UCG.MI",
+   "name": "UniCredit",
+   "type": "Aktie",
+   "headline": "UniCredit: Rekordquartal, höheres Gewinnziel, Kurs gönnt sich eine Pause",
+   "strength": "mittel",
+   "why": [
+    "Die italienische Großbank UniCredit hat am 9. November das beste Quartal ihrer Geschichte gemeldet: Der Nettogewinn stieg um 24 % auf rund 3,3 Mrd. € und lag über den Erwartungen der Analysten.",
+    "Gleichzeitig hob die Bank ihr Gewinnziel für 2026 auf „deutlich über 11,5 Mrd. €“ an (vorher „über 11 Mrd. €“); die harte Kernkapitalquote (CET1, das wichtigste Polster einer Bank gegen Verluste) liegt bei 15 %.",
+    "Für Aktionäre gibt es eine Zwischendividende von rund 3,00 € je Aktie; Ex-Tag (ab dann ohne Dividende gehandelt) ist der 23. November.",
+    "Die Aktie sprang am Ergebnistag um 6,3 % und hat den Sprung seitdem gehalten; sie liegt über dem 200-Tage-Durchschnitt (≈ 75,70 €, Trend intakt), MACD positiv, und der Analysten-Schnitt von 98,58 € liegt gut 20 % über dem Kurs."
+   ],
+   "risks": [
+    "Am 23. November wird die Dividende abgetrennt: Der Kurs fällt an diesem Tag rein rechnerisch um rund 3 € – das ist kein echter Verlust, kann Einsteiger aber verwirren.",
+    "Die Übernahme der Commerzbank bringt Integrationskosten und das Risiko, dass das Kapitalpolster zeitweise sinkt.",
+    "Eine Schwäche der italienischen Wirtschaft oder der italienischen Staatsanleihen würde Bankgewinne direkt belasten.",
+    "Direkt über dem Kurs liegt ein starker Widerstand bei rund 83 € (eine Marke, an der der Kurs oft nach unten abgeprallt ist); nicht alle Analysten sind überzeugt."
+   ],
+   "entry": "Gestaffelter Einstieg zwischen rund 79,20 € (50-Tage-Durchschnitt) und 82 €. Wer die Dividende nicht mitnehmen will, wartet den Ex-Tag am 23.11. ab. Ein Schlusskurs über rund 83 € (starker Widerstand) wäre ein Ausbruchssignal.",
+   "stop": "Stopp unter der starken Unterstützung bei rund 75,40 €, also bei etwa 74,50 € (ca. −8,9 % vom Kurs 81,78 €; nach dem Dividendenabschlag entsprechend weniger).",
+   "targets": "Ziel 1: Widerstand rund 83,06 € (+1,6 %). Ziel 2: 52-Wochen-Hoch 86,42 € (+5,7 %). Langfristig: Analysten-Ø-Ziel 98,58 € (+20,5 %).",
+   "horizon": "6–12 Monate",
+   "sources": [
+    {
+     "title": "Il Sole 24 Ore: UniCredit raises its target (09.11.2026)",
+     "url": "https://en.ilsole24ore.com/art/unicredit-revises-its-forecasts-and-raises-its-target-for-commerzbank-AJrHn59B"
     },
     {
-     "title": "24/7 Wall St: JPMorgan just added Meta to its Analyst Focus List (9.11.2026)",
-     "url": "https://247wallst.com/investing/2026/11/09/jpmorgan-just-added-meta-platforms-to-its-analyst-focus-list/"
+     "title": "The Edge Malaysia: UniCredit Q3 net profit +24 % (09.11.2026)",
+     "url": "https://theedgemalaysia.com/node/825038"
     },
     {
-     "title": "Meta: Q3-2026-Zahlen (Investitionsplan)",
-     "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/"
+     "title": "Forbes Italia: UniCredit trimestrale record (09.11.2026)",
+     "url": "https://forbes.it/2026/11/09/unicredit-trimestrale-record-terzo-trimestre-utili-orcel-commerzbank"
+    },
+    {
+     "title": "finanzen.net: UniCredit Kursziele",
+     "url": "https://www.finanzen.net/kursziele/unicredit"
+    }
+   ]
+  },
+  {
+   "sector": "Industrie",
+   "ticker": "ITT",
+   "symbol": "ITT",
+   "name": "ITT Inc.",
+   "type": "Aktie",
+   "headline": "ITT: Zahlen klar über den Erwartungen, Jahresprognose erneut erhöht",
+   "strength": "mittel",
+   "why": [
+    "Der US-Industriekonzern ITT (Pumpen, Ventile, Steckverbinder, Bremsbeläge) hat am 4. November im dritten Quartal einen bereinigten Gewinn je Aktie (ohne Sondereffekte) von 2,26 $ erzielt – 20 % mehr als im Vorjahr und über der Analystenschätzung von rund 2,08 $.",
+    "Der Umsatz stieg um 44 % auf 1,44 Mrd. $, vor allem durch den Zukauf von SPX Flow; aus eigener Kraft (organisch) wuchs ITT um 8 %, die Aufträge organisch um 20 %.",
+    "ITT hob die Jahresprognose für den bereinigten Gewinn je Aktie auf 8,54–8,62 $ an.",
+    "Die Aktie liegt wieder über dem 200-Tage-Durchschnitt (≈ 200,70 $), der MACD ist positiv, und das Analysten-Ø-Ziel (254,92 $) liegt rund 22 % über dem Kurs."
+   ],
+   "risks": [
+    "Der Gewinn nach offiziellen Buchhaltungsregeln (GAAP) fiel wegen Übernahmekosten auf 1,38 $ je Aktie – Skeptiker stören sich an der großen Lücke zur „bereinigten“ Zahl.",
+    "Die Eingliederung von SPX Flow ist ein großes Projekt; Pannen dabei oder eine schwächere US-Industriekonjunktur würden die Aktie belasten.",
+    "Der Anlass (Zahlen vom 4.11.) ist schon gut zwei Wochen alt; eine frische Analysten-Hochstufung danach ist nicht bestätigt.",
+    "ITT ist mit rund 18 Mrd. $ Börsenwert kleiner als die Branchenriesen und schwankt stärker; für Euro-Anleger kommt das Dollar-Risiko dazu."
+   ],
+   "entry": "Kaufzone 201–209 $: Hier liegen der 200-Tage-Durchschnitt (≈ 200,70 $) und der 50-Tage-Durchschnitt (≈ 203 $) als Auffangnetz. Ein Schlusskurs über dem starken Widerstand bei rund 223,70 $ wäre ein Ausbruchssignal.",
+   "stop": "Stopp unter der starken Unterstützung bei rund 187,60 $, also etwa bei 185 $ (−11,4 % vom Kurs 208,92 $). Vorsichtigere steigen bei einem Schlusskurs unter etwa 198 $ aus (≈ −5,2 %).",
+   "targets": "Ziel 1: Widerstand rund 223,67 $ (+7,1 %). Ziel 2: 52-Wochen-Hoch 230,32 $ (+10,2 %). Langfristig: Analysten-Ø-Ziel 254,92 $ (+22,0 %).",
+   "horizon": "6–12 Monate",
+   "sources": [
+    {
+     "title": "SEC: ITT 8-K Q3 2026 (04.11.2026)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0000216228/000021622826000072/earningsrelease2026q3.htm"
+    },
+    {
+     "title": "Business Wire/Morningstar: ITT Reports Q3 2026",
+     "url": "https://www.morningstar.com/news/business-wire/20261104083400/itt-reports-third-quarter-2026-eps-of-138-and-adjusted-eps-of-226"
+    },
+    {
+     "title": "Reuters via Capital.com: ITT Q3 beats estimates (04.11.2026)",
+     "url": "https://capital.com/en-eu/news/itt-q3-adjusted-eps-rises-beats-estimates"
+    },
+    {
+     "title": "24/7 Wall St.: ITT beats Q3 and raises guidance",
+     "url": "https://247wallst.com/cards/itt-q3-2026-earnings-itt-01m6m8c66pnz91q16f6mgf79f2"
+    }
+   ]
+  },
+  {
+   "sector": "Basiskonsum",
+   "ticker": "EL",
+   "symbol": "EL",
+   "name": "Estée Lauder",
+   "type": "Aktie",
+   "headline": "Estée Lauder: Prognose erhöht, Margenziel bis 2030 – Rücksetzer als Einstiegschance",
+   "strength": "mittel",
+   "why": [
+    "Am 2. November meldete der Kosmetikkonzern starke Quartalszahlen: Der Umsatz stieg um 7 % auf 3,72 Mrd. $, der bereinigte Gewinn je Aktie (Gewinn ohne Sondereffekte) lag bei 0,72 $ nach 0,32 $ im Vorjahr und klar über den erwarteten rund 0,51 $.",
+    "Gleichzeitig hob Estée Lauder die Jahresprognose an: Der bereinigte Gewinn je Aktie soll jetzt 3,20 bis 3,45 $ erreichen (vorher 3,10 bis 3,35 $), das organische Wachstum (Wachstum ohne Zukäufe und Währungseffekte) 4,0 bis 5,5 %.",
+    "Am 4. November stellte das Management Ziele bis 2030 vor: jedes Jahr mittleres einstelliges Wachstum, zweistelliges Gewinnwachstum je Aktie und eine operative Marge (Anteil des Betriebsgewinns am Umsatz) von 16,5 bis 18,5 %.",
+    "Die Aktie liegt mit rund 104 $ unter ihrem Hoch, aber weiter klar über dem 200-Tage-Durchschnitt (≈ 91 $) – der Langfristtrend ist intakt."
+   ],
+   "risks": [
+    "Zölle belasten laut Unternehmen das Geschäft und dürften auch im Gesamtjahr bremsen.",
+    "Ein Teil der Prognoseanhebung stammt nur aus dem starken ersten Quartal; die zweite Jahreshälfte wurde kaum angehoben.",
+    "Das Geschäft hängt stark von China und vom Reiseeinzelhandel (Duty-Free an Flughäfen) ab – schwächere Reiselust würde direkt bremsen.",
+    "Kurzfristig ist das Momentum schwach: Der MACD (Trendfolge-Indikator) liegt unter seiner Signallinie, die Aktie kann also noch etwas weiter zurückkommen."
+   ],
+   "entry": "Kaufzone 101–104 $: Hier treffen die Unterstützung (Kursbereich, in dem Käufer zuletzt mehrfach zugriffen) bei rund 103 $ und der 50-Tage-Durchschnitt bei rund 102 $ zusammen. Prozyklisch alternativ erst bei einem Schlusskurs über rund 109,60 $.",
+   "stop": "Schlusskurs unter 98 $ (−5,8 %): Dann wären die Unterstützung bei 103 $ und der 50-Tage-Durchschnitt klar gebrochen. Die nächste starke Unterstützung liegt erst bei rund 89,80 $.",
+   "targets": "Ziel 1: Widerstand (Kursbereich, an dem Verkäufer zuletzt bremsten) bei rund 109,60 $ (+5,4 %); Ziel 2: rund 119,40 $ (+14,8 %), knapp unter dem 52-Wochen-Hoch von 121,64 $. Analysten-Ø-Ziel 116,49 $ (+12,0 %).",
+   "horizon": "3–6 Monate (nächste Quartalszahlen voraussichtlich Anfang Februar 2027)",
+   "sources": [
+    {
+     "title": "Estée Lauder: Q1 FY2027 Results (02.11.2026)",
+     "url": "https://www.elcompanies.com/en/news-and-media/newsroom/press-releases/2026/11-02-2026-110046663"
+    },
+    {
+     "title": "Estée Lauder 8-K Exhibit 99.1, Q1 FY2027 (SEC)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001001250/000100125026000057/fy2027q1exhibit991.htm"
+    },
+    {
+     "title": "Finviz: Estee Lauder shares rise as Q1 beats (02.11.2026)",
+     "url": "https://finviz.com/news/412990/estee-lauder-shares-rise-52-as-q1-earnings-beat-forecasts-and-fy2027-outlook-improves"
+    },
+    {
+     "title": "Estée Lauder: Fiscal 2030 Ambition (04.11.2026)",
+     "url": "https://www.elcompanies.com/en/news-and-media/newsroom/press-releases/2026/11-04-2026-050031474"
     }
    ]
   }
- ],
- "method": "Ausgewählt aus großen, liquiden Aktien außerhalb deines Depots: Der Anlass muss durch mindestens 2 Quellen bestätigt sein, das Chartbild muss stimmen (Kurs über dem 200-Tage-Schnitt, Momentum positiv), und Analysten müssen Kurspotenzial sehen. Wird jeden Sonntag neu bestimmt."
+ ]
 }

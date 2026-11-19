@@ -315,10 +315,10 @@
  "radar": {
   "chance": [
    {
-    "ticker": "META",
-    "name": "Meta Platforms",
-    "why": "Chance der Woche: Kurs 616,38 $, über der Unterstützung bei rund 595 $; Analysten-Ø-Ziel ≈ 848 $ (+38 %).",
-    "risk": "Knapp unter dem 200-Tage-Schnitt (≈ 630 $); sehr hohe KI-Ausgaben.",
+    "ticker": "PANW",
+    "name": "Palo Alto Networks",
+    "why": "Neue Chancen der Woche je Branche: Technologie Palo Alto (Zahlen und Prognose über den Erwartungen); außerdem Vertex, UniCredit, ITT und Estée Lauder – Details im Bereich „Chancen“.",
+    "risk": "Palo Alto ist schon kräftig gestiegen – nicht dem Kurssprung hinterherlaufen.",
     "strength": "mittel"
    },
    {

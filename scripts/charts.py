@@ -4,7 +4,7 @@
 Lädt 1 Jahr Tageskerzen (Yahoo Finance) für jede Depot-Position, berechnet
 gleitende Durchschnitte, RSI, MACD, Unterstützungen/Widerstände, einen
 statistischen Schwankungskorridor für die nächsten 20 Handelstage und
-Analysten-Kursziele, und schreibt alles nach data/charts.json.
+Analysten-Kursziele, Branche/Land sowie Euro-Wechselkurse, und schreibt alles nach data/charts.json.
 
 Aufruf:  python3 scripts/charts.py [--out data/charts.json]
 Nur Standardbibliothek. Keine Anlageberatung.
@@ -55,23 +55,58 @@ def candles(sym):
             out.append([d, o, h, l, c, v or 0])
     return r["meta"], out
 
-def targets(sym):
+SECTOR_DE = {"Technology": "Technologie", "Communication Services": "Kommunikation & Medien", "Consumer Cyclical": "Konsum (zyklisch)",
+             "Consumer Defensive": "Basiskonsum", "Healthcare": "Gesundheit & Pharma", "Financial Services": "Finanzen", "Industrials": "Industrie",
+             "Energy": "Energie", "Basic Materials": "Rohstoffe", "Utilities": "Versorger", "Real Estate": "Immobilien"}
+EUROPE = {"Germany", "France", "Netherlands", "Switzerland", "United Kingdom", "Ireland", "Italy", "Spain", "Denmark", "Sweden", "Norway",
+          "Finland", "Belgium", "Austria", "Luxembourg", "Portugal", "Poland"}
+
+def region_of(country):
+    if not country: return None
+    if country == "United States": return "USA"
+    if country in EUROPE: return "Europa"
+    if country in ("China", "Hong Kong"): return "China"
+    return {"Japan": "Japan", "Canada": "Kanada", "Taiwan": "Taiwan", "South Korea": "Südkorea", "India": "Indien"}.get(country, "Andere")
+
+def summary(sym):
+    """Analysten-Kursziele und Firmenprofil (Branche, Land, Börsenwert) von Yahoo. Fehler -> (None, {})."""
     global _crumb
     try:
         if _crumb is None:
             try: get("https://fc.yahoo.com", tries=1)
             except Exception: pass
             _crumb = get("https://query2.finance.yahoo.com/v1/test/getcrumb").decode().strip()
-        j = json.loads(get(f"https://query2.finance.yahoo.com/v10/finance/quoteSummary/{sym}?modules=financialData&crumb={_crumb}"))
-        f = j["quoteSummary"]["result"][0]["financialData"]
-        g = lambda k: (f.get(k) or {}).get("raw")
-        n = g("numberOfAnalystOpinions")
-        if not n or not g("targetMeanPrice"):
-            return None
-        return {"mean": g("targetMeanPrice"), "median": g("targetMedianPrice"), "high": g("targetHighPrice"),
-                "low": g("targetLowPrice"), "n": n, "rec": f.get("recommendationKey")}
+        j = json.loads(get(f"https://query2.finance.yahoo.com/v10/finance/quoteSummary/{sym}?modules=financialData,assetProfile,price&crumb={_crumb}"))
+        res = j["quoteSummary"]["result"][0]
     except Exception:
-        return None
+        return None, {}
+    f, ap, pr = res.get("financialData") or {}, res.get("assetProfile") or {}, res.get("price") or {}
+    prof = {k: v for k, v in {"sector": SECTOR_DE.get(ap.get("sector"), ap.get("sector")), "industry": ap.get("industry"),
+            "country": ap.get("country"), "region": region_of(ap.get("country")),
+            "market_cap": (pr.get("marketCap") or {}).get("raw")}.items() if v}
+    g = lambda k: (f.get(k) or {}).get("raw")
+    n = g("numberOfAnalystOpinions")
+    tgt = None
+    if n and g("targetMeanPrice"):
+        tgt = {"mean": g("targetMeanPrice"), "median": g("targetMedianPrice"), "high": g("targetHighPrice"),
+               "low": g("targetLowPrice"), "n": n, "rec": f.get("recommendationKey")}
+    return tgt, prof
+
+def targets(sym):
+    return summary(sym)[0]
+
+def fx_rates():
+    """Wechselkurse: Wert von 1 Einheit Fremdwährung in Euro, letzter Kurs + Tagesreihe (1 Jahr)."""
+    out = {}
+    for cur, pair in (("USD", "EURUSD=X"), ("HKD", "EURHKD=X"), ("GBP", "EURGBP=X"), ("CHF", "EURCHF=X")):
+        try:
+            _, c = candles(pair)
+            ser = [[x[0], round(1 / x[4], 6)] for x in c[-260:] if x[4]]
+            out[cur] = {"last": ser[-1][1], "date": ser[-1][0], "series": ser}
+        except Exception as e:
+            print("ERR fx", cur, e)
+        time.sleep(0.3)
+    return out
 
 # ---------- Indikatoren ----------
 def sma(vals, n):
@@ -187,7 +222,7 @@ def analyze(disp, sym, name, typ):
     cone = [{"t": d, "u1": round(price * math.exp(sd * math.sqrt(k)), 4), "d1": round(price * math.exp(-sd * math.sqrt(k)), 4),
              "u2": round(price * math.exp(2 * sd * math.sqrt(k)), 4), "d2": round(price * math.exp(-2 * sd * math.sqrt(k)), 4)}
             for k, d in enumerate(days, 1)]
-    tgt = targets(sym) if typ == "Aktie" else None
+    tgt, prof = summary(sym) if typ == "Aktie" else (None, {})
 
     # --- Bewertung der Signale ---
     pts, notes = 0, []
@@ -247,7 +282,7 @@ def analyze(disp, sym, name, typ):
         "supports": sup, "resistances": res,
         "high52": round(hi52, 4), "low52": round(lo52, 4),
         "atr": round(a, 4), "vol_daily_pct": round(sd * 100, 2),
-        "cone": cone, "target": tgt,
+        "cone": cone, "target": tgt, **prof,
         "analysis": {"tone": tone, "score": pts, "points": notes, "rsi": rsi_txt, "macd": macd_txt,
                      "perf": {"1M": round((price / closes[-22] - 1) * 100, 1) if len(closes) > 22 else None,
                               "3M": round((price / closes[-64] - 1) * 100, 1) if len(closes) > 64 else None,
@@ -264,6 +299,7 @@ def load_positions():
         for p in op.get("picks", []):
             if not any(x.get("ticker") == p.get("ticker") for x in pos):
                 pos.append({"ticker": p["ticker"], "symbol": p.get("symbol", ""), "name": p.get("name", p["ticker"]), "type": p.get("type", "Aktie"), "group": "chance"})
+                if p.get("sector"): pos[-1]["sector"] = p["sector"]
     return pf, pos
 
 def main():
@@ -280,6 +316,8 @@ def main():
                 resolved = True
             it = analyze(p["ticker"], p["symbol"], p["name"], p.get("type") or "Aktie")
             it["group"] = p["group"]
+            for k in ("sector", "region", "sp500"):   # Angaben aus portfolio.json/opportunity.json (v. a. für ETFs) haben Vorrang
+                if p.get(k) is not None: it[k] = p[k]
             items.append(it); print("ok ", p["ticker"], p["symbol"])
         except Exception as e:
             errors.append(f"{p['ticker']}: {e}"); print("ERR", p["ticker"], e)
@@ -288,9 +326,11 @@ def main():
         by = {p["ticker"]: p for p in pos if p["group"] == "depot"}
         pf["positions"] = [dict(q, symbol=by.get(q["ticker"], q).get("symbol", ""), name=by.get(q["ticker"], q).get("name", q["name"]), type=by.get(q["ticker"], q).get("type", q.get("type"))) for q in pf["positions"]]
         json.dump(pf, open(POSITIONS_FILE, "w"), ensure_ascii=False, indent=1)
+    fx = fx_rates()
+    if len(fx) < 3: errors.append("Wechselkurse unvollständig: " + ", ".join(fx) or "keine")
     now = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=1)))
     json.dump({"updated": now.isoformat(timespec="minutes"), "updated_label": now.strftime("%d.%m.%Y, %H:%M Uhr"),
-               "source": "Yahoo Finance (Tageskerzen, Schlusskurse; Analysten-Kursziele)", "errors": errors, "items": items},
+               "source": "Yahoo Finance (Tageskerzen, Schlusskurse; Analysten-Kursziele)", "errors": errors, "fx": fx, "items": items},
               open(a.out, "w"), ensure_ascii=False, separators=(",", ":"))
     print(f"{len(items)} Werte, {len(errors)} Fehler -> {a.out}")
 

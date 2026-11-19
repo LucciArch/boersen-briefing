@@ -5,43 +5,52 @@
    "ticker": "CSPX",
    "symbol": "CSPX.L",
    "name": "Core S&P 500",
-   "type": "ETF"
+   "type": "ETF",
+   "sector": "Breiter Index (S&P 500)",
+   "region": "USA"
   },
   {
    "ticker": "AMD",
    "symbol": "AMD",
    "name": "AMD",
-   "type": "Aktie"
+   "type": "Aktie",
+   "sp500": true
   },
   {
    "ticker": "GOOGL",
    "symbol": "GOOGL",
    "name": "Alphabet",
-   "type": "Aktie"
+   "type": "Aktie",
+   "sp500": true
   },
   {
    "ticker": "CAT",
    "symbol": "CAT",
    "name": "Caterpillar",
-   "type": "Aktie"
+   "type": "Aktie",
+   "sp500": true
   },
   {
    "ticker": "WMT",
    "symbol": "WMT",
    "name": "Walmart",
-   "type": "Aktie"
+   "type": "Aktie",
+   "sp500": true
   },
   {
    "ticker": "COPX",
    "symbol": "COPX.L",
    "name": "Copper Miners",
-   "type": "ETF"
+   "type": "ETF",
+   "sector": "Rohstoffe",
+   "region": "Welt"
   },
   {
    "ticker": "ABBV",
    "symbol": "ABBV",
    "name": "AbbVie",
-   "type": "Aktie"
+   "type": "Aktie",
+   "sp500": true
   },
   {
    "ticker": "CAKE",
@@ -59,13 +68,16 @@
    "ticker": "AMZN",
    "symbol": "AMZN",
    "name": "Amazon",
-   "type": "Aktie"
+   "type": "Aktie",
+   "sp500": true
   },
   {
    "ticker": "NUCL",
    "symbol": "NUCL.L",
    "name": "Uranium & Nuclear",
-   "type": "ETF"
+   "type": "ETF",
+   "sector": "Energie",
+   "region": "Welt"
   },
   {
    "ticker": "SPCX",
@@ -83,13 +95,16 @@
    "ticker": "WQTM",
    "symbol": "WQTM.L",
    "name": "Quantum Computing",
-   "type": "ETF"
+   "type": "ETF",
+   "sector": "Technologie",
+   "region": "Welt"
   },
   {
    "ticker": "TTWO",
    "symbol": "TTWO",
    "name": "Take-Two",
-   "type": "Aktie"
+   "type": "Aktie",
+   "sp500": true
   }
  ]
 }

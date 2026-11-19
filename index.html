@@ -102,6 +102,25 @@
   .btn.go{background:var(--up);color:#06210f}
   .banner{background:rgba(240,179,74,.12);border:1px solid rgba(240,179,74,.4);border-radius:12px;padding:11px;font-size:13px;line-height:1.5;margin-bottom:10px}
   .pick h3{font-size:22px;font-weight:700;letter-spacing:-.01em} .pick .hl{font-size:15px;color:#c9cfd9;margin-top:4px;line-height:1.45}
+  /* Depot-Analyse */
+  .big{font-size:28px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .tile{background:var(--card2);border-radius:12px;padding:10px}
+  .tile small{display:block;font-size:11px;color:var(--muted)} .tile b{display:block;font-size:15px;margin-top:3px} .tile span{display:block;font-size:11.5px;color:var(--muted);margin-top:3px;line-height:1.35}
+  .lv-gut{color:var(--up)} .lv-mittel{color:var(--warn)} .lv-hoch{color:var(--down)}
+  .alloc{padding:6px 0} .alloc .l{display:flex;justify-content:space-between;font-size:13px;gap:8px} .alloc .l span:last-child{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+  .alloc .t{height:6px;background:var(--card2);border-radius:99px;margin-top:4px;overflow:hidden} .alloc .t i{display:block;height:100%;background:var(--accent);border-radius:99px}
+  .tip{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13.5px;line-height:1.5} .tip:last-child{border-bottom:0}
+  .tip .ic{flex:none;width:22px;text-align:center} .tip b{display:block;font-size:14px;margin-bottom:2px} .tip p{color:#c9cfd9}
+  .hold{display:grid;grid-template-columns:1fr 78px 92px;gap:6px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line)} .hold:last-of-type{border-bottom:0}
+  .hold .n{font-size:13.5px;min-width:0} .hold .n b{display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis} .hold .n small{font-size:11px;color:var(--muted)}
+  .hold input{width:100%;background:var(--card2);border:1px solid var(--line);color:var(--text);font:inherit;font-size:14px;padding:8px;border-radius:8px;text-align:right}
+  .hold.hd{font-size:11px;color:var(--muted);padding-bottom:4px} .hold.hd span{text-align:right}
+  #histchart{height:170px;margin:8px -6px 0}
+  .plist{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);cursor:pointer} .plist:last-child{border-bottom:0}
+  .plist .nm{flex:1;min-width:0} .plist .nm b{display:block;font-size:14.5px} .plist .nm span{font-size:12px;color:var(--muted)}
+  .plist.on .nm b{color:var(--accent)}
+  .gap{font-size:10.5px;font-weight:700;padding:2px 6px;border-radius:6px;background:rgba(240,179,74,.15);color:var(--warn);margin-left:4px;white-space:nowrap}
   .box{background:var(--card2);border-radius:12px;padding:11px;margin-top:8px;font-size:13.5px;line-height:1.5} .box b{display:block;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
 </style>
 </head>
@@ -129,6 +148,9 @@
 
   <!-- DEPOT -->
   <section class="view" id="v-depot">
+    <div class="row" id="dtabs"></div>
+    <div id="d-ana" style="display:none"></div>
+    <div id="d-list">
     <div id="pending"></div>
     <div class="row" id="filters"></div>
     <div class="card" id="depot"></div>
@@ -139,6 +161,7 @@
       <button class="btn" id="addbtn">+ Hinzufügen</button>
     </div>
     <p class="hint">Tippe auf eine Position für Details. Die Einordnung (Chance / Halten / Beobachten / Vorsicht) beruht auf aktuellen Nachrichten und ist keine Anlageberatung.</p>
+    </div>
   </section>
 
   <!-- CHARTS -->
@@ -209,6 +232,7 @@ function show(v) {
   window.scrollTo(0, 0);
   if (location.hash !== "#" + v) history.replaceState(null, "", "#" + v);
   if (v === "charts") renderChart();
+  if (v === "depot" && dtab === "ana") renderAnalysis();
 }
 document.querySelectorAll("nav button").forEach(b => b.onclick = () => show(b.dataset.v));
 function openChart(t) { sel = t; show("charts"); renderTickers(); }
@@ -250,8 +274,10 @@ function renderPending() {
 
 function vbadge(x) { return x.verified === true ? `<span class="vb ok">✓ bestätigt durch ${x.nsrc || 2} Quellen</span>` : x.verified === false ? `<span class="vb no">⚠ nur ${x.nsrc || 1} Quelle – mit Vorsicht</span>` : ""; }
 
-function renderDepot() {
+function renderDepot() { renderDtabs(); renderDepotList(); }
+function renderDepotList() {
   renderPending();
+  const HO = holdings();
   const all = depotList();
   const counts = all.reduce((a, p) => (a[p.signal] = (a[p.signal] || 0) + 1, a), {});
   const opts = ["alle", "chance", "halten", "beobachten", "vorsicht", "neu"].filter(k => k === "alle" || counts[k]);
@@ -263,18 +289,21 @@ function renderDepot() {
     const ch = chartOf(p.ticker);
     const price = ch ? `${money(ch.last, ch.currency)}<small>${fmtChg(ch.change_pct)} · ${ch.date.slice(8, 10)}.${ch.date.slice(5, 7)}.</small>` : (p.change != null ? fmtChg(p.change) : "");
     const chgCls = ch ? cls(ch.change_pct) : cls(p.change);
+    const hq = HO[p.ticker.toUpperCase()], fx = ch ? fxOf(ch.currency) : null;
+    const val = hq?.qty && fx ? `<small style="color:var(--text)">${eur(hq.qty * ch.last * fx, 0)}</small>` : "";
     return `<div class="pos" data-t="${esc(p.ticker)}">
       <div class="top">
         <div class="nm"><b>${esc(p.name)}</b><span>${esc(p.ticker)}${p.type ? " · " + esc(p.type) : ""}${ch ? ' · Technik: <span class="' + (ch.analysis.tone === "positiv" ? "up" : ch.analysis.tone === "negativ" ? "down" : "") + '">' + ch.analysis.tone + "</span>" : ""}</span></div>
-        <span class="chg ${chgCls}">${price}</span>
+        <span class="chg ${chgCls}">${price}${val}</span>
         <span class="sig s-${esc(p.signal)}">${SIG[p.signal] || esc(p.signal)}</span>
         <button class="del" data-del="${esc(p.ticker)}" aria-label="Entfernen">✕</button>
       </div>
-      <div class="note">${esc(p.note)}${p.next ? `<br><span class="lnk" style="cursor:default">📅 ${esc(p.next)}</span>` : ""}<br>${vbadge(p)}
-        ${ch ? `<br><button class="lnk" data-chart="${esc(p.ticker)}">📈 Chart & Analyse</button>` : ""}</div>
+      <div class="note">${ch?.sector ? `<span class="hint">${esc(ch.sector)}${ch.region ? " · " + esc(ch.region) : ""}</span><br>` : ""}${esc(p.note)}${p.next ? `<br><span class="lnk" style="cursor:default">📅 ${esc(p.next)}</span>` : ""}<br>${vbadge(p)}
+        ${ch ? `<br><button class="lnk" data-chart="${esc(p.ticker)}">📈 Chart & Analyse</button>` : ""}${p.pendingAdd ? "" : `<button class="lnk" data-hold="1">${hq?.qty ? "✎ Anteile: " + num(hq.qty, hq.qty % 1 ? 2 : 0) : "+ Anteile eintragen"}</button>`}</div>
     </div>`; }).join("") : '<p class="hint">Keine Positionen in dieser Kategorie.</p>';
   document.querySelectorAll("#depot .top").forEach(el => el.onclick = e => { if (!e.target.closest(".del")) el.parentElement.classList.toggle("open"); });
   document.querySelectorAll("[data-chart]").forEach(b => b.onclick = () => openChart(b.dataset.chart));
+  document.querySelectorAll("[data-hold]").forEach(b => b.onclick = () => { dtab = "ana"; store("dtab", dtab); renderDtabs(); setTimeout(() => $("#editor")?.scrollIntoView({behavior: "smooth"}), 50); });
   document.querySelectorAll("[data-del]").forEach(b => b.onclick = e => { e.stopPropagation(); askRemove(b.dataset.del); });
 }
 function askRemove(t) {
@@ -424,14 +453,256 @@ function renderChart() {
   $("#c-scen").innerHTML = ["bull", "base", "bear"].map(k => `<div class="sc ${k}"><b>${k === "bull" ? "▲" : k === "bear" ? "▼" : "↔"} ${esc(sc[k].title)}</b>${esc(sc[k].text)}</div>`).join("");
 }
 
-/* ---------- Chance der Woche ---------- */
+/* ---------- Anteile (nur lokal auf dem Gerät) ---------- */
+const holdings = () => store("holdings") || {};
+const saveHoldings = h => store("holdings", h);
+function parseNum(s) {
+  s = String(s ?? "").trim().replace(/\s/g, "").replace(/€/g, "");
+  if (!s) return null;
+  if (s.includes(",")) s = s.replace(/\./g, "").replace(",", ".");
+  const n = Number(s);
+  return isFinite(n) && n >= 0 ? n : NaN;
+}
+const eur = (x, d) => x == null || !isFinite(x) ? "–" : num(x, d ?? (Math.abs(x) >= 1000 ? 0 : 2)) + " €";
+const pct = (x, d = 1) => x == null || !isFinite(x) ? "–" : num(x * 100, d) + " %";
+const spct = (x, d = 1) => x == null || !isFinite(x) ? "–" : (x > 0 ? "+" : "") + num(x * 100, d) + " %";
+const BROAD = s => /^Breiter Index/.test(s || "");
+const SPEC_THEMES = /quantum|uran|nuclear|crypto|bitcoin|space/i;
+
+function fxOf(cur) {                       // Wert von 1 Einheit in Euro
+  if (!cur || cur === "EUR") return 1;
+  if (cur === "GBp" || cur === "GBX") return C?.fx?.GBP ? C.fx.GBP.last / 100 : null;
+  return C?.fx?.[cur]?.last ?? null;
+}
+const _fxIdx = {};
+function fxAt(cur, date) {                 // Kurs am Tag (letzter bekannter Wert davor)
+  if (!cur || cur === "EUR") return 1;
+  const k = cur === "GBp" || cur === "GBX" ? "GBP" : cur, f = cur === k ? 1 : 0.01;
+  const ser = C?.fx?.[k]?.series; if (!ser?.length) return null;
+  let lo = 0, hi = ser.length - 1;
+  if (date < ser[0][0]) return ser[0][1] * f;
+  while (lo < hi) { const m = (lo + hi + 1) >> 1; if (ser[m][0] <= date) lo = m; else hi = m - 1; }
+  return ser[lo][1] * f;
+}
+
+function analyzeDepot() {
+  const h = holdings(), list = depotList().filter(p => !p.pendingAdd);
+  const rows = [], missing = [], noprice = [];
+  list.forEach(p => {
+    const x = h[p.ticker.toUpperCase()], ch = chartOf(p.ticker);
+    if (!x || !x.qty) { missing.push(p); return; }
+    const r = ch ? fxOf(ch.currency) : null;
+    if (!ch || r == null) { noprice.push(p); return; }
+    const price = ch.last * r, value = x.qty * price;
+    const pp = P?.positions?.find(q => q.ticker.toUpperCase() === p.ticker.toUpperCase()) || {};
+    rows.push({p, ch, qty: x.qty, buy: x.buy || null, price, value, cost: x.buy ? x.qty * x.buy : null,
+      sector: ch.sector || pp.sector || "Unbekannt", region: ch.region || pp.region || "Unbekannt",
+      cur: ch.currency === "GBp" ? "GBP" : ch.currency, type: p.type || ch.type || "", sp500: ch.sp500 || pp.sp500,
+      dayEur: value - value / (1 + (ch.change_pct || 0) / 100), signal: p.signal});
+  });
+  const total = rows.reduce((a, r) => a + r.value, 0);
+  rows.forEach(r => r.w = total ? r.value / total : 0);
+  rows.sort((a, b) => b.value - a.value);
+  const group = f => Object.values(rows.reduce((a, r) => { const k = f(r); (a[k] ||= {k, w: 0, n: 0, names: []}); a[k].w += r.w; a[k].n++; a[k].names.push(r.p.name); return a; }, {})).sort((a, b) => b.w - a.w);
+  const A = {rows, missing, noprice, total, bySector: group(r => r.sector), byRegion: group(r => r.region), byCur: group(r => r.cur), byType: group(r => r.type === "ETF" ? "ETFs" : "Einzelaktien")};
+  if (!rows.length) return A;
+  A.effN = 1 / rows.reduce((a, r) => a + r.w * r.w, 0);
+  A.broadW = rows.filter(r => BROAD(r.sector)).reduce((a, r) => a + r.w, 0);
+  const single = rows.filter(r => !BROAD(r.sector));
+  A.maxSingle = single[0] || null;
+  A.top3 = rows.slice(0, 3).reduce((a, r) => a + r.w, 0);
+  A.maxSector = A.bySector.find(s => !BROAD(s.k) && s.k !== "Unbekannt") || null;
+  A.usW = A.byRegion.filter(g => g.k === "USA").reduce((a, g) => a + g.w, 0);
+  A.foreignCur = rows.filter(r => r.cur !== "EUR").reduce((a, r) => a + r.w, 0);
+  A.day = rows.reduce((a, r) => a + r.dayEur, 0);
+  const withBuy = rows.filter(r => r.cost != null);
+  if (withBuy.length) { A.cost = withBuy.reduce((a, r) => a + r.cost, 0); A.costVal = withBuy.reduce((a, r) => a + r.value, 0); A.nBuy = withBuy.length; }
+  const tg = rows.filter(r => r.ch.target?.mean);
+  if (tg.length) { const w = tg.reduce((a, r) => a + r.w, 0); A.upside = tg.reduce((a, r) => a + r.w * (r.ch.target.mean / r.ch.last - 1), 0) / w; A.upsideCov = w; }
+  A.tone = {positiv: 0, neutral: 0, negativ: 0}; rows.forEach(r => A.tone[r.ch.analysis.tone] += r.w);
+  A.vorsichtW = rows.filter(r => r.signal === "vorsicht").reduce((a, r) => a + r.w, 0);
+  A.spec = rows.filter(r => SPEC_THEMES.test(r.p.name + " " + (r.ch.industry || "")) || (r.ch.vol_daily_pct || 0) >= 3.5);
+  A.specW = A.spec.reduce((a, r) => a + r.w, 0);
+  A.tiny = rows.filter(r => r.w < 0.02);
+  A.hist = depotHistory(rows);
+  return A;
+}
+
+function depotHistory(rows) {
+  const S = rows.map(r => ({r, m: new Map(r.ch.candles.map(c => [c[0], c[4]])), first: r.ch.candles[0]?.[0]})).filter(s => s.first);
+  if (!S.length || S.some(s => !fxAt(s.r.ch.currency, s.first))) return null;
+  const start = S.reduce((a, s) => s.first > a ? s.first : a, "");
+  const cnt = new Map(); S.forEach(s => s.m.forEach((_, d) => cnt.set(d, (cnt.get(d) || 0) + s.r.w)));
+  const dates = [...cnt.keys()].filter(d => cnt.get(d) >= 0.5).sort();   // Tage, an denen der Großteil des Depots gehandelt wurde
+  const last = S.map(() => null), vals = [], ind = S.map(() => []);
+  for (const d of [...new Set([...S.flatMap(s => [...s.m.keys()])])].sort()) {
+    S.forEach((s, i) => { if (s.m.has(d)) last[i] = s.m.get(d); });
+    if (d < start || !cnt.has(d) || cnt.get(d) < 0.5) continue;
+    let v = 0; S.forEach((s, i) => { const e = s.r.qty * last[i] * fxAt(s.r.ch.currency, d); v += e; ind[i].push(e); });
+    vals.push([d, v]);
+  }
+  if (vals.length < 40) return null;
+  const vol = arr => { const r = []; for (let i = 1; i < arr.length; i++) r.push(Math.log(arr[i] / arr[i - 1])); const m = r.reduce((a, b) => a + b, 0) / r.length; return Math.sqrt(r.reduce((a, b) => a + (b - m) ** 2, 0) / (r.length - 1) * 252); };
+  const v = vals.map(x => x[1]);
+  let peak = v[0], mdd = 0, mddAt = vals[0][0];
+  vals.forEach(([d, x]) => { peak = Math.max(peak, x); const dd = x / peak - 1; if (dd < mdd) { mdd = dd; mddAt = d; } });
+  const indVol = S.reduce((a, s, i) => a + s.r.w * vol(ind[i]), 0);
+  return {vals, start: vals[0][0], ret: v[v.length - 1] / v[0] - 1, vol: vol(v), mdd, mddAt, indVol, days: vals.length};
+}
+
+const level = (x, a, b) => x < a ? "gut" : x < b ? "mittel" : "hoch";
+const dm = d => d ? d.slice(8, 10) + "." + d.slice(5, 7) + "." + d.slice(0, 4) : "";
+
+function depotTips(A) {
+  const T = [], ok = [];
+  const chanceFor = sec => (O?.picks || []).find(p => pickSector(p) === sec);
+  const chLink = sec => { const p = chanceFor(sec); return p ? ` Passende Idee: <button class="lnk" style="margin:0" data-pick="${esc(p.ticker)}">⭐ ${esc(p.name)} (${esc(sec)})</button>` : ""; };
+  const ms = A.maxSingle;
+  if (ms && ms.w > 0.2) T.push(["⚠️", `Klumpen: ${esc(ms.p.name)} ist ${pct(ms.w)} deines Depots`, `Läuft es bei ${esc(ms.p.name)} schlecht, trifft das dein ganzes Depot. Eine verbreitete Faustregel: keine Einzelaktie über 10–15 %. Neues Geld eher in andere Werte stecken, statt hier nachzukaufen.`]);
+  else if (ms && ms.w > 0.12) T.push(["💡", `${esc(ms.p.name)} ist mit ${pct(ms.w)} deine größte Einzelaktie`, `Noch im Rahmen, aber im Auge behalten: Steigt sie weiter, wird der Anteil schnell zu groß.`]);
+  else if (ms) ok.push(`Keine Einzelaktie über ${pct(Math.max(ms.w, 0.12), 0)} – kein gefährlicher Einzelklumpen.`);
+  const sec = A.maxSector;
+  if (sec && sec.w > 0.35) T.push(["⚠️", `Branchen-Klumpen: ${esc(sec.k)} ${pct(sec.w)}`, `${esc(sec.names.join(", "))} hängen oft an denselben Nachrichten (Zinsen, Konjunktur, Branchentrends) und fallen dann gemeinsam.`]);
+  const core = ["Technologie", "Gesundheit & Pharma", "Finanzen", "Industrie", "Basiskonsum", "Energie"];
+  const have = new Set(A.bySector.filter(s => s.w >= 0.03).map(s => s.k));
+  const gaps = core.filter(c => !have.has(c));
+  if (gaps.length) T.push(["🧩", `Wenig oder nichts in: ${gaps.join(", ")}`, `Branchen, die in deinem Depot fehlen, können schwanken, wenn deine anderen Werte fallen (z. B. Basiskonsum und Pharma in Abschwüngen).${A.broadW > 0.2 ? " Über deinen Index-ETF bist du zwar schon breit dabei, aber nur mit kleinem Anteil." : ""}${gaps.map(chLink).join("")}`]);
+  if (A.usW > 0.75) T.push(["🌍", `${pct(A.usW, 0)} deines Depots stecken in den USA`, `Europa, Japan und Schwellenländer fehlen fast ganz. Wer breiter streuen will, nimmt oft einen ETF auf die Welt ohne USA oder auf Europa dazu.`]);
+  else if (A.usW) ok.push(`USA-Anteil ${pct(A.usW, 0)} – regional nicht übermäßig einseitig.`);
+  if (A.foreignCur > 0.8) T.push(["💱", `Währungsrisiko: ${pct(A.foreignCur, 0)} nicht in Euro`, `Deine Werte notieren in Dollar oder Hongkong-Dollar. Steigt der Euro, sinkt dein Depotwert in Euro, auch wenn die Kurse gleich bleiben.`]);
+  if (A.broadW > 0 && A.broadW < 0.3) T.push(["🧱", `Kleine Basis: Breite ETFs nur ${pct(A.broadW, 0)}`, `Viele Privatanleger nutzen „Kern & Satelliten“: 50–70 % in breiten Index-ETFs als ruhige Basis, der Rest in Einzelaktien und Themen. Bei dir ist der Satelliten-Teil deutlich größer.`]);
+  else if (!A.broadW) T.push(["🧱", "Kein breiter Index-ETF als Basis", `Ein breiter ETF (z. B. auf den S&P 500 oder die Welt) würde dein Depot ruhiger machen.`]);
+  else if (A.broadW >= 0.5) ok.push(`Breiter Index-ETF als solide Basis (${pct(A.broadW, 0)}).`);
+  const ov = A.rows.filter(r => r.sp500).reduce((a, r) => a + r.w, 0);
+  if (A.rows.some(r => BROAD(r.sector) && /S&P/.test(r.sector)) && ov > 0.15) T.push(["🔁", `Doppelt gewichtet: ${pct(ov, 0)} in S&P-500-Einzelwerten`, `${esc(A.rows.filter(r => r.sp500).slice(0, 4).map(r => r.p.name).join(", "))} stecken auch schon in deinem S&P-500-ETF. Das ist kein Fehler, aber du setzt dadurch doppelt auf dieselben Firmen.`]);
+  if (A.specW > 0.25) T.push(["🎢", `Spekulativer Anteil ${pct(A.specW, 0)}`, `${esc(A.spec.map(r => r.p.name).join(", "))} schwanken stark oder sind junge Zukunftsthemen. Das kann sich lohnen, aber starke Rückschläge von 30–50 % sind hier normal.`]);
+  if (A.tiny.length >= 3) T.push(["🔍", `${A.tiny.length} Mini-Positionen unter 2 %`, `${esc(A.tiny.map(r => r.p.name).join(", "))} bewegen dein Depot kaum. Entweder bewusst aufstocken oder zusammenlegen – das macht das Depot übersichtlicher.`]);
+  if (A.vorsichtW > 0.2) T.push(["🚦", `${pct(A.vorsichtW, 0)} deines Depots stehen heute auf „Vorsicht“`, `Lies dir im Briefing die Begründung zu diesen Werten durch.`]);
+  if (A.tone.negativ > 0.4) T.push(["📉", `Charttechnik bei ${pct(A.tone.negativ, 0)} des Depots negativ`, `Ein großer Teil deiner Werte ist im Abwärtstrend. Das sagt nichts über die Zukunft, aber Nachkäufe in fallende Trends sind riskanter.`]);
+  A.rows.filter(r => r.cost != null && r.value / r.cost - 1 <= -0.25).forEach(r => T.push(["🩹", `${esc(r.p.name)}: ${spct(r.value / r.cost - 1, 0)} seit Kauf`, `Frag dich ehrlich: Würdest du die Aktie heute neu kaufen? Wenn sich die Geschichte dahinter verschlechtert hat, ist Halten nur Hoffen.`]));
+  A.rows.filter(r => r.cost != null && r.value / r.cost - 1 >= 1).forEach(r => T.push(["🏆", `${esc(r.p.name)}: ${spct(r.value / r.cost - 1, 0)} seit Kauf`, `Ein Teilverkauf („Gewinne mitnehmen“) senkt das Risiko, falls die Aktie wieder fällt. Beachte die Steuer auf Gewinne über dem Freibetrag.`]));
+  if (A.effN >= 8) ok.push(`Gut gestreut: wirkt wie ${num(A.effN, 0)} gleich große Positionen.`);
+  return {T, ok};
+}
+
+function renderAnalysis() {
+  const el = $("#d-ana"), A = analyzeDepot();
+  const intro = `<div class="card"><h2>Gesamtanalyse</h2><p class="hint" style="font-size:13.5px">Trag unten ein, wie viele Anteile du von jeder Position hast (so wie in Trade Republic). Optional den durchschnittlichen Kaufkurs in Euro, dann siehst du auch Gewinn und Verlust.<br><br>🔒 Deine Anteile werden <b>nur auf diesem Handy</b> gespeichert. Sie landen nicht im öffentlichen GitHub-Repo.</p></div>`;
+  let html = "";
+  if (!C?.fx) html += `<div class="banner">Die Wechselkurse fehlen noch. Sie kommen mit dem nächsten Morgen-Update, dann rechnet die App alles in Euro um.</div>`;
+  if (!A.rows.length) { el.innerHTML = html + intro + editorHtml(A); bindEditor(); return; }
+  const {T, ok} = depotTips(A), H = A.hist;
+  const pl = A.cost ? A.costVal - A.cost : null;
+  html += `<div class="card"><h2>Dein Depot</h2>
+    <div class="big">${eur(A.total, 0)}</div>
+    <div style="font-size:13px;margin-top:4px"><span class="${cls(A.day)}">${A.day >= 0 ? "+" : ""}${eur(A.day)}</span> <span class="hint">am letzten Handelstag (ohne Währungseffekt)</span></div>
+    ${pl != null ? `<div style="font-size:13px;margin-top:4px"><span class="${cls(pl)}">${pl >= 0 ? "+" : ""}${eur(pl)} (${spct(A.costVal / A.cost - 1)})</span> <span class="hint">seit Kauf${A.nBuy < A.rows.length ? ` · ${A.nBuy} von ${A.rows.length} Positionen mit Kaufkurs` : ""}</span></div>` : ""}
+    <p class="hint" style="margin-top:8px">Schätzung aus Schlusskursen (Yahoo, ${esc(C?.updated_label || "")}) und aktuellen Wechselkursen. Der Wert in Trade Republic weicht leicht ab.${A.missing.length ? `<br>Ohne Anteile, nicht eingerechnet: ${esc(A.missing.map(p => p.name).join(", "))}.` : ""}${A.noprice.length ? `<br>Ohne Kurs, nicht eingerechnet: ${esc(A.noprice.map(p => p.name).join(", "))}.` : ""}</p></div>`;
+  const vl = H ? (H.vol < 0.15 ? ["gut", "niedrig"] : H.vol < 0.25 ? ["mittel", "mittel"] : ["hoch", H.vol < 0.35 ? "hoch" : "sehr hoch"]) : null;
+  const sp = A.effN >= 8 || A.broadW >= 0.5 ? ["gut", "gut"] : A.effN >= 4 ? ["mittel", "mittel"] : ["hoch", "gering"];
+  const kl = Math.max(A.maxSingle?.w || 0, (A.maxSector?.w || 0) / 2);
+  const klL = level(kl, 0.12, 0.2), klT = {gut: "gering", mittel: "mittel", hoch: "hoch"}[klL];
+  html += `<div class="card"><h2>Bewertung</h2><div class="tiles">
+    <div class="tile"><small>Streuung</small><b class="lv-${sp[0]}">${sp[1]}</b><span>wirkt wie ${num(A.effN, 1)} gleich große Positionen${A.broadW ? `, davon ${pct(A.broadW, 0)} breiter ETF` : ""}</span></div>
+    <div class="tile"><small>Klumpenrisiko</small><b class="lv-${klL}">${klT}</b><span>größte Einzelaktie ${A.maxSingle ? pct(A.maxSingle.w, 0) : "–"} · größte Branche ${A.maxSector ? esc(A.maxSector.k) + " " + pct(A.maxSector.w, 0) : "–"}</span></div>
+    <div class="tile"><small>Schwankung</small>${vl ? `<b class="lv-${vl[0]}">${vl[1]}</b><span>±${pct(H.vol, 0)} pro Jahr (S&P 500 meist ±15–20 %)</span>` : "<b>–</b><span>zu wenig Kursdaten</span>"}</div>
+    <div class="tile"><small>Analysten-Ziele</small>${A.upside != null ? `<b class="${cls(A.upside)}">${spct(A.upside, 0)}</b><span>gewichteter Ø-Abstand zum Kursziel (für ${pct(A.upsideCov, 0)} des Depots)</span>` : "<b>–</b><span>keine Kursziele</span>"}</div>
+  </div>
+  <p class="hint" style="margin-top:8px">Charttechnik nach Depotgewicht: <span class="up">${pct(A.tone.positiv, 0)} positiv</span> · ${pct(A.tone.neutral, 0)} neutral · <span class="down">${pct(A.tone.negativ, 0)} negativ</span></p></div>`;
+  html += `<div class="card"><h2>Verbesserungsansätze</h2>${T.map(([ic, h, t]) => `<div class="tip"><span class="ic">${ic}</span><div><b>${h}</b><p>${t}</p></div></div>`).join("") || '<p class="hint">Keine auffälligen Schwachstellen gefunden.</p>'}
+    ${ok.length ? `<div class="sub2 up" style="margin-top:12px">Was schon gut ist</div><ul class="pts">${ok.map(x => `<li>${x}</li>`).join("")}</ul>` : ""}
+    <p class="hint" style="margin-top:10px">Diese Hinweise folgen festen Regeln (Anteile, Branchen, Regionen, Schwankung) und sind keine Anlageberatung.</p></div>`;
+  const tabs = {pos: "Positionen", sector: "Branchen", region: "Regionen", cur: "Währungen"};
+  const at = store("allocTab") || "pos";
+  const grp = {pos: A.rows.map(r => ({k: r.p.name, w: r.w, x: eur(r.value, 0) + (r.cost != null ? ` · <span class="${cls(r.value - r.cost)}">${spct(r.value / r.cost - 1, 0)}</span>` : "")})),
+    sector: A.bySector, region: A.byRegion, cur: A.byCur.map(g => ({...g, k: {USD: "US-Dollar", EUR: "Euro", HKD: "Hongkong-Dollar", GBP: "Pfund"}[g.k] || g.k}))}[at];
+  html += `<div class="card"><h2>Aufteilung</h2><div class="row" id="atabs">${Object.entries(tabs).map(([k, t]) => `<button class="f sm ${k === at ? "on" : ""}" data-a="${k}">${t}</button>`).join("")}</div>
+    ${grp.map(g => `<div class="alloc"><div class="l"><span>${esc(g.k)}</span><span>${g.x ? g.x + " · " : ""}${pct(g.w)}</span></div><div class="t"><i style="width:${(g.w * 100).toFixed(1)}%"></i></div></div>`).join("")}</div>`;
+  if (H) html += `<div class="card"><h2>Rückblick seit ${dm(H.start)}</h2>
+    <p class="hint">So hätte sich dein Depot mit den heutigen Stückzahlen entwickelt (in Euro, inkl. Wechselkurs).</p>
+    <div id="histchart"></div>
+    <div class="kv"><div><small>Entwicklung</small><b class="${cls(H.ret)}">${spct(H.ret)}</b></div><div><small>Schwankung p. a.</small><b>±${pct(H.vol, 0)}</b></div><div><small>Größter Rückgang</small><b class="down">${spct(H.mdd)}</b></div></div>
+    <p class="hint" style="margin-top:8px">Einzeln schwanken deine Werte im Schnitt um ±${pct(H.indVol, 0)} pro Jahr, zusammen nur um ±${pct(H.vol, 0)}. Diesen Ausgleich bringt die Streuung. Der größte Rückgang vom Hoch war am ${dm(H.mddAt)}. Vergangenheit, keine Prognose.</p></div>`;
+  el.innerHTML = html + editorHtml(A);
+  document.querySelectorAll("#atabs .f").forEach(b => b.onclick = () => { store("allocTab", b.dataset.a); renderAnalysis(); });
+  document.querySelectorAll("[data-pick]").forEach(b => b.onclick = () => { pickSel = b.dataset.pick; show("chance"); renderChance(); });
+  bindEditor();
+  if (H) drawHist(H);
+}
+let histChart;
+function drawHist(H) {
+  if (typeof LightweightCharts === "undefined" || !$("#histchart")) return;
+  if (histChart) { try { histChart.remove(); } catch (e) {} }
+  histChart = LightweightCharts.createChart($("#histchart"), {layout: {background: {type: "solid", color: "#171b22"}, textColor: "#8c94a3", fontFamily: "Inter, system-ui", fontSize: 11, attributionLogo: false},
+    grid: {vertLines: {visible: false}, horzLines: {color: "#1f242d"}}, rightPriceScale: {borderColor: "#2a303b"}, timeScale: {borderColor: "#2a303b"}, crosshair: {mode: 0}, autoSize: true, handleScroll: false, handleScale: false});
+  const up = H.ret >= 0, s = histChart.addAreaSeries({lineColor: up ? "#2fbf71" : "#ef5a5a", topColor: up ? "rgba(47,191,113,.25)" : "rgba(239,90,90,.25)", bottomColor: "rgba(0,0,0,0)", lineWidth: 2, priceLineVisible: false,
+    priceFormat: {type: "custom", formatter: v => num(v, 0) + " €"}});
+  s.setData(H.vals.map(([t, v]) => ({time: t, value: v})));
+  histChart.timeScale().fitContent();
+}
+
+function editorHtml(A) {
+  const h = holdings(), list = depotList().filter(p => !p.pendingAdd);
+  return `<div class="card" id="editor"><h2>Anteile eintragen</h2>
+    <div class="hold hd"><span>Position</span><span>Stück</span><span>Ø Kaufkurs €</span></div>
+    ${list.map(p => { const x = h[p.ticker.toUpperCase()] || {}, ch = chartOf(p.ticker), r = ch ? fxOf(ch.currency) : null;
+      return `<div class="hold"><div class="n"><b>${esc(p.name)}</b><small>${esc(p.ticker)}${ch && r ? " · " + eur(ch.last * r) : ""}</small></div>
+        <input inputmode="decimal" data-q="${esc(p.ticker)}" value="${x.qty != null ? num(x.qty, x.qty % 1 ? 4 : 0).replace(/(,\d*?)0+$/, "$1").replace(/,$/, "") : ""}" placeholder="0">
+        <input inputmode="decimal" data-b="${esc(p.ticker)}" value="${x.buy != null ? num(x.buy, 2) : ""}" placeholder="optional"></div>`; }).join("")}
+    <p class="err" id="herr" style="display:none;padding:8px 0 0;text-align:left"></p>
+    <button class="btn go" id="hsave">Speichern & analysieren</button>
+    <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap"><button class="lnk" id="hexp">⬇ Sicherung kopieren</button><button class="lnk" id="himp">⬆ Sicherung einfügen</button></div>
+    <p class="hint" style="margin-top:6px">Stückzahlen mit Komma eingeben (z. B. 2,5 bei Bruchstücken). Die Sicherung ist ein kurzer Text, den du z. B. in Notizen ablegen kannst, falls der Browser-Speicher gelöscht wird.</p></div>`;
+}
+function bindEditor() {
+  const b = $("#hsave"); if (!b) return;
+  b.onclick = () => {
+    const h = {}, bad = [];
+    document.querySelectorAll("[data-q]").forEach(i => {
+      const t = i.dataset.q, q = parseNum(i.value), bi = document.querySelector(`[data-b="${CSS.escape(t)}"]`), bu = parseNum(bi.value);
+      if (Number.isNaN(q) || Number.isNaN(bu)) { bad.push(t); return; }
+      if (q) h[t.toUpperCase()] = {qty: q, buy: bu || null};
+    });
+    if (bad.length) { $("#herr").style.display = ""; $("#herr").textContent = "Bitte nur Zahlen eingeben bei: " + bad.join(", "); return; }
+    saveHoldings(h); renderAnalysis(); renderDepotList(); window.scrollTo(0, 0);
+  };
+  $("#hexp").onclick = async () => { const t = JSON.stringify(holdings()); try { await navigator.clipboard.writeText(t); $("#hexp").textContent = "✓ Kopiert"; } catch (e) { prompt("Sicherung (kopieren):", t); } };
+  $("#himp").onclick = () => { const t = prompt("Sicherung hier einfügen:"); if (!t) return;
+    try { const d = JSON.parse(t); if (typeof d !== "object" || Array.isArray(d)) throw 0;
+      const h = {}; Object.entries(d).forEach(([k, v]) => { const q = Number(v?.qty), bu = v?.buy == null ? null : Number(v.buy); if (isFinite(q) && q > 0 && /^[\w .&\-]{1,40}$/u.test(k)) h[k.toUpperCase()] = {qty: q, buy: isFinite(bu) && bu > 0 ? bu : null}; });
+      saveHoldings(h); renderAnalysis(); renderDepotList(); } catch (e) { alert("Das ist keine gültige Sicherung."); } };
+}
+
+let dtab = "list";
+function renderDtabs() {
+  $("#dtabs").innerHTML = [["list", "Positionen"], ["ana", "📊 Gesamtanalyse"]].map(([k, t]) => `<button class="f ${k === dtab ? "on" : ""}" data-d="${k}">${t}</button>`).join("");
+  document.querySelectorAll("#dtabs .f").forEach(b => b.onclick = () => { dtab = b.dataset.d; store("dtab", dtab); renderDtabs(); });
+  $("#d-list").style.display = dtab === "list" ? "" : "none";
+  $("#d-ana").style.display = dtab === "ana" ? "" : "none";
+  if (dtab === "ana" && document.getElementById("v-depot").classList.contains("on")) renderAnalysis();
+}
+
+/* ---------- Chancen der Woche (je Branche) ---------- */
+let pickSel = null;
+const pickSector = p => p.sector || chartOf(p.ticker)?.sector || "Weitere";
+function sectorGaps() {                   // Branchen, die im Depot (fast) fehlen
+  const A = analyzeDepot();
+  if (A.rows.length) return {w: Object.fromEntries(A.bySector.map(s => [s.k, s.w])), byWeight: true};
+  const w = {}; depotList().forEach(p => { const s = chartOf(p.ticker)?.sector; if (s) w[s] = (w[s] || 0) + 1; }); return {w, byWeight: false};
+}
 function renderChance() {
-  const p = O?.picks?.[0];
-  if (!p || !p.why) { $("#chance").innerHTML = '<div class="card"><p class="hint">Die Chance der Woche wird jeden Sonntag neu bestimmt.</p></div>'; return; }
-  const ch = chartOf(p.ticker), c = ch?.currency;
-  const li = a => `<ul class="pts">${a.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
-  $("#chance").innerHTML = `<div class="card pick">
-      <h2>⭐ Chance der Woche · ${esc(O.week)}</h2>
+  const picks = (O?.picks || []).filter(p => p.why);
+  if (!picks.length) { $("#chance").innerHTML = '<div class="card"><p class="hint">Die Chancen der Woche werden jeden Sonntag neu bestimmt.</p></div>'; return; }
+  if (!picks.some(p => p.ticker === pickSel)) pickSel = picks[0].ticker;
+  const G = sectorGaps(), isGap = sec => G.byWeight ? (G.w[sec] || 0) < 0.03 : !G.w[sec];
+  const gapTag = sec => isGap(sec) ? `<span class="gap">${G.byWeight ? "wenig im Depot" : "fehlt im Depot"}</span>` : "";
+  const p = picks.find(x => x.ticker === pickSel), ch = chartOf(p.ticker), c = ch?.currency;
+  const li = a => `<ul class="pts">${(a || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
+  const overview = picks.length > 1 ? `<div class="card"><h2>⭐ Chancen der Woche · ${esc(O.week)}</h2><p class="hint" style="margin-bottom:4px">Eine Idee je Branche. Tippe für Details.</p>
+    ${picks.map(x => { const k = chartOf(x.ticker); return `<div class="plist ${x.ticker === pickSel ? "on" : ""}" data-p="${esc(x.ticker)}"><div class="nm"><span>${esc(pickSector(x))}${gapTag(pickSector(x))}</span><b>${esc(x.name)}</b></div>
+      ${k?.target ? `<span class="sig" style="background:rgba(180,140,255,.15);color:var(--violet)">Ziel ${fmtChg((k.target.mean / k.last - 1) * 100)}</span>` : ""}<span class="sig s-chance">${esc(x.strength)}</span></div>`; }).join("")}</div>` : "";
+  $("#chance").innerHTML = overview + `<div class="card pick" id="pickcard">
+      <h2>${picks.length > 1 ? esc(pickSector(p)) + gapTag(pickSector(p)) : "⭐ Chance der Woche · " + esc(O.week)}</h2>
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
         <div><h3>${esc(p.name)}</h3><div class="hint">${esc(p.ticker)} · ${esc(p.type)} · nicht in deinem Depot</div></div>
         ${ch ? `<div style="text-align:right"><b style="font-size:17px">${money(ch.last, c)}</b><div class="${cls(ch.change_pct)}" style="font-size:12px;font-weight:600">${fmtChg(ch.change_pct)}</div></div>` : ""}
@@ -449,16 +720,20 @@ function renderChance() {
       <div class="box"><b>Zeithorizont</b>${esc(p.horizon)}</div></div>
     <div class="card src"><h2>Quellen</h2>${(p.sources || []).map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)} ↗</a>`).join("")}</div>
     <div class="card"><h2>Wie wird ausgewählt?</h2><p class="hint">${esc(O.method || "")}</p></div>`;
+  document.querySelectorAll(".plist").forEach(el => el.onclick = () => { pickSel = el.dataset.p; renderChance(); $("#pickcard").scrollIntoView({behavior: "smooth", block: "start"}); });
   const b = $("#tochart"); if (b) b.onclick = () => openChart(p.ticker);
   // Teaser auf "Heute"
   $("#chance-teaser").style.display = "";
-  $("#chance-teaser").innerHTML = `<h2>⭐ Chance der Woche</h2><div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><div><b style="font-size:16px">${esc(p.name)}</b><div class="hint">${esc(p.headline)}</div></div><button class="f" id="teaserbtn">Ansehen</button></div>`;
-  $("#teaserbtn").onclick = () => show("chance");
+  $("#chance-teaser").innerHTML = picks.length > 1
+    ? `<h2>⭐ Chancen der Woche</h2>${picks.map(x => `<div class="plist" data-tp="${esc(x.ticker)}"><div class="nm"><span>${esc(pickSector(x))}${gapTag(pickSector(x))}</span><b>${esc(x.name)}</b></div><span class="hint">›</span></div>`).join("")}`
+    : `<h2>⭐ Chance der Woche</h2><div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><div><b style="font-size:16px">${esc(p.name)}</b><div class="hint">${esc(p.headline)}</div></div><button class="f" data-tp="${esc(p.ticker)}">Ansehen</button></div>`;
+  document.querySelectorAll("[data-tp]").forEach(el => el.onclick = () => { pickSel = el.dataset.tp; renderChance(); show("chance"); });
 }
 
 /* ---------- Start ---------- */
 (async () => {
   show_ = store("chartopts") || show_;
+  dtab = store("dtab") || "list";
   renderToggles();
   [B, C, P, O] = await Promise.all([load("data/briefing.json"), load("data/charts.json"), load("data/portfolio.json"), load("data/opportunity.json")]);
   syncChanges();

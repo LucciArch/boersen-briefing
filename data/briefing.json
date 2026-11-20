@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-20T07:28+01:00",
- "updated_label": "Fr, 20.11.2026, 07:28 Uhr",
+ "updated": "2026-11-20T12:40+01:00",
+ "updated_label": "Fr, 20.11.2026, 12:40 Uhr",
  "kind": "Tagesbriefing",
  "mood": "Deutlich schwächer: Trotz des gelungenen Börsenstarts von Anthropic fielen die US-Börsen am Donnerstag um rund 2 % (S&P 500 sechster Minustag in Folge), weil Anleger an der Rendite der hohen KI-Investitionen zweifeln. In Asien setzte sich der Ausverkauf heute fort, der DAX wird vorbörslich rund 1,3 % tiefer erwartet.",
- "check_note": "14 von 15 Depotkursen mit mindestens 2 Quellen bestätigt (Schlusskurse vom Donnerstag); beim Uran-ETF nur 1 sichere Quelle, bei drei London-Themen-ETFs keine Tagesveränderung (Quellen in verschiedenen Währungen nicht eindeutig). Ein unabhängiger Faktencheck bestätigte alle Indexstände, Kurse und Nachrichten; korrigiert wurden die GTA-VI-Schätzung (jetzt 24,6 Mio.), AMDs nachbörsliche Bewegung und die Spanne des Gold-Tagesminus.",
+ "check_note": "Aktualisiert um 12:40 Uhr: SoFi und SpaceX wurden laut Depot-Update aus dem Depot entfernt; Hongkong-Schluss ergänzt. 12 von 13 Depotkursen mit mindestens 2 Quellen bestätigt (Schlusskurse vom Donnerstag); beim Uran-ETF nur 1 sichere Quelle, bei drei London-ETFs keine Tagesveränderung. Der Faktencheck vom Morgen bestätigte alle Indexstände, Kurse und Nachrichten; Xiaomis Freitagsschluss ist nur über 1 Quelle belegt.",
  "markets": [
   {
    "name": "S&P 500",
@@ -168,18 +168,6 @@
    "verified": true
   },
   {
-   "name": "SoFi",
-   "ticker": "SOFI",
-   "type": "Aktie",
-   "signal": "vorsicht",
-   "price": "13,53 $",
-   "change": -4.11,
-   "note": "Do-Schluss = neues 52-Wochen-Tief, achter Verlusttag in Folge; die bisherige Unterstützung bei rund 13,86 $ ist gebrochen. Kein Firmengrund bestätigt (Vermutungen von Privatanlegern über Geldabfluss Richtung Anthropic sind unbelegt). Rund 21 % unter dem 200-Tage-Schnitt. Gegenpol: Analysten haben die Gewinnschätzung in 30 Tagen um rund 9 % angehoben.",
-   "next": "Fed-Zinsentscheid 9.12. (außerhalb 7 Tage)",
-   "nsrc": 2,
-   "verified": true
-  },
-  {
    "name": "Amazon",
    "ticker": "AMZN",
    "type": "Aktie",
@@ -204,25 +192,13 @@
    "verified": false
   },
   {
-   "name": "SpaceX",
-   "ticker": "SPCX",
-   "type": "Aktie",
-   "signal": "beobachten",
-   "price": "138,43 $",
-   "change": -3.53,
-   "note": "Do-Schluss. Morgens im Plus, dann mit dem Markt gedreht. Laut Anthropics Börsenprospekt will Anthropic bis zu 120,5 Mrd. $ für Rechenleistung bei SpaceX ausgeben – das ist Chance und Abhängigkeit von einem Großkunden zugleich. Unterstützung bei rund 130 $; ab etwa 8.12. dürfen Alt-Aktionäre verkaufen.",
-   "next": "Ende der Haltefrist 8.12. (voraussichtlich)",
-   "nsrc": 2,
-   "verified": true
-  },
-  {
    "name": "Xiaomi",
    "ticker": "1810.HK",
    "type": "Aktie",
    "signal": "beobachten",
    "price": "28,52 HK$",
    "change": -3.84,
-   "note": "Do-Schluss in Hongkong. Heute (Fr) laut Yahoo im Handel weiter schwächer (Zwischenstand ≈ 27,64 HK$, nicht bestätigt) – ganz Asien leidet unter dem KI-Abverkauf. Knapp unter dem 200-Tage-Schnitt (≈ 29,07 HK$). Analysten haben die Gewinnschätzung in 30 Tagen um rund 5 % gesenkt.",
+   "note": "Do-Schluss in Hongkong (bestätigt). Heute (Fr) schloss Xiaomi laut Yahoo bei ≈ 27,64 HK$ (≈ −3,1 %) – nur 1 Quelle, daher nicht als bestätigt angezeigt. Der Hang Seng fiel heute um 1,89 % auf ≈ 22.411 Punkte (tiefster Stand seit rund anderthalb Jahren), Technologiewerte noch stärker. Knapp unter dem 200-Tage-Schnitt (≈ 29,07 HK$). Analysten haben die Gewinnschätzung in 30 Tagen um rund 5 % gesenkt.",
    "next": "Q3-Zahlen Di 24.11. (bestätigt)",
    "nsrc": 2,
    "verified": true
@@ -260,17 +236,17 @@
     "USA",
     "KI",
     "AMZN",
-    "GOOGL",
-    "SPCX"
+    "GOOGL"
    ]
   },
   {
    "title": "KI-Zweifel drücken die Börsen weltweit",
-   "text": "S&P 500, Dow und Nasdaq fielen am Donnerstag je rund 2 %; der S&P 500 hat damit sechs Tage in Folge verloren. Heute bricht Asien ein: SoftBank rund −16 %, auch Japan, Südkorea und Taiwan mit kräftigen Verlusten. Anleger zweifeln, ob die riesigen KI-Investitionen genug Gewinn bringen.",
+   "text": "S&P 500, Dow und Nasdaq fielen am Donnerstag je rund 2 %; der S&P 500 hat damit sechs Tage in Folge verloren. Heute bricht Asien ein: SoftBank rund −16 %, auch Japan, Südkorea und Taiwan mit kräftigen Verlusten. Anleger zweifeln, ob die riesigen KI-Investitionen genug Gewinn bringen. In Hongkong schloss der Hang Seng 1,89 % tiefer bei rund 22.411 Punkten; seit dem Jahreshoch Ende Januar sind das rund 20 % Minus (Bärenmarkt = Rückgang um 20 % vom Hoch).",
    "tags": [
     "Markt",
     "KI",
-    "Asien"
+    "Asien",
+    "1810.HK"
    ]
   },
   {
@@ -329,13 +305,6 @@
     "name": "Caterpillar",
     "why": "Neues 52-Wochen-Tief, Abwärtstrend ohne Bodenbildung.",
     "risk": "Überverkauft – eine kurze Gegenbewegung ist jederzeit möglich, Verkauf jetzt also nicht zwingend.",
-    "strength": "mittel"
-   },
-   {
-    "ticker": "SOFI",
-    "name": "SoFi",
-    "why": "Unterstützung gebrochen, neues 52-Wochen-Tief.",
-    "risk": "Gewinnschätzungen steigen – fundamental nicht schwach.",
     "strength": "mittel"
    },
    {
@@ -510,6 +479,18 @@
   {
    "title": "Make Tech Easier: GTA 6 first-day sales estimate (Sensor Tower)",
    "url": "https://maketecheasier.com/gta-6-first-day-sales-estimate/"
+  },
+  {
+   "title": "TVB News: 港股收市報22410點 跌430點 (20.11.2026)",
+   "url": "https://news.tvb.com/tc/1207448-%E6%B8%AF%E8%82%A1%E6%94%B6%E5%B8%82%E5%A0%B122410%E9%BB%9E%E8%B7%8C430%E9%BB%9E"
+  },
+  {
+   "title": "21财经: 港股收评 恒指跌近2% (20.11.2026)",
+   "url": "https://m.21jingji.com/article/20261120/herald/049195259479fe62e123fba290eab5f7.html"
+  },
+  {
+   "title": "Bloomberg: Hong Kong Stocks Fall 20% From 2026 High as AI Selloff Spreads",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-20/hong-kong-stocks-hang-seng-hsi-hkex-2026-ai-selloff-bear-market"
   }
  ]
 }

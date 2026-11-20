@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14",
+ "updated": "2026-11-20",
  "positions": [
   {
    "ticker": "CSPX",
@@ -59,12 +59,6 @@
    "type": "Aktie"
   },
   {
-   "ticker": "SOFI",
-   "symbol": "SOFI",
-   "name": "SoFi",
-   "type": "Aktie"
-  },
-  {
    "ticker": "AMZN",
    "symbol": "AMZN",
    "name": "Amazon",
@@ -78,12 +72,6 @@
    "type": "ETF",
    "sector": "Energie",
    "region": "Welt"
-  },
-  {
-   "ticker": "SPCX",
-   "symbol": "SPCX",
-   "name": "SpaceX",
-   "type": "Aktie"
   },
   {
    "ticker": "1810.HK",

@@ -9,7 +9,16 @@
    "symbol": "VRTX",
    "name": "Vertex Pharmaceuticals",
    "strength": "schwach",
-   "status": "wartet auf ersten Handelstag"
+   "status": "läuft",
+   "entry_date": "2026-11-19",
+   "entry": 537.79,
+   "bench_entry": 737.46,
+   "last_date": "2026-11-19",
+   "last": 520.66,
+   "ret": -0.0319,
+   "bench_ret": -0.0293,
+   "excess": -0.0026,
+   "days": 0
   },
   {
    "id": "KW 47 (16.–20.11.2026)|UCG",
@@ -42,7 +51,16 @@
    "symbol": "ITT",
    "name": "ITT Inc.",
    "strength": "mittel",
-   "status": "wartet auf ersten Handelstag"
+   "status": "läuft",
+   "entry_date": "2026-11-19",
+   "entry": 209.03,
+   "bench_entry": 737.46,
+   "last_date": "2026-11-19",
+   "last": 206.26,
+   "ret": -0.0133,
+   "bench_ret": -0.0293,
+   "excess": 0.016,
+   "days": 0
   },
   {
    "id": "KW 47 (16.–20.11.2026)|EL",
@@ -53,7 +71,16 @@
    "symbol": "EL",
    "name": "Estée Lauder",
    "strength": "mittel",
-   "status": "wartet auf ersten Handelstag"
+   "status": "läuft",
+   "entry_date": "2026-11-19",
+   "entry": 103.34,
+   "bench_entry": 737.46,
+   "last_date": "2026-11-19",
+   "last": 101.77,
+   "ret": -0.0152,
+   "bench_ret": -0.0293,
+   "excess": 0.0141,
+   "days": 0
   },
   {
    "id": "KW 47 (16.–20.11.2026)|META",
@@ -70,24 +97,24 @@
    "last_date": "2026-11-18",
    "last": 616.38,
    "ret": -0.0369,
-   "bench_ret": -0.026,
-   "excess": -0.0109,
+   "bench_ret": -0.0451,
+   "excess": 0.0082,
    "days": 2,
    "status": "läuft"
   }
  ],
- "updated": "2026-11-19T14:08+01:00",
+ "updated": "2026-11-20T07:22+01:00",
  "benchmark": "S&P 500 (SPY)",
  "method": "Einstieg zum Eröffnungskurs des ersten Handelstags ab Veröffentlichung; Vergleich mit dem S&P-500-ETF SPY über denselben Zeitraum; Kursentwicklung in Handelswährung, ohne Dividenden und Gebühren.",
  "stats": {
   "now": {
-   "n": 1,
-   "beat": 0,
+   "n": 4,
+   "beat": 3,
    "positive": 0,
-   "hit_rate": 0.0,
-   "avg_ret": -0.0369,
-   "avg_bench": -0.026,
-   "avg_excess": -0.0109
+   "hit_rate": 0.75,
+   "avg_ret": -0.0243,
+   "avg_bench": -0.0333,
+   "avg_excess": 0.0089
   },
   "4w": {
    "n": 0

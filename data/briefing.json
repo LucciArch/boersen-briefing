@@ -3,7 +3,7 @@
  "updated_label": "Sa, 21.11.2026, 07:30 Uhr",
  "kind": "Wochenrückblick",
  "mood": "Schwarze Woche: Der S&P 500 verlor 8,6 % (schlechteste Woche seit April 2025) und ist jetzt in einer Korrektur (mehr als 10 % unter dem Rekord), die Nasdaq fiel allein am Freitag um 5,3 %. Auslöser am Freitag war ein Reuters-Bericht, dass die US-Börsenaufsicht SEC die Buchhaltung von Nvidia prüft – das verstärkte die Zweifel an KI-Aktien.",
- "check_note": "Alle 9 US- und Hongkong-Kurse im Depot sind mit mindestens 2 Quellen bestätigt (Freitagsschluss). Bei den 4 London-ETFs gibt es für Freitag nur 1 Quelle (Yahoo) – die Werte sind daher als nicht bestätigt markiert. Gold, Bitcoin und US-Rendite nur als Spanne, weil die Quellen leicht abweichen. Der unabhängige Faktencheck läuft noch; Ergebnis folgt in einem Update.",
+ "check_note": "Alle 9 US- und Hongkong-Kurse im Depot und alle Indexstände sind mit mindestens 2 Quellen bestätigt (Freitagsschluss); bei den 4 London-ETFs gibt es für Freitag nur 1 Quelle (Yahoo), daher als nicht bestätigt markiert. Der unabhängige Faktencheck bestätigte alle Kurse, Indexstände und Nachrichten (GTA-VI-Zahlen per SEC-Meldung); korrigiert wurden Amazons Anthropic-Anteil (14,7 %) und die US-Rendite, Xiaomis Zahlentermin gilt nur als voraussichtlich.",
  "markets": [
   {
    "name": "S&P 500",
@@ -41,7 +41,7 @@
    "name": "Bitcoin",
    "value": "≈ 59.000 $",
    "change": null,
-   "note": "Fr-Abend, erstmals seit Juli unter 60.000 $; Tagesminus je nach Quelle rund 4,7–4,9 %",
+   "note": "Stand Fr-Abend, erstmals seit Juli unter 60.000 $; Tagesminus je nach Quelle rund 4,7–4,9 %. Über Nacht weiter gefallen (Sa früh laut Faktencheck rund 56.000 $, nur 1 Quelle)",
    "nsrc": 2,
    "verified": true
   },
@@ -63,7 +63,7 @@
   },
   {
    "name": "US-Rendite 10J",
-   "value": "≈ 4,92–4,94 %",
+   "value": "≈ 4,91–4,94 %",
    "change": null,
    "note": "Fr-Schluss, deutlich gesunken (Flucht in sichere Staatsanleihen). Eine Fed-Zinserhöhung am 9.12. gilt laut CME FedWatch als praktisch sicher (rund 99–100 %)",
    "nsrc": 3,
@@ -174,7 +174,7 @@
    "signal": "beobachten",
    "price": "246,82 $",
    "change": -4.1,
-   "note": "Fr-Schluss, mit dem KI-Abverkauf; auch die Anthropic-Aktie (Amazon hält rund 14,6 %) fiel am zweiten Handelstag deutlich. Jetzt nur noch knapp über dem 200-Tage-Schnitt (≈ 245 $) und unter der Unterstützung bei 250 $ – nächste Unterstützung erst bei rund 226 $. Analysten-Ø-Ziel ≈ 327 $ (+32 %).",
+   "note": "Fr-Schluss, mit dem KI-Abverkauf; auch die Anthropic-Aktie (Amazon hält rund 14,7 %) fiel am zweiten Handelstag deutlich. Jetzt nur noch knapp über dem 200-Tage-Schnitt (≈ 245 $) und unter der Unterstützung bei 250 $ – nächste Unterstützung erst bei rund 226 $. Analysten-Ø-Ziel ≈ 327 $ (+32 %).",
    "next": "AWS re:Invent ab 30.11. (voraussichtlich, außerhalb 7 Tage)",
    "nsrc": 3,
    "verified": true
@@ -199,7 +199,7 @@
    "price": "27,64 HK$",
    "change": -3.09,
    "note": "Fr-Schluss in Hongkong (jetzt mit 2 Quellen bestätigt). Rund 5 % unter dem 200-Tage-Schnitt. Analysten haben die Gewinnschätzung in 30 Tagen um rund 5 % gesenkt – die Q3-Zahlen am Dienstag sind der nächste große Test.",
-   "next": "Q3-Zahlen Di 24.11. (bestätigt)",
+   "next": "Q3-Zahlen Di 24.11. (voraussichtlich)",
    "nsrc": 3,
    "verified": true
   },
@@ -231,7 +231,7 @@
  "news": [
   {
    "title": "Nvidia: SEC prüft laut Reuters die Buchhaltung",
-   "text": "Laut Reuters (zwei informierte Personen) untersucht die US-Börsenaufsicht SEC mögliche Buchhaltungsprobleme bei Nvidia. Nvidia fiel um rund 14 % auf 125,53 $ – schlechtester Tag seit Januar 2025. Eine Untersuchung ist kein Beweis für Fehlverhalten; die SEC äußerte sich nicht. Der Bericht zog den ganzen Chip- und KI-Sektor nach unten.",
+   "text": "Laut Reuters (zwei informierte Personen) untersucht die US-Börsenaufsicht SEC mögliche Buchhaltungsprobleme bei Nvidia. Nvidia fiel um rund 14 % auf 125,53 $ – schlechtester Tag seit Januar 2025. Dass die SEC ermittelt, hatte das Wall Street Journal schon am Dienstag berichtet; neu ist, dass es um die Buchhaltung gehen soll. Eine Untersuchung ist kein Beweis für Fehlverhalten; die SEC äußerte sich nicht. Der Bericht zog den ganzen Chip- und KI-Sektor nach unten.",
    "tags": [
     "USA",
     "KI",
@@ -272,7 +272,7 @@
   },
   {
    "title": "Flucht in Sicherheit: Anleihen gefragt, Gold und Bitcoin schwach",
-   "text": "Die Rendite 10-jähriger US-Staatsanleihen sank auf rund 4,92–4,94 % (vorher ≈ 5,05 %). Gold fiel auf den tiefsten Stand seit rund 14 Monaten, Bitcoin rutschte unter 60.000 $. Am Markt gilt eine Fed-Zinserhöhung am 9.12. als praktisch sicher.",
+   "text": "Die Rendite 10-jähriger US-Staatsanleihen sank auf rund 4,91–4,94 % (vorher ≈ 5,05 %). Gold fiel auf den tiefsten Stand seit rund 14 Monaten, Bitcoin rutschte unter 60.000 $. Am Markt gilt eine Fed-Zinserhöhung am 9.12. als praktisch sicher.",
    "tags": [
     "Zinsen",
     "Rohstoffe",
@@ -322,7 +322,7 @@
   },
   {
    "date": "Di 24.11.",
-   "text": "Xiaomi Q3-Zahlen (bestätigt)",
+   "text": "Xiaomi Q3-Zahlen (voraussichtlich)",
    "mine": true
   },
   {

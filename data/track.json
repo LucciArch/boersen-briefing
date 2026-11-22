@@ -1,6 +1,61 @@
 {
  "picks": [
   {
+   "id": "KW 48 (23.–27.11.2026)|UCG",
+   "week": "KW 48 (23.–27.11.2026)",
+   "created": "2026-11-22",
+   "sector": "Finanzen",
+   "ticker": "UCG",
+   "symbol": "UCG.MI",
+   "name": "UniCredit",
+   "strength": "mittel",
+   "status": "wartet auf ersten Handelstag"
+  },
+  {
+   "id": "KW 48 (23.–27.11.2026)|REGN",
+   "week": "KW 48 (23.–27.11.2026)",
+   "created": "2026-11-22",
+   "sector": "Gesundheit & Pharma",
+   "ticker": "REGN",
+   "symbol": "REGN",
+   "name": "Regeneron",
+   "strength": "mittel",
+   "status": "wartet auf ersten Handelstag"
+  },
+  {
+   "id": "KW 48 (23.–27.11.2026)|PANW",
+   "week": "KW 48 (23.–27.11.2026)",
+   "created": "2026-11-22",
+   "sector": "Technologie",
+   "ticker": "PANW",
+   "symbol": "PANW",
+   "name": "Palo Alto Networks",
+   "strength": "mittel",
+   "status": "wartet auf ersten Handelstag"
+  },
+  {
+   "id": "KW 48 (23.–27.11.2026)|ITT",
+   "week": "KW 48 (23.–27.11.2026)",
+   "created": "2026-11-22",
+   "sector": "Industrie",
+   "ticker": "ITT",
+   "symbol": "ITT",
+   "name": "ITT Inc.",
+   "strength": "schwach",
+   "status": "wartet auf ersten Handelstag"
+  },
+  {
+   "id": "KW 48 (23.–27.11.2026)|EL",
+   "week": "KW 48 (23.–27.11.2026)",
+   "created": "2026-11-22",
+   "sector": "Basiskonsum",
+   "ticker": "EL",
+   "symbol": "EL",
+   "name": "Estée Lauder",
+   "strength": "schwach",
+   "status": "wartet auf ersten Handelstag"
+  },
+  {
    "id": "KW 47 (16.–20.11.2026)|VRTX",
    "week": "KW 47 (16.–20.11.2026)",
    "created": "2026-11-19",
@@ -33,12 +88,12 @@
    "entry_date": "2026-11-19",
    "entry": 81.75,
    "bench_entry": 737.46,
-   "last_date": "2026-11-19",
-   "last": 80.32,
-   "ret": -0.0175,
+   "last_date": "2026-11-20",
+   "last": 78.28,
+   "ret": -0.0424,
    "bench_ret": -0.0646,
-   "excess": 0.0471,
-   "days": 0
+   "excess": 0.0222,
+   "days": 1
   },
   {
    "id": "KW 47 (16.–20.11.2026)|PANW",
@@ -121,7 +176,7 @@
    "status": "läuft"
   }
  ],
- "updated": "2026-11-21T07:22+01:00",
+ "updated": "2026-11-22T07:28+01:00",
  "benchmark": "S&P 500 (SPY)",
  "method": "Einstieg zum Eröffnungskurs des ersten Handelstags ab Veröffentlichung; Vergleich mit dem S&P-500-ETF SPY über denselben Zeitraum; Kursentwicklung in Handelswährung, ohne Dividenden und Gebühren.",
  "stats": {
@@ -130,9 +185,9 @@
    "beat": 5,
    "positive": 0,
    "hit_rate": 0.8333,
-   "avg_ret": -0.049,
+   "avg_ret": -0.0532,
    "avg_bench": -0.0671,
-   "avg_excess": 0.0181
+   "avg_excess": 0.014
   },
   "4w": {
    "n": 0

@@ -1,7 +1,7 @@
 {
- "week": "KW 47 (16.–20.11.2026)",
- "updated": "2026-11-19",
- "method": "Je Branche eine große, liquide Aktie außerhalb des Depots mit frischem, bestätigtem positivem Anlass (meist Zahlen mit angehobener Prognose); technisch gefiltert nach Kurs über dem 200-Tage-Schnitt, RSI unter 70 und Analysten-Kursziel deutlich über Kurs. Für Energie/Rohstoffe erfüllte diese Woche kein Kandidat die Kriterien (Öl-, Kupfer- und Goldwerte im Abwärtstrend).",
+ "week": "KW 48 (23.–27.11.2026)",
+ "updated": "2026-11-22",
+ "method": "Je Branche eine große, liquide Aktie außerhalb des Depots mit bestätigtem positivem Anlass (Zahlen mit angehobener Prognose, Zulassung) und – wo möglich – steigenden Analysten-Gewinnschätzungen; technisch gefiltert nach Kurs über dem 200-Tage-Schnitt, RSI unter 70 und Analysten-Kursziel über Kurs (über 100 Werte geprüft). Für Energie/Rohstoffe fand sich kein Wert mit frischem, bestätigtem positivem Anlass (Ölpreis fällt, Bernstein senkte Ziele, Minen im Abwärtstrend) – daher diese Woche 5 statt 6 Ideen.",
  "picks": [
   {
    "sector": "Technologie",
@@ -9,24 +9,24 @@
    "symbol": "PANW",
    "name": "Palo Alto Networks",
    "type": "Aktie",
-   "headline": "Palo Alto übertrifft Erwartungen und hebt Jahresprognose deutlich an",
+   "headline": "Palo Alto: starke Zahlen und angehobene Prognose – nach dem Abverkauf wieder näher an der Kaufzone",
    "strength": "mittel",
    "why": [
     "Palo Alto Networks hat am 18.11.2026 nach US-Börsenschluss Zahlen für das erste Geschäftsquartal vorgelegt: Der Umsatz stieg um 39 % auf 3,44 Mrd. $ (erwartet rund 3,31 Mrd. $), der Gewinn je Aktie lag bei 1,05 $ (erwartet 0,97 $).",
-    "Die Firma hebt ihre Umsatzprognose für das Geschäftsjahr auf 14,52–14,57 Mrd. $ an (bisher 14,10–14,20 Mrd. $).",
-    "Die wiederkehrenden Erlöse aus neuen Sicherheitsprodukten (ARR, hochgerechneter Jahresumsatz aus Abos) wuchsen um 66 % auf 9,73 Mrd. $.",
-    "Der Kurs liegt klar über dem 200-Tage-Durchschnitt (Mittelwert der letzten 200 Handelstage, ≈ 279 $) – der langfristige Trend ist intakt; das Analysten-Ø-Ziel liegt bei rund 406 $."
+    "Die Firma hebt ihre Umsatzprognose für das Geschäftsjahr auf 14,52–14,57 Mrd. $ an (bisher 14,10–14,20 Mrd. $). Auch die Prognose für den bereinigten Gewinn je Aktie stieg auf 4,26–4,30 $ (ohne die geplante Übernahme von Applied Compute).",
+    "Am 19.11. haben mehrere Banken ihre Kursziele angehoben (u. a. Goldman Sachs auf 440 $, Citi auf 445 $, Baird auf 465 $).",
+    "Die Aktie liegt trotz des Marktabverkaufs rund 22 % über dem 200-Tage-Durchschnitt (Mittelwert der letzten 200 Handelstage, ≈ 281 $), der MACD (Trendfolge-Indikator) ist positiv, der RSI (Kraftmesser 0–100) mit 49 neutral; das Analysten-Ø-Ziel (≈ 410 $) liegt rund 19 % über dem Freitagsschluss von 343,32 $."
    ],
    "risks": [
-    "Die Aktie ist schon vor und nach den Zahlen kräftig gestiegen (vorbörslich am 19.11. deutlich über dem Mittwochsschluss von 339,92 $). Wer jetzt kauft, läuft Gefahr, einem Kurssprung hinterherzulaufen, der teilweise wieder abgegeben wird.",
-    "Palo Alto kauft das KI-Start-up Applied Compute für 4,5 Mrd. $ in eigenen Aktien. Das verwässert den Anteil der Altaktionäre (neue Aktien verkleinern den Anteil jedes Einzelnen).",
-    "Laut Yahoo-Daten haben Analysten ihre Gewinnschätzung für das übernächste Geschäftsjahr in den letzten 30 Tagen um rund 6,6 % gesenkt (vermutlich wegen der Übernahme) – ein Warnsignal. Zudem ist die Bewertung hoch.",
-    "Der MACD (Trendfolge-Indikator) war vor dem Sprung noch negativ. Bestätigt ist die Trendwende erst, wenn der Kurs über etwa 368 $ hält."
+    "Laut Yahoo-Daten haben Analysten die Gewinnschätzung für das Geschäftsjahr bis Juli 2028 in 30 Tagen um rund 11 % gesenkt. Wahrscheinlicher Grund (nicht ausdrücklich bestätigt): Die Übernahme von Applied Compute kostet laut Management bis zu 2 Prozentpunkte Marge und wird mit neuen Aktien bezahlt (Verwässerung = Anteil jedes Aktionärs wird kleiner).",
+    "Wells Fargo hat das Kursziel am 19.11. von 525 auf 510 $ gesenkt (Einstufung „Overweight“ blieb); am Freitag fiel die Aktie mit dem Markt um rund 5 %.",
+    "Im aktuellen Tech-Ausverkauf (Nasdaq in einer Woche −10 %) fallen auch Aktien mit guten Zahlen; die Bewertung ist hoch.",
+    "Insider haben in den letzten 90 Tagen Aktien verkauft (laut Yahoo 10 Verkäufe, keine Käufe)."
    ],
-   "entry": "Nicht dem Kurssprung hinterherlaufen. Besser bei Rücksetzern in die Zone 345–368 $; der frühere Widerstand bei rund 368,50 $ sollte nach einem Ausbruch als Boden halten. Den Eröffnungskurs heute in Trade Republic prüfen.",
-   "stop": "Schlusskurs unter 329 $ (unter der schwachen Unterstützung bei rund 334,75 $; die starke Unterstützung liegt erst bei rund 312 $). Bei einem Einstieg bei 360 $ entspricht das einem Risiko von rund 8,6 %.",
-   "targets": "Ziel 1: Widerstand bei rund 398,90 $ (+17,3 % zum Mittwochsschluss von 339,92 $). Ziel 2: Analysten-Ø-Ziel 405,78 $ (+19,4 %). Ziel 3: 52-Wochen-Hoch 432,33 $ (+27,2 %). Vom höheren Kurs nach dem Sprung aus ist der Abstand entsprechend kleiner.",
-   "horizon": "2–6 Monate",
+   "entry": "Gestaffelt in der Zone 335–345 $ (schwache Unterstützung bei rund 334,75 $). Ein Schlusskurs zurück über rund 368,50 $ (Widerstand und 50-Tage-Durchschnitt ≈ 367 $) wäre ein Zeichen, dass der Rücksetzer vorbei ist. Kurs vor dem Kauf in Trade Republic prüfen.",
+   "stop": "Schlusskurs unter 329 $ (unter der schwachen Unterstützung bei 334,75 $); bei einem Einstieg bei 340 $ sind das rund −3,2 %. Die starke Unterstützung liegt erst bei rund 312 $ (−9,1 % zum Freitagsschluss) – wer mehr Luft will, setzt den Stopp darunter (≈ 309 $).",
+   "targets": "Ziel 1: Widerstand rund 368,50 $ (+7,3 % zum Freitagsschluss 343,32 $). Ziel 2: starker Widerstand rund 398,90 $ (+16,2 %). Analysten-Ø-Ziel ≈ 409,70 $ (+19,3 %); 52-Wochen-Hoch 432,33 $ (+25,9 %).",
+   "horizon": "3–6 Monate",
    "sources": [
     {
      "title": "CNBC: Palo Alto inks $4.5 billion deal for Applied Compute, shares pop on earnings (18.11.2026)",
@@ -39,49 +39,65 @@
     {
      "title": "Reuters via Investing.com: Palo Alto's raised sales forecast powers cybersecurity rally (19.11.2026)",
      "url": "https://investing.com/news/stock-market-news/palo-altos-raised-sales-forecast-powers-cybersecurity-stock-rally-5038632"
+    },
+    {
+     "title": "Yahoo Finance: Baird raises Palo Alto Networks price target (19.11.2026)",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/baird-raises-palo-alto-networks-130027796.html"
+    },
+    {
+     "title": "DefenseWorld: Wells Fargo lowers PANW price target (20.11.2026)",
+     "url": "https://www.defenseworld.net/2026/11/20/palo-alto-networks-nasdaqpanw-stock-price-target-lowered-at-wells-fargo-company.html"
     }
    ]
   },
   {
    "sector": "Gesundheit & Pharma",
-   "ticker": "VRTX",
-   "symbol": "VRTX",
-   "name": "Vertex Pharmaceuticals",
+   "ticker": "REGN",
+   "symbol": "REGN",
+   "name": "Regeneron",
    "type": "Aktie",
-   "headline": "Vertex: Prognose angehoben, FDA-Entscheidung zum Nierenmittel bis 30. November",
-   "strength": "schwach",
+   "headline": "Regeneron: Gewinnsprung im Quartal, neue FDA-Zulassung, Analysten heben Schätzungen kräftig an",
+   "strength": "mittel",
    "why": [
-    "Vertex hat am 2.11.2026 den Umsatz im dritten Quartal um 12 % auf 3,44 Mrd. $ gesteigert und die Jahresprognose auf 13,15–13,25 Mrd. $ angehoben (bisher 13,1–13,2 Mrd. $).",
-    "Neue Produkte wachsen schnell: Die Gentherapie Casgevy (gegen Sichelzellkrankheit) kam auf 99 Mio. $ Umsatz, das Schmerzmittel Journavx auf 58 Mio. $.",
-    "Bis zum 30.11.2026 entscheidet die US-Arzneimittelbehörde FDA über die Zulassung von Povetacicept gegen die Nierenkrankheit IgA-Nephropathie – ein mögliches neues Standbein neben dem Mukoviszidose-Geschäft.",
-    "Die Aktie liegt über dem 200-Tage-Durchschnitt (≈ 484 $, langfristiger Trend intakt), der RSI (Kraftmesser 0–100) ist mit 52 neutral, und das Analysten-Ø-Ziel liegt rund 11 % über dem Kurs."
+    "Regeneron hat am 30.10.2026 für das dritte Quartal einen Umsatz von 5,1 Mrd. $ (+36 %) und einen bereinigten Gewinn je Aktie (ohne Sondereffekte) von 20,07 $ (+70 %) gemeldet – deutlich über den erwarteten rund 16,1 $. Das Augenmittel EYLEA HD wuchs in den USA um 62 % auf 699 Mio. $.",
+    "Am 18.11.2026 hat die US-Arzneimittelbehörde FDA Livsayis (Cemdisiran) gegen die Muskelkrankheit generalisierte Myasthenia gravis zugelassen – Regenerons erstes Mittel in der Neurologie, Gabe nur alle 3 Monate.",
+    "Der erweiterte Vertrag mit Sanofi (1.10.2026) bringt eine Vorauszahlung von 1 Mrd. $ und bis zu 7 Mrd. $ mögliche Meilensteinzahlungen.",
+    "Analysten haben ihre Gewinnschätzung fürs nächste Jahr laut Yahoo in 30 Tagen um rund 23 % angehoben (7 Anhebungen, 2 Senkungen). Die Aktie liegt rund 23 % über dem 200-Tage-Durchschnitt (≈ 751 $) und hat sich im Ausverkauf gut gehalten (1 Monat +12 %); RSI 57 (kräftig, nicht überhitzt)."
    ],
    "risks": [
-    "Die FDA-Entscheidung ist ein Ja-oder-Nein-Ereignis: Bei Ablehnung oder Verzögerung kann die Aktie über Nacht deutlich fallen, auch unter den Stoppkurs.",
-    "Die Prognose wurde nur leicht angehoben (um 50 Mio. $), und Analysten haben die Gewinnschätzung fürs nächste Jahr in 30 Tagen um rund 2,4 % gesenkt (Yahoo-Daten).",
-    "Das Kerngeschäft Mukoviszidose wächst langsamer, und Konkurrenten bringen weitere Mittel gegen IgA-Nephropathie auf den Markt.",
-    "Der MACD (Trendfolge-Indikator) ist zurzeit negativ; kurzfristig fehlt Schwung."
+    "Ein Teil des Gewinnanstiegs kommt aus einer Änderung der Abrechnung mit Sanofi; die Vorauszahlung von 1 Mrd. $ bläht zudem erst das 4. Quartal auf – solche Effekte wiederholen sich nicht. Das klassische EYLEA-Geschäft schwächelt, die Forschungskosten steigen.",
+    "Das Analysten-Ø-Ziel (≈ 991 $) liegt nur rund 8 % über dem Kurs – viel Gutes ist schon eingepreist.",
+    "Der MACD (Trendfolge-Indikator) liegt unter seiner Signallinie – kurzfristig fehlt Schwung; Insider haben in 90 Tagen laut Yahoo nur verkauft (12 Verkäufe).",
+    "Livsayis trägt einen Warnhinweis (Meningokokken-Infektionen) und kommt in einen Markt mit mehreren Konkurrenzmitteln."
    ],
-   "entry": "Zone 515–537 $: Der Kurs liegt knapp über der Unterstützung bei rund 531,80 $. Ein zweiter Kauf ist bei Rücksetzern Richtung 496–500 $ möglich (starke Unterstützung bei rund 496 $). Vorsichtige warten die FDA-Entscheidung (bis 30.11.) ab.",
-   "stop": "Schlusskurs unter 490 $ (unter der starken Unterstützung bei rund 496 $), etwa −8,7 % vom letzten Kurs. Bei schlechten FDA-Nachrichten kann der Kurs darunter eröffnen.",
-   "targets": "Ziel 1: Widerstand bei rund 558 $ (+4,0 %). Ziel 2: 52-Wochen-Hoch 568,67 $ (+6,0 %). Ziel 3: Analysten-Ø-Ziel 595,36 $ (+11,0 %). Alle Werte zum Schlusskurs vom 18.11. von 536,45 $.",
-   "horizon": "1–3 Monate",
+   "entry": "Kein Hinterherlaufen: besser bei Rücksetzern in die Zone 855–900 $ (Unterstützung bei rund 853 $, 50-Tage-Durchschnitt ≈ 830 $). Ein Schlusskurs über rund 987 $ (Widerstand, knapp unter dem 52-Wochen-Hoch) wäre ein Ausbruchssignal.",
+   "stop": "Schlusskurs unter 840 $ (unter der Unterstützung bei rund 853 $); bei einem Einstieg bei 900 $ sind das rund −6,7 %. Die starke Unterstützung liegt erst bei rund 767 $ (−16,7 % zum Freitagsschluss).",
+   "targets": "Ziel 1: Widerstand rund 986,60 $ (+7,2 % zum Freitagsschluss 920,69 $). Ziel 2: 52-Wochen-Hoch 991,73 $ (+7,7 %); Analysten-Ø-Ziel ≈ 991 $ (+7,6 %). Einzelne Banken sehen mehr (Barclays 1.075 $, +16,8 %).",
+   "horizon": "3–6 Monate (nächste Zahlen voraussichtlich Ende Januar 2027)",
    "sources": [
     {
-     "title": "Nasdaq.com: Vertex Reports Third Quarter 2026 Financial Results (02.11.2026)",
-     "url": "https://www.nasdaq.com/press-release/vertex-reports-third-quarter-2026-financial-results-2026-11-02"
+     "title": "Regeneron: Third Quarter 2026 Financial and Operating Results (30.10.2026)",
+     "url": "https://investor.regeneron.com/news-releases/news-release-details/regeneron-reports-third-quarter-2026-financial-and-operating"
     },
     {
-     "title": "StockStory: Vertex Q3 2026 sales top estimates",
-     "url": "https://stockstory.org/us/stocks/nasdaq/vrtx/news/earnings/vertex-pharmaceuticalss-nasdaqvrtx-q3-2026-sales-top-estimates"
+     "title": "Zacks: REGN Q3 earnings beat on Dupixent profits & EYLEA HD growth",
+     "url": "https://www.zacks.com/stock/news/3019989/regn-q3-earnings-beat-on-dupixent-profits-&-eylea-hd-growth,-stock-up"
     },
     {
-     "title": "HCPLive: FDA accepts BLA for povetacicept (PDUFA 30.11.2026)",
-     "url": "https://www.hcplive.com/view/fda-accepts-bla-for-povetacicept-in-iga-nephropathy"
+     "title": "NeurologyLive: FDA approves cemdisiran for generalized myasthenia gravis (18.11.2026)",
+     "url": "https://www.neurologylive.com/view/fda-approves-cemdisiran-as-new-treatment-generalized-myasthenia-gravis"
     },
     {
-     "title": "BioSpace: Vertex as FDA verdict looms",
-     "url": "https://www.biospace.com/business/vertex-unfazed-by-competitive-igan-space-as-fda-verdict-looms"
+     "title": "Fierce Pharma: Regeneron breaks through neurology barrier with FDA nod",
+     "url": "https://www.fiercepharma.com/pharma/regeneron-breaks-through-neurology-barrier-fda-nod-crowded-myasthenia-gravis"
+    },
+    {
+     "title": "Regeneron: Regeneron and Sanofi expand global alliance (01.10.2026)",
+     "url": "https://investor.regeneron.com/news-releases/news-release-details/regeneron-and-sanofi-expand-global-alliance-multiple-next"
+    },
+    {
+     "title": "STAT: Sanofi-Regeneron agreement (01.10.2026)",
+     "url": "https://www.statnews.com/2026/10/01/sanofi-regeneron-agreement-dupixent-antibodies-immunology/"
     }
    ]
   },
@@ -91,23 +107,23 @@
    "symbol": "UCG.MI",
    "name": "UniCredit",
    "type": "Aktie",
-   "headline": "UniCredit: Rekordquartal, höheres Gewinnziel, Kurs gönnt sich eine Pause",
+   "headline": "UniCredit: Rekordquartal, Einigung mit Berlin zur Commerzbank – Montag Dividendenabschlag",
    "strength": "mittel",
    "why": [
     "Die italienische Großbank UniCredit hat am 9. November das beste Quartal ihrer Geschichte gemeldet: Der Nettogewinn stieg um 24 % auf rund 3,3 Mrd. € und lag über den Erwartungen der Analysten.",
-    "Gleichzeitig hob die Bank ihr Gewinnziel für 2026 auf „deutlich über 11,5 Mrd. €“ an (vorher „über 11 Mrd. €“); die harte Kernkapitalquote (CET1, das wichtigste Polster einer Bank gegen Verluste) liegt bei 15 %.",
-    "Für Aktionäre gibt es eine Zwischendividende von rund 3,00 € je Aktie; Ex-Tag (ab dann ohne Dividende gehandelt) ist der 23. November.",
-    "Die Aktie sprang am Ergebnistag um 6,3 % und hat den Sprung seitdem gehalten; sie liegt über dem 200-Tage-Durchschnitt (≈ 75,70 €, Trend intakt), MACD positiv, und der Analysten-Schnitt von 98,58 € liegt gut 20 % über dem Kurs."
+    "Gleichzeitig hob die Bank ihr Gewinnziel für 2026 auf „deutlich über 11,5 Mrd. €“ an; die harte Kernkapitalquote (CET1, das wichtigste Polster einer Bank gegen Verluste) liegt bei 15 %.",
+    "Die Commerzbank-Übernahme kommt voran: Die US-Notenbank Fed und die EU haben zugestimmt (16.11.), und am 19.11. hat sich UniCredit mit der Bundesregierung geeinigt (u. a. bleibt das Deutschland-Geschäft in Frankfurt und börsennotiert).",
+    "Zwischendividende 3,0034 € je Aktie: Ex-Tag ist Mo 23.11., Zahltag 25.11. Die Aktie liegt über dem 200-Tage-Durchschnitt (≈ 75,70 €), der MACD ist positiv, und die Analysten-Gewinnschätzung stieg in 30 Tagen um rund 5,6 %; das Analysten-Ø-Ziel (≈ 99,86 €) liegt rund 28 % über dem Freitagsschluss von 78,28 €."
    ],
    "risks": [
-    "Am 23. November wird die Dividende abgetrennt: Der Kurs fällt an diesem Tag rein rechnerisch um rund 3 € – das ist kein echter Verlust, kann Einsteiger aber verwirren.",
-    "Die Übernahme der Commerzbank bringt Integrationskosten und das Risiko, dass das Kapitalpolster zeitweise sinkt.",
-    "Eine Schwäche der italienischen Wirtschaft oder der italienischen Staatsanleihen würde Bankgewinne direkt belasten.",
-    "Direkt über dem Kurs liegt ein starker Widerstand bei rund 83 € (eine Marke, an der der Kurs oft nach unten abgeprallt ist); nicht alle Analysten sind überzeugt."
+    "Am Mo 23.11. (Ex-Tag) fällt der Kurs rein rechnerisch um rund 3 € auf etwa 75,30 € – das ist kein echter Verlust, liegt aber direkt an der starken Unterstützung bei rund 75,40 € und am 200-Tage-Durchschnitt.",
+    "Die Commerzbank-Übernahme bringt Integrationskosten und Streit um die Führung; eine letzte Genehmigung steht laut UniCredit noch aus (erwartet bis Ende November).",
+    "Eine Schwäche der italienischen Wirtschaft oder der italienischen Staatsanleihen würde Bankgewinne direkt belasten; im Börsenabverkauf fallen auch Banken.",
+    "Starker Widerstand bei rund 83 € (Marke, an der der Kurs oft nach unten abgeprallt ist)."
    ],
-   "entry": "Gestaffelter Einstieg zwischen rund 79,20 € (50-Tage-Durchschnitt) und 82 €. Wer die Dividende nicht mitnehmen will, wartet den Ex-Tag am 23.11. ab. Ein Schlusskurs über rund 83 € (starker Widerstand) wäre ein Ausbruchssignal.",
-   "stop": "Stopp unter der starken Unterstützung bei rund 75,40 €, also bei etwa 74,50 € (ca. −8,9 % vom Kurs 81,78 €; nach dem Dividendenabschlag entsprechend weniger).",
-   "targets": "Ziel 1: Widerstand rund 83,06 € (+1,6 %). Ziel 2: 52-Wochen-Hoch 86,42 € (+5,7 %). Langfristig: Analysten-Ø-Ziel 98,58 € (+20,5 %).",
+   "entry": "Nach dem Dividendenabschlag gestaffelt zwischen rund 75 € (starke Unterstützung 75,40 €, 200-Tage-Schnitt ≈ 75,70 €) und 79 € (50-Tage-Durchschnitt ≈ 79 €). Ein Schlusskurs über rund 83 € wäre ein Ausbruchssignal.",
+   "stop": "Schlusskurs unter 72 € (unter der nächsten starken Unterstützung bei rund 72,75 €); das sind rund −4,4 % vom rechnerischen Kurs nach Dividende (≈ 75,28 €).",
+   "targets": "Ziel 1: Widerstand rund 83,06 € (+10,3 % zum rechnerischen Kurs nach Dividende von ≈ 75,28 €). Ziel 2: 52-Wochen-Hoch 86,42 € (+14,8 %). Langfristig: Analysten-Ø-Ziel ≈ 99,86 € (+32,6 %; +27,6 % zum Freitagsschluss 78,28 €).",
    "horizon": "6–12 Monate",
    "sources": [
     {
@@ -123,8 +139,20 @@
      "url": "https://forbes.it/2026/11/09/unicredit-trimestrale-record-terzo-trimestre-utili-orcel-commerzbank"
     },
     {
-     "title": "finanzen.net: UniCredit Kursziele",
-     "url": "https://www.finanzen.net/kursziele/unicredit"
+     "title": "Borsa Italiana/Teleborsa: UniCredit acconto dividendo 3 euro per azione il 25 novembre (09.11.2026)",
+     "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/unicredit-acconto-dividendo-da-45-miliardi-3-euro-per-azione-il-25-novembre-31_2026-11-09_TLB.html?lang=it"
+    },
+    {
+     "title": "Börsen-Zeitung: Bund und UniCredit einigen sich über Commerzbank (19.11.2026)",
+     "url": "https://www.boersen-zeitung.de/banken-finanzen/bund-und-unicredit-einigen-sich-ueber-commerzbank"
+    },
+    {
+     "title": "Il Sole 24 Ore: UniCredit, accordo fatto con il governo tedesco",
+     "url": "https://en.ilsole24ore.com/art/unicredit-accordo-fatto-il-governo-tedesco-commerzbank-AJO6cdLC"
+    },
+    {
+     "title": "UniCredit: Fed approval regarding the offer on Commerzbank (16.11.2026)",
+     "url": "https://www.unicreditgroup.eu/en/press-media/press-releases/2026/november/unicredit-receives-fed-approval-regarding-the-offer-on-commerzba.html"
     }
    ]
   },
@@ -134,23 +162,23 @@
    "symbol": "ITT",
    "name": "ITT Inc.",
    "type": "Aktie",
-   "headline": "ITT: Zahlen klar über den Erwartungen, Jahresprognose erneut erhöht",
-   "strength": "mittel",
+   "headline": "ITT: Zahlen klar über den Erwartungen, Prognose erhöht – Kurs testet den 200-Tage-Schnitt",
+   "strength": "schwach",
    "why": [
     "Der US-Industriekonzern ITT (Pumpen, Ventile, Steckverbinder, Bremsbeläge) hat am 4. November im dritten Quartal einen bereinigten Gewinn je Aktie (ohne Sondereffekte) von 2,26 $ erzielt – 20 % mehr als im Vorjahr und über der Analystenschätzung von rund 2,08 $.",
     "Der Umsatz stieg um 44 % auf 1,44 Mrd. $, vor allem durch den Zukauf von SPX Flow; aus eigener Kraft (organisch) wuchs ITT um 8 %, die Aufträge organisch um 20 %.",
     "ITT hob die Jahresprognose für den bereinigten Gewinn je Aktie auf 8,54–8,62 $ an.",
-    "Die Aktie liegt wieder über dem 200-Tage-Durchschnitt (≈ 200,70 $), der MACD ist positiv, und das Analysten-Ø-Ziel (254,92 $) liegt rund 22 % über dem Kurs."
+    "Analysten haben die Gewinnschätzung fürs nächste Jahr laut Yahoo in 30 Tagen um rund 3,7 % angehoben (9 Anhebungen, 1 Senkung); das Analysten-Ø-Ziel (≈ 255,50 $) liegt rund 27 % über dem Freitagsschluss von 201,09 $. Die Aktie hält sich genau auf dem 200-Tage-Durchschnitt (≈ 200,80 $)."
    ],
    "risks": [
-    "Der Gewinn nach offiziellen Buchhaltungsregeln (GAAP) fiel wegen Übernahmekosten auf 1,38 $ je Aktie – Skeptiker stören sich an der großen Lücke zur „bereinigten“ Zahl.",
-    "Die Eingliederung von SPX Flow ist ein großes Projekt; Pannen dabei oder eine schwächere US-Industriekonjunktur würden die Aktie belasten.",
-    "Der Anlass (Zahlen vom 4.11.) ist schon gut zwei Wochen alt; eine frische Analysten-Hochstufung danach ist nicht bestätigt.",
+    "Technisch auf der Kippe: Der MACD (Trendfolge-Indikator) hat gerade nach unten gekreuzt – ein frisches Verkaufssignal; fällt der Kurs klar unter den 200-Tage-Schnitt, ist der Aufwärtstrend angeschlagen.",
+    "Der Gewinn nach offiziellen Buchhaltungsregeln (GAAP) fiel wegen Übernahmekosten auf 1,38 $ je Aktie; für den SPX-Flow-Kauf wurden neue Aktien ausgegeben (Verwässerung), und das 4. Quartal soll schwächer werden.",
+    "Der Anlass (Zahlen vom 4.11.) ist schon knapp drei Wochen alt; seither keine neue bestätigte Nachricht.",
     "ITT ist mit rund 18 Mrd. $ Börsenwert kleiner als die Branchenriesen und schwankt stärker; für Euro-Anleger kommt das Dollar-Risiko dazu."
    ],
-   "entry": "Kaufzone 201–209 $: Hier liegen der 200-Tage-Durchschnitt (≈ 200,70 $) und der 50-Tage-Durchschnitt (≈ 203 $) als Auffangnetz. Ein Schlusskurs über dem starken Widerstand bei rund 223,70 $ wäre ein Ausbruchssignal.",
-   "stop": "Stopp unter der starken Unterstützung bei rund 187,60 $, also etwa bei 185 $ (−11,4 % vom Kurs 208,92 $). Vorsichtigere steigen bei einem Schlusskurs unter etwa 198 $ aus (≈ −5,2 %).",
-   "targets": "Ziel 1: Widerstand rund 223,67 $ (+7,1 %). Ziel 2: 52-Wochen-Hoch 230,32 $ (+10,2 %). Langfristig: Analysten-Ø-Ziel 254,92 $ (+22,0 %).",
+   "entry": "Erst kaufen, wenn der 200-Tage-Schnitt hält: Zone 198–205 $. Vorsichtiger: Schlusskurs über dem starken Widerstand bei rund 209,70 $ abwarten.",
+   "stop": "Stopp unter der starken Unterstützung bei rund 187,50 $, also etwa bei 185 $ (−8,0 % zum Freitagsschluss). Vorsichtigere steigen bei einem Schlusskurs unter rund 196 $ aus (−2,5 %).",
+   "targets": "Ziel 1: Widerstand rund 209,70 $ (+4,3 % zum Freitagsschluss 201,09 $). Ziel 2: Widerstand rund 223,70 $ (+11,2 %); 52-Wochen-Hoch 230,32 $ (+14,5 %). Langfristig: Analysten-Ø-Ziel ≈ 255,50 $ (+27,1 %).",
    "horizon": "6–12 Monate",
    "sources": [
     {
@@ -168,6 +196,10 @@
     {
      "title": "24/7 Wall St.: ITT beats Q3 and raises guidance",
      "url": "https://247wallst.com/cards/itt-q3-2026-earnings-itt-01m6m8c66pnz91q16f6mgf79f2"
+    },
+    {
+     "title": "Finviz/EarningsWhispers: ITT beats and raises a third time, but GAAP dilution and softer Q4",
+     "url": "https://finviz.com/news/417271/itt-beats-and-raises-a-third-time-as-cct-orders-surge-but-gaap-dilution-and-a-softer-q4-keep-skeptics-engaged"
     }
    ]
   },
@@ -177,24 +209,24 @@
    "symbol": "EL",
    "name": "Estée Lauder",
    "type": "Aktie",
-   "headline": "Estée Lauder: Prognose erhöht, Margenziel bis 2030 – Rücksetzer als Einstiegschance",
-   "strength": "mittel",
+   "headline": "Estée Lauder: Prognose erhöht, Ziele bis 2030 – Kurs nahe der Kaufzone",
+   "strength": "schwach",
    "why": [
     "Am 2. November meldete der Kosmetikkonzern starke Quartalszahlen: Der Umsatz stieg um 7 % auf 3,72 Mrd. $, der bereinigte Gewinn je Aktie (Gewinn ohne Sondereffekte) lag bei 0,72 $ nach 0,32 $ im Vorjahr und klar über den erwarteten rund 0,51 $.",
     "Gleichzeitig hob Estée Lauder die Jahresprognose an: Der bereinigte Gewinn je Aktie soll jetzt 3,20 bis 3,45 $ erreichen (vorher 3,10 bis 3,35 $), das organische Wachstum (Wachstum ohne Zukäufe und Währungseffekte) 4,0 bis 5,5 %.",
     "Am 4. November stellte das Management Ziele bis 2030 vor: jedes Jahr mittleres einstelliges Wachstum, zweistelliges Gewinnwachstum je Aktie und eine operative Marge (Anteil des Betriebsgewinns am Umsatz) von 16,5 bis 18,5 %.",
-    "Die Aktie liegt mit rund 104 $ unter ihrem Hoch, aber weiter klar über dem 200-Tage-Durchschnitt (≈ 91 $) – der Langfristtrend ist intakt."
+    "Analysten haben die Gewinnschätzung fürs nächste Jahr laut Yahoo in 30 Tagen um rund 3,1 % angehoben (19 Anhebungen, 1 Senkung). Die Aktie liegt mit 99,46 $ rund 9 % über dem 200-Tage-Durchschnitt (≈ 91 $) – der Langfristtrend ist intakt; Analysten-Ø-Ziel ≈ 116,50 $ (+17,1 %)."
    ],
    "risks": [
-    "Zölle belasten laut Unternehmen das Geschäft und dürften auch im Gesamtjahr bremsen.",
-    "Ein Teil der Prognoseanhebung stammt nur aus dem starken ersten Quartal; die zweite Jahreshälfte wurde kaum angehoben.",
-    "Das Geschäft hängt stark von China und vom Reiseeinzelhandel (Duty-Free an Flughäfen) ab – schwächere Reiselust würde direkt bremsen.",
-    "Kurzfristig ist das Momentum schwach: Der MACD (Trendfolge-Indikator) liegt unter seiner Signallinie, die Aktie kann also noch etwas weiter zurückkommen."
+    "Ein Teil des Quartalsgewinns kam aus einer niedrigeren Steuerquote; die Prognose wurde weniger angehoben, als das Quartal die Erwartungen übertraf.",
+    "Zölle belasten laut Unternehmen das Geschäft; zudem hängt viel an China und am Reiseeinzelhandel (Duty-Free) – dort ist die Vergleichsbasis im 2. Halbjahr schwierig.",
+    "Hohe Bewertung und nur rund die Hälfte der Analysten rät zum Kauf.",
+    "Kurzfristig schwach: MACD (Trendfolge-Indikator) unter der Signallinie, RSI (Kraftmesser 0–100) 38; der Kurs ist unter den 50-Tage-Durchschnitt (≈ 102 $) gefallen."
    ],
-   "entry": "Kaufzone 101–104 $: Hier treffen die Unterstützung (Kursbereich, in dem Käufer zuletzt mehrfach zugriffen) bei rund 103 $ und der 50-Tage-Durchschnitt bei rund 102 $ zusammen. Prozyklisch alternativ erst bei einem Schlusskurs über rund 109,60 $.",
-   "stop": "Schlusskurs unter 98 $ (−5,8 %): Dann wären die Unterstützung bei 103 $ und der 50-Tage-Durchschnitt klar gebrochen. Die nächste starke Unterstützung liegt erst bei rund 89,80 $.",
-   "targets": "Ziel 1: Widerstand (Kursbereich, an dem Verkäufer zuletzt bremsten) bei rund 109,60 $ (+5,4 %); Ziel 2: rund 119,40 $ (+14,8 %), knapp unter dem 52-Wochen-Hoch von 121,64 $. Analysten-Ø-Ziel 116,49 $ (+12,0 %).",
-   "horizon": "3–6 Monate (nächste Quartalszahlen voraussichtlich Anfang Februar 2027)",
+   "entry": "Gestaffelt zwischen rund 92 $ (Nähe 200-Tage-Schnitt ≈ 91 $) und 100 $. Prozyklisch erst bei einem Schlusskurs über dem Widerstand bei rund 103,10 $.",
+   "stop": "Schlusskurs unter 88 $ (unter der starken Unterstützung bei rund 89,80 $ und dem 200-Tage-Schnitt): −11,5 % zum Freitagsschluss; bei einem Einstieg bei 95 $ rund −7,4 %.",
+   "targets": "Ziel 1: Widerstand rund 103,10 $ (+3,6 % zum Freitagsschluss 99,46 $). Ziel 2: rund 109,60 $ (+10,2 %). Ziel 3: rund 119,40 $ (+20,1 %), knapp unter dem 52-Wochen-Hoch 121,64 $. Analysten-Ø-Ziel ≈ 116,50 $ (+17,1 %).",
+   "horizon": "3–6 Monate (nächste Quartalszahlen am 3.2.2027)",
    "sources": [
     {
      "title": "Estée Lauder: Q1 FY2027 Results (02.11.2026)",
@@ -211,6 +243,10 @@
     {
      "title": "Estée Lauder: Fiscal 2030 Ambition (04.11.2026)",
      "url": "https://www.elcompanies.com/en/news-and-media/newsroom/press-releases/2026/11-04-2026-050031474"
+    },
+    {
+     "title": "Finviz: Estee Lauder beats big and raises again, but guidance lift is smaller",
+     "url": "https://finviz.com/news/413359/estee-lauder-beats-big-and-raises-again-but-the-guidance-lift-is-smaller-than-the-quarters-upside"
     }
    ]
   }

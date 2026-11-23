@@ -1,15 +1,15 @@
 {
- "updated": "2026-11-22T07:50:00+01:00",
- "updated_label": "So, 22.11.2026, 07:50 Uhr",
- "kind": "Wochenrückblick",
- "mood": "Nach der schwärzesten Woche seit April 2025 (S&P 500 −8,6 %, Nasdaq −10 %) ist der US-Markt in einer Korrektur; am Wochenende kam nichts Neues zu Nvidia, aber ein iranischer Angriff auf Bahrain könnte den Ölpreis am Montag bewegen. Diese Woche zählen vor allem die US-Inflationsdaten (Mi) und Thanksgiving (Do Börse zu).",
- "check_note": "Alle Indexstände und 12 von 13 Depot-Kursen sind mit mindestens 2 Quellen bestätigt (London-ETFs über die Xetra-Tagesveränderung); beim Uran-ETF NUCL weicht die zweite Quelle ab – nicht bestätigt. Der unabhängige Faktencheck (rund 125 Punkte) fand 3 Fehler (Datum einer Kursziel-Senkung bei Palo Alto, Einmaleffekt bei Regeneron, CAKE-Minustage) – korrigiert; Unbestätigtes wurde entfernt oder als „voraussichtlich“ markiert.",
+ "updated": "2026-11-23T07:55:00+01:00",
+ "updated_label": "Mo, 23.11.2026, 07:55 Uhr",
+ "kind": "Tagesbriefing",
+ "mood": "Nach der schwärzesten Woche seit April 2025 deuten die US-Terminkontrakte eine kräftige Gegenbewegung an (S&P 500 rund +2 %, Nasdaq 100 rund +3 %), Asien bleibt aber schwach (Südkorea deutlich im Minus). Ob daraus eine echte Erholung wird, ist offen – wichtig sind diese Woche Xiaomi-Zahlen (Di) und US-Inflation (Mi).",
+ "check_note": "",
  "markets": [
   {
    "name": "S&P 500",
    "value": "6.910,39",
    "change": -3.7,
-   "note": "Fr-Schluss, 7. Minustag in Folge; Woche −8,6 %. Mehr als 10 % unter dem Rekord vom 6.10. = Korrektur",
+   "note": "Fr-Schluss, Korrektur (mehr als 10 % unter dem Rekord); Woche −8,6 %. Terminkontrakt Mo früh rund +2,2 %",
    "nsrc": 3,
    "verified": true
   },
@@ -17,7 +17,7 @@
    "name": "Nasdaq Comp.",
    "value": "22.617,73",
    "change": -5.28,
-   "note": "Fr-Schluss; Woche −10 %, seit Jahresbeginn jetzt im Minus. Chipindex SOX am Fr rund −10,7 % (1 Quelle)",
+   "note": "Fr-Schluss; Woche −10 %. Nasdaq-100-Terminkontrakt Mo früh rund +2,5 bis +3 % (je nach Uhrzeit)",
    "nsrc": 3,
    "verified": true
   },
@@ -25,7 +25,7 @@
    "name": "Dow Jones",
    "value": "48.147,33",
    "change": -1.93,
-   "note": "Fr-Schluss",
+   "note": "Fr-Schluss; Terminkontrakt Mo früh rund +1,6 %",
    "nsrc": 3,
    "verified": true
   },
@@ -33,39 +33,39 @@
    "name": "DAX",
    "value": "24.802,78",
    "change": -2.6,
-   "note": "Fr-Schluss, 6. Minustag in Folge, unter 25.000 Punkten; Rekordhoch im Handel am 12.11.: 27.001,67",
+   "note": "Fr-Schluss (Xetra), 6. Minustag in Folge; Woche mehr als −7 %. Rekordhoch 12.11. knapp über 27.000",
    "nsrc": 3,
    "verified": true
   },
   {
    "name": "Bitcoin",
-   "value": "≈ 59.000 $",
+   "value": "≈ 61.000 $",
    "change": null,
-   "note": "So früh; Sa früh kurz bei rund 55.100 $ (tiefster Stand seit Sept. 2024), dann Erholung über 60.000 $. 24-h-Plus je nach Quelle +4,8 bis +5,7 %",
+   "note": "Mo früh, rund 60.600–61.200 $ je nach Quelle; am Wochenende kurz bei rund 55.100 $ (Tief seit Sept. 2024)",
    "nsrc": 2,
    "verified": true
   },
   {
    "name": "Gold",
-   "value": "≈ 3.535 $",
+   "value": "≈ 3.575–3.605 $",
    "change": null,
-   "note": "je Unze, Fr-Abend; Tagestief rund 3.503 $, tiefster Stand seit Sept. 2025",
-   "nsrc": 3,
+   "note": "je Unze, Mo früh; Erholung vom Freitag (Schluss ≈ 3.538 $, tiefster Stand seit 14 Monaten)",
+   "nsrc": 2,
    "verified": true
   },
   {
    "name": "Öl (Brent)",
-   "value": "92,57 $",
-   "change": 0.64,
-   "note": "je Barrel, Fr-Schluss; Woche −3,4 %. Achtung: Iran griff am Sa-Abend Ziele in Bahrain an – Ölpreis könnte am Montag steigen",
-   "nsrc": 3,
+   "value": "≈ 92,6 $",
+   "change": null,
+   "note": "je Barrel, Mo früh kaum verändert: Irans Angriff auf Bahrain (Sa) hält das Risiko hoch, aber Golf-Exporte laufen und es droht ein Überangebot",
+   "nsrc": 2,
    "verified": true
   },
   {
    "name": "US-Rendite 10J",
-   "value": "≈ 4,92–4,94 %",
+   "value": "≈ 4,92–4,95 %",
    "change": null,
-   "note": "Fr-Schluss, deutlich gesunken (Vorwoche ≈ 5,15 %) – Flucht in sichere Anleihen. Fed-Zinserhöhung um 0,25 Prozentpunkte am 9.12. laut CME FedWatch je nach Quelle zu rund 92–97 % erwartet",
+   "note": "Fr-Schluss, deutlich gesunken (Flucht in sichere Anleihen). Fed-Zinserhöhung am 9.12. gilt als sehr wahrscheinlich",
    "nsrc": 3,
    "verified": true
   }
@@ -78,8 +78,8 @@
    "signal": "halten",
    "price": "762,40 $",
    "change": -3.39,
-   "note": "Fr-Schluss in London; die Tagesveränderung bestätigt der Xetra-Kurs in Euro (−3,51 %). Der S&P 500 ist in einer Korrektur; der ETF liegt rund 4 % unter dem 200-Tage-Schnitt (Durchschnittskurs der letzten 200 Handelstage, ≈ 792 $). Für einen breiten Index-ETF und langfristiges Sparen kein Handlungsbedarf.",
-   "next": "Thanksgiving Do 26.11. (US-Börsen zu, Fr 27.11. bis 19:00 Uhr)",
+   "note": "Fr-Schluss in London; Tagesveränderung über den Xetra-Kurs in Euro (−3,51 %) bestätigt. Der S&P 500 ist in einer Korrektur (mehr als 10 % unter dem Rekord). Lichtblick: Die S&P-500-Terminkontrakte (Wetten auf den Eröffnungskurs) lagen Mo früh rund 2 % im Plus. Der ETF liegt rund 4 % unter dem 200-Tage-Schnitt (≈ 792 $). Für einen breiten Index-ETF und langfristiges Sparen kein Handlungsbedarf.",
+   "next": "Mi 25.11. US-Inflation (PCE); Do 26.11. Thanksgiving (US-Börsen zu)",
    "nsrc": 2,
    "verified": true
   },
@@ -90,7 +90,7 @@
    "signal": "vorsicht",
    "price": "424,39 $",
    "change": -13.25,
-   "note": "Fr-Schluss; in zwei Tagen rund −20 %. Belastet vom Leerverkäufer-Bericht (Hunterbrook) zu China-Exporten – AMD weist die Vorwürfe zurück, Hunterbrook räumt ein, keinen Gesetzesverstoß belegen zu können – und vom Chip-Ausverkauf nach dem Nvidia-Bericht. Knapp unter dem 200-Tage-Schnitt (≈ 430 $). Positiv: Analysten haben die Gewinnschätzung fürs nächste Jahr in 30 Tagen um rund 11 % angehoben (35 Anhebungen, 3 Senkungen). Am Wochenende keine neuen Nachrichten.",
+   "note": "Fr-Schluss; in zwei Tagen rund −20 % nach dem Leerverkäufer-Bericht (Hunterbrook) zu China – AMD weist die Vorwürfe zurück, Hunterbrook schreibt selbst, die Funde belegten für sich keinen Exportverstoß. Knapp unter dem 200-Tage-Schnitt (≈ 430 $). Positiv: Analysten haben die Gewinnschätzung fürs nächste Jahr in 30 Tagen um rund 11 % angehoben (35 Anhebungen, 3 Senkungen). Nasdaq-100-Terminkontrakte Mo früh rund +3 % – Erholung möglich, aber unsicher. Am Wochenende keine neue AMD-Nachricht.",
    "next": "Zahlen voraussichtlich 2.2.2027",
    "nsrc": 3,
    "verified": true
@@ -102,7 +102,7 @@
    "signal": "beobachten",
    "price": "265,29 $",
    "change": -2.7,
-   "note": "Fr-Schluss, 52-Wochen-Tief; rund 21 % unter dem 200-Tage-Schnitt, RSI 28 (Kraftmesser 0–100, unter 30 = überverkauft). Analyst Ming-Chi Kuo berichtet, Google kürze 2027 die Bestellung eines Broadcom-KI-Chips um rund 20 % und verlagere zu MediaTek – von Google nicht bestätigt. Gewinnschätzung in 30 Tagen leicht gesenkt (≈ −1,7 %).",
+   "note": "Fr-Schluss, 52-Wochen-Tief; rund 34 % unter dem Rekordschluss vom Mai, RSI 28 (Kraftmesser 0–100, unter 30 = überverkauft). Belastet von der Sorge um hohe KI-Ausgaben und neue Schulden. Laut Analyst Ming-Chi Kuo kürzt Google 2027 Bestellungen eines Broadcom-KI-Chips – von Google nicht bestätigt. Gewinnschätzung in 30 Tagen leicht gesenkt (≈ −1,7 %).",
    "next": "Kein Termin in den nächsten 7 Tagen",
    "nsrc": 2,
    "verified": true
@@ -114,8 +114,8 @@
    "signal": "vorsicht",
    "price": "510,45 $",
    "change": -5.01,
-   "note": "Fr-Schluss, 52-Wochen-Tief; in 3 Monaten rund −37 %. Keine Firmennachricht – Anleger ziehen sich aus Werten zurück, die vom Rechenzentrums-Ausbau profitieren. Rund 37 % unter dem 200-Tage-Schnitt, RSI 24 (stark überverkauft – Gegenbewegung möglich, aber nicht sicher). Gewinnschätzung in 30 Tagen leicht gesenkt (≈ −1,3 %).",
-   "next": "Q4-Zahlen voraussichtlich Ende Januar 2027",
+   "note": "Fr-Schluss, 52-Wochen-Tief; Woche rund −13 %, in 3 Monaten rund −37 %. Keine Firmennachricht – Anleger meiden Werte, die vom Rechenzentrums-Ausbau leben (Caterpillar liefert Stromaggregate dafür). Rund 37 % unter dem 200-Tage-Schnitt, RSI 24 (stark überverkauft – Gegenbewegung möglich, aber nicht sicher). Gewinnschätzung in 30 Tagen leicht gesenkt (≈ −1,3 %).",
+   "next": "Q4-Zahlen 28.1.2027 (laut Yahoo; vom Unternehmen noch zu bestätigen)",
    "nsrc": 2,
    "verified": true
   },
@@ -138,7 +138,7 @@
    "signal": "vorsicht",
    "price": "45,12 $",
    "change": -5.23,
-   "note": "Fr-Schluss in London; Tagesveränderung über Xetra (in €, −5,36 %) bestätigt. Kupfer hatte die schlechteste Woche des Jahres (rund −9 %) und gilt als im Bärenmarkt (in New York mehr als 20 % unter dem Hoch, in London rund 18 %). Rund 30 % unter dem 200-Tage-Schnitt, RSI 23 (stark überverkauft); knapp über dem 52-Wochen-Tief (44,43 $).",
+   "note": "Fr-Schluss in London; Tagesveränderung über Xetra (in €, −5,36 %) bestätigt. Kupfer fiel in London (LME) am Montag früh kurz unter 12.000 $ je Tonne – tiefster Stand seit März – und erholte sich dann etwas. Sorge um weniger KI-Rechenzentren drückt Metalle. Rund 30 % unter dem 200-Tage-Schnitt, RSI 23 (stark überverkauft); knapp über dem 52-Wochen-Tief (44,43 $).",
    "next": "Kein Termin gefunden",
    "nsrc": 2,
    "verified": true
@@ -163,7 +163,7 @@
    "price": "107,95 $",
    "change": -3.83,
    "note": "Fr-Schluss; zweiter Minustag nach dem Allzeithoch vom 18.11., keine Firmennachricht. Kurs etwa auf dem Analysten-Ø-Ziel (≈ 107 $). Positiv: Gewinnschätzung in 30 Tagen um rund 3 % angehoben. Unterstützung bei rund 104 $.",
-   "next": "Dividende 0,30 $ wird am Di 24.11. ausgezahlt",
+   "next": "Dividende 0,30 $ wird morgen, Di 24.11., ausgezahlt",
    "nsrc": 2,
    "verified": true
   },
@@ -174,7 +174,7 @@
    "signal": "beobachten",
    "price": "246,82 $",
    "change": -4.1,
-   "note": "Fr-Schluss, mit dem KI-Abverkauf; die Anthropic-Aktie (Amazon hält rund 14,7 %) fiel am Freitag um rund 8,5 % auf 88,91 $ (Ausgabepreis 83 $). Nur knapp über dem 200-Tage-Schnitt (≈ 245 $); nächste Unterstützung erst bei rund 226 $. Analysten-Ø-Ziel ≈ 327 $ (+32 %).",
+   "note": "Fr-Schluss, mit dem KI-Abverkauf; die Anthropic-Aktie (Amazon hält rund 14,7 %) fiel am Freitag um rund 8,5 % auf 88,91 $. Nur knapp über dem 200-Tage-Schnitt (≈ 245 $); Widerstand bei rund 250 $, nächste Unterstützung erst bei rund 226 $. Gewinnschätzung stabil (+0,7 % in 30 Tagen), Analysten-Ø-Ziel ≈ 327 $ (+32 %).",
    "next": "AWS re:Invent ab 30.11. (voraussichtlich, außerhalb 7 Tage)",
    "nsrc": 3,
    "verified": true
@@ -186,7 +186,7 @@
    "signal": "vorsicht",
    "price": "35,22 $",
    "change": -5.74,
-   "note": "Fr in London laut Yahoo; der Xetra-Kurs in Euro fiel stärker (−7,2 %) – daher nicht bestätigt. Wäre ein neues 52-Wochen-Tief. Atom- und Uranaktien fallen mit den KI-Werten (Strom für Rechenzentren); rund 36 % unter dem 200-Tage-Schnitt.",
+   "note": "Fr in London laut Yahoo; der Xetra-Kurs in Euro fiel stärker (−7,2 %) – daher nicht bestätigt. Wäre ein neues 52-Wochen-Tief. Atom- und Uranaktien fallen mit den KI-Werten (Strom für Rechenzentren); rund 36 % unter dem 200-Tage-Schnitt. Am Wochenende keine neuen Nachrichten.",
    "next": "Kein Termin gefunden",
    "nsrc": 1,
    "verified": false
@@ -198,8 +198,8 @@
    "signal": "beobachten",
    "price": "27,64 HK$",
    "change": -3.09,
-   "note": "Fr-Schluss in Hongkong. Rund 5 % unter dem 200-Tage-Schnitt. Analysten haben die Gewinnschätzung fürs nächste Jahr in 30 Tagen um rund 5 % gesenkt (2 Anhebungen, 6 Senkungen) – die Q3-Zahlen am Dienstag sind der nächste große Test.",
-   "next": "Q3-Zahlen Di 24.11. (laut Xiaomi-Investorenseite)",
+   "note": "Fr-Schluss in Hongkong (Woche −4,95 %). Am Montag im Handel laut Yahoo rund 27,5 HK$, der Hang Seng fiel um rund 1,5 % – Montagsschluss noch offen. Analysten haben die Gewinnschätzung fürs nächste Jahr in 30 Tagen um rund 5 % gesenkt (2 Anhebungen, 6 Senkungen); ein Broker (UOB Kay Hian) erwartet für Q3 rund 7 % weniger Umsatz als vor einem Jahr – vor allem wegen schwächerer E-Auto- und Gerätesparte.",
+   "next": "Q3-Zahlen MORGEN, Di 24.11. (laut Xiaomi)",
    "nsrc": 2,
    "verified": true
   },
@@ -210,7 +210,7 @@
    "signal": "vorsicht",
    "price": "25,64 $",
    "change": -8.18,
-   "note": "Fr-Schluss in London (25,635 $); Tagesveränderung über Xetra (in €, −8,45 %) bestätigt. Neues 52-Wochen-Tief. Quantenaktien fielen am Freitag deutlich (IonQ rund −8 %, Rigetti −6 %). Rund 28 % unter dem 200-Tage-Schnitt, RSI 26 (überverkauft).",
+   "note": "Fr-Schluss in London (25,635 $); Tagesveränderung über Xetra (in €, −8,45 %) bestätigt. Neues 52-Wochen-Tief. Quantenaktien fielen am Freitag deutlich (IonQ rund −8 %, Rigetti −6 %). Rund 28 % unter dem 200-Tage-Schnitt, RSI 26 (überverkauft). Am Wochenende keine neuen Nachrichten.",
    "next": "Kein Termin gefunden",
    "nsrc": 2,
    "verified": true
@@ -222,7 +222,7 @@
    "signal": "halten",
    "price": "210,00 $",
    "change": 0.65,
-   "note": "Fr-Schluss, im Plus gegen den Markt: GTA VI brachte laut Take-Two am ersten Tag rund 3,79 Mrd. $ Umsatz im Handel (größter Unterhaltungsstart der Geschichte); vor dem Start 32,5 Mio. verkaufte Exemplare. Achtung: Handelsumsatz, nicht Take-Twos eigener Umsatz. Knapp unter dem 200-Tage-Schnitt (≈ 218 $); Gewinnschätzung fürs nächste Geschäftsjahr in 30 Tagen um rund 21 % angehoben.",
+   "note": "Fr-Schluss, im Plus gegen den Markt: GTA VI brachte laut Take-Two am ersten Tag rund 3,79 Mrd. $ Umsatz im Handel (größter Unterhaltungsstart der Geschichte). Achtung: Handelsumsatz und Firmenschätzung, nicht Take-Twos eigener Umsatz; Wochenendzahlen gibt es noch nicht. Knapp unter dem 200-Tage-Schnitt (≈ 218 $); Gewinnschätzung fürs nächste Geschäftsjahr in 30 Tagen um rund 21 % angehoben.",
    "next": "Zahlen voraussichtlich 9.2.2027",
    "nsrc": 3,
    "verified": true
@@ -230,52 +230,54 @@
  ],
  "news": [
   {
-   "title": "Schwarze Woche: S&P 500 in der Korrektur",
-   "text": "S&P 500 −8,6 % und Nasdaq −10 % in einer Woche – die schlechteste seit April 2025. Auslöser am Freitag: Laut Reuters prüft die US-Börsenaufsicht SEC die Buchhaltung von Nvidia; Nvidia fiel um 14 % auf 125,53 $. Eine Untersuchung ist kein Beweis für Fehlverhalten; am Wochenende gab es dazu keine neuen Meldungen.",
+   "title": "US-Terminkontrakte springen an, Asien weiter schwach",
+   "text": "Nach der Korrektur-Woche lagen die Terminkontrakte am Montag früh deutlich im Plus (S&P 500 rund +2 %, Nasdaq 100 rund +3 %, Dow rund +1,6 %). Einen konkreten Auslöser nennen die Berichte nicht. In Asien fielen dagegen Chipwerte weiter: Südkoreas Kospi rutschte auf ein 10-Monats-Tief, Samsung rund −4,5 %; Hongkong rund −1,5 %. Japan hatte Feiertag. Südkorea, Taiwan und China kündigten Stützungsmaßnahmen an.",
    "tags": [
+    "Markt",
     "USA",
-    "KI",
-    "Markt"
+    "Asien"
    ]
   },
   {
-   "title": "Iran greift Ziele in Bahrain an",
-   "text": "Am Samstagabend hat Iran laut bahrainischem Innenministerium ein ziviles Industriegelände in Bahrain getroffen (Brand, keine Opfer). Behauptungen der Revolutionsgarden über Treffer an US-Radaren sind nicht bestätigt. Das kann den Ölpreis am Montag steigen lassen.",
+   "title": "Trump will Jensen Huang zurück an Nvidias Spitze",
+   "text": "US-Präsident Trump hat sich dafür ausgesprochen, dass Nvidias Verwaltungsrat den zurückgetretenen Chef Jensen Huang wieder einsetzt. Finanzminister Bessent will die Entscheidung von den laufenden Untersuchungen zu Chipverkäufen nach China abhängig machen. Der Verwaltungsrat hat bisher keine Rückkehr beschlossen. Nvidias Lage belastet den ganzen Chip-Sektor, auch AMD.",
    "tags": [
-    "Geopolitik",
-    "Öl"
+    "Nvidia",
+    "Chips",
+    "AMD"
    ]
   },
   {
-   "title": "Fed: Zinserhöhung im Dezember gilt als fast sicher",
-   "text": "Am Terminmarkt liegt die Wahrscheinlichkeit für eine Erhöhung um 0,25 Prozentpunkte am 9.12. je nach Quelle bei rund 92–97 % (CME FedWatch). Fed-Gouverneur Waller brachte sogar 0,5 Punkte ins Gespräch. Wichtig dafür: die US-Inflationsdaten PCE am Mittwoch.",
+   "title": "Öl kaum bewegt trotz Angriff auf Bahrain",
+   "text": "Iran hat am Samstag laut Bahrain ein ziviles Industriegelände getroffen (Brand); die Revolutionsgarden sprechen von Angriffen auf US-Militär. Brent blieb am Montag früh bei rund 92,6 $ je Barrel nahezu unverändert, weil die Exporte vom Golf laufen und die Internationale Energieagentur ein Überangebot erwartet.",
    "tags": [
-    "USA",
-    "Zinsen"
+    "Öl",
+    "Nahost"
    ]
   },
   {
-   "title": "Bitcoin: Absturz auf 55.000 $, dann Erholung",
-   "text": "Bitcoin fiel am Samstag früh kurz auf rund 55.100 $ – den tiefsten Stand seit September 2024 – und erholte sich danach auf rund 59.000–60.000 $. Laut CoinGlass wurden gehebelte Wetten von über 1,8 Mrd. $ aufgelöst.",
-   "tags": [
-    "Krypto"
-   ]
-  },
-  {
-   "title": "Kupfer im Bärenmarkt",
-   "text": "Kupfer hatte die schlechteste Woche des Jahres (rund −9 %) und gilt als im Bärenmarkt (in New York mehr als 20 % unter dem Hoch) – die Sorge um weniger KI-Rechenzentren drückt auch Metalle. Das trifft den Kupferminen-ETF im Depot.",
+   "title": "Kupfer kurz unter 12.000 $",
+   "text": "Kupfer fiel in London am Montag früh kurz unter 12.000 $ je Tonne, den tiefsten Stand seit März, und erholte sich dann auf rund 12.240 $. Belastend sind Sorgen um die KI-Ausgaben, ein starker Dollar und erwartete Zinserhöhungen. Das trifft den Kupferminen-ETF COPX.",
    "tags": [
     "Rohstoffe",
-    "Depot",
     "COPX"
    ]
   },
   {
-   "title": "GTA VI: Rekordstart für Take-Two",
-   "text": "Laut Take-Two brachte GTA VI am ersten Tag rund 3,79 Mrd. $ Handelsumsatz – der größte Unterhaltungsstart aller Zeiten. Die Aktie stieg am Freitag gegen den Markt leicht.",
+   "title": "Gold und Bitcoin erholen sich",
+   "text": "Gold stieg am Montag früh wieder auf rund 3.575–3.605 $ je Unze, nachdem es am Freitag den tiefsten Stand seit 14 Monaten erreicht hatte. Bitcoin notierte bei rund 61.000 $, nach einem kurzen Absturz auf rund 55.100 $ am Wochenende.",
    "tags": [
-    "Depot",
-    "TTWO"
+    "Gold",
+    "Krypto"
+   ]
+  },
+  {
+   "title": "Kurze US-Woche mit wichtigen Inflationsdaten",
+   "text": "Am Mittwoch kommen die US-Inflation nach dem PCE-Index (das bevorzugte Maß der Fed) und die zweite Schätzung des Wachstums im 3. Quartal. Donnerstag bleiben die US-Börsen wegen Thanksgiving zu, Freitag schließen sie früh. Dünner Handel kann Kursausschläge verstärken.",
+   "tags": [
+    "Termine",
+    "Fed",
+    "USA"
    ]
   }
  ],
@@ -323,7 +325,7 @@
  "calendar": [
   {
    "date": "Mo 23.11.",
-   "text": "Einkaufsmanagerindizes (Stimmung in Firmen) DE/Eurozone/USA; UniCredit Ex-Dividende; HPE Q-Zahlen (nach US-Schluss)",
+   "text": "Einkaufsmanagerindizes (Stimmung in Firmen) Eurozone/Deutschland/USA; HPE Q-Zahlen nach US-Schluss; Japan Feiertag",
    "mine": false
   },
   {
@@ -338,22 +340,22 @@
   },
   {
    "date": "Di 24.11.",
-   "text": "ifo-Geschäftsklima; US-Verbrauchervertrauen; HP Q-Zahlen, Dell und Workday (voraussichtlich) nach US-Schluss",
+   "text": "ifo-Geschäftsklima; Best Buy (vor US-Start), Dell und Workday (nach US-Schluss) mit Zahlen",
    "mine": false
   },
   {
    "date": "Mi 25.11.",
-   "text": "USA 14:30 Uhr: Inflation PCE (Oktober) und BIP Q3 (2. Schätzung) – wichtig für die Fed am 9.12.; Deere Q4-Zahlen (vor US-Börsenstart)",
+   "text": "USA: Inflation PCE (Oktober) und BIP Q3 (2. Schätzung) – wichtig für die Fed am 9.12.; Deere Q4-Zahlen (voraussichtlich)",
    "mine": false
   },
   {
    "date": "Do 26.11.",
-   "text": "Thanksgiving – US-Börsen geschlossen; EZB-Sitzungsprotokoll (voraussichtlich)",
+   "text": "Thanksgiving – US-Börsen geschlossen",
    "mine": false
   },
   {
    "date": "Fr 27.11.",
-   "text": "Black Friday – US-Börsen schließen um 19:00 Uhr deutscher Zeit; deutsche Arbeitsmarktdaten",
+   "text": "Black Friday – US-Börsen schließen um 19:00 Uhr deutscher Zeit",
    "mine": false
   },
   {
@@ -364,84 +366,96 @@
  ],
  "sources": [
   {
-   "title": "Motley Fool/Yahoo: Stock Market Today, Nov. 20 – Nvidia rout deepens as SEC accounting probe…",
-   "url": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-nvidia-s-usd2-5-trillion-rout-deepens-as-sec-accounting-probe-adds-to-wall-street-s-ai-sell-off/"
+   "title": "CNBC: S&P 500 futures rebound sharply (Live, 22./23.11.2026)",
+   "url": "https://www.cnbc.com/2026/11/22/stock-market-today-live-updates.html"
   },
   {
-   "title": "StockTitan: Stock market today, 20.11.2026",
-   "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-20-2026"
+   "title": "Investing.com: Wall Street futures jump after major indexes enter correction territory (23.11.2026)",
+   "url": "https://uk.investing.com/news/stock-market-news/wall-street-futures-jump-after-major-indexes-enter-correction-territory-4998140"
+  },
+  {
+   "title": "Investing.com: Asia stocks slide as AI rout deepens despite rebound in U.S. futures (23.11.2026)",
+   "url": "https://in.investing.com/news/stock-market-news/asia-stocks-slide-as-ai-rout-deepens-despite-rebound-in-us-futures-5719990"
+  },
+  {
+   "title": "Investing.com: Oil falls as robust Gulf exports offset Iran escalation (23.11.2026)",
+   "url": "https://www.investing.com/news/commodities-news/oil-falls-as-robust-gulf-exports-offset-iran-escalation-supply-glut-risks-5044220"
+  },
+  {
+   "title": "Angel One: Crude oil prices fall as strong Gulf exports offset Iran tensions (23.11.2026)",
+   "url": "https://angelone.in/news/commodities/crude-oil-prices-fall-as-strong-gulf-exports-offset-iran-tensions-and-supply-glut-concerns-november-23-2026"
+  },
+  {
+   "title": "Investing.com: LME copper briefly falls below $12,000 a ton (23.11.2026)",
+   "url": "https://www.investing.com/news/commodities-news/lme-copper-briefly-falls-below-12000-a-ton-as-tech-selloff-deepens-5044280"
+  },
+  {
+   "title": "onvista/dpa-AFX: Wochenausblick – getrübte Aussicht auf Jahresendrally beim Dax (23.11.2026)",
+   "url": "https://www.onvista.de/news/2026/11-23-wochenausblick-getruebte-aussicht-auf-jahresendrally-beim-dax-0-10-26579250"
   },
   {
    "title": "ARIVA/dpa-AFX: Dax fällt unter 25.000 Punkte (20.11.2026)",
    "url": "https://www.ariva.de/news/aktien-frankfurt-schluss-dax-faellt-unter-25-000-punkte-12215520"
   },
   {
-   "title": "Kitco: Gold falls toward $3,500 (20.11.2026)",
-   "url": "https://www.kitco.com/news/article/2026-11-20/gold-falls-toward-3500-silver-slides-stock-markets-enter-correction"
+   "title": "NBC News: Trump 'would not mind' if Jensen Huang returned as Nvidia CEO",
+   "url": "https://www.nbcnews.com/politics/trump-administration/trump-support-jensen-huang-nvidia-ceo-rcna609597"
   },
   {
-   "title": "24/7 Wall St.: This stock market selloff could block the Fed's rate hikes (21.11.2026)",
-   "url": "https://247wallst.com/investing/2026/11/21/this-stock-market-selloff-could-block-the-feds-rate-hikes/"
+   "title": "Yahoo Finance: Trump throws his weight behind Jensen Huang's return",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/trump-throws-weight-behind-jensen-041337724.html"
   },
   {
-   "title": "CoinDesk: Bitcoin bounces 9% from two-year low (21.11.2026)",
-   "url": "https://www.coindesk.com/markets/2026/11/21/bitcoin-bounces-9-from-two-year-low-to-retake-usd60-000-as-traders-eye-monday-s-stock-open"
+   "title": "Mitrade: Gold rebounds above $3,600 (23.11.2026)",
+   "url": "https://www.mitrade.com/insights/commodity-analysis/gold/gold-rebounds-above-3600-stock-correction"
   },
   {
-   "title": "CoinCodex: Daily market update 22.11.2026",
-   "url": "https://coincodex.com/article/95777/daily-market-update-for-november-22-2026/"
+   "title": "KuCoin: Crypto daily market report 23.11.2026",
+   "url": "https://www.kucoin.com/news/articles/crypto-daily-market-report-november-23-2026"
   },
   {
-   "title": "Al Jazeera: Iran targets US military in Bahrain (21.11.2026)",
-   "url": "https://www.aljazeera.com/news/liveblog/2026/11/21/iran-war-live-iran-targets-us-military-in-bahrain-houthi-strikes-continue"
+   "title": "Seeking Alpha: Xiaomi Q3 2026 preview",
+   "url": "https://seekingalpha.com/article/4969149-xiaomi-q3-2026-preview-premiumization-offsets-handset-weakness-but-ev-targets-look-stretched"
   },
   {
-   "title": "Euronews: Iran attacks US bases in Bahrain (21.11.2026)",
-   "url": "https://www.euronews.com/2026/11/21/iran-attacks-us-bases-in-bahrain-as-its-tankers-get-ready-to-break-the-us-blockade"
+   "title": "Yahoo Finance: Caterpillar sinks another 6% as AI selloff spreads to industrials",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/caterpillar-sinks-another-6-vertiv-213106252.html"
   },
   {
-   "title": "finanznachrichten.de/dpa-AFX: Wochenausblick – getrübte Aussicht auf Jahresendrally (20.11.2026)",
-   "url": "https://www.finanznachrichten.de/nachrichten-2026-11/70190938-wochenausblick-getruebte-aussicht-auf-jahresendrally-beim-dax-016.htm"
+   "title": "CNBC: AMD falls on short-seller report of alleged China exposure (19.11.2026)",
+   "url": "https://www.cnbc.com/2026/11/19/amd-falls-on-short-seller-report-of-alleged-china-exposure.html"
   },
   {
-   "title": "Yahoo Finance: AMD stock drops after Hunterbrook raises export-control concerns",
-   "url": "https://finance.yahoo.com/technology/article/amd-stock-drops-after-hunterbrook-media-raises-export-control-concerns-171508145.html"
+   "title": "Motley Fool: Alphabet stock just hit a 1-year low (21.11.2026)",
+   "url": "https://fool.com/investing/2026/11/21/alphabet-stock-just-hit-a-1-year-low-why-is-google-s-parent-borrowing-so-much-money"
   },
   {
-   "title": "Yahoo Finance: Google reportedly cuts Broadcom-designed chip orders (20.11.2026)",
-   "url": "https://finance.yahoo.com/technology/ai/articles/google-reportedly-cuts-broadcom-designed-165518878.html"
-  },
-  {
-   "title": "American Bazaar: Walmart raises full-year outlook for third time (19.11.2026)",
-   "url": "https://americanbazaaronline.com/2026/11/19/walmart-raises-full-year-outlook-for-third-time-as-e-commerce-sales-surge-23-492701/"
-  },
-  {
-   "title": "Fierce Biotech: AbbVie–DISCO bispecific pact (19.11.2026)",
-   "url": "https://www.fiercebiotech.com/biotech/abbvie-busts-move-disco-25b-pact-aimed-bispecific-discovery"
-  },
-  {
-   "title": "CNBC: Anthropic IPO and tech sell-off (21.11.2026)",
-   "url": "https://www.cnbc.com/2026/11/21/anthropic-ipo-tech-selloff.html"
-  },
-  {
-   "title": "MINING.COM: Copper price sinks into bear market",
-   "url": "https://mining.com/copper-price-sinks-into-bear-market-erasing-2026-gains-in-worst-week-of-the-year"
+   "title": "ABC News: GTA VI breaks 1st-day sales record",
+   "url": "https://abcnews.com/GMA/Culture/grand-theft-auto-vi-breaks-1st-day-sales-record/story?id=138328412"
   },
   {
    "title": "Take-Two: Grand Theft Auto VI shatters entertainment box office records",
    "url": "https://www.take2games.com/ir/news/grand-theft-auto-vi-shatters-entertainment-box-office-records"
   },
   {
-   "title": "Forbes: GTA 6 raked in $3.8 billion on first day (20.11.2026)",
-   "url": "https://www.forbes.com/sites/antoniopequenoiv/2026/11/20/gta-6-raked-in-38-billion-sales-on-first-day-the-largest-entertainment-launch-ever/"
+   "title": "aktiencheck: Wall-Street-Ausblick – PCE-Inflation, BIP und Thanksgiving-Pause",
+   "url": "https://aktiencheck.de/artikel/wall-street-ausblick-pce-inflation-bip-und-thanksgiving-pause-welche-termine"
+  },
+  {
+   "title": "MINING.COM: Copper price sinks into bear market",
+   "url": "https://mining.com/copper-price-sinks-into-bear-market-erasing-2026-gains-in-worst-week-of-the-year"
+  },
+  {
+   "title": "Fierce Biotech: AbbVie–DISCO pact",
+   "url": "https://www.fiercebiotech.com/biotech/abbvie-busts-move-disco-25b-pact-aimed-bispecific-discovery"
+  },
+  {
+   "title": "American Bazaar: Walmart raises full-year outlook for third time",
+   "url": "https://americanbazaaronline.com/2026/11/19/walmart-raises-full-year-outlook-for-third-time-as-e-commerce-sales-surge-23-492701/"
   },
   {
    "title": "NYSE: Holidays & Trading Hours",
    "url": "https://www.nyse.com/Markets/hours-calendars"
-  },
-  {
-   "title": "SIFMA: Thanksgiving 2026 market close recommendation",
-   "url": "https://www.sifma.org/news/press-releases/sifma-recommends-a-full-market-close-on-november-26-and-an-early-market-close-on-november-27-in-the-u-s-in-observance-of-the-thanksgiving-day-holiday"
   }
  ]
 }

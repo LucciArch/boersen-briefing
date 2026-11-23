@@ -176,7 +176,7 @@
    "status": "läuft"
   }
  ],
- "updated": "2026-11-22T07:28+01:00",
+ "updated": "2026-11-23T07:21+01:00",
  "benchmark": "S&P 500 (SPY)",
  "method": "Einstieg zum Eröffnungskurs des ersten Handelstags ab Veröffentlichung; Vergleich mit dem S&P-500-ETF SPY über denselben Zeitraum; Kursentwicklung in Handelswährung, ohne Dividenden und Gebühren.",
  "stats": {

@@ -3,7 +3,7 @@
  "updated_label": "Mo, 23.11.2026, 07:55 Uhr",
  "kind": "Tagesbriefing",
  "mood": "Nach der schwärzesten Woche seit April 2025 deuten die US-Terminkontrakte eine kräftige Gegenbewegung an (S&P 500 rund +2 %, Nasdaq 100 rund +3 %), Asien bleibt aber schwach (Südkorea deutlich im Minus). Ob daraus eine echte Erholung wird, ist offen – wichtig sind diese Woche Xiaomi-Zahlen (Di) und US-Inflation (Mi).",
- "check_note": "",
+ "check_note": "Alle Indexstände und 12 von 13 Depot-Kursen (Freitagsschluss) mit mindestens 2 Quellen bestätigt; beim Uran-ETF NUCL weicht die zweite Quelle weiter ab – nicht bestätigt. Montagswerte (Terminkontrakte, Gold, Öl, Bitcoin) sind Frühwerte und ändern sich laufend. Der unabhängige Faktencheck (52 Punkte) fand 2 Fehler (Wochenminus Caterpillar und Xiaomi) und 4 Ungenauigkeiten – alles korrigiert, eine nur einfach belegte Xiaomi-Prognose entfernt.",
  "markets": [
   {
    "name": "S&P 500",
@@ -114,7 +114,7 @@
    "signal": "vorsicht",
    "price": "510,45 $",
    "change": -5.01,
-   "note": "Fr-Schluss, 52-Wochen-Tief; Woche rund −13 %, in 3 Monaten rund −37 %. Keine Firmennachricht – Anleger meiden Werte, die vom Rechenzentrums-Ausbau leben (Caterpillar liefert Stromaggregate dafür). Rund 37 % unter dem 200-Tage-Schnitt, RSI 24 (stark überverkauft – Gegenbewegung möglich, aber nicht sicher). Gewinnschätzung in 30 Tagen leicht gesenkt (≈ −1,3 %).",
+   "note": "Fr-Schluss, 52-Wochen-Tief; Woche rund −15 %, in 3 Monaten rund −37 %. Keine Firmennachricht – Anleger meiden Werte, die vom Rechenzentrums-Ausbau leben (Caterpillar liefert Stromaggregate dafür). Rund 37 % unter dem 200-Tage-Schnitt, RSI 24 (stark überverkauft – Gegenbewegung möglich, aber nicht sicher). Gewinnschätzung in 30 Tagen leicht gesenkt (≈ −1,3 %).",
    "next": "Q4-Zahlen 28.1.2027 (laut Yahoo; vom Unternehmen noch zu bestätigen)",
    "nsrc": 2,
    "verified": true
@@ -198,7 +198,7 @@
    "signal": "beobachten",
    "price": "27,64 HK$",
    "change": -3.09,
-   "note": "Fr-Schluss in Hongkong (Woche −4,95 %). Am Montag im Handel laut Yahoo rund 27,5 HK$, der Hang Seng fiel um rund 1,5 % – Montagsschluss noch offen. Analysten haben die Gewinnschätzung fürs nächste Jahr in 30 Tagen um rund 5 % gesenkt (2 Anhebungen, 6 Senkungen); ein Broker (UOB Kay Hian) erwartet für Q3 rund 7 % weniger Umsatz als vor einem Jahr – vor allem wegen schwächerer E-Auto- und Gerätesparte.",
+   "note": "Fr-Schluss in Hongkong (Woche rund −4,2 %). Am Montag im Handel laut Yahoo rund 27,5 HK$, der Hang Seng fiel um rund 1,5–1,8 % – Montagsschluss noch offen. Analysten haben die Gewinnschätzung fürs nächste Jahr in 30 Tagen um rund 5 % gesenkt (2 Anhebungen, 6 Senkungen); Vorab-Schätzungen sehen schwächere E-Auto- und Gerätesparten (nur 1 Quelle, nicht bestätigt).",
    "next": "Q3-Zahlen MORGEN, Di 24.11. (laut Xiaomi)",
    "nsrc": 2,
    "verified": true
@@ -223,7 +223,7 @@
    "price": "210,00 $",
    "change": 0.65,
    "note": "Fr-Schluss, im Plus gegen den Markt: GTA VI brachte laut Take-Two am ersten Tag rund 3,79 Mrd. $ Umsatz im Handel (größter Unterhaltungsstart der Geschichte). Achtung: Handelsumsatz und Firmenschätzung, nicht Take-Twos eigener Umsatz; Wochenendzahlen gibt es noch nicht. Knapp unter dem 200-Tage-Schnitt (≈ 218 $); Gewinnschätzung fürs nächste Geschäftsjahr in 30 Tagen um rund 21 % angehoben.",
-   "next": "Zahlen voraussichtlich 9.2.2027",
+   "next": "Zahlen voraussichtlich Anfang Feb. 2027 (8. oder 9.2., noch nicht bestätigt)",
    "nsrc": 3,
    "verified": true
   }
@@ -231,7 +231,7 @@
  "news": [
   {
    "title": "US-Terminkontrakte springen an, Asien weiter schwach",
-   "text": "Nach der Korrektur-Woche lagen die Terminkontrakte am Montag früh deutlich im Plus (S&P 500 rund +2 %, Nasdaq 100 rund +3 %, Dow rund +1,6 %). Einen konkreten Auslöser nennen die Berichte nicht. In Asien fielen dagegen Chipwerte weiter: Südkoreas Kospi rutschte auf ein 10-Monats-Tief, Samsung rund −4,5 %; Hongkong rund −1,5 %. Japan hatte Feiertag. Südkorea, Taiwan und China kündigten Stützungsmaßnahmen an.",
+   "text": "Nach der Korrektur-Woche lagen die Terminkontrakte am Montag früh deutlich im Plus (S&P 500 rund +2 %, Nasdaq 100 rund +3 %, Dow rund +1,6 %). Einen konkreten Auslöser nennen die Berichte nicht. In Asien fielen dagegen Chipwerte weiter: Südkoreas Kospi rutschte auf ein 10-Monats-Tief, Samsung rund −5 %; Hongkong rund −1,5 bis −1,8 %. Japan hatte Feiertag. Südkorea, Taiwan und China kündigten Stützungsmaßnahmen an.",
    "tags": [
     "Markt",
     "USA",
@@ -240,7 +240,7 @@
   },
   {
    "title": "Trump will Jensen Huang zurück an Nvidias Spitze",
-   "text": "US-Präsident Trump hat sich dafür ausgesprochen, dass Nvidias Verwaltungsrat den zurückgetretenen Chef Jensen Huang wieder einsetzt. Finanzminister Bessent will die Entscheidung von den laufenden Untersuchungen zu Chipverkäufen nach China abhängig machen. Der Verwaltungsrat hat bisher keine Rückkehr beschlossen. Nvidias Lage belastet den ganzen Chip-Sektor, auch AMD.",
+   "text": "US-Präsident Trump hat Nvidias Verwaltungsrat aufgefordert, den zurückgetretenen Chef Jensen Huang wieder einzustellen. Der Verwaltungsratschef hatte vergangene Woche gesagt, Huang werde nicht zurückgeholt; ein Personalberater sucht einen neuen Chef, Colette Kress führt übergangsweise. Finanzminister Bessent will zuerst Antworten zu den Chipverkäufen nach China. Nvidias Lage belastet den ganzen Chip-Sektor, auch AMD.",
    "tags": [
     "Nvidia",
     "Chips",
@@ -330,7 +330,7 @@
   },
   {
    "date": "Di 24.11.",
-   "text": "Xiaomi Q3-Zahlen",
+   "text": "Xiaomi Q3-Zahlen (19:30 Uhr Hongkong = 12:30 Uhr dt. Zeit)",
    "mine": true
   },
   {
@@ -345,7 +345,7 @@
   },
   {
    "date": "Mi 25.11.",
-   "text": "USA: Inflation PCE (Oktober) und BIP Q3 (2. Schätzung) – wichtig für die Fed am 9.12.; Deere Q4-Zahlen (voraussichtlich)",
+   "text": "USA: Inflation PCE (Oktober) und BIP Q3 (2. Schätzung) – wichtig für die Fed am 9.12.; Deere Q4-Zahlen (vor US-Start)",
    "mine": false
   },
   {
@@ -396,10 +396,6 @@
   {
    "title": "ARIVA/dpa-AFX: Dax fällt unter 25.000 Punkte (20.11.2026)",
    "url": "https://www.ariva.de/news/aktien-frankfurt-schluss-dax-faellt-unter-25-000-punkte-12215520"
-  },
-  {
-   "title": "NBC News: Trump 'would not mind' if Jensen Huang returned as Nvidia CEO",
-   "url": "https://www.nbcnews.com/politics/trump-administration/trump-support-jensen-huang-nvidia-ceo-rcna609597"
   },
   {
    "title": "Yahoo Finance: Trump throws his weight behind Jensen Huang's return",
@@ -456,6 +452,34 @@
   {
    "title": "NYSE: Holidays & Trading Hours",
    "url": "https://www.nyse.com/Markets/hours-calendars"
+  },
+  {
+   "title": "Yahoo Finance: Trump urges Nvidia board to rehire Huang",
+   "url": "https://finance.yahoo.com/technology/articles/trump-urges-nvidia-board-rehire-042759448.html"
+  },
+  {
+   "title": "NBC News: Trump 'would not mind' if Jensen Huang returned",
+   "url": "https://www.nbcnews.com/politics/trump-administration/trump-support-jensen-huang-nvidia-ceo-rcna609597"
+  },
+  {
+   "title": "CNBC: Asia markets – Kospi, Taiwan, China (23.11.2026)",
+   "url": "https://cnbc.com/2026/11/23/asia-markets-kospi-taiwan-china-csi300.html"
+  },
+  {
+   "title": "Business Recorder: Gold rises from 14-month low",
+   "url": "https://www.brecorder.com/news/40450321/gold-rises-from-14-month-low-as-markets-await-us-inflation-data"
+  },
+  {
+   "title": "Xiaomi IR: 2026 Q3 results announcement",
+   "url": "https://ir.mi.com/events/event-details/xiaomi-corporation-2026-third-quarter-results-announcement"
+  },
+  {
+   "title": "BEA: Release schedule",
+   "url": "https://www.bea.gov/news/schedule"
+  },
+  {
+   "title": "StockTitan: Earnings calendar week of Nov. 23, 2026",
+   "url": "https://www.stocktitan.net/articles/earnings-calendar-week-of-november-23-2026"
   }
  ]
 }

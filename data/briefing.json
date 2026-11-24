@@ -3,7 +3,7 @@
  "updated_label": "Di, 24.11.2026, 07:40 Uhr",
  "kind": "Tagesbriefing",
  "mood": "Kräftige Erholung nach der Ausverkaufswoche: Nvidia holte Jensen Huang als Chef zurück, die Aktie sprang um 31 % und zog den S&P 500 (+4,7 %, bester Tag seit April 2025) und die Nasdaq (+6,5 %) mit nach oben. Ob die Erholung hält, ist offen: Heute kommen die Xiaomi-Zahlen, morgen die US-Inflation (PCE).",
- "check_note": "Alle Indexstände und 13 von 13 Depot-Kursen (Montagsschluss) mit mindestens 2 Quellen abgeglichen; bei den 4 London-ETFs dient der Xetra-Kurs in Euro als zweite Quelle (gleiche Richtung, Abweichung durch Wechselkurs und Börsenzeiten). Gold, Bitcoin und US-Rendite sind Spannen, weil die Quellen zu verschiedenen Uhrzeiten messen.",
+ "check_note": "Alle Indexstände und alle 13 Depot-Kurse (Montagsschluss) geprüft; US-Aktien mit 2 übereinstimmenden Quellen, bei den 4 London-ETFs nur Yahoo plus Xetra-Kurs in Euro als Gegenprobe (Richtung passt). Der unabhängige Faktencheck fand 3 Fehler (Quantenaktien-Plus, Kupfer-Tief „seit März“, Datum einer Fed-Aussage) und 2 ungenaue Spannen – alles korrigiert.",
  "markets": [
   {
    "name": "S&P 500",
@@ -47,7 +47,7 @@
   },
   {
    "name": "Gold",
-   "value": "≈ 3.630–3.650 $",
+   "value": "≈ 3.620–3.650 $",
    "change": null,
    "note": "je Unze; Mo kräftig erholt (Terminkontrakt Dez. +3,9 % auf 3.651 $)",
    "nsrc": 3,
@@ -63,9 +63,9 @@
   },
   {
    "name": "US-Rendite 10J",
-   "value": "≈ 4,92–4,96 %",
+   "value": "≈ 4,92–4,93 %",
    "change": null,
-   "note": "Mo leicht gestiegen. Fed-Vize Williams hält eine Zinserhöhung am 9.12. für möglich, aber keine große (0,5 Punkte)",
+   "note": "Mo-Schluss, leicht gestiegen. NY-Fed-Chef Williams nannte die Inflation am Montag „zu hoch“ und hält weitere Zinserhöhungen für möglich; der Markt rechnet am 9.12. fast sicher mit +0,25 Punkten",
    "nsrc": 3,
    "verified": true
   }
@@ -138,7 +138,7 @@
    "signal": "vorsicht",
    "price": "47,35 $",
    "change": 4.93,
-   "note": "Mo-Schluss in London (47,345 $); Xetra-Kurs in Euro +6,2 %. Kupfer fiel in London (LME) früh kurz auf ≈ 11.950 $ je Tonne (tiefster Stand seit März 2024) und erholte sich auf ≈ 12.240 $. Langfristiger Abwärtstrend (Kurs weit unter dem 200-Tage-Schnitt).",
+   "note": "Mo-Schluss in London (47,345 $); Xetra-Kurs in Euro +6,2 %. Kupfer fiel in London (LME) früh kurz auf ≈ 11.950 $ je Tonne (tiefster Stand seit März) und erholte sich auf ≈ 12.240 $. Langfristiger Abwärtstrend (Kurs weit unter dem 200-Tage-Schnitt).",
    "next": "Kein Termin gefunden",
    "nsrc": 2,
    "verified": true
@@ -150,7 +150,7 @@
    "signal": "halten",
    "price": "288,45 $",
    "change": 0.79,
-   "note": "Mo-Schluss. Gute Nachricht: Die US-Behörde FDA hat Rinvoq für Weißfleckenkrankheit (Vitiligo) zugelassen – als erste Tablette dafür, ab 12 Jahren. Aufwärtstrend intakt, Gewinnschätzungen stabil.",
+   "note": "Mo-Schluss. Gute Nachricht: Die US-Behörde FDA hat Rinvoq für Weißfleckenkrankheit (Vitiligo) zugelassen – als erste Therapie, die im ganzen Körper wirkt (Tablette), ab 12 Jahren. Aufwärtstrend intakt, Gewinnschätzungen stabil.",
    "next": "Kein Termin in den nächsten 7 Tagen",
    "nsrc": 3,
    "verified": true
@@ -174,8 +174,8 @@
    "signal": "halten",
    "price": "255,39 $",
    "change": 3.47,
-   "note": "Mo-Schluss, mit der Tech-Erholung wieder über den 200-Tage-Schnitt (≈ 245 $). Die Anthropic-Aktie (Amazon hält rund 14,6 %) fiel dagegen um rund 1,4 % und liegt nur knapp über dem Ausgabepreis von 83 $.",
-   "next": "AWS re:Invent ab 30.11. (voraussichtlich, außerhalb 7 Tage)",
+   "note": "Mo-Schluss, mit der Tech-Erholung wieder über den 200-Tage-Schnitt (≈ 245 $). Die Anthropic-Aktie (Amazon hält rund 14,6 %) fiel dagegen um 1,4 % auf 87,64 $ – rund 5,6 % über dem Ausgabepreis von 83 $.",
+   "next": "AWS re:Invent 30.11.–4.12. (außerhalb 7 Tage)",
    "nsrc": 2,
    "verified": true
   },
@@ -210,7 +210,7 @@
    "signal": "vorsicht",
    "price": "27,43 $",
    "change": 6.98,
-   "note": "Mo-Schluss in London (27,425 $); Xetra-Kurs in Euro +7,6 %. Quantenaktien in den USA stark erholt (IonQ, Rigetti, D-Wave je rund +14 bis +17 %) – ohne eigene Nachrichten, nur mit dem Tech-Sektor. Weiter weit unter dem 200-Tage-Schnitt.",
+   "note": "Mo-Schluss in London (27,425 $); Xetra-Kurs in Euro +7,6 %. Quantenaktien in den USA stark erholt (IonQ, Rigetti, D-Wave je rund +12 bis +13 %) – ohne eigene Nachrichten, nur mit dem Tech-Sektor. Weiter weit unter dem 200-Tage-Schnitt.",
    "next": "Kein Termin gefunden",
    "nsrc": 2,
    "verified": true
@@ -272,7 +272,7 @@
   },
   {
    "title": "Fed: Zinserhöhung im Dezember bleibt wahrscheinlich",
-   "text": "New-York-Fed-Chef John Williams nannte die Inflation weiter zu hoch, schloss aber eine große Zinserhöhung (0,5 Punkte) für den 9.12. aus. Der Markt rechnet mit +0,25 Punkten.",
+   "text": "New-York-Fed-Chef John Williams nannte die Inflation am Montag weiter „zu hoch“ und schließt weitere Zinserhöhungen nicht aus. Eine große Erhöhung (0,5 Punkte) hatte er schon am 17.11. ausgeschlossen. Der Markt rechnet am 9.12. mit +0,25 Punkten.",
    "tags": [
     "USA",
     "Zinsen"
@@ -285,7 +285,7 @@
     "ticker": "PANW",
     "name": "Palo Alto Networks",
     "why": "Chance der Woche (Technologie): starke Zahlen, angehobene Prognose, mehrere Kursziel-Anhebungen.",
-    "risk": "Tech-Erholung ist erst einen Tag alt – nicht hastig kaufen.",
+    "risk": "Tech-Erholung ist erst einen Tag alt – nicht hastig kaufen. Analysten haben die Gewinnschätzung in 30 Tagen um 10,5 % gesenkt (Übernahme).",
     "strength": "mittel"
    },
    {

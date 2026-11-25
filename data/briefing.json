@@ -3,7 +3,7 @@
  "updated_label": "Mi, 25.11.2026, 07:45 Uhr",
  "kind": "Tagesbriefing",
  "mood": "Die Erholung hielt nur einen Tag: Chipwerte brachen ein (Halbleiter-Index −7,9 %), dazu kamen Berichte über neue US-Zölle gegen China, die EU und weitere Länder. Der Dow stieg dank Gesundheits- und Konsumwerten trotzdem über 50.000 Punkte. Heute um 14:30 Uhr kommt die US-Inflation (PCE).",
- "check_note": "Alle 4 Indexstände und alle 9 US-Depot-Kurse (Dienstagsschluss) mit 2–3 übereinstimmenden Quellen bestätigt (u. a. AP, Nasdaq.com, Yahoo); bei den 4 London-ETFs nur Yahoo plus Xetra-Kurs in Euro als Gegenprobe (Richtung passt). AMD-Meldung direkt in der SEC-Originalmeldung geprüft.",
+ "check_note": "Alle Indexstände und alle 9 US-Depot-Kurse (Dienstagsschluss) mit 2–3 übereinstimmenden Quellen bestätigt (u. a. AP, Nasdaq.com, Yahoo), AMD-Meldung in der SEC-Originalmeldung; bei den 4 London-ETFs nur Yahoo plus Xetra-Kurs in Euro als Gegenprobe. Der unabhängige Faktencheck bestätigte rund 85 Punkte und fand 1 Fehler (Quantenaktien-Minus) sowie 4 unbelegte Zusätze – korrigiert bzw. entfernt.",
  "markets": [
   {
    "name": "S&P 500",
@@ -65,7 +65,7 @@
    "name": "US-Rendite 10J",
    "value": "≈ 4,90–4,93 %",
    "change": null,
-   "note": "Di-Schluss, kaum verändert; Fed-Erhöhung im Dezember zu rund 95 % eingepreist",
+   "note": "Di-Schluss, kaum verändert; Fed-Erhöhung im Dezember zu 93–100 % eingepreist",
    "nsrc": 3,
    "verified": true
   }
@@ -114,7 +114,7 @@
    "signal": "vorsicht",
    "price": "540,63 $",
    "change": -1.17,
-   "note": "Di-Schluss, rund 50 % unter dem 52-Wochen-Hoch. Morgan Stanley senkte das Kursziel auf 675 $ (von 915 $), Evercore ISI auf 833 $ (von 1.045 $). Gewinnschätzung in 30 Tagen −1,2 %. Klarer Abwärtstrend.",
+   "note": "Di-Schluss, rund 50 % unter dem 52-Wochen-Hoch. Ende Okt./Anfang Nov. senkten Morgan Stanley (auf 675 $ von 915 $) und Evercore ISI (auf 833 $ von 1.045 $) ihre Kursziele. Gewinnschätzung in 30 Tagen −1,2 %. Klarer Abwärtstrend.",
    "next": "Q4-Zahlen 2.2.2027",
    "nsrc": 2,
    "verified": true
@@ -127,7 +127,7 @@
    "price": "132,31 $",
    "change": 2.11,
    "note": "Di-Schluss. Guggenheim hob das Kursziel auf 140 $ (von 130 $), Kaufempfehlung bleibt. RSI 72 (über 70 = kurzfristig heiß gelaufen), Widerstand bei ≈ 133,40 $ knapp über dem Kurs.",
-   "next": "Di 1.12. Chef John Furner auf Morgan-Stanley-Konferenz, Mi 2.12. UBS-Konferenz",
+   "next": "Di 1.12. Chef John Furner auf Morgan-Stanley-Konferenz; Mi 2.12. Wachstumschef Seth Dallaire bei UBS",
    "nsrc": 2,
    "verified": true
   },
@@ -210,7 +210,7 @@
    "signal": "vorsicht",
    "price": "25,67 $",
    "change": -6.4,
-   "note": "Di in London laut Yahoo; Gegenprobe Xetra in Euro −6,9 %. Quantenaktien gaben den Montagsgewinn großteils wieder ab (D-Wave rund −9 %, Rigetti −7 %, IonQ −5 %). Weit unter dem 200-Tage-Schnitt.",
+   "note": "Di in London laut Yahoo; Gegenprobe Xetra in Euro −6,9 %. Quantenaktien gaben den Montagsgewinn großteils wieder ab (D-Wave −7,8 %, Rigetti −6,2 %, IonQ −4,0 %). Weit unter dem 200-Tage-Schnitt.",
    "next": "Kein Termin gefunden",
    "nsrc": 2,
    "verified": true
@@ -222,7 +222,7 @@
    "signal": "halten",
    "price": "220,41 $",
    "change": 5.28,
-   "note": "Di-Schluss, kräftig im Plus gegen den Tech-Trend – eine eigene Firmennachricht für den Tag fand sich nicht; GTA VI verkauft sich weiter stark. Kurs wieder knapp über dem 200-Tage-Schnitt (≈ 219 $), Widerstand bei ≈ 228 $. Gewinnschätzung in 30 Tagen +24 %.",
+   "note": "Di-Schluss, kräftig im Plus gegen den Tech-Trend – eine eigene Firmennachricht für den Tag fand sich nicht. Kurs wieder knapp über dem 200-Tage-Schnitt (≈ 219 $), Widerstand bei ≈ 228 $. Gewinnschätzung in 30 Tagen +24 %.",
    "next": "Zahlen 9.2.2027",
    "nsrc": 2,
    "verified": true
@@ -231,7 +231,7 @@
  "news": [
   {
    "title": "Chip-Ausverkauf: Halbleiter-Index −7,9 %",
-   "text": "Nach dem +31 %-Tag fiel Nvidia um 5,9 %. Analog Devices brach um rund 17 % ein, weil der Ausblick fürs nächste Quartal enttäuschte; Micron verlor 11 % (BNP Paribas warnt vor einem Überangebot bei Speicherchips). Alle 30 Werte im Halbleiter-Index fielen.",
+   "text": "Nach dem +31 %-Tag fiel Nvidia um 5,9 %. Analog Devices brach um rund 17 % ein, trotz Rekordumsatz wegen eines Ausblicks fürs nächste Quartal, der Anleger enttäuschte; Micron verlor 11 % (BNP Paribas warnt vor einem Überangebot bei Speicherchips).",
    "tags": [
     "USA",
     "Chips",
@@ -307,7 +307,7 @@
     "ticker": "PANW",
     "name": "Palo Alto Networks",
     "why": "Chance der Woche (Technologie): hielt sich am Chip-Ausverkaufstag fast unverändert (−0,1 %).",
-    "risk": "Gewinnschätzung in 30 Tagen −8,5 % (Übernahme); Tech-Stimmung wackelig.",
+    "risk": "Gewinnschätzung in 30 Tagen −8,5 %; Tech-Stimmung wackelig.",
     "strength": "mittel"
    }
   ],
@@ -361,7 +361,7 @@
   },
   {
    "date": "Di 1.12.",
-   "text": "Walmart-Chef John Furner bei Morgan-Stanley-Konferenz (Mi 2.12. UBS-Konferenz)",
+   "text": "Walmart-Chef John Furner bei Morgan-Stanley-Konferenz (Mi 2.12. Wachstumschef Seth Dallaire bei UBS)",
    "mine": true
   },
   {

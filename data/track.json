@@ -9,7 +9,16 @@
    "symbol": "UCG.MI",
    "name": "UniCredit",
    "strength": "mittel",
-   "status": "wartet auf ersten Handelstag"
+   "status": "läuft",
+   "entry_date": "2026-11-23",
+   "entry": 76.5,
+   "bench_entry": 724.33,
+   "last_date": "2026-11-23",
+   "last": 76.8,
+   "ret": 0.0039,
+   "bench_ret": -0.0077,
+   "excess": 0.0116,
+   "days": 0
   },
   {
    "id": "KW 48 (23.–27.11.2026)|REGN",
@@ -24,12 +33,12 @@
    "entry_date": "2026-11-23",
    "entry": 923.18,
    "bench_entry": 724.33,
-   "last_date": "2026-11-23",
-   "last": 942.24,
-   "ret": 0.0206,
-   "bench_ret": -0.0028,
-   "excess": 0.0234,
-   "days": 0
+   "last_date": "2026-11-24",
+   "last": 987.09,
+   "ret": 0.0692,
+   "bench_ret": -0.0077,
+   "excess": 0.0769,
+   "days": 1
   },
   {
    "id": "KW 48 (23.–27.11.2026)|PANW",
@@ -44,12 +53,12 @@
    "entry_date": "2026-11-23",
    "entry": 361.82,
    "bench_entry": 724.33,
-   "last_date": "2026-11-23",
-   "last": 353.43,
-   "ret": -0.0232,
-   "bench_ret": -0.0028,
-   "excess": -0.0204,
-   "days": 0
+   "last_date": "2026-11-24",
+   "last": 352.99,
+   "ret": -0.0244,
+   "bench_ret": -0.0077,
+   "excess": -0.0167,
+   "days": 1
   },
   {
    "id": "KW 48 (23.–27.11.2026)|ITT",
@@ -64,12 +73,12 @@
    "entry_date": "2026-11-23",
    "entry": 210.89,
    "bench_entry": 724.33,
-   "last_date": "2026-11-23",
-   "last": 215.75,
-   "ret": 0.023,
-   "bench_ret": -0.0028,
-   "excess": 0.0258,
-   "days": 0
+   "last_date": "2026-11-24",
+   "last": 212.26,
+   "ret": 0.0065,
+   "bench_ret": -0.0077,
+   "excess": 0.0142,
+   "days": 1
   },
   {
    "id": "KW 48 (23.–27.11.2026)|EL",
@@ -84,12 +93,12 @@
    "entry_date": "2026-11-23",
    "entry": 102.0,
    "bench_entry": 724.33,
-   "last_date": "2026-11-23",
-   "last": 103.75,
-   "ret": 0.0172,
-   "bench_ret": -0.0028,
-   "excess": 0.02,
-   "days": 0
+   "last_date": "2026-11-24",
+   "last": 108.13,
+   "ret": 0.0601,
+   "bench_ret": -0.0077,
+   "excess": 0.0678,
+   "days": 1
   },
   {
    "id": "KW 47 (16.–20.11.2026)|VRTX",
@@ -104,12 +113,12 @@
    "entry_date": "2026-11-19",
    "entry": 537.79,
    "bench_entry": 737.46,
-   "last_date": "2026-11-23",
-   "last": 538.54,
-   "ret": 0.0014,
-   "bench_ret": -0.0206,
-   "excess": 0.022,
-   "days": 2
+   "last_date": "2026-11-24",
+   "last": 563.92,
+   "ret": 0.0486,
+   "bench_ret": -0.0253,
+   "excess": 0.0739,
+   "days": 3
   },
   {
    "id": "KW 47 (16.–20.11.2026)|UCG",
@@ -124,12 +133,12 @@
    "entry_date": "2026-11-19",
    "entry": 81.75,
    "bench_entry": 737.46,
-   "last_date": "2026-11-20",
-   "last": 78.28,
-   "ret": -0.0424,
-   "bench_ret": -0.0206,
-   "excess": -0.0218,
-   "days": 1
+   "last_date": "2026-11-23",
+   "last": 76.8,
+   "ret": -0.0606,
+   "bench_ret": -0.0253,
+   "excess": -0.0353,
+   "days": 2
   },
   {
    "id": "KW 47 (16.–20.11.2026)|PANW",
@@ -144,12 +153,12 @@
    "entry_date": "2026-11-19",
    "entry": 355.81,
    "bench_entry": 737.46,
-   "last_date": "2026-11-23",
-   "last": 353.43,
-   "ret": -0.0067,
-   "bench_ret": -0.0206,
-   "excess": 0.0139,
-   "days": 2
+   "last_date": "2026-11-24",
+   "last": 352.99,
+   "ret": -0.0079,
+   "bench_ret": -0.0253,
+   "excess": 0.0174,
+   "days": 3
   },
   {
    "id": "KW 47 (16.–20.11.2026)|ITT",
@@ -164,12 +173,12 @@
    "entry_date": "2026-11-19",
    "entry": 209.03,
    "bench_entry": 737.46,
-   "last_date": "2026-11-23",
-   "last": 215.75,
-   "ret": 0.0321,
-   "bench_ret": -0.0206,
-   "excess": 0.0527,
-   "days": 2
+   "last_date": "2026-11-24",
+   "last": 212.26,
+   "ret": 0.0155,
+   "bench_ret": -0.0253,
+   "excess": 0.0408,
+   "days": 3
   },
   {
    "id": "KW 47 (16.–20.11.2026)|EL",
@@ -184,12 +193,12 @@
    "entry_date": "2026-11-19",
    "entry": 103.34,
    "bench_entry": 737.46,
-   "last_date": "2026-11-23",
-   "last": 103.75,
-   "ret": 0.004,
-   "bench_ret": -0.0206,
-   "excess": 0.0246,
-   "days": 2
+   "last_date": "2026-11-24",
+   "last": 108.13,
+   "ret": 0.0464,
+   "bench_ret": -0.0253,
+   "excess": 0.0717,
+   "days": 3
   },
   {
    "id": "KW 47 (16.–20.11.2026)|META",
@@ -203,27 +212,27 @@
    "entry_date": "2026-11-16",
    "entry": 640.0,
    "bench_entry": 749.66,
-   "last_date": "2026-11-23",
-   "last": 597.6,
-   "ret": -0.0663,
-   "bench_ret": -0.0365,
-   "excess": -0.0298,
-   "days": 5,
+   "last_date": "2026-11-24",
+   "last": 589.82,
+   "ret": -0.0784,
+   "bench_ret": -0.0412,
+   "excess": -0.0372,
+   "days": 6,
    "status": "läuft"
   }
  ],
- "updated": "2026-11-24T07:22+01:00",
+ "updated": "2026-11-25T07:22+01:00",
  "benchmark": "S&P 500 (SPY)",
  "method": "Einstieg zum Eröffnungskurs des ersten Handelstags ab Veröffentlichung; Vergleich mit dem S&P-500-ETF SPY über denselben Zeitraum; Kursentwicklung in Handelswährung, ohne Dividenden und Gebühren.",
  "stats": {
   "now": {
-   "n": 10,
-   "beat": 7,
-   "positive": 6,
-   "hit_rate": 0.7,
-   "avg_ret": -0.004,
-   "avg_bench": -0.0151,
-   "avg_excess": 0.011
+   "n": 11,
+   "beat": 8,
+   "positive": 7,
+   "hit_rate": 0.7273,
+   "avg_ret": 0.0072,
+   "avg_bench": -0.0187,
+   "avg_excess": 0.0259
   },
   "4w": {
    "n": 0

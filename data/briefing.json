@@ -3,7 +3,7 @@
  "updated_label": "Fr, 27.11.2026, 07:50 Uhr",
  "kind": "Tagesbriefing",
  "mood": "Durchatmen: Am Donnerstag erholte sich Europa kräftig (DAX +2,1 %), auch die London-ETFs im Depot holten 3–7 % auf. Die US-Börsen waren zu und handeln heute nur verkürzt bis 19 Uhr – US-Kurse im Depot sind deshalb noch vom Mittwoch.",
- "check_note": "Vorläufig: Faktencheck läuft noch. DAX und alle London-ETF-Kurse (Do) mit Yahoo plus zweiter Notierung bestätigt; US-Kurse sind Mittwochsschluss (gestern mit 2 Quellen geprüft).",
+ "check_note": "Alle Indexstände und 12 von 13 Depot-Kursen mit mindestens 2 übereinstimmenden Quellen bestätigt (US-Werte = Mittwochsschluss, Do Thanksgiving); beim Uranium-ETF passen London und Xetra nicht zusammen, Kurs daher nicht angezeigt. Bitcoin und Gold nur als Spanne. Der unabhängige Faktencheck bestätigte 29 von 35 Angaben; 3 Ungenauigkeiten (DAX-Gewinner, Kupfer, NUCL) wurden korrigiert, 3 Punkte als „voraussichtlich“ bzw. vorsichtiger formuliert.",
  "markets": [
   {
    "name": "S&P 500",
@@ -33,7 +33,7 @@
    "name": "DAX",
    "value": "25.215,52",
    "change": 2.08,
-   "note": "Do-Schluss (Xetra), Erholung vom tiefsten Stand seit Juli; Siemens Energy und Infineon über +5 %, Commerzbank schwächer",
+   "note": "Do-Schluss (Xetra), Erholung vom tiefsten Stand seit Juli; VW, Siemens Energy und Bayer vorn (+4 bis +5 %), Commerzbank −2,7 %",
    "nsrc": 3,
    "verified": true
   },
@@ -49,7 +49,7 @@
    "name": "Gold",
    "value": "≈ 3.600–3.670 $",
    "change": null,
-   "note": "je Unze, Do-Abend bis Fr früh (Spot und Terminkontrakt); erholt vom 15-Monats-Tief am Mi",
+   "note": "je Unze, Do-Abend bis Fr früh (Spot und Terminkontrakt); erholt vom Mehrmonatstief am Mi",
    "nsrc": 2,
    "verified": true
   },
@@ -90,7 +90,7 @@
    "signal": "beobachten",
    "price": "406,03 $",
    "change": -1.75,
-   "note": "Mi-Schluss (Do Thanksgiving geschlossen, Fr verkürzter Handel bis 19:00 Uhr dt. Zeit). UBS senkte das Kursziel von 700 auf 625 $ (Kaufempfehlung bleibt). Ein US-Kongressausschuss meldet, die Regierung habe von Dez. 2025 bis Mai 2026 Lieferungen von fast 900.000 KI-Chips von AMD und Nvidia an chinesische Firmen genehmigt – wie viele geliefert wurden, ist unklar. Weiter belastet die Registrierung von bis zu 337 Mio. Aktien für möglichen Weiterverkauf. Positiv: Gewinnschätzung in 30 Tagen +11 %.",
+   "note": "Mi-Schluss (Do Thanksgiving geschlossen, Fr verkürzter Handel bis 19:00 Uhr dt. Zeit). UBS senkte am Mi das Kursziel von 700 auf 625 $ (Kaufempfehlung bleibt). Ein US-Kongressausschuss hatte am 19.11. gemeldet, ein US-Kongressausschuss hatte am 19.11. gemeldet, die Regierung habe von Dez. 2025 bis Mai 2026 Lieferungen von fast 900.000 KI-Chips von AMD und Nvidia an chinesische Firmen genehmigt – wie viele geliefert wurden, ist unklar. Weiter belastet die Registrierung von bis zu 337 Mio. Aktien für möglichen Weiterverkauf. Positiv: Gewinnschätzung in 30 Tagen +11 %.",
    "next": "Di 1.12. UBS-Technologiekonferenz; Zahlen 2.2.2027",
    "nsrc": 2,
    "verified": true
@@ -127,7 +127,7 @@
    "price": "131,94 $",
    "change": -0.28,
    "note": "Mi-Schluss (Do Thanksgiving geschlossen, Fr verkürzter Handel bis 19:00 Uhr dt. Zeit). Heute Black Friday – Walmarts Online-Aktion läuft bis 29.11.; Umsatzzahlen dazu gibt es noch keine. RSI 70 (ab 70 gilt eine Aktie als kurzfristig heiß gelaufen), Widerstand knapp darüber bei ≈ 133,40 $. Gewinnschätzungen stabil.",
-   "next": "Di 1.12. Chef John Furner auf Morgan-Stanley-Konferenz; Mi 2.12. Seth Dallaire bei UBS",
+   "next": "Di 1.12. Walmart auf Morgan-Stanley-Konferenz (18:45 Uhr); Mi 2.12. bei UBS",
    "nsrc": 2,
    "verified": true
   },
@@ -138,7 +138,7 @@
    "signal": "vorsicht",
    "price": "45,67 $",
    "change": 5.3,
-   "note": "Do-Schluss in London, starke Gegenbewegung; Gegenprobe Xetra in Euro +5,2 %. Kupfer erholte sich an der Londoner Metallbörse um 2,65 % auf knapp 12.000 $ je Tonne, weil die Zollsorgen etwas nachließen. Trotzdem weit unter dem 200-Tage-Schnitt (≈ 64 $), Abwärtstrend intakt.",
+   "note": "Do-Schluss in London, starke Gegenbewegung; Gegenprobe Xetra in Euro +5,2 %. Kupfer erholte sich an der Londoner Metallbörse um rund 2 % auf knapp 11.900 $ je Tonne, weil die Zollsorgen etwas nachließen. Trotzdem weit unter dem 200-Tage-Schnitt (≈ 64 $), Abwärtstrend intakt.",
    "next": "Kein Termin gefunden",
    "nsrc": 2,
    "verified": true
@@ -184,12 +184,12 @@
    "ticker": "NUCL",
    "type": "ETF",
    "signal": "vorsicht",
-   "price": "36,05 $",
-   "change": 6.93,
-   "note": "Do-Schluss in London, kräftige Erholung vom 52-Wochen-Tief (holt die US-Erholung vom Mi-Abend nach); Gegenprobe Mailand in Euro +6,4 %. Weiter weit unter dem 200-Tage-Schnitt (≈ 54 $), Widerstand bei ≈ 37,85 $.",
+   "price": "Kurs widersprüchlich, nicht angezeigt",
+   "change": null,
+   "note": "Do kräftige Erholung vom 52-Wochen-Tief, aber die Börsen passen nicht genau zusammen: London (Yahoo) 36,05 $ / +6,9 %, Xetra in Euro +5,1 %, Mailand +6,4 % – Kurs daher nicht angezeigt. Weiter weit unter dem 200-Tage-Schnitt (≈ 54 $).",
    "next": "Kein Termin gefunden",
-   "nsrc": 2,
-   "verified": true
+   "nsrc": 1,
+   "verified": false
   },
   {
    "name": "Xiaomi",
@@ -340,12 +340,12 @@
   },
   {
    "date": "Di 1.12.",
-   "text": "AMD auf der UBS-Technologiekonferenz; Walmart-Chef John Furner bei Morgan Stanley (18:45 Uhr)",
+   "text": "AMD auf der UBS-Technologiekonferenz; Walmart bei Morgan Stanley (18:45 Uhr)",
    "mine": true
   },
   {
    "date": "Mi 2.12.",
-   "text": "Walmart-Wachstumschef Seth Dallaire bei UBS; USA: ADP-Arbeitsmarktdaten (voraussichtlich)",
+   "text": "Walmart bei UBS-Konferenz; USA: ADP-Arbeitsmarktdaten (voraussichtlich)",
    "mine": true
   },
   {
@@ -448,6 +448,50 @@
   {
    "title": "CNBC: Take-Two GTA VI sales record",
    "url": "https://www.cnbc.com/2026/11/20/take-two-sales-as-gta-vi-launches-to-massive-fanfare.html"
+  },
+  {
+   "title": "AP: How major US stock indexes fared Wednesday 11/25/2026",
+   "url": "https://wtop.com/national/2026/11/how-major-us-stock-indexes-fared-wednesday-11-25-2026"
+  },
+  {
+   "title": "CNBC: Stock market news for Nov. 25, 2026",
+   "url": "https://www.cnbc.com/2026/11/24/stock-market-today-live-updates-.html"
+  },
+  {
+   "title": "US Treasury: Daily Par Yield Curve",
+   "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611"
+  },
+  {
+   "title": "CNBC: US proposes Section 301 tariffs",
+   "url": "https://www.cnbc.com/2026/11/25/us-tariffs-trump-section-301.html"
+  },
+  {
+   "title": "SEC: AMD Form S-3ASR",
+   "url": "https://www.sec.gov/Archives/edgar/data/0000002488/000119312526472370/d171551ds3asr.htm"
+  },
+  {
+   "title": "aktiencheck.de: Bernstein warnt vor AWS-Bremse",
+   "url": "https://aktiencheck.de/artikel/amazon-aktie-bernstein-warnt-vor-aws-bremse"
+  },
+  {
+   "title": "Walmart: Leadership to participate in upcoming investor events",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-leadership-participate-upcoming-investor-130000815.html"
+  },
+  {
+   "title": "Take-Two: Grand Theft Auto VI shatters records",
+   "url": "https://www.take2games.com/ir/news/grand-theft-auto-vi-shatters-entertainment-box-office-records"
+  },
+  {
+   "title": "investingLive: Copper 20% slide on the LME",
+   "url": "https://investinglive.com/commodities/copper-sends-two-signals-a-20-slide-on-the-lme-record-premiums-in-china/"
+  },
+  {
+   "title": "Federal Reserve: FOMC-Kalender",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "title": "BLS: Arbeitsmarktbericht-Termine",
+   "url": "https://www.bls.gov/schedule/news_release/empsit.htm"
   }
  ]
 }

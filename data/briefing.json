@@ -3,7 +3,7 @@
  "updated_label": "Sa, 28.11.2026, 07:40 Uhr",
  "kind": "Wochenrückblick",
  "mood": "Starke Erholungswoche: Der S&P 500 schaffte +5,6 % (beste Woche seit April 2025), der Nasdaq +6,7 %, getragen von KI- und Chipwerten nach Jensen Huangs Rückkehr als Nvidia-Chef. Auch der DAX legte 2,6 % zu – vom Rekord über 27.000 Punkten ist er aber noch weit entfernt.",
- "check_note": "Alle Indexstände und 12 von 13 Depot-Kursen mit mindestens 2 übereinstimmenden Quellen bestätigt (US-Aktien: Yahoo + Nasdaq.com; London-ETFs: Yahoo + Gegenprobe Xetra). Beim Uranium-ETF passen London und Xetra nicht genau zusammen, Kurs daher nicht angezeigt; Bitcoin, Gold, Öl und Rendite nur als ungefährer Wert.",
+ "check_note": "Alle Indexstände und 12 von 13 Depot-Kursen mit mindestens 2 übereinstimmenden Quellen bestätigt (US-Aktien: Yahoo + Nasdaq.com; London-ETFs: Yahoo + Gegenprobe Xetra). Beim Uranium-ETF passen London und Xetra nicht genau zusammen, Kurs daher nicht angezeigt; Bitcoin, Gold, Öl und Rendite nur als ungefährer Wert. Der unabhängige Faktencheck bestätigte rund 109 von 118 Angaben; korrigiert wurden Öl, Gold-Wochenplus und Bitcoin, ergänzt die Xiaomi-Quartalszahlen, 2 unbestätigte Details entfernt.",
  "markets": [
   {
    "name": "S&P 500",
@@ -39,9 +39,9 @@
   },
   {
    "name": "Bitcoin",
-   "value": "≈ 60.300–61.600 $",
+   "value": "≈ 59.800 $",
    "change": null,
-   "note": "Fr, je nach Börse und Uhrzeit; weiter rund 30 % unter dem Hoch vom September",
+   "note": "Fr-Abend/Sa früh; am Fr schwankte der Kurs zwischen rund 58.700 und 62.100 $. Weiter rund 30 % unter dem Hoch vom September",
    "nsrc": 2,
    "verified": true
   },
@@ -49,15 +49,15 @@
    "name": "Gold",
    "value": "≈ 3.630–3.650 $",
    "change": null,
-   "note": "je Unze, Fr-Nachmittag/Abend; Woche knapp +3 %, im November trotzdem rund −6,6 %. Belastend: Erwartung steigender US-Zinsen",
+   "note": "je Unze, Fr-Nachmittag/Abend; Woche rund +3,5 %, im November trotzdem rund −6,6 %. Belastend: Erwartung steigender US-Zinsen",
    "nsrc": 2,
    "verified": true
   },
   {
    "name": "Öl (Brent)",
-   "value": "≈ 94 $",
+   "value": "≈ 95,40 $",
    "change": null,
-   "note": "Januar-Kontrakt am Fr-Abend, rund −2 % am Tag; Woche knapp +2 %. OPEC+ tagt am So – laut Reuters-Insidern sollen die Fördermengen fürs 1. Quartal 2027 unverändert bleiben",
+   "note": "Januar-Kontrakt, Fr-Schluss; im Tagesverlauf über 98 $, dann deutlich zurück. Woche rund +3 %, erstes Wochenplus im November. OPEC+ tagt am So – laut Reuters-Insidern sollen die Fördermengen fürs 1. Quartal 2027 unverändert bleiben",
    "nsrc": 2,
    "verified": true
   },
@@ -198,7 +198,7 @@
    "signal": "vorsicht",
    "price": "27,80 HK$",
    "change": 4.51,
-   "note": "Fr-Schluss Hongkong, Tech-Werte erholt; Woche +0,6 %. Xiaomi kauft weiter eigene Aktien zurück (z. B. 24.11.: 1,89 Mio. Stück). Kurs knapp unter dem 200-Tage-Schnitt (≈ 28,9 HK$). Analysten senkten die Gewinnschätzung in 30 Tagen um 5,6 %.",
+   "note": "Fr-Schluss Hongkong, Tech-Werte erholt; Woche +0,6 %. Q3-Zahlen am Di (24.11.): Umsatz 107,2 Mrd. Yuan (−5,2 %, etwas besser als erwartet), bereinigter Gewinn −56,8 % auf 4,88 Mrd. Yuan (unter der Schätzung) – teurere Speicherchips drücken die Marge, Handy-Auslieferungen −29 %, Auto-Umsatz −20 %. Xiaomi kauft laufend eigene Aktien zurück. Kurs knapp unter dem 200-Tage-Schnitt (≈ 28,9 HK$). Analysten senkten die Gewinnschätzung in 30 Tagen um 5,6 %.",
    "next": "Keine Termine in den nächsten 7 Tagen",
    "nsrc": 2,
    "verified": true
@@ -239,7 +239,7 @@
   },
   {
    "title": "Jensen Huang zurück an der Nvidia-Spitze",
-   "text": "Nvidias Verwaltungsrat setzte Huang am Mo (23.11.) wieder als Chef ein, die Aktie stieg an dem Tag um 31 %, gab danach aber einen Teil wieder ab. Ermittlungen (u. a. US-Justizministerium und Börsenaufsicht SEC wegen Chip-Schmuggels) laufen weiter.",
+   "text": "Nvidias Verwaltungsrat setzte Huang am Mo (23.11.) wieder als Chef ein, die Aktie stieg an dem Tag um 31 %, gab danach aber einen Teil wieder ab. Ermittlungen des US-Justizministeriums wegen Chip-Schmuggels laufen weiter.",
    "tags": [
     "USA",
     "Chips",
@@ -266,7 +266,7 @@
   },
   {
    "title": "OPEC+ entscheidet am Sonntag",
-   "text": "Brent fiel am Freitag auf rund 94 $. Laut Reuters-Insidern will OPEC+ am So (29.11.) die Fördermengen für das 1. Quartal 2027 unverändert lassen. Angriffe auf Tanker bei Hormus halten die Sorge um das Angebot hoch.",
+   "text": "Brent schloss am Freitag bei rund 95,40 $ (Woche rund +3 %). Laut Reuters-Insidern will OPEC+ am So (29.11.) die Fördermengen für das 1. Quartal 2027 unverändert lassen. Angriffe auf Tanker bei Hormus halten die Sorge um das Angebot hoch.",
    "tags": [
     "Öl",
     "Nahost"
@@ -309,7 +309,7 @@
    {
     "ticker": "NVDA",
     "name": "Nvidia",
-    "why": "Nach dem Chef-Comeback +31 % an einem Tag, danach wieder Abgaben; Ermittlungen wegen Chip-Schmuggels laufen weiter.",
+    "why": "Nach dem Chef-Comeback +31 % an einem Tag, danach wieder Abgaben; Ermittlungen des US-Justizministeriums wegen Chip-Schmuggels laufen weiter.",
     "risk": "Sehr starke Schwankungen in beide Richtungen.",
     "strength": "mittel"
    }
@@ -446,6 +446,18 @@
   {
    "title": "Yahoo Finance: Kursdaten 1810.HK, LSE- und Xetra-ETFs",
    "url": "https://finance.yahoo.com/quote/1810.HK/"
+  },
+  {
+   "title": "Reuters via mlq.ai: Xiaomi third-quarter adjusted profit falls 57%",
+   "url": "https://mlq.ai/news/xiaomis-third-quarter-adjusted-profit-falls-57-as-smartphone-shipments-drop-29/"
+  },
+  {
+   "title": "Longbridge: Xiaomi Q3-Ergebnis",
+   "url": "https://longbridge.com/en/news/306612885"
+  },
+  {
+   "title": "Investing.com: Xiaomi Q3 2026 earnings call transcript",
+   "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-xiaomi-q3-2026-revenue-holds-steady-as-stock-falls-93CH-5048015"
   },
   {
    "title": "CNBC: This week's bounce may not hold, history shows",

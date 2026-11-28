@@ -1,71 +1,71 @@
 {
- "updated": "2026-11-27T07:50+01:00",
- "updated_label": "Fr, 27.11.2026, 07:50 Uhr",
- "kind": "Tagesbriefing",
- "mood": "Durchatmen: Am Donnerstag erholte sich Europa kräftig (DAX +2,1 %), auch die London-ETFs im Depot holten 3–7 % auf. Die US-Börsen waren zu und handeln heute nur verkürzt bis 19 Uhr – US-Kurse im Depot sind deshalb noch vom Mittwoch.",
- "check_note": "Alle Indexstände und 12 von 13 Depot-Kursen mit mindestens 2 übereinstimmenden Quellen bestätigt (US-Werte = Mittwochsschluss, Do Thanksgiving); beim Uranium-ETF passen London und Xetra nicht zusammen, Kurs daher nicht angezeigt. Bitcoin und Gold nur als Spanne. Der unabhängige Faktencheck bestätigte 29 von 35 Angaben; 3 Ungenauigkeiten (DAX-Gewinner, Kupfer, NUCL) wurden korrigiert, 3 Punkte als „voraussichtlich“ bzw. vorsichtiger formuliert.",
+ "updated": "2026-11-28T07:40+01:00",
+ "updated_label": "Sa, 28.11.2026, 07:40 Uhr",
+ "kind": "Wochenrückblick",
+ "mood": "Starke Erholungswoche: Der S&P 500 schaffte +5,6 % (beste Woche seit April 2025), der Nasdaq +6,7 %, getragen von KI- und Chipwerten nach Jensen Huangs Rückkehr als Nvidia-Chef. Auch der DAX legte 2,6 % zu – vom Rekord über 27.000 Punkten ist er aber noch weit entfernt.",
+ "check_note": "Alle Indexstände und 12 von 13 Depot-Kursen mit mindestens 2 übereinstimmenden Quellen bestätigt (US-Aktien: Yahoo + Nasdaq.com; London-ETFs: Yahoo + Gegenprobe Xetra). Beim Uranium-ETF passen London und Xetra nicht genau zusammen, Kurs daher nicht angezeigt; Bitcoin, Gold, Öl und Rendite nur als ungefährer Wert.",
  "markets": [
   {
    "name": "S&P 500",
-   "value": "7.182,78",
-   "change": -0.25,
-   "note": "Mi-Schluss; Do Thanksgiving geschlossen, Terminkontrakte deuten auf festeren Start heute",
-   "nsrc": 2,
+   "value": "7.297,49",
+   "change": 1.6,
+   "note": "Fr-Schluss (verkürzter Handel); Woche +5,6 %, beste Woche seit April 2025",
+   "nsrc": 3,
    "verified": true
   },
   {
    "name": "Nasdaq Comp.",
-   "value": "23.585,80",
-   "change": -0.62,
-   "note": "Mi-Schluss; Do geschlossen",
-   "nsrc": 2,
+   "value": "24.129,50",
+   "change": 2.31,
+   "note": "Fr-Schluss; Woche +6,7 %, Chip- und KI-Werte vorn",
+   "nsrc": 3,
    "verified": true
   },
   {
    "name": "Dow Jones",
-   "value": "50.182,95",
-   "change": 0.33,
-   "note": "Mi-Schluss; Do geschlossen",
+   "value": "50.774,94",
+   "change": 1.18,
+   "note": "Fr-Schluss; Woche +5,5 %, beste Woche seit Oktober 2022",
    "nsrc": 2,
    "verified": true
   },
   {
    "name": "DAX",
-   "value": "25.215,52",
-   "change": 2.08,
-   "note": "Do-Schluss (Xetra), Erholung vom tiefsten Stand seit Juli; VW, Siemens Energy und Bayer vorn (+4 bis +5 %), Commerzbank −2,7 %",
-   "nsrc": 3,
+   "value": "25.441,24",
+   "change": 0.9,
+   "note": "Fr-Schluss (Xetra); Woche +2,6 %. Seit Do wieder über dem 200-Tage-Schnitt (Linie für den langfristigen Trend); Chip- und Rüstungswerte gefragt",
+   "nsrc": 2,
    "verified": true
   },
   {
    "name": "Bitcoin",
-   "value": "≈ 61.000–61.700 $",
+   "value": "≈ 60.300–61.600 $",
    "change": null,
-   "note": "Fr früh, je nach Börse; im November rund −20 %, Abflüsse aus Bitcoin-ETFs",
+   "note": "Fr, je nach Börse und Uhrzeit; weiter rund 30 % unter dem Hoch vom September",
    "nsrc": 2,
    "verified": true
   },
   {
    "name": "Gold",
-   "value": "≈ 3.600–3.670 $",
+   "value": "≈ 3.630–3.650 $",
    "change": null,
-   "note": "je Unze, Do-Abend bis Fr früh (Spot und Terminkontrakt); erholt vom Mehrmonatstief am Mi",
+   "note": "je Unze, Fr-Nachmittag/Abend; Woche knapp +3 %, im November trotzdem rund −6,6 %. Belastend: Erwartung steigender US-Zinsen",
    "nsrc": 2,
    "verified": true
   },
   {
    "name": "Öl (Brent)",
-   "value": "≈ 92,70 $",
+   "value": "≈ 94 $",
    "change": null,
-   "note": "Februar-Kontrakt, Fr früh; der auslaufende Januar-Kontrakt stand Do bei rund 96 $ (Huthi-Angriff auf Ras Tanura, Schiffstreffer bei Hormus). OPEC+ tagt am So",
+   "note": "Januar-Kontrakt am Fr-Abend, rund −2 % am Tag; Woche knapp +2 %. OPEC+ tagt am So – laut Reuters-Insidern sollen die Fördermengen fürs 1. Quartal 2027 unverändert bleiben",
    "nsrc": 2,
    "verified": true
   },
   {
    "name": "US-Rendite 10J",
-   "value": "≈ 4,85 %",
+   "value": "≈ 4,9 %",
    "change": null,
-   "note": "Mi-Stand; Do kein Anleihehandel in den USA",
+   "note": "Fr-Schluss; leicht gestiegen. Der Markt rechnet für den 9.12. überwiegend mit einer Zinserhöhung der Fed",
    "nsrc": 2,
    "verified": true
   }
@@ -76,10 +76,10 @@
    "ticker": "CSPX",
    "type": "ETF",
    "signal": "halten",
-   "price": "781,29 $",
-   "change": 3.31,
-   "note": "Do-Schluss in London, kräftige Erholung nach −2,2 % am Mi (die US-Erholung vom Mi-Abend ist jetzt im Kurs). Gegenprobe Xetra (SXR8) in Euro +3,2 %. Weiter unter dem 200-Tage-Schnitt (≈ 793 $, Linie für den langfristigen Trend); Widerstand bei 800 $.",
-   "next": "Fr 27.11. US-Börsen schließen um 19:00 Uhr dt. Zeit",
+   "price": "786,42 $",
+   "change": 0.66,
+   "note": "Fr-Schluss London (Yahoo); Gegenprobe Xetra (SXR8) in Dollar umgerechnet +0,7 %. Woche +3,2 % (London schließt vor den USA, deshalb weniger als der S&P 500 mit +5,6 %). Weiter knapp unter dem 200-Tage-Schnitt (≈ 793 $); Widerstand bei 800 $.",
+   "next": "Fr 4.12. US-Arbeitsmarktbericht; Mi 9.12. Fed-Zinsentscheid",
    "nsrc": 2,
    "verified": true
   },
@@ -88,9 +88,9 @@
    "ticker": "AMD",
    "type": "Aktie",
    "signal": "beobachten",
-   "price": "406,03 $",
-   "change": -1.75,
-   "note": "Mi-Schluss (Do Thanksgiving geschlossen, Fr verkürzter Handel bis 19:00 Uhr dt. Zeit). UBS senkte am Mi das Kursziel von 700 auf 625 $ (Kaufempfehlung bleibt). Ein US-Kongressausschuss hatte am 19.11. gemeldet, die Regierung habe von Dez. 2025 bis Mai 2026 Lieferungen von fast 900.000 KI-Chips von AMD und Nvidia an chinesische Firmen genehmigt – wie viele geliefert wurden, ist unklar. Weiter belastet die Registrierung von bis zu 337 Mio. Aktien für möglichen Weiterverkauf. Positiv: Gewinnschätzung in 30 Tagen +11 %.",
+   "price": "424,54 $",
+   "change": 4.56,
+   "note": "Fr-Schluss (verkürzter Handel bis 19:00 Uhr dt. Zeit). Chip-Erholung; auf Wochensicht praktisch unverändert (+0,04 %). Die Bank Erste Group stufte am Fr auf „Halten“ herab (Grund: hohe Bewertung, Kurs-Gewinn-Verhältnis ≈ 87). Kurs unter dem 200-Tage-Schnitt (≈ 434 $). Positiv: Gewinnschätzung in 30 Tagen +11 %.",
    "next": "Di 1.12. UBS-Technologiekonferenz; Zahlen 2.2.2027",
    "nsrc": 2,
    "verified": true
@@ -100,9 +100,9 @@
    "ticker": "GOOGL",
    "type": "Aktie",
    "signal": "beobachten",
-   "price": "273,10 $",
-   "change": -2.13,
-   "note": "Mi-Schluss (Do Thanksgiving geschlossen, Fr verkürzter Handel bis 19:00 Uhr dt. Zeit). Keine wichtigen neuen Nachrichten seit Mi gefunden. Kurs nur 3,9 % über dem 52-Wochen-Tief (262,73 $), deutlich unter dem 200-Tage-Schnitt (≈ 336 $). Analysten haben die Gewinnschätzung in 30 Tagen um 1,7 % gesenkt.",
+   "price": "274,96 $",
+   "change": 0.68,
+   "note": "Fr-Schluss (verkürzter Handel bis 19:00 Uhr dt. Zeit). Woche +3,6 %, blieb aber hinter dem Markt zurück; Sorge um hohe KI-Investitionen. Am Mi kurz auf 52-Wochen-Tief (262,73 $), jetzt 4,7 % darüber; weit unter dem 200-Tage-Schnitt (≈ 336 $). Analysten senkten die Gewinnschätzung in 30 Tagen um 1,7 %.",
    "next": "Kein Termin in den nächsten 7 Tagen",
    "nsrc": 2,
    "verified": true
@@ -112,9 +112,9 @@
    "ticker": "CAT",
    "type": "Aktie",
    "signal": "vorsicht",
-   "price": "543,69 $",
-   "change": 0.57,
-   "note": "Mi-Schluss (Do Thanksgiving geschlossen, Fr verkürzter Handel bis 19:00 Uhr dt. Zeit). Keine wichtigen Nachrichten gefunden. Klarer Abwärtstrend, weit unter dem 200-Tage-Schnitt (≈ 801 $); Gewinnschätzung in 30 Tagen −1,2 %. Widerstand bei ≈ 557 $.",
+   "price": "561,74 $",
+   "change": 3.32,
+   "note": "Fr-Schluss (verkürzter Handel bis 19:00 Uhr dt. Zeit). Starke Woche (+10,0 %) ohne eigene Firmenmeldung. Trotzdem klarer Abwärtstrend, weit unter dem 200-Tage-Schnitt (≈ 800 $); Gewinnschätzung in 30 Tagen −1,2 %. Kurs knapp über der Unterstützung bei ≈ 557 $, nächster Widerstand ≈ 619 $.",
    "next": "Q4-Zahlen 2.2.2027",
    "nsrc": 2,
    "verified": true
@@ -124,10 +124,10 @@
    "ticker": "WMT",
    "type": "Aktie",
    "signal": "halten",
-   "price": "131,94 $",
-   "change": -0.28,
-   "note": "Mi-Schluss (Do Thanksgiving geschlossen, Fr verkürzter Handel bis 19:00 Uhr dt. Zeit). Heute Black Friday – Walmarts Online-Aktion läuft bis 29.11.; Umsatzzahlen dazu gibt es noch keine. RSI 70 (ab 70 gilt eine Aktie als kurzfristig heiß gelaufen), Widerstand knapp darüber bei ≈ 133,40 $. Gewinnschätzungen stabil.",
-   "next": "Di 1.12. Walmart auf Morgan-Stanley-Konferenz (18:45 Uhr); Mi 2.12. bei UBS",
+   "price": "133,13 $",
+   "change": 0.9,
+   "note": "Fr-Schluss (verkürzter Handel bis 19:00 Uhr dt. Zeit). Woche +4,0 %, Kurs nahe Jahreshoch. Adobe meldete für den Black Friday bis zum Abend 9,7 Mrd. $ Online-Umsatz in den USA (+12,8 %) – Walmart-eigene Zahlen gibt es noch nicht. RSI 72 (über 70 gilt als kurzfristig heiß gelaufen); Widerstand ≈ 135 $.",
+   "next": "Di 1.12. Walmart auf Morgan-Stanley-Konferenz; Mi 2.12. bei UBS",
    "nsrc": 2,
    "verified": true
   },
@@ -136,9 +136,9 @@
    "ticker": "COPX",
    "type": "ETF",
    "signal": "vorsicht",
-   "price": "45,67 $",
-   "change": 5.3,
-   "note": "Do-Schluss in London, starke Gegenbewegung; Gegenprobe Xetra in Euro +5,2 %. Kupfer erholte sich an der Londoner Metallbörse um rund 2 % auf knapp 11.900 $ je Tonne, weil die Zollsorgen etwas nachließen. Trotzdem weit unter dem 200-Tage-Schnitt (≈ 64 $), Abwärtstrend intakt.",
+   "price": "47,70 $",
+   "change": 4.43,
+   "note": "Fr-Schluss London (Yahoo); Gegenprobe Xetra in Dollar +4,6 %. Kupfer stieg an der Londoner Metallbörse um gut 3 % auf rund 12.250 $ je Tonne (China stützt seinen Aktienmarkt, KI-Sorgen ließen nach). Woche +5,7 %, aber weiter weit unter dem 200-Tage-Schnitt (≈ 64 $).",
    "next": "Kein Termin gefunden",
    "nsrc": 2,
    "verified": true
@@ -148,9 +148,9 @@
    "ticker": "ABBV",
    "type": "Aktie",
    "signal": "halten",
-   "price": "294,48 $",
-   "change": -1.93,
-   "note": "Mi-Schluss (Do Thanksgiving geschlossen, Fr verkürzter Handel bis 19:00 Uhr dt. Zeit). Keine wichtigen Nachrichten gefunden. Kurs knapp unter dem 52-Wochen-Hoch (≈ 303 $), deutlich über dem 200-Tage-Schnitt. Gewinnschätzungen stabil (−0,1 % in 30 Tagen).",
+   "price": "291,88 $",
+   "change": -0.88,
+   "note": "Fr-Schluss (verkürzter Handel bis 19:00 Uhr dt. Zeit). Woche +2,0 %. Am Mo (23.11.) hat die US-Arzneibehörde FDA Rinvoq gegen Weißfleckenkrankheit (Vitiligo) zugelassen – laut AbbVie die erste innerlich wirkende Behandlung (systemische Therapie) dafür in den USA. Kurs über dem 200-Tage-Schnitt, knapp unter dem 52-Wochen-Hoch (≈ 303 $). Gewinnschätzungen stabil.",
    "next": "Kein Termin in den nächsten 7 Tagen",
    "nsrc": 2,
    "verified": true
@@ -160,9 +160,9 @@
    "ticker": "CAKE",
    "type": "Aktie",
    "signal": "halten",
-   "price": "109,66 $",
-   "change": 0.22,
-   "note": "Mi-Schluss (Do Thanksgiving geschlossen, Fr verkürzter Handel bis 19:00 Uhr dt. Zeit). Keine wichtigen Nachrichten gefunden. Kurs knapp über dem Analysten-Ø-Ziel (≈ 107 $); Gewinnschätzung in 30 Tagen +3,4 %.",
+   "price": "111,20 $",
+   "change": 1.4,
+   "note": "Fr-Schluss (verkürzter Handel bis 19:00 Uhr dt. Zeit). Keine wichtigen Nachrichten gefunden. Woche +3,0 %; Kurs über dem Analysten-Ø-Ziel (≈ 107 $), nur rund 21 % der Analysten raten zum Kauf. Gewinnschätzung in 30 Tagen +3,4 %.",
    "next": "Zahlen 17.2.2027",
    "nsrc": 2,
    "verified": true
@@ -172,10 +172,10 @@
    "ticker": "AMZN",
    "type": "Aktie",
    "signal": "beobachten",
-   "price": "244,43 $",
-   "change": -3.12,
-   "note": "Mi-Schluss (Do Thanksgiving geschlossen, Fr verkürzter Handel bis 19:00 Uhr dt. Zeit). Black Friday und Cyber Monday (30.11.) sind wichtige Verkaufstage; Zahlen dazu gibt es noch nicht. Belastend bleibt die Bernstein-Warnung zu schwächerer Cloud-Nutzung. Kurs knapp unter dem 200-Tage-Schnitt (≈ 246 $). Gewinnschätzungen leicht steigend (+1,1 % in 30 Tagen).",
-   "next": "Mo 30.11.–Fr 4.12. Cloud-Konferenz AWS re:Invent",
+   "price": "254,12 $",
+   "change": 3.96,
+   "note": "Fr-Schluss (verkürzter Handel bis 19:00 Uhr dt. Zeit). Mit der Tech-Erholung kräftig im Plus, Woche +3,0 %; wieder über dem 200-Tage-Schnitt (≈ 246 $). Black-Friday-Online-Umsatz in den USA laut Adobe stark (+12,8 %), Amazon-eigene Zahlen fehlen noch. Gewinnschätzungen leicht steigend (+1,0 % in 30 Tagen).",
+   "next": "Mo 30.11. Cyber Monday; Mo 30.11.–Fr 4.12. Cloud-Konferenz AWS re:Invent",
    "nsrc": 2,
    "verified": true
   },
@@ -186,7 +186,7 @@
    "signal": "vorsicht",
    "price": "Kurs widersprüchlich, nicht angezeigt",
    "change": null,
-   "note": "Do kräftige Erholung vom 52-Wochen-Tief, aber die Börsen passen nicht genau zusammen: London (Yahoo) 36,05 $ / +6,9 %, Xetra in Euro +5,1 %, Mailand +6,4 % – Kurs daher nicht angezeigt. Weiter weit unter dem 200-Tage-Schnitt (≈ 54 $).",
+   "note": "Fr weiter erholt (London laut Yahoo 37,30 $ / +3,5 %, Xetra in Dollar umgerechnet ≈ +4,1 %) – die Abweichung ist zu groß, Kurs daher nicht angezeigt. Weiter weit unter dem 200-Tage-Schnitt (≈ 54 $).",
    "next": "Kein Termin gefunden",
    "nsrc": 1,
    "verified": false
@@ -196,9 +196,9 @@
    "ticker": "1810.HK",
    "type": "Aktie",
    "signal": "vorsicht",
-   "price": "26,60 HK$",
-   "change": 0.15,
-   "note": "Do-Schluss in Hongkong. Heute (Fr) im Handel deutlich im Plus (zuletzt rund 27,7 HK$, Tech-Werte in Hongkong erholt) – Schlusskurs steht noch aus. Nach schwachen Q3-Zahlen kauft Xiaomi laufend eigene Aktien zurück. Analysten senkten die Gewinnschätzung in 30 Tagen um 5,6 %.",
+   "price": "27,80 HK$",
+   "change": 4.51,
+   "note": "Fr-Schluss Hongkong, Tech-Werte erholt; Woche +0,6 %. Xiaomi kauft weiter eigene Aktien zurück (z. B. 24.11.: 1,89 Mio. Stück). Kurs knapp unter dem 200-Tage-Schnitt (≈ 28,9 HK$). Analysten senkten die Gewinnschätzung in 30 Tagen um 5,6 %.",
    "next": "Keine Termine in den nächsten 7 Tagen",
    "nsrc": 2,
    "verified": true
@@ -208,9 +208,9 @@
    "ticker": "WQTM",
    "type": "ETF",
    "signal": "vorsicht",
-   "price": "26,32 $",
-   "change": 6.71,
-   "note": "Do-Schluss in London, holt die Erholung der US-Quantenaktien vom Mi-Abend nach; Gegenprobe Xetra in Euro +6,2 %. Weiter weit unter dem 200-Tage-Schnitt (≈ 35,6 $); Widerstand bei ≈ 27,20 $.",
+   "price": "27,41 $",
+   "change": 4.16,
+   "note": "Fr-Schluss London (Yahoo); Gegenprobe Xetra in Dollar +4,4 %. Woche +6,9 %. Weiter weit unter dem 200-Tage-Schnitt (≈ 35,6 $); Kurs am Widerstand ≈ 27,20 $, nächster bei ≈ 29,30 $.",
    "next": "Kein Termin gefunden",
    "nsrc": 2,
    "verified": true
@@ -220,44 +220,26 @@
    "ticker": "TTWO",
    "type": "Aktie",
    "signal": "halten",
-   "price": "227,34 $",
-   "change": 3.14,
-   "note": "Mi-Schluss (Do Thanksgiving geschlossen, Fr verkürzter Handel bis 19:00 Uhr dt. Zeit). Keine neue Firmenmeldung; Rückenwind von GTA VI (laut Take-Two 3,79 Mrd. $ Einzelhandelsumsatz am ersten Tag – das ist nicht gleich Take-Twos Umsatz). Kurs über dem 200-Tage-Schnitt (≈ 219 $); Gewinnschätzung in 30 Tagen +24 %.",
+   "price": "230,22 $",
+   "change": 1.27,
+   "note": "Fr-Schluss (verkürzter Handel bis 19:00 Uhr dt. Zeit). Woche +9,6 %. Rückenwind von GTA VI (laut Take-Two 3,79 Mrd. $ Einzelhandelsumsatz am ersten Tag – das ist nicht gleich Take-Twos Umsatz). Kurs über dem 200-Tage-Schnitt (≈ 219 $); Gewinnschätzung in 30 Tagen +24 %.",
    "next": "Zahlen 9.2.2027",
-   "nsrc": 3,
+   "nsrc": 2,
    "verified": true
   }
  ],
  "news": [
   {
-   "title": "DAX erholt sich kräftig",
-   "text": "Der DAX stieg am Donnerstag um 2,08 % auf 25.215,52 Punkte, der MDax um 2,34 %. Grund war vor allem die Erholung der US-Techwerte am Mittwochabend; Technologie-, Rohstoff- und Autowerte waren gefragt. Die US-Börsen waren wegen Thanksgiving geschlossen.",
-   "tags": [
-    "Europa",
-    "DAX"
-   ]
-  },
-  {
-   "title": "UniCredit hat letzte Genehmigung für Commerzbank",
-   "text": "Polens Finanzaufsicht hat zugestimmt – damit hat UniCredit alle Genehmigungen für die Übernahme. UniCredit verlangt eine außerordentliche Hauptversammlung, will 9 von 10 Aktionärsvertretern im Aufsichtsrat austauschen und Chef Andrea Orcel als Aufsichtsratschef. Commerzbank prüft den Antrag.",
-   "tags": [
-    "Europa",
-    "Banken",
-    "UCG"
-   ]
-  },
-  {
-   "title": "EU weist US-Vorwurf zurück",
-   "text": "Die EU-Kommission bestreitet, Ursache von Überkapazitäten zu sein, und erwartet, dass neue US-Zölle die vereinbarte Obergrenze von 15 % einhalten. Am Mo 30.11. soll der US-Handelsbeauftragte Greer per Video mit den EU-Handelsministern sprechen.",
+   "title": "Beste US-Börsenwoche seit April 2025",
+   "text": "Der S&P 500 stieg in der verkürzten Thanksgiving-Woche um 5,6 %, der Nasdaq um 6,7 %, der Dow um 5,5 %. Treiber war die Erholung von KI- und Chipwerten. Analysten warnen: Nach so schnellen Korrekturen hält eine erste Erholung nicht immer.",
    "tags": [
     "USA",
-    "EU",
-    "Zölle"
+    "Markt"
    ]
   },
   {
-   "title": "Nvidia-Kreditnote unter Beobachtung",
-   "text": "S&P hat Nvidias Bonitätsnote AA am Mittwoch auf „Beobachtung mit negativer Tendenz“ gesetzt (Grund: Unternehmensführung, Abhängigkeit von Chef Jensen Huang); eine Herabstufung wäre um eine Stufe. Die Chipbranche bleibt nervös – das trifft auch AMD.",
+   "title": "Jensen Huang zurück an der Nvidia-Spitze",
+   "text": "Nvidias Verwaltungsrat setzte Huang am Mo (23.11.) wieder als Chef ein, die Aktie stieg an dem Tag um 31 %, gab danach aber einen Teil wieder ab. Ermittlungen (u. a. US-Justizministerium und Börsenaufsicht SEC wegen Chip-Schmuggels) laufen weiter.",
    "tags": [
     "USA",
     "Chips",
@@ -265,11 +247,37 @@
    ]
   },
   {
-   "title": "Öl teurer vor OPEC+-Treffen",
-   "text": "Brent legte am Donnerstag weiter zu, nachdem die Huthis einen Angriff auf die saudische Raffinerie Ras Tanura gemeldet hatten; Schäden sind nicht unabhängig bestätigt. Am Sonntag (29.11.) entscheidet OPEC+ über die Fördermengen für 2027.",
+   "title": "Black Friday online stark",
+   "text": "Laut Adobe gaben US-Kunden am Black Friday bis 18:30 Uhr Ortszeit 9,7 Mrd. $ online aus, 12,8 % mehr als im Vorjahr; Adobe erwartet für den Tag nun 13–13,4 Mrd. $. Das stützt Händler wie Walmart und Amazon.",
+   "tags": [
+    "USA",
+    "Konsum",
+    "WMT",
+    "AMZN"
+   ]
+  },
+  {
+   "title": "Kupfer und Gold erholen sich",
+   "text": "Kupfer stieg am Freitag in London um gut 3 % auf rund 12.250 $ je Tonne, nachdem China mehr Unterstützung für seinen Aktienmarkt angekündigt hatte. Gold holte die Wochenverluste auf, bleibt im November aber deutlich im Minus.",
+   "tags": [
+    "Rohstoffe",
+    "COPX"
+   ]
+  },
+  {
+   "title": "OPEC+ entscheidet am Sonntag",
+   "text": "Brent fiel am Freitag auf rund 94 $. Laut Reuters-Insidern will OPEC+ am So (29.11.) die Fördermengen für das 1. Quartal 2027 unverändert lassen. Angriffe auf Tanker bei Hormus halten die Sorge um das Angebot hoch.",
    "tags": [
     "Öl",
     "Nahost"
+   ]
+  },
+  {
+   "title": "DAX mit Wochenplus",
+   "text": "Der DAX schloss am Freitag bei 25.441 Punkten (+0,9 %), auf Wochensicht +2,6 %. Gefragt waren Chip- und Rüstungswerte.",
+   "tags": [
+    "Europa",
+    "DAX"
    ]
   }
  ],
@@ -278,14 +286,14 @@
    {
     "ticker": "ITT",
     "name": "ITT Inc.",
-    "why": "Chance der Woche (Industrie): +2,0 % am Mi, Gewinnschätzungen +3,7 % in 30 Tagen, Kurs über dem 200-Tage-Schnitt, zwei Insider-Käufe.",
-    "risk": "Widerstand bei ≈ 224 $ knapp über dem Kurs; Zollpläne belasten Industriewerte.",
+    "why": "Chance der Woche (Industrie): Gewinnschätzungen +3,7 % in 30 Tagen, Kurs über dem 200-Tage-Schnitt, zwei Insider-Käufe.",
+    "risk": "Widerstand knapp über dem Kurs; Zollpläne belasten Industriewerte.",
     "strength": "mittel"
    },
    {
     "ticker": "EL",
     "name": "Estée Lauder",
-    "why": "Chance der Woche (Basiskonsum): +1,4 % am Mi, Gewinnschätzungen +3,1 % in 30 Tagen (19× angehoben, 1× gesenkt).",
+    "why": "Chance der Woche (Basiskonsum): Gewinnschätzungen +3,1 % in 30 Tagen (19× angehoben, 1× gesenkt).",
     "risk": "Nur die Hälfte der Analysten rät zum Kauf; Zölle auf China/EU könnten treffen.",
     "strength": "mittel"
    },
@@ -293,7 +301,7 @@
     "ticker": "REGN",
     "name": "Regeneron",
     "why": "Chance der Woche (Gesundheit): Gewinnschätzungen +23 % in 30 Tagen, Kurs nahe Rekord.",
-    "risk": "Kurs liegt praktisch auf dem Analysten-Ø-Ziel (≈ 991 $); RSI 67 nahe überhitzt.",
+    "risk": "Kurs liegt etwa auf dem Analysten-Ø-Ziel; nahe überhitzt.",
     "strength": "mittel"
    }
   ],
@@ -301,26 +309,21 @@
    {
     "ticker": "NVDA",
     "name": "Nvidia",
-    "why": "S&P droht mit Herabstufung der Kreditnote; Aktie im November rund −27 %, sehr starke Schwankungen.",
-    "risk": "Nach so starken Verlusten sind schnelle Gegenbewegungen möglich.",
+    "why": "Nach dem Chef-Comeback +31 % an einem Tag, danach wieder Abgaben; Ermittlungen wegen Chip-Schmuggels laufen weiter.",
+    "risk": "Sehr starke Schwankungen in beide Richtungen.",
     "strength": "mittel"
    }
   ]
  },
  "calendar": [
   {
-   "date": "Fr 27.11.",
-   "text": "Black Friday – US-Börsen schließen um 19:00 Uhr dt. Zeit",
-   "mine": false
-  },
-  {
    "date": "So 29.11.",
-   "text": "OPEC+-Treffen zur Fördermenge 2027",
+   "text": "OPEC+-Treffen zur Fördermenge",
    "mine": false
   },
   {
    "date": "Mo 30.11.",
-   "text": "Deutschland: Inflation November (vorläufig) (voraussichtlich)",
+   "text": "Cyber Monday (USA); Deutschland: Inflation November (vorläufig) (voraussichtlich)",
    "mine": false
   },
   {
@@ -329,18 +332,13 @@
    "mine": true
   },
   {
-   "date": "Mo 30.11.",
-   "text": "US-Handelsbeauftragter Greer per Video mit EU-Handelsministern (Zölle, Stahl)",
-   "mine": false
-  },
-  {
    "date": "Di 1.12.",
    "text": "Eurozone: Inflation November (Schnellschätzung); USA: Einkaufsmanagerindex Industrie (ISM)",
    "mine": false
   },
   {
    "date": "Di 1.12.",
-   "text": "AMD auf der UBS-Technologiekonferenz; Walmart bei Morgan Stanley (18:45 Uhr)",
+   "text": "AMD auf der UBS-Technologiekonferenz; Walmart bei Morgan Stanley",
    "mine": true
   },
   {
@@ -366,132 +364,92 @@
  ],
  "sources": [
   {
-   "title": "dpa-AFX via finanzen.net: Aktien Frankfurt Schluss – Dax erholt (26.11.2026)",
-   "url": "https://www.finanzen.net/nachricht/aktien/aktien-frankfurt-schluss-dax-erholt-zeit-zum-durchatmen-dank-thanksgiving-16088942"
+   "title": "AP via KRMG: How major US stock indexes fared Friday 11/27/2026",
+   "url": "https://krmg.com/2026/11/27/how-major-us-stock-indexes-fared-friday-11-27-2026/"
   },
   {
-   "title": "finanzen.net: DAX",
-   "url": "https://www.finanzen.net/index/dax"
+   "title": "CNBC: Dow rallies nearly 600 points to close out best week since 2022",
+   "url": "https://www.cnbc.com/2026/11/26/stock-market-today-live-updates.html"
   },
   {
-   "title": "Trading Economics: DAX",
-   "url": "https://tradingeconomics.com/germany/stock-market"
+   "title": "Nasdaq.com: Kursdaten (Nasdaq Composite, Depot-Aktien)",
+   "url": "https://www.nasdaq.com/market-activity/stocks/amd"
   },
   {
-   "title": "ARIVA: Dax erholt (26.11.26)",
-   "url": "https://www.ariva.de/news/aktien-frankfurt-schluss-dax-erholt-zeit-zum-durchatmen-12221888"
+   "title": "Motley Fool: S&P 500 posts best week in 19 months (27.11.2026)",
+   "url": "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-today-nov-27-s-and-p-500-posts-best-week-in-19-months-as-ai-stocks-rebound/"
   },
   {
-   "title": "Yahoo Finance: Kurse (CSPX.L, COPX.L, NUCL.L, WQTM.L, SXR8.DE, 1810.HK, BTC-USD, GC=F, BZ=F)",
-   "url": "https://finance.yahoo.com/quote/CSPX.L/"
+   "title": "dpa-AFX via ARIVA: Aktien Frankfurt Schluss – KI-Erholung zieht auch Dax weiter nach oben (27.11.2026)",
+   "url": "https://www.ariva.de/news/aktien-frankfurt-schluss-ki-erholung-zieht-auch-dax-weiter-12223126"
   },
   {
-   "title": "Euronews: UniCredit secures final Polish approval for Commerzbank bid",
-   "url": "https://www.euronews.com/2026/11/26/unicredit-secures-final-polish-approval-for-commerzbank-takeover-bid"
+   "title": "onvista: Dax steigt dank KI-Erholung – Gold holt Wochenverluste auf",
+   "url": "https://www.onvista.de/news/2026/11-27-dax-steigt-dank-ki-erholung-gold-holt-wochenverluste-auf-41121301-19-26581589"
   },
   {
-   "title": "Bloomberg: UniCredit asks Commerzbank to convene EGM",
-   "url": "https://www.bloomberg.com/news/articles/2026-11-26/unicredit-asks-commerzbank-to-convene-egm-after-final-approval"
+   "title": "Kitco: Gold climbs above $3,650 (27.11.2026)",
+   "url": "https://www.kitco.com/news/article/2026-11-27/gold-climbs-above-3650-silver-surges-wall-street-rebounds-sharply-kitco-pm"
   },
   {
-   "title": "The Hill: EU pushes back against US 15 percent tariff",
-   "url": "https://thehill.com/policy/international/6244220-eu-rejects-us-tariff-proposal/"
+   "title": "Rio Times: Bitcoin rises to US$61,482 (27.11.2026)",
+   "url": "https://www.riotimesonline.com/crypto-markets-bitcoin-majors-friday-november-27-2026/"
   },
   {
-   "title": "Eunews: Commission responds to new US tariff threats",
-   "url": "https://www.eunews.it/en/2026/11/25/threats-of-new-tariffs-from-the-us-the-commission-responds-overcapacity-is-affecting-us-we-are-not-the-cause/"
+   "title": "Investing.com: US 10-Year Bond Yield Historical Data",
+   "url": "https://www.investing.com/rates-bonds/u.s.-10-year-bond-yield-historical-data"
   },
   {
-   "title": "Yahoo Finance: S&P warns Nvidia's board may be compromised",
-   "url": "https://www.yahoo.com/news/us/articles/us-finds-no-evidence-china-163136002.html"
+   "title": "Trading Economics: US 10-Year Yield",
+   "url": "https://tradingeconomics.com/united-states/government-bond-yield"
   },
   {
-   "title": "Seoul Economic Daily: Nvidia faces credit review",
-   "url": "https://en.sedaily.com/economy/2026/11/27/nvidia-faces-credit-review-as-sp-flags-reliance-on-jensen"
+   "title": "Middle East Monitor/Anadolu: Brent trims weekly gains ahead of OPEC+",
+   "url": "https://www.middleeastmonitor.com/20261127-oil-gas-prices-fall-as-brent-trims-weekly-gains-ahead-of-opec-meeting/"
   },
   {
-   "title": "ad-hoc-news: AMD faces a two-front week",
-   "url": "https://ad-hoc-news.de/boerse/news/unternehmensnachrichten/amd-faces-a-two-front-week-analysts-trim-targets-as-washington-and-a-short-seller-circle/70559642"
+   "title": "MINING.COM: Copper price jumps most since January",
+   "url": "https://www.mining.com/copper-price-jumps-most-since-january-as-short-sellers-retreat/"
   },
   {
-   "title": "TokenPost: AMD shares 37% below record close",
-   "url": "https://tokenpost.com/news/investing/62928"
+   "title": "Yahoo Finance/Adobe: Black Friday online sales",
+   "url": "https://finance.yahoo.com/economy/articles/u-black-friday-online-sales-012646652.html"
   },
   {
-   "title": "CNBC: Oil prices rise after Houthis say they attacked Saudi refinery",
-   "url": "https://www.cnbc.com/2026/11/25/oil-wti-brent-hormuz-middle-east.html"
+   "title": "MarketBeat: AMD downgraded by Erste Group to Hold (27.11.2026)",
+   "url": "https://www.marketbeat.com/instant-alerts/analyst-advanced-micro-devices-nasdaq-amd-downgraded-by-erste-group-bank-to-hold-2026-11-27/"
   },
   {
-   "title": "Business Recorder: Copper bounces back toward $12,000",
-   "url": "https://www.brecorder.com/news/40450844/copper-bounces-back-toward-12000-as-us-tariff-fears-ease"
+   "title": "TipRanks: AMD stock rises even as Erste Group downgrades",
+   "url": "https://www.tipranks.com/news/amd-stock-rises-even-as-erste-group-downgrades-to-hold-heres-why"
   },
   {
-   "title": "USAGold: Daily precious metals report 26.11.2026",
-   "url": "https://www.usagold.com/daily-precious-metals-market-report-november-26-2026/"
+   "title": "AbbVie: Rinvoq approved for nonsegmental vitiligo (23.11.2026)",
+   "url": "https://news.abbvie.com/2026-11-23-AbbVies-RINVOQ-R-upadacitinib-Approved-as-the-First-Systemic-Therapy-in-the-U-S-to-Treat-Adult-and-Pediatric-Patients-With-Nonsegmental-Vitiligo"
   },
   {
-   "title": "GoldPrice.com: Gold price today",
-   "url": "https://goldprice.com/gold-price-today"
+   "title": "Investing.com: AbbVie wins FDA approval for vitiligo treatment",
+   "url": "https://uk.investing.com/news/stock-market-news/abbvie-wins-fda-approval-for-vitiligo-treatment-rinvoq-93CH-5000097"
   },
   {
-   "title": "Dimsum Daily: Hang Seng surges as tech shares rally",
-   "url": "https://dimsumdaily.hk/hang-seng-index-surges-over-500-points-in-afternoon-trading-as-tech-shares-rally%EF%BF%BC"
+   "title": "CNN: Jensen Huang reinstated as CEO of Nvidia",
+   "url": "https://www.cnn.com/2026/11/23/business/live-news/jensen-huang-reinstated-as-ceo-of-nvidia"
   },
   {
-   "title": "HKEX: Xiaomi (1810) quote",
-   "url": "https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities/Equities-Quote?sym=1810&sc_lang=en"
+   "title": "Yahoo Finance: Nvidia stock has best day since 2003",
+   "url": "https://finance.yahoo.com/technology/article/nvidia-reinstates-jensen-huang-as-ceo-stock-rockets-141145439.html"
   },
   {
-   "title": "Engineering News: OPEC+ ahead of tougher call for 2027",
-   "url": "https://engineeringnews.co.za/article/opec-keeps-december-oil-output-targets-steady-ahead-of-tougher-call-for-2027-2026-11-02"
-  },
-  {
-   "title": "CNBC: Take-Two GTA VI sales record",
-   "url": "https://www.cnbc.com/2026/11/20/take-two-sales-as-gta-vi-launches-to-massive-fanfare.html"
-  },
-  {
-   "title": "AP: How major US stock indexes fared Wednesday 11/25/2026",
-   "url": "https://wtop.com/national/2026/11/how-major-us-stock-indexes-fared-wednesday-11-25-2026"
-  },
-  {
-   "title": "CNBC: Stock market news for Nov. 25, 2026",
-   "url": "https://www.cnbc.com/2026/11/24/stock-market-today-live-updates-.html"
-  },
-  {
-   "title": "US Treasury: Daily Par Yield Curve",
-   "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611"
-  },
-  {
-   "title": "CNBC: US proposes Section 301 tariffs",
-   "url": "https://www.cnbc.com/2026/11/25/us-tariffs-trump-section-301.html"
-  },
-  {
-   "title": "SEC: AMD Form S-3ASR",
-   "url": "https://www.sec.gov/Archives/edgar/data/0000002488/000119312526472370/d171551ds3asr.htm"
-  },
-  {
-   "title": "aktiencheck.de: Bernstein warnt vor AWS-Bremse",
-   "url": "https://aktiencheck.de/artikel/amazon-aktie-bernstein-warnt-vor-aws-bremse"
-  },
-  {
-   "title": "Walmart: Leadership to participate in upcoming investor events",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-leadership-participate-upcoming-investor-130000815.html"
-  },
-  {
-   "title": "Take-Two: Grand Theft Auto VI shatters records",
+   "title": "Take-Two: GTA VI $3.79 billion day-one retail sales",
    "url": "https://www.take2games.com/ir/news/grand-theft-auto-vi-shatters-entertainment-box-office-records"
   },
   {
-   "title": "investingLive: Copper 20% slide on the LME",
-   "url": "https://investinglive.com/commodities/copper-sends-two-signals-a-20-slide-on-the-lme-record-premiums-in-china/"
+   "title": "Yahoo Finance: Kursdaten 1810.HK, LSE- und Xetra-ETFs",
+   "url": "https://finance.yahoo.com/quote/1810.HK/"
   },
   {
-   "title": "Federal Reserve: FOMC-Kalender",
-   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-  },
-  {
-   "title": "BLS: Arbeitsmarktbericht-Termine",
-   "url": "https://www.bls.gov/schedule/news_release/empsit.htm"
+   "title": "CNBC: This week's bounce may not hold, history shows",
+   "url": "https://cnbc.com/2026/11/27/this-weeks-bounce-following-a-rapid-correction-may-not-hold-history-shows.html"
   }
  ]
 }
